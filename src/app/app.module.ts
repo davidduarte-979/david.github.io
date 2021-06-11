@@ -11,6 +11,8 @@ import { LayoutComponent } from './layout/layout.component';
 import { SharedModule } from './shared/shared.module';
 import { HeroComponent } from './landing-page/components/hero/hero.component';
 import { NewsletterComponent } from './landing-page/components/newsletter/newsletter.component';
+import { SkillBarComponent } from './landing-page/components/skill-bar/skill-bar.component';
+import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [
@@ -22,8 +24,9 @@ import { NewsletterComponent } from './landing-page/components/newsletter/newsle
     ContactComponent,
     HeroComponent,
     NewsletterComponent,
+    SkillBarComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, SharedModule],
+  imports: [BrowserModule, AppRoutingModule, SharedModule, CoreModule],
   providers: [],
   bootstrap: [AppComponent],
 })
