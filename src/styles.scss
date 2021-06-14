@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~animate.css/animate.min';
 * {
   margin: 0;
   padding: 0;
@@ -8,4 +9,40 @@ body {
   font-family: 'Varela Round', -apple-system, BlinkMacSystemFont, 'Segoe UI',
     Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji',
     'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+.bg-black {
+  background-color: #000 !important;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+}
+
+.btn {
+  box-shadow: 0 0.1875rem 0.1875rem 0 rgb(0 0 0 / 10%) !important;
+  padding: 1.25rem 2rem !important;
+  font-family: 'Varela Round', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  font-size: 80%;
+  text-transform: uppercase;
+  letter-spacing: 0.15rem;
+  border: 0;
+  transition: 1s !important;
+}
+.btn-primario {
+  color: #fff !important;
+  background-color: #64a19d !important;
+}
+.btn-primario:hover {
+  background-color: #558985 !important;
+  transition: 1s;
+  transform: scale(1.2);
 }
