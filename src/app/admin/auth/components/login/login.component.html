@@ -1,0 +1,15 @@
+<ng-container>
+  <form class="form">
+    <input type="text" placeholder="Username" id="username" />
+    <input type="password" placeholder="Password" id="password" />
+    <button
+      [routerLink]="['/', 'dashboard', 'admin']"
+      type="submit"
+      id="login-button"
+    >
+      Sign In
+    </button>
+  </form>
+  <span>Do have an account? </span>
+  <a id="form-link" class="ml-2 text-white" routerLink="register">Sign up</a>
+</ng-container>
