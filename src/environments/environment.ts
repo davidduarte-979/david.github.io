@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  API_URL: 'http://localhost:3000/api/projects/',
-  API_DEV: 'http://localhost:3000',
+  API_URL: 'https://porfolio-typescript-api.herokuapp.com/api/projects/',
+  API_AUTH: 'https://porfolio-typescript-api.herokuapp.com',
 };
 
 /*

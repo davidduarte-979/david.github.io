@@ -1,11 +1,36 @@
 <ng-container>
-  <form class="form">
-    <input type="text" placeholder="Full Name" />
-    <input type="email" placeholder="Email" />
-    <input type="password" placeholder="New Password" />
-    <input type="password" placeholder="Confirm Password" />
+  <form class="form" (ngSubmit)="onSubmit($event)">
+    <input
+      type="text"
+      placeholder="First Name"
+      [(ngModel)]="user.firstName"
+      name="firstName"
+    />
+    <input
+      type="text"
+      placeholder="Last Name"
+      name="lastName"
+      [(ngModel)]="user.lastName"
+    />
+    <input
+      type="email"
+      placeholder="Email"
+      type="text"
+      [(ngModel)]="user.email"
+      name="email"
+      placeholder="Username"
+      id="username"
+    />
+    <input
+      [(ngModel)]="user.password"
+      type="password"
+      placeholder="New Password"
+      name="password"
+    />
     <button type="submit" id="login-button">Sign up</button>
   </form>
   <span>Do not have an account yet?</span>
-  <a id="form-link" class="ml-2 text-white" routerLink="/dashboard">Sign In</a>
+  <a id="form-link" class="ml-2 text-white" [routerLink]="['/', 'dashboard']">
+    Sign In</a
+  >
 </ng-container>

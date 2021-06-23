@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { Project } from 'src/app/core/models/project';
 import { ServiceProjects } from '../../../core/services/projects/project.service';
 @Component({
@@ -6,19 +7,24 @@ import { ServiceProjects } from '../../../core/services/projects/project.service
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.scss'],
 })
-export class ProjectsComponent implements OnInit {
+export class ProjectsComponent implements OnInit, OnDestroy {
   projects!: Project[];
   isLoaded = true;
+  projectsSub!: Subscription;
   constructor(private serviceProjects: ServiceProjects) {}
 
   ngOnInit(): void {
     this.onGetProjects();
   }
   onGetProjects(): any {
-    this.serviceProjects.getAllProducts().subscribe((data) => {
-      console.log(data);
-      this.projects = data;
-      this.isLoaded = false;
-    });
+    this.projectsSub = this.serviceProjects
+      .getAllProducts()
+      .subscribe((data) => {
+        this.projects = data;
+        this.isLoaded = false;
+      });
+  }
+  ngOnDestroy(): void {
+    this.projectsSub.unsubscribe();
   }
 }

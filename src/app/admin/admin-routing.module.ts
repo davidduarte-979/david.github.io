@@ -1,15 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { SidebarComponent } from './sidebar/sidebar.component';
-
+import { AuthGuard } from '../core/guards/auth.guard';
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule),
+    component: SidebarComponent,
+    canActivate: [AuthGuard],
   },
   {
-    path: 'admin',
-    component: SidebarComponent,
+    path: 'auth',
+    loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule),
   },
 ];
 

@@ -9,10 +9,13 @@ import { SharedModule } from './shared/shared.module';
 import { HeroComponent } from './landing-page/components/hero/hero.component';
 import { CoreModule } from './core/core.module';
 import { CardComponent } from './landing-page/components/projects/card/card.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SkillBarComponent } from './landing-page/components/skill-bar/skill-bar.component';
+import { AuthGuard } from './core/guards/auth.guard';
+import { TokenInterceptorService } from './core/services/token-interceptor/token-interceptor.service';
+import { RedirectToGuard } from './core/guards/redirect-to.guard';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,15 @@ import { SkillBarComponent } from './landing-page/components/skill-bar/skill-bar
     HttpClientModule,
     BrowserAnimationsModule,
   ],
-  providers: [],
+  providers: [
+    AuthGuard,
+    RedirectToGuard,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptorService,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
