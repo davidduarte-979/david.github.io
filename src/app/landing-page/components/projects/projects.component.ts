@@ -18,7 +18,7 @@ export class ProjectsComponent implements OnInit, OnDestroy {
   }
   onGetProjects(): any {
     this.projectsSub = this.serviceProjects
-      .getAllProducts()
+      .getAllProjects()
       .subscribe((data) => {
         this.projects = data;
         this.isLoaded = false;

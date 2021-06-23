@@ -1,4 +1,4 @@
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AuthRoutingModule } from './auth-routing.module';
 import { LayoutComponent } from './components/layout/layout.component';
@@ -16,6 +16,5 @@ import { RegisterComponent } from './components/register/register.component';
     FormsModule,
     SharedModule,
   ],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AuthModule {}

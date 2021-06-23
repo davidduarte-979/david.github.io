@@ -23,4 +23,8 @@ export class AuthService {
     localStorage.removeItem('token');
     this.router.navigate(['/', 'dashboard', 'auth']);
   }
+  getUser(): Observable<User> {
+    const id = '60d300e9c5cc08064270822d';
+    return this.http.get<User>(`${environment.API_AUTH}/users/${id}`);
+  }
 }

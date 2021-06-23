@@ -1,36 +1,54 @@
 <ng-container>
-  <form class="form" (ngSubmit)="onSubmit($event)">
+  <form class="form" [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
     <input
       type="text"
       placeholder="First Name"
-      [(ngModel)]="user.firstName"
+      formControlName="firstName"
       name="firstName"
     />
+    <span *ngIf="!firstName.valid && firstName.touched" class="text-danger"
+      >this field is required</span
+    >
     <input
       type="text"
       placeholder="Last Name"
       name="lastName"
-      [(ngModel)]="user.lastName"
+      formControlName="lastName"
     />
+    <span *ngIf="!lastName.valid && lastName.touched" class="text-danger"
+      >this field is invalid</span
+    >
     <input
       type="email"
       placeholder="Email"
       type="text"
-      [(ngModel)]="user.email"
+      formControlName="email"
       name="email"
-      placeholder="Username"
       id="username"
     />
+    <span *ngIf="!email.valid && email.touched" class="text-danger"
+      >this field is invalid</span
+    >
     <input
-      [(ngModel)]="user.password"
+      formControlName="password"
       type="password"
-      placeholder="New Password"
+      placeholder="Password"
       name="password"
     />
-    <button type="submit" id="login-button">Sign up</button>
+    <span *ngIf="!password.valid && password.touched" class="text-danger"
+      >this field is required</span
+    >
+    <br />
+    <button [disabled]="!signUpForm.valid" type="submit" id="login-button">
+      Sign up
+    </button>
+    <br />
+    <span *ngIf="!signUpForm.valid && signUpForm.touched" class="text-danger"
+      >this form data is invalid</span
+    >
   </form>
   <span>Do not have an account yet?</span>
   <a id="form-link" class="ml-2 text-white" [routerLink]="['/', 'dashboard']">
-    Sign In</a
-  >
+    Sign In
+  </a>
 </ng-container>

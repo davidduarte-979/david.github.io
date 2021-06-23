@@ -12,6 +12,9 @@
   src: url(https://fonts.gstatic.com/s/sourcesanspro/v14/6xKydSBYKcSV-LCoeQqfX1RYOo3ik4zwlxdr.ttf)
     format('truetype');
 }
+input.ng-invalid.ng-touched {
+  border: 1px solid red !important;
+}
 .form {
   font-family: 'Source Sans Pro', sans-serif;
   color: white;
