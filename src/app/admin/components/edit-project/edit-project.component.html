@@ -1,1 +1,42 @@
-<p>edit-project works!</p>
+<div class="py-4">
+  <h1 class="text-center">Please Insert a new Project</h1>
+  <form
+    [formGroup]="editProjectForm"
+    class="d-flex flex-column justify-content-center align-items-center"
+    (ngSubmit)="onSubmit()"
+  >
+    <mat-form-field appearance="fill">
+      <mat-label>Project Name</mat-label>
+      <input formControlName="projectName" matInput required />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Title</mat-label>
+      <input formControlName="title" matInput required />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Description</mat-label>
+      <input formControlName="description" matInput required />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Image Url</mat-label>
+      <input formControlName="imageUrl" matInput required />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Project Url</mat-label>
+      <input formControlName="projectUrl" matInput required />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Technologies</mat-label>
+      <textarea formControlName="technologies" matInput required></textarea>
+    </mat-form-field>
+
+    <button mat-raised-button type="submit" color="primary">
+      Add New Project
+    </button>
+  </form>
+</div>
