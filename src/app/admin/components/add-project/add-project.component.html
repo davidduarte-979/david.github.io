@@ -5,37 +5,71 @@
     class="d-flex flex-column justify-content-center align-items-center"
     (ngSubmit)="onSubmit()"
   >
-    <mat-form-field appearance="fill">
+    <mat-form-field class="mb-2" appearance="fill">
       <mat-label>Project Name</mat-label>
-      <input formControlName="projectName" matInput required />
+      <input formControlName="projectName" matInput />
+      <mat-error
+        *ngIf="addProjectForm.get('projectName')?.hasError('required')"
+      >
+        this field is required
+      </mat-error>
     </mat-form-field>
 
-    <mat-form-field appearance="fill">
+    <mat-form-field class="mb-2" appearance="fill">
       <mat-label>Title</mat-label>
-      <input formControlName="title" matInput required />
+      <input formControlName="title" matInput />
+      <mat-error *ngIf="addProjectForm.get('title')?.hasError('required')">
+        this field is required
+      </mat-error>
     </mat-form-field>
 
-    <mat-form-field appearance="fill">
+    <mat-form-field class="mb-2" appearance="fill">
       <mat-label>Description</mat-label>
-      <input formControlName="description" matInput required />
+      <input formControlName="description" matInput />
+      <mat-error
+        *ngIf="addProjectForm.get('description')?.hasError('required')"
+      >
+        this field is required
+      </mat-error>
     </mat-form-field>
 
-    <mat-form-field appearance="fill">
+    <mat-form-field class="mb-2" appearance="fill">
       <mat-label>Image Url</mat-label>
-      <input formControlName="imageUrl" matInput required />
+      <input formControlName="imageUrl" matInput />
+      <mat-error *ngIf="addProjectForm.get('imageUrl')?.hasError('required')">
+        this field is required
+      </mat-error>
     </mat-form-field>
 
-    <mat-form-field appearance="fill">
+    <mat-form-field class="mb-2" appearance="fill">
       <mat-label>Project Url</mat-label>
-      <input formControlName="projectUrl" matInput required />
+      <input formControlName="projectUrl" matInput />
+      <mat-error *ngIf="addProjectForm.get('projectUrl')?.hasError('required')">
+        this field is required
+      </mat-error>
     </mat-form-field>
 
-    <mat-form-field appearance="fill">
+    <mat-form-field class="mb-2" appearance="fill">
       <mat-label>Technologies</mat-label>
-      <textarea formControlName="technologies" matInput required></textarea>
+      <textarea formControlName="technologies" matInput></textarea>
+      <mat-error
+        *ngIf="addProjectForm.get('technologies')?.hasError('required')"
+      >
+        this field is required
+      </mat-error>
     </mat-form-field>
-
-    <button mat-raised-button type="submit" color="primary">
+    <mat-error
+      class="mt-2"
+      *ngIf="!addProjectForm.valid && addProjectForm.touched"
+    >
+      this form is invalid
+    </mat-error>
+    <button
+      [disabled]="!addProjectForm.valid"
+      mat-raised-button
+      type="submit"
+      color="primary"
+    >
       Add New Project
     </button>
   </form>

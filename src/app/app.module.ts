@@ -16,6 +16,7 @@ import { SkillBarComponent } from './landing-page/components/skill-bar/skill-bar
 import { AuthGuard } from './core/guards/auth.guard';
 import { TokenInterceptorService } from './core/services/token-interceptor/token-interceptor.service';
 import { RedirectToGuard } from './core/guards/redirect-to.guard';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { RedirectToGuard } from './core/guards/redirect-to.guard';
     CardComponent,
     ProjectsComponent,
     SkillBarComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,

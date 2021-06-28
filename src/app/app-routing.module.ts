@@ -6,6 +6,7 @@ import { ProjectsComponent } from './landing-page/components/projects/projects.c
 import { SkillBarComponent } from './landing-page/components/skill-bar/skill-bar.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { LayoutComponent } from './layout/layout.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const routes: Routes = [
   {
@@ -38,6 +39,10 @@ const routes: Routes = [
     path: 'dashboard',
     loadChildren: () =>
       import('./admin/admin.module').then((m) => m.AdminModule),
+  },
+  {
+    path: '**',
+    component: PageNotFoundComponent,
   },
 ];
 

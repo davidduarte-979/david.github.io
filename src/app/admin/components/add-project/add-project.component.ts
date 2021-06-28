@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 import { Router } from '@angular/router';
 import { Project } from '@core/models/project';
 import { ServiceProjects } from '@core/services/projects/project.service';
@@ -12,17 +17,21 @@ import { ServiceProjects } from '@core/services/projects/project.service';
 export class AddProjectComponent implements OnInit {
   constructor(
     private serviceProjects: ServiceProjects,
-    private router: Router
-  ) {}
+    private router: Router,
+    private fb: FormBuilder
+  ) {
+    this.formBuilder();
+  }
   addProjectForm!: FormGroup;
-  ngOnInit(): void {
-    this.addProjectForm = new FormGroup({
-      projectName: new FormControl('', [Validators.required]),
-      title: new FormControl('', [Validators.required]),
-      description: new FormControl('', [Validators.required]),
-      technologies: new FormControl('', [Validators.required]),
-      imageUrl: new FormControl('', [Validators.required]),
-      projectUrl: new FormControl('', [Validators.required]),
+  ngOnInit(): void {}
+  private formBuilder(): void {
+    this.addProjectForm = this.fb.group({
+      projectName: ['', [Validators.required]],
+      title: ['', [Validators.required]],
+      description: ['', [Validators.required]],
+      technologies: ['', [Validators.required]],
+      imageUrl: ['', [Validators.required]],
+      projectUrl: ['', [Validators.required]],
     });
   }
   onSubmit(): void {

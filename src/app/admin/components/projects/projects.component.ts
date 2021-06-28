@@ -26,6 +26,7 @@ export class ProjectsComponent implements OnInit, OnDestroy {
     this.dataSourceSub = this.projectService
       .getAllProjects()
       .subscribe((data) => {
+        console.log(data);
         this.dataSource = new MatTableDataSource(data);
       });
   }

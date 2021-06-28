@@ -9,7 +9,7 @@ export class ServiceProjects {
   getAllProjects(): Observable<Project[]> {
     return this.http.get<Project[]>(environment.API_URL);
   }
-  getProjects(id: string): Observable<Project> {
+  getProject(id: string): Observable<Project> {
     return this.http.get<Project>(`${environment.API_URL}/${id}`);
   }
   createProjects(project: Project): Observable<object> {
