@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 export class ServiceProjects {
   constructor(private http: HttpClient) {}
   getAllProjects(): Observable<Project[]> {
-    return this.http.get<Project[]>(environment.API_URL);
+    return this.http.get<Project[]>('http://localhost:3000/api/projects/');
   }
   getProject(id: string): Observable<Project> {
     return this.http.get<Project>(`${environment.API_URL}/${id}`);

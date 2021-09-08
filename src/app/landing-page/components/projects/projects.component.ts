@@ -20,6 +20,7 @@ export class ProjectsComponent implements OnInit, OnDestroy {
     this.projectsSub = this.serviceProjects
       .getAllProjects()
       .subscribe((data) => {
+        console.log(data);
         this.projects = data;
         this.isLoaded = false;
       });

@@ -40,11 +40,11 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
   providers: [
     AuthGuard,
     RedirectToGuard,
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: TokenInterceptorService,
-      multi: true,
-    },
+    // {
+    //   provide: HTTP_INTERCEPTORS,
+    //   useClass: TokenInterceptorService,
+    //   multi: true,
+    // },
   ],
   bootstrap: [AppComponent],
 })
