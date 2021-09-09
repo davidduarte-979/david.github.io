@@ -1,23 +1,9 @@
 <ng-container>
-  <form class="form" [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
-    <input
-      type="text"
-      placeholder="First Name"
-      formControlName="firstName"
-      name="firstName"
-    />
-    <span *ngIf="!firstName.valid && firstName.touched" class="text-danger"
-      >this field is required</span
-    >
-    <input
-      type="text"
-      placeholder="Last Name"
-      name="lastName"
-      formControlName="lastName"
-    />
-    <span *ngIf="!lastName.valid && lastName.touched" class="text-danger"
-      >this field is invalid</span
-    >
+  <mat-spinner *ngIf="isLoading" class="m-auto my-5"></mat-spinner>
+  <div *ngIf="error" class="alert alert-warning" role="alert">
+    {{ error }}
+  </div>
+  <form *ngIf="!isLoading" class="form" [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
     <input
       type="email"
       placeholder="Email"

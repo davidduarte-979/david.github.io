@@ -33,7 +33,7 @@ export class EditProjectComponent implements OnInit {
   onGetProject(): void {
     this.route.params.subscribe((data) => {
       this.id = data.id;
-      this.serviceProject.getProject(this.id).subscribe((project: Project) => {
+      this.serviceProject.getProject(this.id).subscribe((project: any) => {
         this.editProjectForm.patchValue({
           projectName: project.projectName,
           title: project.title,

@@ -1,5 +1,5 @@
 export interface Project {
-  _id: string;
+  readonly id: string;
   projectName: string;
   title: string;
   description: string;

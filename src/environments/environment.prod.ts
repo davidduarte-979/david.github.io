@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
-  API_URL: 'https://porfolio-typescript-api.herokuapp.com/api/projects/',
-  API_AUTH: 'https://porfolio-typescript-api.herokuapp.com',
+  API_URL: 'http://localhost:3000/api/projects',
+  API_AUTH: 'http://localhost:3000',
 };

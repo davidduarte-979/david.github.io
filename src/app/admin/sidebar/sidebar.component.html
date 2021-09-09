@@ -1,4 +1,4 @@
-<mat-sidenav-container class="sidenav-container" *ngIf="user$ | async as user">
+<mat-sidenav-container class="sidenav-container" >
   <mat-sidenav
     #drawer
     class="sidenav"
@@ -29,7 +29,7 @@
         <mat-icon aria-label="Side nav toggle icon">home</mat-icon>
       </button>
       <div class="d-flex justify-content-between w-100">
-        <span>Welcome {{ user.firstName }} {{ user.lastName }} </span>
+        <span>Welcome David Duarte </span>
         <button mat-raised-button color="warn" (click)="onLogOut()">
           logout
         </button>

@@ -4,7 +4,6 @@ import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { AuthService } from '@core/services/auth/auth.service';
 import { User } from '@core/models/user';
-
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
@@ -21,15 +20,10 @@ export class SidebarComponent implements OnInit {
 
   constructor(
     private breakpointObserver: BreakpointObserver,
-    private auth: AuthService
+    private auth: AuthService,
   ) {}
-  ngOnInit(): void {
-    this.onGetUser();
-  }
+  ngOnInit(): void {}
   onLogOut(): void {
     this.auth.logout();
-  }
-  onGetUser(): Observable<User> {
-    return (this.user$ = this.auth.getUser());
   }
 }

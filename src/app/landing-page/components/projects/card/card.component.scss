@@ -29,10 +29,17 @@ h1 {
   &:hover {
     > .front {
       transform: rotateY(180deg);
+      h1 {
+        display: none;
+      }
     }
     > .back {
       opacity: 1;
       transform: rotateY(0deg);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+  
     }
   }
   &.flip-vertical {
@@ -56,7 +63,7 @@ h1 {
   display: inline-block;
   margin-right: 2px;
   margin-bottom: 1em;
-  width: 300px;
+  width: 100%;
   > .front,
   > .back {
     display: block;
@@ -64,7 +71,7 @@ h1 {
     width: inherit;
     background-size: cover !important;
     background-position: center !important;
-    height: 220px;
+    height: 320px;
     padding: 1em 2em;
     background: #313131;
     border-radius: 10px;
@@ -87,4 +94,6 @@ h1 {
     0.625rem 0.625rem rgba(0, 0, 0, 0.04), 16px 16px rgba(0, 0, 0, 0.04),
     17px 17px rgba(0, 0, 0, 0.04), 18px 18px rgba(0, 0, 0, 0.04),
     19px 19px rgba(0, 0, 0, 0.04), 1.25rem 1.25rem rgba(0, 0, 0, 0.04);
+    position: relative;
+    bottom: 90px;
 }

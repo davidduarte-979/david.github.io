@@ -17,6 +17,7 @@ import { AuthGuard } from './core/guards/auth.guard';
 import { TokenInterceptorService } from './core/services/token-interceptor/token-interceptor.service';
 import { RedirectToGuard } from './core/guards/redirect-to.guard';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { HeaderInterceptor } from '@core/services/auth/auth-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -38,13 +39,11 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     BrowserAnimationsModule,
   ],
   providers: [
-    AuthGuard,
-    RedirectToGuard,
-    // {
-    //   provide: HTTP_INTERCEPTORS,
-    //   useClass: TokenInterceptorService,
-    //   multi: true,
-    // },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HeaderInterceptor,
+      multi: true,
+    },
   ],
   bootstrap: [AppComponent],
 })

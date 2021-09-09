@@ -1,23 +1,26 @@
-<div class="skill-section">
-  <h2 class="text-white-50 text-center mb-4">Skills</h2>
-  <div class="skill-bars mx-auto">
-    <div *ngFor="let skill of skills" class="bar">
-      <div class="info">
-        <span>{{ skill.name }}</span>
-        <br />
-        <span *ngIf="skill.proficient">Proficient</span>
-      </div>
-      <div class="progress">
-        <div
-          class="
-            progress-bar
-            bg-danger
-            progress-bar-striped progress-bar-animated
-          "
-          role="progressbar"
-          [style.width.%]="skill.knowledge"
-        >
-          {{ skill.knowledge }}%
+<div class=" container-fluid skill-section">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-6">
+      <h2 class="text-white-50 text-center mb-4">Skills</h2>
+      <div class="skill-bars mx-auto">
+        <div *ngFor="let skill of skills" class="bar">
+          <div class="info">
+            <span>{{ skill.name }}</span>
+            <span *ngIf="skill.proficient && skill.knowledge > 80">Proficient</span>
+          </div>
+          <div class="progress">
+            <div
+              class="
+                progress-bar
+                bg-danger
+                progress-bar-striped progress-bar-animated
+              "
+              role="progressbar"
+              [style.width.%]="skill.knowledge"
+            >
+              {{ skill.knowledge }}%
+            </div>
+          </div>
         </div>
       </div>
     </div>

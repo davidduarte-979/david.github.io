@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnDestroy } from '@angular/core';
 import {
   ActivatedRouteSnapshot,
   CanActivate,
@@ -6,7 +6,8 @@ import {
   RouterStateSnapshot,
   UrlTree,
 } from '@angular/router';
-import { Observable } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
+import { map, take } from 'rxjs/operators';
 import { AuthService } from '../services/auth/auth.service';
 
 @Injectable({
@@ -17,14 +18,15 @@ export class RedirectToGuard implements CanActivate {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
-  ):
-    | Observable<boolean | UrlTree>
-    | Promise<boolean | UrlTree>
-    | boolean
-    | UrlTree {
-    if (this.auth.loggedIn()) {
-      this.router.navigate(['/', 'dashboard', 'admin']);
-    }
-    return !this.auth.loggedIn();
+  ): any {
+       return this.auth.user.pipe(
+         take(1),
+         map((user) => {
+           if (!user) {
+            return true;
+           }
+           return this.router.createUrlTree(['/', 'dashboard']);
+         })
+       )
   }
 }

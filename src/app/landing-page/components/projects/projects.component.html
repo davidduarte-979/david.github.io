@@ -1,4 +1,4 @@
-<ng-container *ngIf="projects">
+<ng-container>
   <section class="projects-section pt-4 bg-light" id="projects">
     <h2 class="text-black-50 text-center pb-4">Projects</h2>
     <div class="container px-4 px-lg-5">
@@ -13,20 +13,22 @@
         </div>
         <div class="col-xl-6 col-lg-6">
           <div class="text-center">
-            <h4>Shoreline</h4>
-            <p class="text-black-50 mb-0">
-              Grayscale is open source and MIT licensed. This means you can use
-              it for any project - even commercial projects! Download it,
-              customize it, and publish your website!
+            <h4>Projects Portfolio</h4>
+            <p class="text-black-50 ms-3 mb-0">
+              Portfolio of personal projects and with companies, in this section I try to summarize all the hard work that I have used and the different concepts that I have implemented, as well as technological stacks, frameworks, preprocessor, databases, etc.
             </p>
           </div>
         </div>
       </div>
-      <div class="container">
-        <app-card
-          *ngFor="let project of projects"
-          [project]="project"
-        ></app-card>
+      <mat-spinner *ngIf="isLoading" class="m-auto mb-5"></mat-spinner>
+      <div *ngIf="!isLoading" class="container">
+        <div class="row justify-content-center">
+            <app-card 
+            class="pt-5 mt-5 col-12 col-md-4"
+            *ngFor="let project of projects"
+              [project]="project"
+            ></app-card>
+        </div>
       </div>
     </div>
   </section>

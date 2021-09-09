@@ -10,7 +10,6 @@
 }
 .skill-bars {
   padding: 25px 30px;
-  width: 600px;
   background: #000000;
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
@@ -23,6 +22,8 @@
 }
 .skill-bars .bar .info {
   margin-bottom: 5px;
+  display: flex;
+  justify-content: space-evenly;
 }
 .skill-bars .bar .info span {
   color: #fff;

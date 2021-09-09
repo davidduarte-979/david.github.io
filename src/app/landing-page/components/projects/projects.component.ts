@@ -9,7 +9,7 @@ import { ServiceProjects } from '../../../core/services/projects/project.service
 })
 export class ProjectsComponent implements OnInit, OnDestroy {
   projects!: Project[];
-  isLoaded = true;
+  isLoading = false;
   projectsSub!: Subscription;
   constructor(private serviceProjects: ServiceProjects) {}
 
@@ -17,12 +17,12 @@ export class ProjectsComponent implements OnInit, OnDestroy {
     this.onGetProjects();
   }
   onGetProjects(): any {
+    this.isLoading = true;
     this.projectsSub = this.serviceProjects
       .getAllProjects()
       .subscribe((data) => {
-        console.log(data);
+        this.isLoading = false;
         this.projects = data;
-        this.isLoaded = false;
       });
   }
   ngOnDestroy(): void {

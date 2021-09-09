@@ -16,13 +16,13 @@
       #input
     />
   </mat-form-field>
-
-  <div class="mat-elevation-z8">
+  <mat-spinner class="m-auto mb-5" *ngIf="isLoading" ></mat-spinner>
+  <div *ngIf="!isLoading"  class="mat-elevation-z8">
     <table mat-table [dataSource]="dataSource" matSort>
       <!-- ID Column -->
       <ng-container matColumnDef="id">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>ID</th>
-        <td mat-cell *matCellDef="let project">{{ project._id }}</td>
+        <td mat-cell *matCellDef="let project">{{ project.id }}</td>
       </ng-container>
 
       <!-- Title Column -->
@@ -62,14 +62,14 @@
               style="margin-right: 5px"
               mat-raised-button
               color="primary"
-              [routerLink]="['/', 'dashboard', 'projects', project._id]"
+              [routerLink]="['/', 'dashboard', 'projects', project.id]"
             >
               Edit
             </button>
             <a
               mat-raised-button
               color="warn"
-              (click)="onDeleteProject(project._id)"
+              (click)="onDeleteProject(project.id)"
             >
               Delete
             </a>

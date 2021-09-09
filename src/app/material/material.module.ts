@@ -15,41 +15,34 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+
+const modules = [
+  MatProgressSpinnerModule,
+  MatSidenavModule,
+  MatSliderModule,
+  MatGridListModule,
+  MatCardModule,
+  MatMenuModule,
+  MatButtonModule,
+  LayoutModule,
+  MatToolbarModule,
+  MatListModule,
+  MatIconModule,
+  MatTableModule,
+  MatFormFieldModule,
+  MatPaginatorModule,
+  MatInputModule,
+  CommonModule,
+  MatSelectModule,
+]
 @NgModule({
   declarations: [],
   imports: [
-    CommonModule,
-    MatSidenavModule,
-    MatSliderModule,
-    MatGridListModule,
-    MatCardModule,
-    MatMenuModule,
-    MatIconModule,
-    LayoutModule,
-    MatToolbarModule,
-    MatListModule,
-    MatTableModule,
-    MatFormFieldModule,
-    MatPaginatorModule,
-    MatInputModule,
-    MatSelectModule,
+    ...modules
   ],
   exports: [
-    MatSidenavModule,
-    MatSliderModule,
-    MatGridListModule,
-    MatCardModule,
-    MatMenuModule,
-    MatButtonModule,
-    LayoutModule,
-    MatToolbarModule,
-    MatListModule,
-    MatIconModule,
-    MatTableModule,
-    MatFormFieldModule,
-    MatPaginatorModule,
-    MatInputModule,
-    MatSelectModule,
+    ...modules
   ],
 })
 export class MaterialModule {}

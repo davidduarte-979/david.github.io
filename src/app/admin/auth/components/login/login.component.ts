@@ -7,7 +7,6 @@ import {
 } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { Token } from 'src/app/core/models/user';
 import { AuthService } from '@core/services/auth/auth.service';
 @Component({
   selector: 'app-login',
@@ -17,6 +16,8 @@ import { AuthService } from '@core/services/auth/auth.service';
 export class LoginComponent implements OnInit, OnDestroy {
   signInForm!: FormGroup;
   signInSub!: Subscription;
+  error!: string;
+  isLoading = false;
   constructor(
     private auth: AuthService,
     private router: Router,
@@ -32,13 +33,21 @@ export class LoginComponent implements OnInit, OnDestroy {
     });
   }
   onSubmit(): void {
-    this.signInSub = this.auth.signIn(this.signInForm.value).subscribe(
-      (data: Token) => {
-        localStorage.setItem('token', data.token);
-        this.router.navigate(['/', 'dashboard'], { relativeTo: this.route });
+    const email = this.signInForm.value.email;
+    const password = this.signInForm.value.password;
+    this.isLoading = true;
+    this.signInSub = this.auth.signIn(email, password)
+    .subscribe(
+      (responseData) => {
+        console.log(responseData);
+        this.isLoading = false;
+        this.router.navigate(['/', 'dashboard']);
       },
-      (err) => console.log(err)
-    );
+      (error) => {
+        console.log(error);
+        this.isLoading = false;
+        this.error = error;
+      });
   }
   get email(): any {
     return this.signInForm.get('email');

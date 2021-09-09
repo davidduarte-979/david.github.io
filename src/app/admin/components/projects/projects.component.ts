@@ -6,13 +6,13 @@ import { Router } from '@angular/router';
 import { Project } from '@core/models/project';
 import { ServiceProjects } from '@core/services/projects/project.service';
 import { Subscription } from 'rxjs';
-
 @Component({
   selector: 'app-projects',
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.scss'],
 })
 export class ProjectsComponent implements OnInit, OnDestroy {
+  isLoading = false;
   displayedColumns: string[] = [
     'id',
     'title',
@@ -27,13 +27,17 @@ export class ProjectsComponent implements OnInit, OnDestroy {
     private router: Router
   ) {}
   ngOnInit(): void {
+    this.onGetData();
+  }
+  onGetData(): void {
+    this.isLoading = true;
     this.dataSourceSub = this.projectService
       .getAllProjects()
-      .subscribe((data) => {
+      .subscribe((data: any) => {
+        this.isLoading = false;
         this.dataSource = new MatTableDataSource(data);
       });
   }
-
   applyFilter(event: Event): void {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
@@ -43,10 +47,8 @@ export class ProjectsComponent implements OnInit, OnDestroy {
     }
   }
   onDeleteProject(id: string): void {
-    this.projectService.deleteProjects(id).subscribe((data) => {
-      console.log(data);
-      this.router.navigate(['/', 'dashboard', 'projects']);
-    });
+    this.projectService.deleteProjects(id);
+    this.onGetData();
   }
   ngOnDestroy(): void {
     this.dataSourceSub.unsubscribe();

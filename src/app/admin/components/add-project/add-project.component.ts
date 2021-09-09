@@ -37,7 +37,7 @@ export class AddProjectComponent implements OnInit {
   onSubmit(): void {
     this.serviceProjects
       .createProjects(this.addProjectForm.value as Project)
-      .subscribe((data) => {
+      .subscribe((data: any) => {
         console.log(data);
         this.router.navigate(['/', 'dashboard', 'projects']);
       });
