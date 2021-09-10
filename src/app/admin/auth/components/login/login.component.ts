@@ -38,8 +38,7 @@ export class LoginComponent implements OnInit, OnDestroy {
     this.isLoading = true;
     this.signInSub = this.auth.signIn(email, password)
     .subscribe(
-      (responseData) => {
-        console.log(responseData);
+      () => {
         this.isLoading = false;
         this.router.navigate(['/', 'dashboard']);
       },

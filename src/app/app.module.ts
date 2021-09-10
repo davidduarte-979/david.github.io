@@ -10,14 +10,13 @@ import { HeroComponent } from './landing-page/components/hero/hero.component';
 import { CoreModule } from './core/core.module';
 import { CardComponent } from './landing-page/components/projects/card/card.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SkillBarComponent } from './landing-page/components/skill-bar/skill-bar.component';
-import { AuthGuard } from './core/guards/auth.guard';
-import { TokenInterceptorService } from './core/services/token-interceptor/token-interceptor.service';
-import { RedirectToGuard } from './core/guards/redirect-to.guard';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { HeaderInterceptor } from '@core/services/auth/auth-interceptor.service';
+import * as fromApp from './store/app.reduce';
 
 @NgModule({
   declarations: [
@@ -37,6 +36,8 @@ import { HeaderInterceptor } from '@core/services/auth/auth-interceptor.service'
     CoreModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    StoreModule.forRoot(fromApp.appReducer),
+    EffectsModule.forRoot([])
   ],
   providers: [
     {

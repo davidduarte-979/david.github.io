@@ -8,6 +8,7 @@ import { AuthService } from '../auth/auth.service';
 import { CurrentUser } from '@core/models/user';
 @Injectable({ providedIn: 'root' })
 export class ServiceProjects {
+  projectsArray: Project[] = [];
   constructor(
     private http: HttpClient,
     private auth: AuthService
@@ -17,10 +18,9 @@ export class ServiceProjects {
     .pipe(
       map(
         (responseData: any) => {
-          const projectsArray = [];
           for (const key in responseData) {
             if (responseData.hasOwnProperty(key)) {
-              projectsArray.push(
+              this.projectsArray.push(
                 {
                   ...responseData[key],
                   id: key
@@ -28,7 +28,7 @@ export class ServiceProjects {
               );
             }
           }
-          return projectsArray;
+          return this.projectsArray;
         })
       );
   }
@@ -36,16 +36,7 @@ export class ServiceProjects {
     return this.http.get<Project>(`${environment.API_URL_FIREBASE}/${id}.json`);
   }
   createProjects(project: Project): any {
-        return this.http.post<Project>(`${environment.API_URL_FIREBASE}.json`, project);
-    // return this.auth.user
-    // .pipe(
-    //   take(1),
-    //   exhaustMap((user: any) => {
-    //     return this.http.post<Project>(`${environment.API_URL_FIREBASE}.json`, project, {
-    //       params: new HttpParams().set('auth', user.token)
-    //     });
-    //   })
-    // );
+    return this.http.post<Project>(`${environment.API_URL_FIREBASE}.json`, project);
   }
   updateProjects(id: string, changes: Partial<Project>): Observable<object> {
     return this.http.put<Project>(`${environment.API_URL_FIREBASE}/${id}.json`, changes);

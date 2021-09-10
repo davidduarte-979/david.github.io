@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
+import { Store } from '@ngrx/store';
+import { Observable, Subscription } from 'rxjs';
 import { Project } from 'src/app/core/models/project';
 import { ServiceProjects } from '../../../core/services/projects/project.service';
 @Component({
@@ -8,12 +9,18 @@ import { ServiceProjects } from '../../../core/services/projects/project.service
   styleUrls: ['./projects.component.scss'],
 })
 export class ProjectsComponent implements OnInit, OnDestroy {
+  projects$!: Observable<{projects: Project[]}>;
   projects!: Project[];
   isLoading = false;
   projectsSub!: Subscription;
-  constructor(private serviceProjects: ServiceProjects) {}
+  constructor(
+    private serviceProjects: ServiceProjects,
+    private store: Store<{projects: { projects: Project[] }}>
+    ) {}
 
   ngOnInit(): void {
+    // this.projects$ = this.store.select('projects');
+    // console.log(this.projects$);
     this.onGetProjects();
   }
   onGetProjects(): any {
