@@ -21,13 +21,15 @@ export interface User {
   uid?: string;
 }
 
-export interface SignUpResponseData {
+export interface AuthResponseData {
   idToken: string;
   email: string;
   refreshToken: string;
   expiresIn: string;
   localId: string;
   registered: boolean;
+  kind?: string;
+  displayName?: string;
 }
 
 export interface SignInResponseData {

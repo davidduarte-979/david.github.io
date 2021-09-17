@@ -5,9 +5,10 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { AuthService } from '@core/services/auth/auth.service';
+import * as fromApp from '../../../../store/app.reduce';
+import * as AuthActions from '../../store/auth.actions';
+import { Store } from '@ngrx/store';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -18,12 +19,31 @@ export class LoginComponent implements OnInit, OnDestroy {
   signInSub!: Subscription;
   error!: string;
   isLoading = false;
-  constructor(
-    private auth: AuthService,
-    private router: Router,
-    private route: ActivatedRoute
-  ) {}
+  constructor(private store: Store<fromApp.AppState>) {
+    this.buildForm();
+  }
   ngOnInit(): void {
+    this.signInSub = this.store.select('auth').subscribe((authResp) => {
+      this.isLoading = authResp.loading;
+      this.error = authResp.authError;
+    });
+  }
+  onSubmit(): void {
+    const email = this.signInForm.value.email;
+    const password = this.signInForm.value.password;
+    this.isLoading = true;
+    this.store.dispatch(AuthActions.loginStart({ email, password }));
+  }
+  onClearError(): void {
+    this.store.dispatch(AuthActions.clearError());
+  }
+  get email(): AbstractControl {
+    return this.signInForm.get('email');
+  }
+  get password(): AbstractControl {
+    return this.signInForm.get('password');
+  }
+  private buildForm(): void {
     this.signInForm = new FormGroup({
       email: new FormControl('david@duartechsolutions.com', [
         Validators.required,
@@ -31,28 +51,6 @@ export class LoginComponent implements OnInit, OnDestroy {
       ]),
       password: new FormControl('', [Validators.required]),
     });
-  }
-  onSubmit(): void {
-    const email = this.signInForm.value.email;
-    const password = this.signInForm.value.password;
-    this.isLoading = true;
-    this.signInSub = this.auth.signIn(email, password)
-    .subscribe(
-      () => {
-        this.isLoading = false;
-        this.router.navigate(['/', 'dashboard']);
-      },
-      (error) => {
-        console.log(error);
-        this.isLoading = false;
-        this.error = error;
-      });
-  }
-  get email(): any {
-    return this.signInForm.get('email');
-  }
-  get password(): any {
-    return this.signInForm.get('password');
   }
   ngOnDestroy(): void {
     if (this.signInSub) {

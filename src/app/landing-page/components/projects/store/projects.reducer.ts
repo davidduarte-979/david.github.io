@@ -9,17 +9,14 @@ const initialState = {
   projects: [],
 };
 
-export function projectsReducer(state = initialState, action: ProjectsActions.GetProjects) {
+export function projectsReducer(state = initialState, action: ProjectsActions.projectsActions): any {
   switch (action.type) {
-    case ProjectsActions.GET_PROJECTS: {
+    case ProjectsActions.SET_PROJECTS:
       return {
         ...state,
-        projectsArray: [...state.projects, action.payload]
+        projects: [...action.payload]
       };
-    }
-
-    default: {
+    default:
       return state;
-    }
   }
 }

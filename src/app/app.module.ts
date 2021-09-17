@@ -16,8 +16,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SkillBarComponent } from './landing-page/components/skill-bar/skill-bar.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { HeaderInterceptor } from '@core/services/auth/auth-interceptor.service';
+import { ProjectsEffects } from './landing-page/components/projects/store/projects.effects';
 import * as fromApp from './store/app.reduce';
-
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from 'src/environments/environment';
+import { AuthEffects } from './admin/auth/store/auth.effects';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +40,10 @@ import * as fromApp from './store/app.reduce';
     HttpClientModule,
     BrowserAnimationsModule,
     StoreModule.forRoot(fromApp.appReducer),
-    EffectsModule.forRoot([])
+    EffectsModule.forRoot([AuthEffects, ProjectsEffects]),
+    StoreDevtoolsModule.instrument({
+      logOnly: environment.production
+    })
   ],
   providers: [
     {

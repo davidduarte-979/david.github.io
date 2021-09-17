@@ -10,7 +10,7 @@ const routes: Routes = [
   {
     path: '',
     component: LayoutComponent,
-    canActivate: [RedirectToGuard],
+    // canActivate: [RedirectToGuard],
     children: [
       {
         path: '',

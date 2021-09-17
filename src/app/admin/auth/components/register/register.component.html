@@ -1,9 +1,22 @@
 <ng-container>
   <mat-spinner *ngIf="isLoading" class="m-auto my-5"></mat-spinner>
-  <div *ngIf="error" class="alert alert-warning" role="alert">
+  <div
+    *ngIf="error"
+    style="z-index: 10"
+    class="alert alert-warning"
+    role="alert"
+  >
     {{ error }}
+    <button class="btn btn-primary" type="button" (click)="onClearError()">
+      Close
+    </button>
   </div>
-  <form *ngIf="!isLoading" class="form" [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+  <form
+    *ngIf="!isLoading"
+    class="form"
+    [formGroup]="signUpForm"
+    (ngSubmit)="onSubmit()"
+  >
     <input
       type="email"
       placeholder="Email"
