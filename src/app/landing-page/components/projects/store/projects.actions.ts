@@ -1,15 +1,15 @@
-import { Action } from '@ngrx/store';
+import { createAction, props } from '@ngrx/store';
 import { Project } from '../../../../core/models/project';
-export const SET_PROJECTS = '[Projects] Set Projects';
-export const FETCH_PROJECTS = '[Projects] Fetch Projects';
 
-export class SetProjects implements Action {
-  readonly type = SET_PROJECTS;
-  constructor(public payload: Project[]) {}
-}
+export const fetchProjectsSuccess = createAction(
+  '[Projects] Set Projects',
+  props<{ projects: Project[] }>()
+);
+export const fetchProjects = createAction('[Projects] Fetch Projects');
 
-export class FetchProjects implements Action {
-  readonly type = FETCH_PROJECTS;
-}
+export const fetchProjectsFail = createAction(
+  '[Projects] Fail Fetch Projects',
+  props<{ errorMessage: string }>()
+);
 
-export type projectsActions = SetProjects | FetchProjects;
+export const clearError = createAction('[Projects] Clear Error');

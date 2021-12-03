@@ -1,47 +1,42 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { Observable, Subscription } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { Observable, pipe, Subscription } from 'rxjs';
+import { map, take } from 'rxjs/operators';
 import { Project } from 'src/app/core/models/project';
 import { ServiceProjects } from '../../../core/services/projects/project.service';
 import * as fromApp from '../../../store/app.reduce';
+import * as ProjectAction from '../projects/store/projects.actions';
 @Component({
   selector: 'app-projects',
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.scss'],
 })
 export class ProjectsComponent implements OnInit, OnDestroy {
-  projects$!: Observable<{projects: Project[]}>;
   projects!: Project[];
   isLoading = false;
   projectsSub!: Subscription;
-  constructor(
-    private serviceProjects: ServiceProjects,
-    private store: Store<fromApp.AppState>
-    ) {}
+  error = null;
+  constructor(private store: Store<fromApp.AppState>) {}
 
   ngOnInit(): void {
-    // this.isLoading = true;
-    // this.projectsSub = this.store.select('projects')
-    // .pipe(
-    //   map((resDataState) => resDataState.projects)
-    // )
-    // .subscribe((projects) => {
-    //   console.log(projects);
-    //   this.isLoading = false;
-    //   this.projects = projects;
-    // });
-    // console.log(this.projects$);
-    this.onGetProjects();
+    this.onSubscribeData();
+    this.onDispatchAction();
   }
-  onGetProjects(): any {
-    this.isLoading = true;
-    this.projectsSub = this.serviceProjects
-      .getAllProjects()
-      .subscribe((data) => {
-        this.isLoading = false;
-        this.projects = data;
+  onSubscribeData(): void {
+    this.projectsSub = this.store
+      .select('projects')
+      // .pipe(take(1))
+      .subscribe((respStateDataProjects) => {
+        this.projects = respStateDataProjects.projects;
+        this.isLoading = respStateDataProjects.loading;
+        this.error = respStateDataProjects.errorMessage;
       });
+  }
+  onDispatchAction(): void {
+    this.store.dispatch(ProjectAction.fetchProjects());
+  }
+  onClearError(): void {
+    this.store.dispatch(ProjectAction.clearError());
   }
   ngOnDestroy(): void {
     this.projectsSub.unsubscribe();

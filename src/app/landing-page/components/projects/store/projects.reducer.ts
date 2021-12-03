@@ -1,22 +1,44 @@
+import { Action, createReducer, on } from '@ngrx/store';
 import { Project } from '@core/models/project';
 import * as ProjectsActions from './projects.actions';
 
 export interface State {
   projects: Project[];
+  errorMessage: string;
+  loading: boolean;
 }
 
 const initialState = {
   projects: [],
+  errorMessage: null,
+  loading: false,
 };
 
-export function projectsReducer(state = initialState, action: ProjectsActions.projectsActions): any {
-  switch (action.type) {
-    case ProjectsActions.SET_PROJECTS:
-      return {
-        ...state,
-        projects: [...action.payload]
-      };
-    default:
-      return state;
-  }
+const _projectsReducer = createReducer(
+  initialState,
+  on(ProjectsActions.fetchProjectsSuccess, (state, action) => ({
+    ...state,
+    projects: [...action.projects],
+    errorMessage: null,
+    loading: false,
+  })),
+  on(ProjectsActions.fetchProjects, (state, action) => ({
+    ...state,
+    errorMessage: null,
+    loading: true,
+  })),
+  on(ProjectsActions.fetchProjectsFail, (state, action) => ({
+    ...state,
+    errorMessage: action.errorMessage,
+    loading: false,
+  })),
+  on(ProjectsActions.clearError, (state, action) => ({
+    ...state,
+    errorMessage: null,
+    loading: false,
+  }))
+);
+
+export function projectReducer(state: State, action: Action): State {
+  return _projectsReducer(state, action);
 }

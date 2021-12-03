@@ -42,8 +42,8 @@ import { AuthEffects } from './admin/auth/store/auth.effects';
     StoreModule.forRoot(fromApp.appReducer),
     EffectsModule.forRoot([AuthEffects, ProjectsEffects]),
     StoreDevtoolsModule.instrument({
-      logOnly: environment.production
-    })
+      logOnly: environment.production,
+    }),
   ],
   providers: [
     {

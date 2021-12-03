@@ -15,19 +15,33 @@
           <div class="text-center">
             <h4>Projects Portfolio</h4>
             <p class="text-black-50 ms-3 mb-0">
-              Portfolio of personal projects and with companies, in this section I try to summarize all the hard work that I have used and the different concepts that I have implemented, as well as technological stacks, frameworks, preprocessor, databases, etc.
+              Portfolio of personal projects and with companies, in this section
+              I try to summarize all the hard work that I have used and the
+              different concepts that I have implemented, as well as
+              technological stacks, frameworks, preprocessor, databases, etc.
             </p>
           </div>
         </div>
       </div>
       <mat-spinner *ngIf="isLoading" class="m-auto mb-5"></mat-spinner>
-      <div class="container">
+      <div
+        style="z-index: 10"
+        *ngIf="error"
+        class="alert alert-warning"
+        role="alert"
+      >
+        {{ error }}
+        <button class="btn btn-primary" (click)="onClearError()" type="button">
+          Close
+        </button>
+      </div>
+      <div *ngIf="!error" class="container">
         <div class="row justify-content-center">
-            <app-card 
+          <app-card
             class="pt-5 mt-5 col-12 col-md-4"
             *ngFor="let project of projects"
-              [project]="project"
-            ></app-card>
+            [project]="project"
+          ></app-card>
         </div>
       </div>
     </div>
