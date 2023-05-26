@@ -21,7 +21,7 @@ jobs:
 
       - name: Install and build
         working-directory: .
-        run: npm install --legacy-peer-deps && npm run gh-build && cp dist/portfolio-angular/index.html dist/portfolio-angular/index.html
+        run: npm install --legacy-peer-deps && export NODE_OPTIONS=--openssl-legacy-provider && npm run gh-build && cp dist/portfolio-angular/index.html dist/portfolio-angular/index.html
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@4.1.1
