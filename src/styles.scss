@@ -1,15 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
-@import '~animate.css/animate.min';
+// @import '~animate.css/animate.min';
 $color-base: #4db6ad;
 $black-color: #222;
 $blue-color: #6dabe4;
 $grey-light: #999;
 $color-base: #4db6ad;
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   font-family: 'Varela Round', -apple-system, BlinkMacSystemFont, 'Segoe UI',
     Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji',
@@ -25,6 +27,7 @@ body {
   height: 100%;
   width: 100%;
 }
+
 body {
   margin: 0;
   font-family: Roboto, 'Helvetica Neue', sans-serif;
@@ -42,10 +45,12 @@ body {
   border: 0;
   transition: 1s !important;
 }
+
 .btn-primario {
   color: #fff !important;
   background-color: #64a19d !important;
 }
+
 .btn-primario:hover {
   background-color: #558985 !important;
   transition: 1s;
