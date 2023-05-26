@@ -21,6 +21,8 @@ import * as fromApp from './store/app.reduce';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from 'src/environments/environment';
 import { AuthEffects } from './admin/auth/store/auth.effects';
+import { ButtonComponent } from '@shared/components/button/button.component';
+import { AboutComponent } from './landing-page/components/about/about.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,6 +33,7 @@ import { AuthEffects } from './admin/auth/store/auth.effects';
     ProjectsComponent,
     SkillBarComponent,
     PageNotFoundComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
@@ -44,6 +47,7 @@ import { AuthEffects } from './admin/auth/store/auth.effects';
     StoreDevtoolsModule.instrument({
       logOnly: environment.production,
     }),
+    ButtonComponent
   ],
   providers: [
     {

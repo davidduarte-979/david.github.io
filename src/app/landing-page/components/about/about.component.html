@@ -1,29 +1,22 @@
-<section
-  class="
+<section class="
     about-section
     text-center
     animate__animated animate__fadeIn animate__slow
-  "
-  id="about"
->
+  " id="about">
   <div class="container px-4 px-lg-5">
     <div class="row gx-4 gx-lg-5 justify-content-center">
       <div class="col-lg-8">
-        <h2
-          class="
+        <h2 class="
             text-white
             mb-4
             animate__animated animate__fadeIn animate__delay-2s
-          "
-        >
+          ">
           Jesus David Duarte
         </h2>
-        <p
-          class="
+        <p class="
             text-white-50
             animate__animated animate__fadeIn animate__delay-2s
-          "
-        >
+          ">
           Hi My name is Jesus David Duarte Jimenez, but all my friends call me
           David. I'm a Senior UI Developer with 5+ years of experience in
           developing Web applications using Angular, JavaScript, TypeScript,
@@ -33,16 +26,7 @@
       </div>
     </div>
     <div class="my-4">
-      <a
-        href="assets/doc/davidResumen.pdf"
-        download="jesus_resume"
-        title="download"
-        class="
-          btn btn-primario
-          animate__animated animate__fadeInUpBig animate__slow
-        "
-        >Download My Resume Here</a
-      >
+      <app-button (clickEvent)="downloadResumen()">Download Resume Here</app-button>
     </div>
     <img class="img-fluid" src="assets/img/ipad.png" alt="..." />
   </div>

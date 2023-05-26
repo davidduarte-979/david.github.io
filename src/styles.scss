@@ -48,13 +48,17 @@ body {
   transition: 1s !important;
 }
 
-.btn-primario {
+.btn-primary {
   color: #fff !important;
   background-color: #64a19d !important;
 }
 
-.btn-primario:hover {
+.btn-primary:hover {
   background-color: #558985 !important;
   transition: 1s;
   transform: scale(1.2);
+}
+
+a {
+  text-decoration: none !important;
 }
