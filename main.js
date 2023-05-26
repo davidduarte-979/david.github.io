@@ -1602,7 +1602,7 @@ function NavbarComponent__svg_svg_7_Template(rf, ctx) {
   if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnamespaceSVG"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "svg", 16);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "path", 19);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "path", 17);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
   }
 }
@@ -1610,7 +1610,7 @@ function NavbarComponent__svg_svg_8_Template(rf, ctx) {
   if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnamespaceSVG"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "svg", 16);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "path", 20);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "path", 18);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
   }
 }
@@ -1637,26 +1637,24 @@ const _c5 = function () {
 const _c6 = function () {
   return ["/contact"];
 };
-function NavbarComponent_div_33_Template(rf, ctx) {
+function NavbarComponent_div_27_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnamespaceSVG"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnamespaceHTML"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 21)(1, "div", 22)(2, "a", 23);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 19)(1, "div", 20)(2, "a", 21);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3, "Home");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "a", 24);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "a", 22);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](5, "Dashboard");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "a", 24);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "a", 22);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](7, "About");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "a", 24);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "a", 22);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](9, "Projects");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "a", 24);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "a", 22);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](11, "Skill");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](12, "a", 24);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](12, "a", 22);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](13, "Contact");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()()();
   }
@@ -1707,9 +1705,9 @@ NavbarComponent.ɵfac = function NavbarComponent_Factory(t) {
 NavbarComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
   type: NavbarComponent,
   selectors: [["app-navbar"]],
-  decls: 34,
-  vars: 15,
-  consts: [[1, "bg-gray-800"], [1, "mx-auto", "max-w-7xl", "px-2", "sm:px-6", "lg:px-8"], [1, "relative", "flex", "h-16", "items-center", "justify-between"], [1, "absolute", "inset-y-0", "left-0", "flex", "items-center", "sm:hidden"], ["type", "button", "aria-controls", "mobile-menu", "aria-expanded", "false", 1, "inline-flex", "items-center", "justify-center", "rounded-md", "p-2", "text-gray-400", "hover:bg-gray-700", "hover:text-white", "focus:outline-none", "focus:ring-2", "focus:ring-inset", "focus:ring-white", 3, "click"], [1, "sr-only"], ["class", "h-6 w-6", "fill", "none", "viewBox", "0 0 24 24", "stroke-width", "1.5", "stroke", "currentColor", "aria-hidden", "true", 4, "ngIf"], [1, "flex", "flex-1", "items-center", "justify-center", "sm:items-stretch", "sm:justify-start"], [1, "flex", "flex-shrink-0", "items-center"], ["src", "https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500", "alt", "Your Company", 1, "block", "h-8", "w-auto", "lg:hidden"], ["src", "https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500", "alt", "Your Company", 1, "hidden", "h-8", "w-auto", "lg:block"], [1, "hidden", "sm:ml-6", "sm:block"], [1, "flex", "space-x-4"], ["routerLinkActive", "bg-gray-900 text-white", 1, "text-gray-300", "hover:bg-gray-700", "hover:text-white", "rounded-md", "px-3", "py-2", "text-sm", "font-medium", 3, "routerLink"], [1, "absolute", "inset-y-0", "right-0", "flex", "items-center", "pr-2", "sm:static", "sm:inset-auto", "sm:ml-6", "sm:pr-0"], ["type", "button", 1, "rounded-full", "bg-gray-800", "p-1", "text-gray-400", "hover:text-white", "focus:outline-none", "focus:ring-2", "focus:ring-white", "focus:ring-offset-2", "focus:ring-offset-gray-800"], ["fill", "none", "viewBox", "0 0 24 24", "stroke-width", "1.5", "stroke", "currentColor", "aria-hidden", "true", 1, "h-6", "w-6"], ["stroke-linecap", "round", "stroke-linejoin", "round", "d", "M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0"], ["class", "sm:hidden", "id", "mobile-menu", 4, "ngIf"], ["stroke-linecap", "round", "stroke-linejoin", "round", "d", "M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"], ["stroke-linecap", "round", "stroke-linejoin", "round", "d", "M6 18L18 6M6 6l12 12"], ["id", "mobile-menu", 1, "sm:hidden"], [1, "space-y-1", "px-2", "pb-3", "pt-2"], ["routerLinkActive", "bg-gray-900 text-white", 1, "text-gray-300", "hover:bg-gray-700", "hover:text-white", "block", "rounded-md", "px-3", "py-2", "text-base", "font-medium", 3, "routerLink", "routerLinkActiveOptions"], ["routerLinkActive", "bg-gray-900 text-white", 1, "text-gray-300", "hover:bg-gray-700", "hover:text-white", "block", "rounded-md", "px-3", "py-2", "text-base", "font-medium", 3, "routerLink"]],
+  decls: 28,
+  vars: 17,
+  consts: [[1, "bg-gray-900"], [1, "mx-auto", "max-w-7xl", "px-2", "sm:px-6", "lg:px-8"], [1, "relative", "flex", "h-16", "items-center", "justify-between"], [1, "absolute", "inset-y-0", "left-0", "flex", "items-center", "sm:hidden"], ["type", "button", "aria-controls", "mobile-menu", "aria-expanded", "false", 1, "inline-flex", "items-center", "justify-center", "rounded-md", "p-2", "text-gray-400", "hover:bg-gray-700", "hover:text-white", "focus:outline-none", "focus:ring-2", "focus:ring-inset", "focus:ring-white", 3, "click"], [1, "sr-only"], ["class", "h-6 w-6", "fill", "none", "viewBox", "0 0 24 24", "stroke-width", "1.5", "stroke", "currentColor", "aria-hidden", "true", 4, "ngIf"], [1, "flex", "flex-1", "items-center", "justify-center", "sm:items-stretch", "sm:justify-start"], [1, "flex", "flex-shrink-0", "items-center"], ["src", "https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500", "alt", "Your Company", 1, "block", "h-8", "w-auto", "lg:hidden"], ["src", "https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500", "alt", "Your Company", 1, "hidden", "h-8", "w-auto", "lg:block"], [1, "hidden", "sm:ml-6", "sm:block"], [1, "flex", "space-x-4"], ["routerLinkActive", "bg-gray-900 text-white", 1, "text-gray-300", "hover:bg-gray-700", "hover:text-white", "rounded-md", "px-3", "py-2", "text-sm", "font-medium", 3, "routerLink", "routerLinkActiveOptions"], ["routerLinkActive", "bg-gray-900 text-white", 1, "text-gray-300", "hover:bg-gray-700", "hover:text-white", "rounded-md", "px-3", "py-2", "text-sm", "font-medium", 3, "routerLink"], ["class", "sm:hidden", "id", "mobile-menu", 4, "ngIf"], ["fill", "none", "viewBox", "0 0 24 24", "stroke-width", "1.5", "stroke", "currentColor", "aria-hidden", "true", 1, "h-6", "w-6"], ["stroke-linecap", "round", "stroke-linejoin", "round", "d", "M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"], ["stroke-linecap", "round", "stroke-linejoin", "round", "d", "M6 18L18 6M6 6l12 12"], ["id", "mobile-menu", 1, "sm:hidden"], [1, "space-y-1", "px-2", "pb-3", "pt-2"], ["routerLinkActive", "bg-gray-900 text-white", 1, "text-gray-300", "hover:bg-gray-700", "hover:text-white", "block", "rounded-md", "px-3", "py-2", "text-base", "font-medium", 3, "routerLink", "routerLinkActiveOptions"], ["routerLinkActive", "bg-gray-900 text-white", 1, "text-gray-300", "hover:bg-gray-700", "hover:text-white", "block", "rounded-md", "px-3", "py-2", "text-base", "font-medium", 3, "routerLink"]],
   template: function NavbarComponent_Template(rf, ctx) {
     if (rf & 1) {
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "nav", 0)(1, "div", 1)(2, "div", 2)(3, "div", 3)(4, "button", 4);
@@ -1728,29 +1726,22 @@ NavbarComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__[
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](13, "div", 11)(14, "div", 12)(15, "a", 13);
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](16, "Home");
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](17, "a", 13);
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](17, "a", 14);
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](18, "Dashboard");
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](19, "a", 13);
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](19, "a", 14);
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](20, "About");
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](21, "a", 13);
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](21, "a", 14);
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](22, "Projects");
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](23, "a", 13);
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](23, "a", 14);
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](24, "Skills");
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](25, "a", 13);
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](25, "a", 14);
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](26, "Contact");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()()()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](27, "div", 14)(28, "button", 15)(29, "span", 5);
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](30, "View notifications");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnamespaceSVG"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](31, "svg", 16);
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](32, "path", 17);
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()()()()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](33, NavbarComponent_div_33_Template, 14, 14, "div", 18);
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()()()()()();
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](27, NavbarComponent_div_27_Template, 14, 14, "div", 15);
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     }
     if (rf & 2) {
@@ -1759,18 +1750,18 @@ NavbarComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__[
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.isOpen);
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](7);
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](9, _c0));
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](10, _c0))("routerLinkActiveOptions", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](11, _c1));
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](10, _c2));
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](12, _c2));
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](11, _c7));
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](13, _c7));
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](12, _c8));
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](14, _c8));
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](13, _c9));
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](15, _c9));
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](14, _c10));
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](8);
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](16, _c10));
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.isOpen);
     }
   },
