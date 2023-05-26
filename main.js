@@ -367,7 +367,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "AppModule": () => (/* binding */ AppModule)
 /* harmony export */ });
-/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @angular/platform-browser */ 2512);
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @angular/platform-browser */ 2512);
 /* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./app-routing.module */ 158);
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./app.component */ 5041);
 /* harmony import */ var _landing_page_components_projects_projects_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./landing-page/components/projects/projects.component */ 7066);
@@ -377,19 +377,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _landing_page_components_hero_hero_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./landing-page/components/hero/hero.component */ 1979);
 /* harmony import */ var _core_core_module__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./core/core.module */ 294);
 /* harmony import */ var _landing_page_components_projects_card_card_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./landing-page/components/projects/card/card.component */ 8157);
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @angular/common/http */ 3765);
-/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @ngrx/store */ 4307);
-/* harmony import */ var _ngrx_effects__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @ngrx/effects */ 2847);
-/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @angular/platform-browser/animations */ 9240);
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @angular/common/http */ 3765);
+/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @ngrx/store */ 4307);
+/* harmony import */ var _ngrx_effects__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @ngrx/effects */ 2847);
+/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @angular/platform-browser/animations */ 9240);
 /* harmony import */ var _landing_page_components_skill_bar_skill_bar_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./landing-page/components/skill-bar/skill-bar.component */ 5860);
 /* harmony import */ var _page_not_found_page_not_found_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./page-not-found/page-not-found.component */ 439);
 /* harmony import */ var _core_services_auth_auth_interceptor_service__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @core/services/auth/auth-interceptor.service */ 2318);
 /* harmony import */ var _landing_page_components_projects_store_projects_effects__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./landing-page/components/projects/store/projects.effects */ 6124);
 /* harmony import */ var _store_app_reduce__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./store/app.reduce */ 713);
-/* harmony import */ var _ngrx_store_devtools__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @ngrx/store-devtools */ 203);
+/* harmony import */ var _ngrx_store_devtools__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @ngrx/store-devtools */ 203);
 /* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! src/environments/environment */ 2340);
 /* harmony import */ var _admin_auth_store_auth_effects__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./admin/auth/store/auth.effects */ 4668);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @angular/core */ 6839);
+/* harmony import */ var _shared_components_button_button_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @shared/components/button/button.component */ 42);
+/* harmony import */ var _landing_page_components_about_about_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./landing-page/components/about/about.component */ 1266);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @angular/core */ 6839);
+
+
 
 
 
@@ -420,25 +424,25 @@ class AppModule {}
 AppModule.ɵfac = function AppModule_Factory(t) {
   return new (t || AppModule)();
 };
-AppModule.ɵmod = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_16__["ɵɵdefineNgModule"]({
+AppModule.ɵmod = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_18__["ɵɵdefineNgModule"]({
   type: AppModule,
   bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_1__.AppComponent]
 });
-AppModule.ɵinj = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_16__["ɵɵdefineInjector"]({
+AppModule.ɵinj = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_18__["ɵɵdefineInjector"]({
   providers: [{
-    provide: _angular_common_http__WEBPACK_IMPORTED_MODULE_17__.HTTP_INTERCEPTORS,
+    provide: _angular_common_http__WEBPACK_IMPORTED_MODULE_19__.HTTP_INTERCEPTORS,
     useClass: _core_services_auth_auth_interceptor_service__WEBPACK_IMPORTED_MODULE_11__.HeaderInterceptor,
     multi: true
   }],
-  imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_18__.BrowserModule, _app_routing_module__WEBPACK_IMPORTED_MODULE_0__.AppRoutingModule, _shared_shared_module__WEBPACK_IMPORTED_MODULE_5__.SharedModule, _core_core_module__WEBPACK_IMPORTED_MODULE_7__.CoreModule, _angular_common_http__WEBPACK_IMPORTED_MODULE_17__.HttpClientModule, _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_19__.BrowserAnimationsModule, _ngrx_store__WEBPACK_IMPORTED_MODULE_20__.StoreModule.forRoot(_store_app_reduce__WEBPACK_IMPORTED_MODULE_13__.appReducer), _ngrx_effects__WEBPACK_IMPORTED_MODULE_21__.EffectsModule.forRoot([_admin_auth_store_auth_effects__WEBPACK_IMPORTED_MODULE_15__.AuthEffects, _landing_page_components_projects_store_projects_effects__WEBPACK_IMPORTED_MODULE_12__.ProjectsEffects]), _ngrx_store_devtools__WEBPACK_IMPORTED_MODULE_22__.StoreDevtoolsModule.instrument({
+  imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_20__.BrowserModule, _app_routing_module__WEBPACK_IMPORTED_MODULE_0__.AppRoutingModule, _shared_shared_module__WEBPACK_IMPORTED_MODULE_5__.SharedModule, _core_core_module__WEBPACK_IMPORTED_MODULE_7__.CoreModule, _angular_common_http__WEBPACK_IMPORTED_MODULE_19__.HttpClientModule, _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_21__.BrowserAnimationsModule, _ngrx_store__WEBPACK_IMPORTED_MODULE_22__.StoreModule.forRoot(_store_app_reduce__WEBPACK_IMPORTED_MODULE_13__.appReducer), _ngrx_effects__WEBPACK_IMPORTED_MODULE_23__.EffectsModule.forRoot([_admin_auth_store_auth_effects__WEBPACK_IMPORTED_MODULE_15__.AuthEffects, _landing_page_components_projects_store_projects_effects__WEBPACK_IMPORTED_MODULE_12__.ProjectsEffects]), _ngrx_store_devtools__WEBPACK_IMPORTED_MODULE_24__.StoreDevtoolsModule.instrument({
     logOnly: src_environments_environment__WEBPACK_IMPORTED_MODULE_14__.environment.production
-  })]
+  }), _shared_components_button_button_component__WEBPACK_IMPORTED_MODULE_16__.ButtonComponent]
 });
 
 (function () {
-  (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_16__["ɵɵsetNgModuleScope"](AppModule, {
-    declarations: [_app_component__WEBPACK_IMPORTED_MODULE_1__.AppComponent, _landing_page_landing_page_component__WEBPACK_IMPORTED_MODULE_3__.LandingPageComponent, _layout_layout_component__WEBPACK_IMPORTED_MODULE_4__.LayoutComponent, _landing_page_components_hero_hero_component__WEBPACK_IMPORTED_MODULE_6__.HeroComponent, _landing_page_components_projects_card_card_component__WEBPACK_IMPORTED_MODULE_8__.CardComponent, _landing_page_components_projects_projects_component__WEBPACK_IMPORTED_MODULE_2__.ProjectsComponent, _landing_page_components_skill_bar_skill_bar_component__WEBPACK_IMPORTED_MODULE_9__.SkillBarComponent, _page_not_found_page_not_found_component__WEBPACK_IMPORTED_MODULE_10__.PageNotFoundComponent],
-    imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_18__.BrowserModule, _app_routing_module__WEBPACK_IMPORTED_MODULE_0__.AppRoutingModule, _shared_shared_module__WEBPACK_IMPORTED_MODULE_5__.SharedModule, _core_core_module__WEBPACK_IMPORTED_MODULE_7__.CoreModule, _angular_common_http__WEBPACK_IMPORTED_MODULE_17__.HttpClientModule, _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_19__.BrowserAnimationsModule, _ngrx_store__WEBPACK_IMPORTED_MODULE_20__.StoreRootModule, _ngrx_effects__WEBPACK_IMPORTED_MODULE_21__.EffectsRootModule, _ngrx_store_devtools__WEBPACK_IMPORTED_MODULE_22__.StoreDevtoolsModule]
+  (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_18__["ɵɵsetNgModuleScope"](AppModule, {
+    declarations: [_app_component__WEBPACK_IMPORTED_MODULE_1__.AppComponent, _landing_page_landing_page_component__WEBPACK_IMPORTED_MODULE_3__.LandingPageComponent, _layout_layout_component__WEBPACK_IMPORTED_MODULE_4__.LayoutComponent, _landing_page_components_hero_hero_component__WEBPACK_IMPORTED_MODULE_6__.HeroComponent, _landing_page_components_projects_card_card_component__WEBPACK_IMPORTED_MODULE_8__.CardComponent, _landing_page_components_projects_projects_component__WEBPACK_IMPORTED_MODULE_2__.ProjectsComponent, _landing_page_components_skill_bar_skill_bar_component__WEBPACK_IMPORTED_MODULE_9__.SkillBarComponent, _page_not_found_page_not_found_component__WEBPACK_IMPORTED_MODULE_10__.PageNotFoundComponent, _landing_page_components_about_about_component__WEBPACK_IMPORTED_MODULE_17__.AboutComponent],
+    imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_20__.BrowserModule, _app_routing_module__WEBPACK_IMPORTED_MODULE_0__.AppRoutingModule, _shared_shared_module__WEBPACK_IMPORTED_MODULE_5__.SharedModule, _core_core_module__WEBPACK_IMPORTED_MODULE_7__.CoreModule, _angular_common_http__WEBPACK_IMPORTED_MODULE_19__.HttpClientModule, _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_21__.BrowserAnimationsModule, _ngrx_store__WEBPACK_IMPORTED_MODULE_22__.StoreRootModule, _ngrx_effects__WEBPACK_IMPORTED_MODULE_23__.EffectsRootModule, _ngrx_store_devtools__WEBPACK_IMPORTED_MODULE_24__.StoreDevtoolsModule, _shared_components_button_button_component__WEBPACK_IMPORTED_MODULE_16__.ButtonComponent]
   });
 })();
 
@@ -605,6 +609,43 @@ AuthService.ɵprov = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵ
 
 /***/ }),
 
+/***/ 5300:
+/*!*********************************************************!*\
+  !*** ./src/app/core/services/file-downloads.service.ts ***!
+  \*********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "FileDownloadsService": () => (/* binding */ FileDownloadsService)
+/* harmony export */ });
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ 3765);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 6839);
+
+
+
+class FileDownloadsService {
+  constructor() {
+    this.http = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_common_http__WEBPACK_IMPORTED_MODULE_1__.HttpClient);
+  }
+  download(url) {
+    return this.http.get(url, {
+      responseType: 'blob'
+    });
+  }
+}
+FileDownloadsService.ɵfac = function FileDownloadsService_Factory(t) {
+  return new (t || FileDownloadsService)();
+};
+FileDownloadsService.ɵprov = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
+  token: FileDownloadsService,
+  factory: FileDownloadsService.ɵfac,
+  providedIn: 'root'
+});
+
+
+/***/ }),
+
 /***/ 5798:
 /*!********************************************************!*\
   !*** ./src/app/core/services/skills/skills.service.ts ***!
@@ -742,36 +783,57 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "AboutComponent": () => (/* binding */ AboutComponent)
 /* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 6839);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 6839);
+/* harmony import */ var _core_services_file_downloads_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @core/services/file-downloads.service */ 5300);
+/* harmony import */ var _shared_components_button_button_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../shared/components/button/button.component */ 42);
+
+
+
 
 class AboutComponent {
-  constructor() {}
+  constructor() {
+    this.downloadsServices = (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.inject)(_core_services_file_downloads_service__WEBPACK_IMPORTED_MODULE_0__.FileDownloadsService);
+  }
   ngOnInit() {}
+  downloadResumen() {
+    this.downloadsServices.download('/assets/doc/davidResumen.pdf').subscribe(blob => {
+      const a = document.createElement('a');
+      const objectUrl = URL.createObjectURL(blob);
+      a.href = objectUrl;
+      a.download = 'JesusDuarteResumen.pdf';
+      a.click();
+      URL.revokeObjectURL(objectUrl);
+    });
+  }
 }
 AboutComponent.ɵfac = function AboutComponent_Factory(t) {
   return new (t || AboutComponent)();
 };
-AboutComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
+AboutComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineComponent"]({
   type: AboutComponent,
   selectors: [["app-about"]],
   decls: 12,
   vars: 0,
-  consts: [["id", "about", 1, "about-section", "text-center", "animate__animated", "animate__fadeIn", "animate__slow"], [1, "container", "px-4", "px-lg-5"], [1, "row", "gx-4", "gx-lg-5", "justify-content-center"], [1, "col-lg-8"], [1, "text-white", "mb-4", "animate__animated", "animate__fadeIn", "animate__delay-2s"], [1, "text-white-50", "animate__animated", "animate__fadeIn", "animate__delay-2s"], [1, "my-4"], ["href", "assets/doc/davidResumen.pdf", "download", "jesus_resume", "title", "download", 1, "btn", "btn-primario", "animate__animated", "animate__fadeInUpBig", "animate__slow"], ["src", "assets/img/ipad.png", "alt", "...", 1, "img-fluid"]],
+  consts: [["id", "about", 1, "about-section", "text-center", "animate__animated", "animate__fadeIn", "animate__slow"], [1, "container", "px-4", "px-lg-5"], [1, "row", "gx-4", "gx-lg-5", "justify-content-center"], [1, "col-lg-8"], [1, "text-white", "mb-4", "animate__animated", "animate__fadeIn", "animate__delay-2s"], [1, "text-white-50", "animate__animated", "animate__fadeIn", "animate__delay-2s"], [1, "my-4"], [3, "clickEvent"], ["src", "assets/img/ipad.png", "alt", "...", 1, "img-fluid"]],
   template: function AboutComponent_Template(rf, ctx) {
     if (rf & 1) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "section", 0)(1, "div", 1)(2, "div", 2)(3, "div", 3)(4, "h2", 4);
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](5, " Jesus David Duarte ");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "p", 5);
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](7, " Hi My name is Jesus David Duarte Jimenez, but all my friends call me David. I'm a Senior UI Developer with 5+ years of experience in developing Web applications using Angular, JavaScript, TypeScript, CSS, React, Next.js, Node.JS, Vue.js, TailwindCss, PostCss, Sass and so much more please download my resume for more information ");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "div", 6)(9, "a", 7);
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](10, "Download My Resume Here");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](11, "img", 8);
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()();
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "section", 0)(1, "div", 1)(2, "div", 2)(3, "div", 3)(4, "h2", 4);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](5, " Jesus David Duarte ");
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](6, "p", 5);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](7, " Hi My name is Jesus David Duarte Jimenez, but all my friends call me David. I'm a Senior UI Developer with 5+ years of experience in developing Web applications using Angular, JavaScript, TypeScript, CSS, React, Next.js, Node.JS, Vue.js, TailwindCss, PostCss, Sass and so much more please download my resume for more information ");
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()()();
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](8, "div", 6)(9, "app-button", 7);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("clickEvent", function AboutComponent_Template_app_button_clickEvent_9_listener() {
+        return ctx.downloadResumen();
+      });
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](10, "Download Resume Here");
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()();
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](11, "img", 8);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()();
     }
   },
+  dependencies: [_shared_components_button_button_component__WEBPACK_IMPORTED_MODULE_1__.ButtonComponent],
   styles: [".about-section[_ngcontent-%COMP%] {\n  padding-top: 5rem;\n  background: linear-gradient(to bottom, #000 0%, rgba(0, 0, 0, 0.9) 75%, rgba(0, 0, 0, 0.8) 100%);\n}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9hcHAvbGFuZGluZy1wYWdlL2NvbXBvbmVudHMvYWJvdXQvYWJvdXQuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxpQkFBQTtFQUNBLGdHQUFBO0FBQ0YiLCJzb3VyY2VzQ29udGVudCI6WyIuYWJvdXQtc2VjdGlvbiB7XG4gIHBhZGRpbmctdG9wOiA1cmVtO1xuICBiYWNrZ3JvdW5kOiBsaW5lYXItZ3JhZGllbnQoXG4gICAgdG8gYm90dG9tLFxuICAgICMwMDAgMCUsXG4gICAgcmdiYSgwLCAwLCAwLCAwLjkpIDc1JSxcbiAgICByZ2JhKDAsIDAsIDAsIDAuOCkgMTAwJVxuICApO1xufVxuIl0sInNvdXJjZVJvb3QiOiIifQ== */"]
 });
 
@@ -859,46 +921,50 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "HeroComponent": () => (/* binding */ HeroComponent)
 /* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 6839);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ 6679);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 6839);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ 6679);
+/* harmony import */ var _shared_components_button_button_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../shared/components/button/button.component */ 42);
 
 
-const _c0 = function () {
-  return ["/", "about"];
-};
+
+
 class HeroComponent {
-  constructor() {}
+  constructor() {
+    this.router = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(_angular_router__WEBPACK_IMPORTED_MODULE_2__.Router);
+  }
   ngOnInit() {}
+  getStarted() {
+    this.router.navigate(['/about']);
+  }
 }
 HeroComponent.ɵfac = function HeroComponent_Factory(t) {
   return new (t || HeroComponent)();
 };
-HeroComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
+HeroComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({
   type: HeroComponent,
   selectors: [["app-hero"]],
   decls: 12,
-  vars: 2,
-  consts: [[1, "hero"], [1, "container", "px-4", "px-lg-5", "d-flex", "h-100", "align-items-center", "justify-content-center"], [1, "d-flex", "justify-content-center"], [1, "text-center"], [1, "fs-3", "mx-auto", "my-0", "text-uppercase", "animate__animated", "animate__fadeInUp", "animate__slow"], [1, "text-white-50", "mx-auto", "mt-2", "mb-5", "animate__animated", "animate__fadeIn", "animate__delay-2s"], ["routerLinkActive", "router-link-active", 1, "btn", "btn-primario", 3, "routerLink"]],
+  vars: 0,
+  consts: [[1, "hero"], [1, "container", "px-4", "px-lg-5", "d-flex", "h-100", "align-items-center", "justify-content-center"], [1, "d-flex", "justify-content-center"], [1, "text-center"], [1, "fs-3", "mx-auto", "my-0", "text-uppercase", "animate__animated", "animate__fadeInUp", "animate__slow"], [1, "text-white-50", "mx-auto", "mt-2", "mb-5", "animate__animated", "animate__fadeIn", "animate__delay-2s"], [3, "clickEvent"]],
   template: function HeroComponent_Template(rf, ctx) {
     if (rf & 1) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "main", 0)(1, "div", 1)(2, "div", 2)(3, "div", 3)(4, "h1", 4);
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](5, " David Duarte ");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](6, "br");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](7, " Software Engineer ");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "h2", 5);
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](9, " Professional fullstack Web Developer ");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "a", 6);
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](11, "Get Started");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()()()()();
-    }
-    if (rf & 2) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](10);
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](1, _c0));
+      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "main", 0)(1, "div", 1)(2, "div", 2)(3, "div", 3)(4, "h1", 4);
+      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](5, " Jesus David Duarte ");
+      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](6, "br");
+      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](7, " Software Engineer ");
+      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](8, "h2", 5);
+      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](9, " Professional fullstack Web Developer ");
+      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](10, "app-button", 6);
+      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("clickEvent", function HeroComponent_Template_app_button_clickEvent_10_listener() {
+        return ctx.getStarted();
+      });
+      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](11, "Get Started");
+      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]()()()()();
     }
   },
-  dependencies: [_angular_router__WEBPACK_IMPORTED_MODULE_1__.RouterLink, _angular_router__WEBPACK_IMPORTED_MODULE_1__.RouterLinkActive],
+  dependencies: [_shared_components_button_button_component__WEBPACK_IMPORTED_MODULE_0__.ButtonComponent],
   styles: [".hero[_ngcontent-%COMP%] {\n  height: 100vh;\n  padding: 0;\n  position: relative;\n  width: 100%;\n  height: auto;\n  min-height: 35rem;\n  padding: 15rem 0;\n  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000 100%), url('bg-masthead.jpg');\n  background-position: center;\n  background-repeat: no-repeat;\n  background-attachment: scroll;\n  background-size: cover;\n}\n.hero[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%] {\n  font-family: \"Varela Round\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\";\n  line-height: 2.5rem;\n  letter-spacing: 0.8rem;\n  background: linear-gradient(rgba(201, 14, 14, 0.9), rgba(34, 3, 3, 0.13));\n  -webkit-text-fill-color: transparent;\n  -webkit-background-clip: text;\n  background-clip: text;\n}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9hcHAvbGFuZGluZy1wYWdlL2NvbXBvbmVudHMvaGVyby9oZXJvLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsYUFBQTtFQUNBLFVBQUE7RUFDQSxrQkFBQTtFQUNBLFdBQUE7RUFDQSxZQUFBO0VBQ0EsaUJBQUE7RUFDQSxnQkFBQTtFQUNBLHdIQUFBO0VBT0EsMkJBQUE7RUFDQSw0QkFBQTtFQUNBLDZCQUFBO0VBQ0Esc0JBQUE7QUFMRjtBQU1FO0VBQ0UscU1BQUE7RUFHQSxtQkFBQTtFQUNBLHNCQUFBO0VBQ0EseUVBQUE7RUFDQSxvQ0FBQTtFQUNBLDZCQUFBO0VBQ0EscUJBQUE7QUFOSiIsInNvdXJjZXNDb250ZW50IjpbIi5oZXJvIHtcbiAgaGVpZ2h0OiAxMDB2aDtcbiAgcGFkZGluZzogMDtcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xuICB3aWR0aDogMTAwJTtcbiAgaGVpZ2h0OiBhdXRvO1xuICBtaW4taGVpZ2h0OiAzNXJlbTtcbiAgcGFkZGluZzogMTVyZW0gMDtcbiAgYmFja2dyb3VuZDogbGluZWFyLWdyYWRpZW50KFxuICAgICAgdG8gYm90dG9tLFxuICAgICAgcmdiYSgwLCAwLCAwLCAwLjMpIDAlLFxuICAgICAgcmdiYSgwLCAwLCAwLCAwLjcpIDc1JSxcbiAgICAgICMwMDAgMTAwJVxuICAgICksXG4gICAgdXJsKC4uLy4uLy4uLy4uL2Fzc2V0cy9pbWcvYmctbWFzdGhlYWQuanBnKTtcbiAgYmFja2dyb3VuZC1wb3NpdGlvbjogY2VudGVyO1xuICBiYWNrZ3JvdW5kLXJlcGVhdDogbm8tcmVwZWF0O1xuICBiYWNrZ3JvdW5kLWF0dGFjaG1lbnQ6IHNjcm9sbDtcbiAgYmFja2dyb3VuZC1zaXplOiBjb3ZlcjtcbiAgaDEge1xuICAgIGZvbnQtZmFtaWx5OiAnVmFyZWxhIFJvdW5kJywgLWFwcGxlLXN5c3RlbSwgQmxpbmtNYWNTeXN0ZW1Gb250LCAnU2Vnb2UgVUknLFxuICAgICAgUm9ib3RvLCAnSGVsdmV0aWNhIE5ldWUnLCBBcmlhbCwgc2Fucy1zZXJpZiwgJ0FwcGxlIENvbG9yIEVtb2ppJyxcbiAgICAgICdTZWdvZSBVSSBFbW9qaScsICdTZWdvZSBVSSBTeW1ib2wnLCAnTm90byBDb2xvciBFbW9qaSc7XG4gICAgbGluZS1oZWlnaHQ6IDIuNXJlbTtcbiAgICBsZXR0ZXItc3BhY2luZzogMC44cmVtO1xuICAgIGJhY2tncm91bmQ6IGxpbmVhci1ncmFkaWVudChyZ2IoMjAxIDE0IDE0IC8gOTAlKSwgcmdiKDM0IDMgMyAvIDEzJSkpO1xuICAgIC13ZWJraXQtdGV4dC1maWxsLWNvbG9yOiB0cmFuc3BhcmVudDtcbiAgICAtd2Via2l0LWJhY2tncm91bmQtY2xpcDogdGV4dDtcbiAgICBiYWNrZ3JvdW5kLWNsaXA6IHRleHQ7XG4gIH1cbn1cbiJdLCJzb3VyY2VSb290IjoiIn0= */"]
 });
 
@@ -1531,6 +1597,63 @@ PageNotFoundComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODUL
 
 /***/ }),
 
+/***/ 42:
+/*!**************************************************************!*\
+  !*** ./src/app/shared/components/button/button.component.ts ***!
+  \**************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "ButtonComponent": () => (/* binding */ ButtonComponent)
+/* harmony export */ });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 6839);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ 6477);
+
+
+
+const _c0 = ["*"];
+class ButtonComponent {
+  constructor() {
+    this.clickEvent = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.EventEmitter();
+  }
+  triggerEvent() {
+    this.clickEvent.emit(new Event('click'));
+  }
+}
+ButtonComponent.ɵfac = function ButtonComponent_Factory(t) {
+  return new (t || ButtonComponent)();
+};
+ButtonComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
+  type: ButtonComponent,
+  selectors: [["app-button"]],
+  outputs: {
+    clickEvent: "clickEvent"
+  },
+  standalone: true,
+  features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵStandaloneFeature"]],
+  ngContentSelectors: _c0,
+  decls: 2,
+  vars: 0,
+  consts: [["routerLinkActive", "router-link-active", 1, "btn", "btn-primary", "animate__animated", "animate__fadeInUp", "animate__slow", 3, "click"]],
+  template: function ButtonComponent_Template(rf, ctx) {
+    if (rf & 1) {
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojectionDef"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "button", 0);
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function ButtonComponent_Template_button_click_0_listener() {
+        return ctx.triggerEvent();
+      });
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojection"](1);
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    }
+  },
+  dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_1__.CommonModule],
+  styles: ["\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsInNvdXJjZVJvb3QiOiIifQ== */"]
+});
+
+
+/***/ }),
+
 /***/ 6526:
 /*!**************************************************************!*\
   !*** ./src/app/shared/components/footer/footer.component.ts ***!
@@ -1707,7 +1830,7 @@ NavbarComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__[
   selectors: [["app-navbar"]],
   decls: 28,
   vars: 17,
-  consts: [[1, "bg-gray-900"], [1, "mx-auto", "max-w-7xl", "px-2", "sm:px-6", "lg:px-8"], [1, "relative", "flex", "h-16", "items-center", "justify-between"], [1, "absolute", "inset-y-0", "left-0", "flex", "items-center", "sm:hidden"], ["type", "button", "aria-controls", "mobile-menu", "aria-expanded", "false", 1, "inline-flex", "items-center", "justify-center", "rounded-md", "p-2", "text-gray-400", "hover:bg-gray-700", "hover:text-white", "focus:outline-none", "focus:ring-2", "focus:ring-inset", "focus:ring-white", 3, "click"], [1, "sr-only"], ["class", "h-6 w-6", "fill", "none", "viewBox", "0 0 24 24", "stroke-width", "1.5", "stroke", "currentColor", "aria-hidden", "true", 4, "ngIf"], [1, "flex", "flex-1", "items-center", "justify-center", "sm:items-stretch", "sm:justify-start"], [1, "flex", "flex-shrink-0", "items-center"], ["src", "https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500", "alt", "Your Company", 1, "block", "h-8", "w-auto", "lg:hidden"], ["src", "https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500", "alt", "Your Company", 1, "hidden", "h-8", "w-auto", "lg:block"], [1, "hidden", "sm:ml-6", "sm:block"], [1, "flex", "space-x-4"], ["routerLinkActive", "bg-gray-900 text-white", 1, "text-gray-300", "hover:bg-gray-700", "hover:text-white", "rounded-md", "px-3", "py-2", "text-sm", "font-medium", 3, "routerLink", "routerLinkActiveOptions"], ["routerLinkActive", "bg-gray-900 text-white", 1, "text-gray-300", "hover:bg-gray-700", "hover:text-white", "rounded-md", "px-3", "py-2", "text-sm", "font-medium", 3, "routerLink"], ["class", "sm:hidden", "id", "mobile-menu", 4, "ngIf"], ["fill", "none", "viewBox", "0 0 24 24", "stroke-width", "1.5", "stroke", "currentColor", "aria-hidden", "true", 1, "h-6", "w-6"], ["stroke-linecap", "round", "stroke-linejoin", "round", "d", "M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"], ["stroke-linecap", "round", "stroke-linejoin", "round", "d", "M6 18L18 6M6 6l12 12"], ["id", "mobile-menu", 1, "sm:hidden"], [1, "space-y-1", "px-2", "pb-3", "pt-2"], ["routerLinkActive", "bg-gray-900 text-white", 1, "text-gray-300", "hover:bg-gray-700", "hover:text-white", "block", "rounded-md", "px-3", "py-2", "text-base", "font-medium", 3, "routerLink", "routerLinkActiveOptions"], ["routerLinkActive", "bg-gray-900 text-white", 1, "text-gray-300", "hover:bg-gray-700", "hover:text-white", "block", "rounded-md", "px-3", "py-2", "text-base", "font-medium", 3, "routerLink"]],
+  consts: [[1, "bg-black"], [1, "mx-auto", "max-w-7xl", "px-2", "sm:px-6", "lg:px-8"], [1, "relative", "flex", "h-16", "items-center", "justify-between"], [1, "absolute", "inset-y-0", "left-0", "flex", "items-center", "sm:hidden"], ["type", "button", "aria-controls", "mobile-menu", "aria-expanded", "false", 1, "inline-flex", "items-center", "justify-center", "rounded-md", "p-2", "text-gray-400", "hover:bg-gray-700", "hover:text-white", "focus:outline-none", "focus:ring-2", "focus:ring-inset", "focus:ring-white", 3, "click"], [1, "sr-only"], ["class", "h-6 w-6", "fill", "none", "viewBox", "0 0 24 24", "stroke-width", "1.5", "stroke", "currentColor", "aria-hidden", "true", 4, "ngIf"], [1, "flex", "flex-1", "items-center", "justify-center", "sm:items-stretch", "sm:justify-start"], [1, "flex", "flex-shrink-0", "items-center"], ["src", "https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500", "alt", "Your Company", 1, "block", "h-8", "w-auto", "lg:hidden"], ["src", "https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500", "alt", "Your Company", 1, "hidden", "h-8", "w-auto", "lg:block"], [1, "hidden", "sm:ml-6", "sm:block"], [1, "flex", "space-x-4"], ["routerLinkActive", "bg-gray-900 text-white", 1, "text-gray-300", "hover:bg-gray-700", "hover:text-white", "rounded-md", "px-3", "py-2", "text-sm", "font-medium", 3, "routerLink", "routerLinkActiveOptions"], ["routerLinkActive", "bg-gray-900 text-white", 1, "text-gray-300", "hover:bg-gray-700", "hover:text-white", "rounded-md", "px-3", "py-2", "text-sm", "font-medium", 3, "routerLink"], ["class", "sm:hidden", "id", "mobile-menu", 4, "ngIf"], ["fill", "none", "viewBox", "0 0 24 24", "stroke-width", "1.5", "stroke", "currentColor", "aria-hidden", "true", 1, "h-6", "w-6"], ["stroke-linecap", "round", "stroke-linejoin", "round", "d", "M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"], ["stroke-linecap", "round", "stroke-linejoin", "round", "d", "M6 18L18 6M6 6l12 12"], ["id", "mobile-menu", 1, "sm:hidden"], [1, "space-y-1", "px-2", "pb-3", "pt-2"], ["routerLinkActive", "bg-gray-900 text-white", 1, "text-gray-300", "hover:bg-gray-700", "hover:text-white", "block", "rounded-md", "px-3", "py-2", "text-base", "font-medium", 3, "routerLink", "routerLinkActiveOptions"], ["routerLinkActive", "bg-gray-900 text-white", 1, "text-gray-300", "hover:bg-gray-700", "hover:text-white", "block", "rounded-md", "px-3", "py-2", "text-base", "font-medium", 3, "routerLink"]],
   template: function NavbarComponent_Template(rf, ctx) {
     if (rf & 1) {
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "nav", 0)(1, "div", 1)(2, "div", 2)(3, "div", 3)(4, "button", 4);
@@ -1782,12 +1905,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "SharedModule": () => (/* binding */ SharedModule)
 /* harmony export */ });
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ 6477);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common */ 6477);
 /* harmony import */ var _components_navbar_navbar_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/navbar/navbar.component */ 3502);
 /* harmony import */ var _components_footer_footer_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/footer/footer.component */ 6526);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ 6679);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/router */ 6679);
 /* harmony import */ var _material_material_module__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../material/material.module */ 898);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 6839);
+/* harmony import */ var _components_button_button_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/button/button.component */ 42);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 6839);
+
 
 
 
@@ -1798,18 +1923,18 @@ class SharedModule {}
 SharedModule.ɵfac = function SharedModule_Factory(t) {
   return new (t || SharedModule)();
 };
-SharedModule.ɵmod = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineNgModule"]({
+SharedModule.ɵmod = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineNgModule"]({
   type: SharedModule
 });
-SharedModule.ɵinj = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInjector"]({
-  imports: [_angular_common__WEBPACK_IMPORTED_MODULE_4__.CommonModule, _angular_router__WEBPACK_IMPORTED_MODULE_5__.RouterModule, _material_material_module__WEBPACK_IMPORTED_MODULE_2__.MaterialModule, _material_material_module__WEBPACK_IMPORTED_MODULE_2__.MaterialModule]
+SharedModule.ɵinj = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineInjector"]({
+  imports: [_angular_common__WEBPACK_IMPORTED_MODULE_5__.CommonModule, _angular_router__WEBPACK_IMPORTED_MODULE_6__.RouterModule, _material_material_module__WEBPACK_IMPORTED_MODULE_2__.MaterialModule, _components_button_button_component__WEBPACK_IMPORTED_MODULE_3__.ButtonComponent, _material_material_module__WEBPACK_IMPORTED_MODULE_2__.MaterialModule]
 });
 
 (function () {
-  (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵsetNgModuleScope"](SharedModule, {
+  (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵsetNgModuleScope"](SharedModule, {
     declarations: [_components_navbar_navbar_component__WEBPACK_IMPORTED_MODULE_0__.NavbarComponent, _components_footer_footer_component__WEBPACK_IMPORTED_MODULE_1__.FooterComponent],
-    imports: [_angular_common__WEBPACK_IMPORTED_MODULE_4__.CommonModule, _angular_router__WEBPACK_IMPORTED_MODULE_5__.RouterModule, _material_material_module__WEBPACK_IMPORTED_MODULE_2__.MaterialModule],
-    exports: [_components_navbar_navbar_component__WEBPACK_IMPORTED_MODULE_0__.NavbarComponent, _components_footer_footer_component__WEBPACK_IMPORTED_MODULE_1__.FooterComponent, _material_material_module__WEBPACK_IMPORTED_MODULE_2__.MaterialModule]
+    imports: [_angular_common__WEBPACK_IMPORTED_MODULE_5__.CommonModule, _angular_router__WEBPACK_IMPORTED_MODULE_6__.RouterModule, _material_material_module__WEBPACK_IMPORTED_MODULE_2__.MaterialModule, _components_button_button_component__WEBPACK_IMPORTED_MODULE_3__.ButtonComponent],
+    exports: [_components_navbar_navbar_component__WEBPACK_IMPORTED_MODULE_0__.NavbarComponent, _components_footer_footer_component__WEBPACK_IMPORTED_MODULE_1__.FooterComponent, _material_material_module__WEBPACK_IMPORTED_MODULE_2__.MaterialModule, _components_button_button_component__WEBPACK_IMPORTED_MODULE_3__.ButtonComponent]
   });
 })();
 
