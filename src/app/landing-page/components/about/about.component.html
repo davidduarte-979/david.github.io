@@ -16,21 +16,24 @@
 
   <div
     class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:items-start lg:gap-y-10">
+
     <div
       class="lg:col-span-2 lg:col-start-1 lg:row-start-1 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
       <div class="lg:pr-4">
         <div class="lg:max-w-lg">
-          <p class="text-base font-semibold leading-7 text-white">Jesus David Duarte</p>
+          <h1 class="text-center md:text-left text-base font-semibold leading-7 text-white">Jesus David Duarte</h1>
         </div>
       </div>
     </div>
-    <div class="-ml-12 -mt-12 p-12 sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden">
-      <img class="w-[40rem] max-w-none rounded-xl bg-gray-900 shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem]"
+
+    <div
+      class="hidden md:block md:-ml-12 md:-mt-12 p-12 sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden">
+      <img class="w-[40rem] max-w-none rounded-xl bg-gray-900 shadow-xl ring-1 ring-gray-400/10"
         src="assets/img/typescript.png" alt="code snippet ">
     </div>
 
     <div
-      class="lg:col-span-2 lg:col-start-1 lg:row-start-2 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
+      class=" lg:col-span-2 lg:col-start-1 lg:row-start-2 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
       <div class="lg:pr-4">
         <div class="max-w-xl">
           <p>As a seasoned software engineer with six years of professional experience, I have honed my skills in a
@@ -43,7 +46,7 @@
             methodologies, ensuring efficient project management, continuous integration, and timely delivery.
           </p>
           <ul role="list" class="mt-8 space-y-8 text-gray-600">
-            <li *ngFor="let skill of skills" class="flex items-center gap-x-3">
+            <li *ngFor="let skill of skills" class="flex flex-col md:flex-row items-center gap-x-3">
               <figure class="w-20 flex-none">
                 <img [src]="skill.logo" />
               </figure>
