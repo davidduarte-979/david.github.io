@@ -660,105 +660,148 @@ __webpack_require__.r(__webpack_exports__);
 
 class SkillsService {
   constructor() {
+    this.startYear = new Date('01/01/2017');
+    this.overAllYearsOfExperience = this.getOverAllYearsOfExperience();
     this.skills = [{
       name: 'Angular',
       knowledge: 100,
-      proficient: true
+      proficient: true,
+      logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg',
+      yearsOfExperience: this.overAllYearsOfExperience,
+      description: 'My expertise lies in leveraging Angular\'s powerful features such as component-based architecture, dependency injection, and reactive programming using RxJS. I have successfully built and maintained large-scale applications, utilizing Angular\'s comprehensive tooling and development ecosystem.'
     }, {
       name: 'React',
       knowledge: 100,
-      proficient: true
-    }, {
-      name: 'Vue.js',
-      knowledge: 80
-    }, {
-      name: 'Svelte',
-      knowledge: 60
+      proficient: true,
+      logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
+      yearsOfExperience: this.overAllYearsOfExperience,
+      description: 'I possess extensive expertise in React, a popular JavaScript library for building user interfaces. With several years of experience, I have developed a deep understanding of React\'s core concepts, component-based architecture, and its robust ecosystem.'
     }, {
       name: 'Node.js',
-      knowledge: 100,
-      proficient: true
+      knowledge: 80,
+      logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg',
+      yearsOfExperience: this.overAllYearsOfExperience,
+      description: 'in Node.js, I have established a strong foundation in server-side JavaScript development. I possess in-depth knowledge and expertise in leveraging Node.js to build scalable and high-performance web applications.'
+    }, {
+      name: 'Css',
+      knowledge: 60,
+      logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-plain.svg',
+      yearsOfExperience: this.overAllYearsOfExperience,
+      description: 'With a strong command over CSS (Cascading Style Sheets), I possess the skills to create visually appealing and engaging user interfaces. I have developed expertise in leveraging CSS to style and layout web pages with precision and creativity.'
     }, {
       name: 'MondoDB',
       knowledge: 100,
-      proficient: true
+      proficient: true,
+      logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg',
+      yearsOfExperience: this.overAllYearsOfExperience,
+      description: 'With expertise in MongoDB, I possess a strong understanding of this NoSQL database technology and its application in modern web development. I have successfully utilized MongoDB to build scalable and flexible data storage solutions.'
     }, {
       name: 'Typescript',
       knowledge: 100,
-      proficient: true
+      proficient: true,
+      logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg',
+      yearsOfExperience: this.overAllYearsOfExperience,
+      description: 'I am skilled in leveraging TypeScript\'s powerful tooling and language features to facilitate efficient development workflows. I am proficient in utilizing TypeScript\'s transpilation process to convert TypeScript code into JavaScript that runs on different platforms and browsers.'
     }, {
-      name: 'Css',
+      name: 'Tailwind',
       knowledge: 100,
-      proficient: true
+      proficient: true,
+      logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg',
+      yearsOfExperience: this.overAllYearsOfExperience,
+      description: 'My proficiency in Tailwind CSS lies in its unique approach of using utility classes to style and design web interfaces. I am skilled in leveraging Tailwind CSS\'s extensive collection of utility classes to rapidly prototype and build user interfaces with minimal custom CSS.'
     }, {
-      name: 'Sass',
+      name: 'Nest.js',
       knowledge: 100,
-      proficient: true
+      proficient: true,
+      logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-plain.svg',
+      yearsOfExperience: this.overAllYearsOfExperience,
+      description: 'Nest.js combines the best practices of object-oriented programming, functional programming, and the modular architecture of frameworks like Angular. I am skilled in leveraging Nest.js\'s features, such as decorators, dependency injection, and decorators, to create highly organized and testable code.'
     }, {
-      name: 'Less',
-      knowledge: 50
-      // proficient: true,
-    }, {
-      name: 'Stylus',
+      name: 'AWS',
       knowledge: 50,
-      proficient: true
-    }, {
-      name: 'Bootstrap',
-      knowledge: 100,
-      proficient: true
-    }, {
-      name: 'Materialize',
-      knowledge: 100,
-      proficient: true
-    }, {
-      name: 'Stack Mean',
-      knowledge: 100,
-      proficient: true
-    }, {
-      name: 'Stack Mern',
-      knowledge: 100,
-      proficient: true
+      // proficient: true,
+      logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg',
+      yearsOfExperience: this.overAllYearsOfExperience,
+      description: 'I am proficient in utilizing AWS core services, including Amazon EC2 for virtual server provisioning, Amazon S3 for scalable object storage, and Amazon RDS for managed relational databases. I have experience in leveraging these services to build highly available and fault-tolerant architectures.'
     }, {
       name: 'Express',
       knowledge: 100,
-      proficient: true
+      proficient: true,
+      logo: 'https://w7.pngwing.com/pngs/925/447/png-transparent-express-js-node-js-javascript-mongodb-node-js-text-trademark-logo.png',
+      yearsOfExperience: this.overAllYearsOfExperience,
+      description: 'I am skilled in building RESTful APIs using Express.js, adhering to best practices for resource naming, HTTP methods, and status codes. I can effectively handle data validation, input sanitization, and response formatting to ensure the integrity and security of the API.'
     }, {
-      name: 'Passport',
+      name: 'Javascript',
       knowledge: 100,
-      proficient: true
-    }, {
-      name: 'Responsive Design',
-      knowledge: 100,
-      proficient: true
-    }, {
-      name: 'API Rest',
-      knowledge: 100,
-      proficient: true
-    }, {
-      name: 'GraphQL',
-      knowledge: 80,
-      proficient: true
+      proficient: true,
+      logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-plain.svg',
+      yearsOfExperience: this.overAllYearsOfExperience,
+      description: 'With expertise in JavaScript, I bring a strong understanding of this versatile programming language to my web development projects. With 8 years of experience, I have successfully utilized JavaScript to build dynamic and interactive web applications.'
     }, {
       name: 'MySql',
-      knowledge: 50
+      knowledge: 100,
+      proficient: true,
+      logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg',
+      yearsOfExperience: this.overAllYearsOfExperience,
+      description: 'With expertise in MySQL, I possess a strong understanding of this popular open-source relational database management system. With [X] years of experience, I have successfully utilized MySQL to design, develop, and maintain efficient and reliable databases for various web applications.'
+    }, {
+      name: 'PostgreSQL',
+      knowledge: 100,
+      proficient: true,
+      logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg',
+      yearsOfExperience: this.overAllYearsOfExperience,
+      description: 'I am proficient in creating and optimizing database schemas, tables, and indexes using PostgreSQL\'s SQL (Structured Query Language). I have a deep understanding of SQL syntax, enabling me to write complex queries, joins, and subqueries to retrieve and manipulate data effectively.'
+    }, {
+      name: 'C#',
+      knowledge: 50,
       // proficient: true,
+      logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-line.svg',
+      yearsOfExperience: this.overAllYearsOfExperience,
+      description: 'C# is a powerful and modern object-oriented language that is widely used in the development of desktop, web, and mobile applications. I am proficient in leveraging C#\'s features such as strong typing, automatic memory management, and extensive standard libraries to write clean, maintainable, and efficient code.'
     }, {
-      name: 'Git and Github',
+      name: 'Git',
       knowledge: 100,
-      proficient: true
+      proficient: true,
+      logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg',
+      yearsOfExperience: this.overAllYearsOfExperience,
+      description: 'With expertise in Git, I possess a strong understanding of this distributed version control system, which is widely used in software development projects.'
     }, {
-      name: 'JSON',
+      name: '.Net Core',
       knowledge: 100,
-      proficient: true
+      proficient: true,
+      logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg',
+      yearsOfExperience: this.overAllYearsOfExperience,
+      description: 'With expertise in .NET Core, I possess a strong understanding of this powerful and cross-platform framework for building modern web, desktop, and cloud applications.  I have successfully utilized .NET Core to develop scalable, high-performance, and maintainable software solutions.'
     }, {
-      name: 'ionic',
-      knowledge: 60
+      name: 'Jasmine',
+      knowledge: 60,
       // proficient: true,
+      logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jasmine/jasmine-plain.svg',
+      yearsOfExperience: this.overAllYearsOfExperience,
+      description: 'With expertise in Jasmine, I possess a strong understanding of this popular JavaScript testing framework used for behavior-driven development (BDD) and unit testing.'
     }, {
-      name: 'Firebase',
+      name: 'Jest',
       knowledge: 100,
-      proficient: true
+      proficient: true,
+      logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jest/jest-plain.svg',
+      yearsOfExperience: this.overAllYearsOfExperience,
+      description: 'With expertise in Jest, I possess a strong understanding of this popular JavaScript testing framework used for unit testing, integration testing, and snapshot testing.'
+    }, {
+      name: 'HTML',
+      knowledge: 100,
+      proficient: true,
+      logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-plain.svg',
+      yearsOfExperience: this.overAllYearsOfExperience,
+      description: 'I am well-versed in utilizing HTML best practices for accessibility, including providing alternative text for images, using semantic tags, and structuring content to be screen reader-friendly. '
     }];
+  }
+  getAllSkills() {
+    return this.skills;
+  }
+  getOverAllYearsOfExperience() {
+    let diff = (new Date().getTime() - this.startYear.getTime()) / 1000;
+    diff /= 60 * 60 * 24;
+    return Math.abs(Math.round(diff / 365.25));
   }
 }
 SkillsService.ɵfac = function SkillsService_Factory(t) {
@@ -785,16 +828,50 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 6839);
 /* harmony import */ var _core_services_file_downloads_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @core/services/file-downloads.service */ 5300);
-/* harmony import */ var _shared_components_button_button_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../shared/components/button/button.component */ 42);
+/* harmony import */ var _core_services_skills_skills_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @core/services/skills/skills.service */ 5798);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ 6477);
 
 
 
 
+
+function AboutComponent_li_23_Template(rf, ctx) {
+  if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "li", 17)(1, "figure", 18);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](2, "img", 19);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](3, "span")(4, "strong", 20);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](5);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](6, "br");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](7, " Years of Experience: ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](8, "strong", 20);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](9);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](10, "br");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](11);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()();
+  }
+  if (rf & 2) {
+    const skill_r1 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("src", skill_r1.logo, _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵsanitizeUrl"]);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate"](skill_r1.name);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate"](skill_r1.yearsOfExperience);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate1"](" ", skill_r1.description, "");
+  }
+}
 class AboutComponent {
   constructor() {
     this.downloadsServices = (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.inject)(_core_services_file_downloads_service__WEBPACK_IMPORTED_MODULE_0__.FileDownloadsService);
+    this.skillServices = (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.inject)(_core_services_skills_skills_service__WEBPACK_IMPORTED_MODULE_1__.SkillsService);
   }
-  ngOnInit() {}
+  ngOnInit() {
+    this.skills = this.skillServices.getAllSkills();
+  }
   downloadResumen() {
     this.downloadsServices.download('/assets/doc/davidResumen.pdf').subscribe(blob => {
       const a = document.createElement('a');
@@ -812,28 +889,40 @@ AboutComponent.ɵfac = function AboutComponent_Factory(t) {
 AboutComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineComponent"]({
   type: AboutComponent,
   selectors: [["app-about"]],
-  decls: 12,
-  vars: 0,
-  consts: [["id", "about", 1, "about-section", "text-center", "animate__animated", "animate__fadeIn", "animate__slow"], [1, "container", "px-4", "px-lg-5"], [1, "row", "gx-4", "gx-lg-5", "justify-content-center"], [1, "col-lg-8"], [1, "text-white", "mb-4", "animate__animated", "animate__fadeIn", "animate__delay-2s"], [1, "text-white-50", "animate__animated", "animate__fadeIn", "animate__delay-2s"], [1, "my-4"], [3, "clickEvent"], ["src", "assets/img/ipad.png", "alt", "...", 1, "img-fluid"]],
+  decls: 24,
+  vars: 1,
+  consts: [[1, "relative", "isolate", "bg-gray-950", "px-6", "py-24", "sm:py-32", "lg:overflow-visible", "lg:px-0"], [1, "absolute", "inset-0", "-z-10", "overflow-hidden"], ["aria-hidden", "true", 1, "absolute", "left-[max(50%,25rem)]", "top-0", "h-[64rem]", "w-[128rem]", "-translate-x-1/2", "stroke-gray-200", "[mask-image:radial-gradient(64rem_64rem_at_top,white,transparent)]"], ["id", "e813992c-7d03-4cc4-a2bd-151760b470a0", "width", "200", "height", "200", "x", "50%", "y", "-1", "patternUnits", "userSpaceOnUse"], ["d", "M100 200V.5M.5 .5H200", "fill", "none"], ["width", "100%", "height", "100%", "stroke-width", "0", "fill", "url(#e813992c-7d03-4cc4-a2bd-151760b470a0)"], [1, "mx-auto", "grid", "max-w-2xl", "grid-cols-1", "gap-x-8", "gap-y-16", "lg:mx-0", "lg:max-w-none", "lg:grid-cols-2", "lg:items-start", "lg:gap-y-10"], [1, "lg:col-span-2", "lg:col-start-1", "lg:row-start-1", "lg:mx-auto", "lg:grid", "lg:w-full", "lg:max-w-7xl", "lg:grid-cols-2", "lg:gap-x-8", "lg:px-8"], [1, "lg:pr-4"], [1, "lg:max-w-lg"], [1, "text-base", "font-semibold", "leading-7", "text-white"], [1, "-ml-12", "-mt-12", "p-12", "sticky", "lg:top-4", "lg:col-start-2", "lg:row-span-2", "lg:row-start-1", "lg:overflow-hidden"], ["src", "assets/img/typescript.png", "alt", "code snippet ", 1, "w-[40rem]", "max-w-none", "rounded-xl", "bg-gray-900", "shadow-xl", "ring-1", "ring-gray-400/10", "sm:w-[57rem]"], [1, "lg:col-span-2", "lg:col-start-1", "lg:row-start-2", "lg:mx-auto", "lg:grid", "lg:w-full", "lg:max-w-7xl", "lg:grid-cols-2", "lg:gap-x-8", "lg:px-8"], [1, "max-w-xl"], ["role", "list", 1, "mt-8", "space-y-8", "text-gray-600"], ["class", "flex items-center gap-x-3", 4, "ngFor", "ngForOf"], [1, "flex", "items-center", "gap-x-3"], [1, "w-20", "flex-none"], [3, "src"], [1, "font-semibold", "text-purple-800"]],
   template: function AboutComponent_Template(rf, ctx) {
     if (rf & 1) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "section", 0)(1, "div", 1)(2, "div", 2)(3, "div", 3)(4, "h2", 4);
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](5, " Jesus David Duarte ");
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div", 0)(1, "div", 1);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnamespaceSVG"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](2, "svg", 2)(3, "defs")(4, "pattern", 3);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](5, "path", 4);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()();
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](6, "rect", 5);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()();
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnamespaceHTML"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](7, "div", 6)(8, "div", 7)(9, "div", 8)(10, "div", 9)(11, "p", 10);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](12, "Jesus David Duarte");
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()()()();
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](13, "div", 11);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](14, "img", 12);
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](6, "p", 5);
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](7, " Hi My name is Jesus David Duarte Jimenez, but all my friends call me David. I'm a Senior UI Developer with 5+ years of experience in developing Web applications using Angular, JavaScript, TypeScript, CSS, React, Next.js, Node.JS, Vue.js, TailwindCss, PostCss, Sass and so much more please download my resume for more information ");
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](8, "div", 6)(9, "app-button", 7);
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("clickEvent", function AboutComponent_Template_app_button_clickEvent_9_listener() {
-        return ctx.downloadResumen();
-      });
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](10, "Download Resume Here");
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](11, "img", 8);
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()();
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](15, "div", 13)(16, "div", 8)(17, "div", 14)(18, "p");
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](19, "As a seasoned software engineer with six years of professional experience, I have honed my skills in a diverse range of technologies and frameworks. My expertise lies in Angular, React, Node.js, SQL, MongoDB, Express, Nest.js, .NET Core, and AWS, enabling me to deliver robust and scalable solutions across various domains. ");
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](20, "br");
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](21, " Throughout my career, I have collaborated with cross-functional teams, including designers, product managers, and fellow developers, to deliver high-quality software solutions. I am experienced in Agile methodologies, ensuring efficient project management, continuous integration, and timely delivery. ");
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](22, "ul", 15);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](23, AboutComponent_li_23_Template, 12, 4, "li", 16);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()()()()()();
+    }
+    if (rf & 2) {
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](23);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngForOf", ctx.skills);
     }
   },
-  dependencies: [_shared_components_button_button_component__WEBPACK_IMPORTED_MODULE_1__.ButtonComponent],
+  dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_3__.NgForOf],
   styles: [".about-section[_ngcontent-%COMP%] {\n  padding-top: 5rem;\n  background: linear-gradient(to bottom, #000 0%, rgba(0, 0, 0, 0.9) 75%, rgba(0, 0, 0, 0.8) 100%);\n}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9hcHAvbGFuZGluZy1wYWdlL2NvbXBvbmVudHMvYWJvdXQvYWJvdXQuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxpQkFBQTtFQUNBLGdHQUFBO0FBQ0YiLCJzb3VyY2VzQ29udGVudCI6WyIuYWJvdXQtc2VjdGlvbiB7XG4gIHBhZGRpbmctdG9wOiA1cmVtO1xuICBiYWNrZ3JvdW5kOiBsaW5lYXItZ3JhZGllbnQoXG4gICAgdG8gYm90dG9tLFxuICAgICMwMDAgMCUsXG4gICAgcmdiYSgwLCAwLCAwLCAwLjkpIDc1JSxcbiAgICByZ2JhKDAsIDAsIDAsIDAuOCkgMTAwJVxuICApO1xufVxuIl0sInNvdXJjZVJvb3QiOiIifQ== */"]
 });
 
@@ -1364,7 +1453,7 @@ class SkillBarComponent {
     this.skillsService = skillsService;
   }
   ngOnInit() {
-    this.skills = this.skillsService.skills;
+    this.skills = this.skillsService.getAllSkills();
   }
 }
 SkillBarComponent.ɵfac = function SkillBarComponent_Factory(t) {
