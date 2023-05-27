@@ -1,5 +1,6 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { Skill } from '@core/models/skills';
+import { TechCategory } from '@core/models/tech-category.enum';
 import { FileDownloadsService } from '@core/services/file-downloads.service';
 import { SkillsService } from '@core/services/skills/skills.service';
 
@@ -12,6 +13,7 @@ export class AboutComponent implements OnInit {
   private downloadsServices = inject(FileDownloadsService)
   private skillServices = inject(SkillsService)
   skills: Skill[];
+  techCategoryEnum = TechCategory;
 
   constructor() { }
 
