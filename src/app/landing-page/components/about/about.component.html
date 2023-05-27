@@ -1,33 +1,63 @@
-<section class="
-    about-section
-    text-center
-    animate__animated animate__fadeIn animate__slow
-  " id="about">
-  <div class="container px-4 px-lg-5">
-    <div class="row gx-4 gx-lg-5 justify-content-center">
-      <div class="col-lg-8">
-        <h2 class="
-            text-white
-            mb-4
-            animate__animated animate__fadeIn animate__delay-2s
-          ">
-          Jesus David Duarte
-        </h2>
-        <p class="
-            text-white-50
-            animate__animated animate__fadeIn animate__delay-2s
-          ">
-          Hi My name is Jesus David Duarte Jimenez, but all my friends call me
-          David. I'm a Senior UI Developer with 5+ years of experience in
-          developing Web applications using Angular, JavaScript, TypeScript,
-          CSS, React, Next.js, Node.JS, Vue.js, TailwindCss, PostCss, Sass and
-          so much more please download my resume for more information
-        </p>
+<div class="relative isolate bg-gray-950 px-6 py-24 sm:py-32 lg:overflow-visible lg:px-0">
+
+  <div class="absolute inset-0 -z-10 overflow-hidden">
+    <svg
+      class="absolute left-[max(50%,25rem)] top-0 h-[64rem] w-[128rem] -translate-x-1/2 stroke-gray-200 [mask-image:radial-gradient(64rem_64rem_at_top,white,transparent)]"
+      aria-hidden="true">
+      <defs>
+        <pattern id="e813992c-7d03-4cc4-a2bd-151760b470a0" width="200" height="200" x="50%" y="-1"
+          patternUnits="userSpaceOnUse">
+          <path d="M100 200V.5M.5 .5H200" fill="none" />
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" stroke-width="0" fill="url(#e813992c-7d03-4cc4-a2bd-151760b470a0)" />
+    </svg>
+  </div>
+
+  <div
+    class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:items-start lg:gap-y-10">
+    <div
+      class="lg:col-span-2 lg:col-start-1 lg:row-start-1 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
+      <div class="lg:pr-4">
+        <div class="lg:max-w-lg">
+          <p class="text-base font-semibold leading-7 text-white">Jesus David Duarte</p>
+        </div>
       </div>
     </div>
-    <div class="my-4">
-      <app-button (clickEvent)="downloadResumen()">Download Resume Here</app-button>
+    <div class="-ml-12 -mt-12 p-12 sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden">
+      <img class="w-[40rem] max-w-none rounded-xl bg-gray-900 shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem]"
+        src="assets/img/typescript.png" alt="code snippet ">
     </div>
-    <img class="img-fluid" src="assets/img/ipad.png" alt="..." />
+
+    <div
+      class="lg:col-span-2 lg:col-start-1 lg:row-start-2 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
+      <div class="lg:pr-4">
+        <div class="max-w-xl">
+          <p>As a seasoned software engineer with six years of professional experience, I have honed my skills in a
+            diverse range of technologies and frameworks. My expertise lies in Angular, React, Node.js, SQL, MongoDB,
+            Express, Nest.js, .NET Core, and AWS, enabling me to deliver robust and scalable solutions across various
+            domains.
+            <br>
+            Throughout my career, I have collaborated with cross-functional teams, including designers, product
+            managers, and fellow developers, to deliver high-quality software solutions. I am experienced in Agile
+            methodologies, ensuring efficient project management, continuous integration, and timely delivery.
+          </p>
+          <ul role="list" class="mt-8 space-y-8 text-gray-600">
+            <li *ngFor="let skill of skills" class="flex items-center gap-x-3">
+              <figure class="w-20 flex-none">
+                <img [src]="skill.logo" />
+              </figure>
+              <span>
+                <strong class="font-semibold text-purple-800">{{skill.name}}</strong>
+                <br>
+                Years of Experience:
+                <strong class="font-semibold text-purple-800">{{skill.yearsOfExperience}}</strong>
+                <br>
+                {{ skill.description }}</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </div>
-</section>
+</div>

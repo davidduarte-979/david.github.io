@@ -1,5 +1,7 @@
 import { Component, OnInit, inject } from '@angular/core';
+import { Skill } from '@core/models/skills';
 import { FileDownloadsService } from '@core/services/file-downloads.service';
+import { SkillsService } from '@core/services/skills/skills.service';
 
 @Component({
   selector: 'app-about',
@@ -8,10 +10,13 @@ import { FileDownloadsService } from '@core/services/file-downloads.service';
 })
 export class AboutComponent implements OnInit {
   private downloadsServices = inject(FileDownloadsService)
+  private skillServices = inject(SkillsService)
+  skills: Skill[];
 
   constructor() { }
 
   ngOnInit(): void {
+    this.skills = this.skillServices.getAllSkills();
   }
 
   downloadResumen(): void {

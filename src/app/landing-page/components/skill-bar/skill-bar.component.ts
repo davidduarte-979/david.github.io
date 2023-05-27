@@ -11,6 +11,6 @@ export class SkillBarComponent implements OnInit {
   constructor(private skillsService: SkillsService) {}
 
   ngOnInit(): void {
-    this.skills = this.skillsService.skills;
+    this.skills = this.skillsService.getAllSkills();
   }
 }

@@ -62,3 +62,11 @@ body {
 a {
   text-decoration: none !important;
 }
+
+p {
+  @apply text-base leading-7 text-gray-400;
+}
+
+span {
+  @apply text-gray-400;
+}
