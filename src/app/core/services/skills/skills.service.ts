@@ -136,7 +136,7 @@ export class SkillsService {
     {
       name: 'C#',
       knowledge: 50,
-      // proficient: true,
+      proficient: true,
       logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-line.svg',
       yearsOfExperience: this.overAllYearsOfExperience,
       description: 'C# is a powerful and modern object-oriented language that is widely used in the development of desktop, web, and mobile applications. I am proficient in leveraging C#\'s features such as strong typing, automatic memory management, and extensive standard libraries to write clean, maintainable, and efficient code.',

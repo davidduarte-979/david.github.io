@@ -1,6 +1,8 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { Skill } from '@core/models/skills';
 import { TechCategory } from '@core/models/tech-category.enum';
+import { TechStack } from '@core/models/tech-stack';
+import { AboutService } from '@core/services/about.service';
 import { FileDownloadsService } from '@core/services/file-downloads.service';
 import { SkillsService } from '@core/services/skills/skills.service';
 
@@ -10,8 +12,10 @@ import { SkillsService } from '@core/services/skills/skills.service';
   styleUrls: ['./about.component.scss']
 })
 export class AboutComponent implements OnInit {
-  private downloadsServices = inject(FileDownloadsService)
-  private skillServices = inject(SkillsService)
+  private downloadsServices = inject(FileDownloadsService);
+  private skillServices = inject(SkillsService);
+  private aboutService = inject(AboutService);
+  techStack: TechStack[];
   skills: Skill[];
   techCategoryEnum = TechCategory;
 
@@ -19,6 +23,7 @@ export class AboutComponent implements OnInit {
 
   ngOnInit(): void {
     this.skills = this.skillServices.getAllSkills();
+    this.techStack = this.aboutService.getTechStack();
   }
 
   downloadResumen(): void {

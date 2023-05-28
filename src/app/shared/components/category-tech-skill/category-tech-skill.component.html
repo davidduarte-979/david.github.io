@@ -1,0 +1,45 @@
+<div class="relative isolate bg-gray-950 px-6 pt-24 sm:pt-32 lg:overflow-visible lg:px-0">
+  <div class="absolute inset-0 -z-10 overflow-hidden">
+    <svg
+      class="absolute left-[max(50%,25rem)] top-0 h-[64rem] w-[128rem] -translate-x-1/2 stroke-gray-200 [mask-image:radial-gradient(64rem_64rem_at_top,white,transparent)]"
+      aria-hidden="true">
+      <defs>
+        <pattern id="e813992c-7d03-4cc4-a2bd-151760b470a0" width="200" height="200" x="50%" y="-1"
+          patternUnits="userSpaceOnUse">
+          <path d="M100 200V.5M.5 .5H200" fill="none" />
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" stroke-width="0" fill="url(#e813992c-7d03-4cc4-a2bd-151760b470a0)" />
+    </svg>
+  </div>
+
+  <div
+    class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:items-start lg:gap-y-10">
+
+    <div [ngClass]="{'md:-ml-12 md:-mt-12 lg:col-start-2': !rtl, 'md:ml-12 md:mt-12 lg:col-start-1': rtl}"
+      class="hidden md:block p-12 sticky lg:top-4 lg:row-span-2 lg:row-start-1 lg:overflow-hidden">
+      <img class="w-[40rem] max-w-none rounded-xl bg-gray-900 shadow-xl ring-1 ring-gray-400/10" [src]="imgUrl"
+        alt="code snippet ">
+    </div>
+
+    <div class="flex justify-center">
+
+      <div class="lg:pr-4">
+        <h1 class="text-white">{{cateroryTitle}}</h1>
+        <div class="max-w-xl">
+          <p>
+            <ng-content></ng-content>
+          </p>
+          <ul role="list" class="mt-8 text-gray-600">
+            <ng-container *ngFor="let skill of skills">
+              <ng-container *ngIf="skill.category === techCategoryEnum">
+                <app-tech-skill [skill]="skill"></app-tech-skill>
+              </ng-container>
+            </ng-container>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
