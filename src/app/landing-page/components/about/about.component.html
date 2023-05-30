@@ -1,11 +1,9 @@
+<div class="px-5">
+  <h2 class="text-center">Jesus David Duarte</h2>
+</div>
 <ng-container *ngFor="let tech of techStack">
-  <app-category-tech-skill
-  [skills]="skills"
-  [cateroryTitle]="tech.categoryTitle"
-  [techCategoryEnum]="tech.techCategoryEnum"
-  [imgUrl]="tech.imgUrl"
-  [rtl]="tech.rtl"
-  >
-  {{tech.description}}
-</app-category-tech-skill>
+  <app-category-tech-skill [skills]="skills" [cateroryTitle]="tech.categoryTitle"
+    [techCategoryEnum]="tech.techCategoryEnum" [imgUrl]="tech.imgUrl" [rtl]="tech.rtl">
+    {{tech.description}}
+  </app-category-tech-skill>
 </ng-container>
