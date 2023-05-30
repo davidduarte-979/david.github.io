@@ -947,10 +947,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-function AboutComponent_ng_container_0_Template(rf, ctx) {
+function AboutComponent_ng_container_3_Template(rf, ctx) {
   if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementContainerStart"](0);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "app-category-tech-skill", 1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "app-category-tech-skill", 3);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementContainerEnd"]();
@@ -961,7 +961,7 @@ function AboutComponent_ng_container_0_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("skills", ctx_r0.skills)("cateroryTitle", tech_r1.categoryTitle)("techCategoryEnum", tech_r1.techCategoryEnum)("imgUrl", tech_r1.imgUrl)("rtl", tech_r1.rtl);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate1"](" ", tech_r1.description, "\n");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate1"](" ", tech_r1.description, " ");
   }
 }
 class AboutComponent {
@@ -992,14 +992,18 @@ AboutComponent.ɵfac = function AboutComponent_Factory(t) {
 AboutComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineComponent"]({
   type: AboutComponent,
   selectors: [["app-about"]],
-  decls: 1,
+  decls: 4,
   vars: 1,
-  consts: [[4, "ngFor", "ngForOf"], [3, "skills", "cateroryTitle", "techCategoryEnum", "imgUrl", "rtl"]],
+  consts: [[1, "px-5"], [1, "text-center"], [4, "ngFor", "ngForOf"], [3, "skills", "cateroryTitle", "techCategoryEnum", "imgUrl", "rtl"]],
   template: function AboutComponent_Template(rf, ctx) {
     if (rf & 1) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](0, AboutComponent_ng_container_0_Template, 3, 6, "ng-container", 0);
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 0)(1, "h2", 1);
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](2, "Jesus David Duarte");
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()();
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](3, AboutComponent_ng_container_3_Template, 3, 6, "ng-container", 2);
     }
     if (rf & 2) {
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](3);
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngForOf", ctx.techStack);
     }
   },
@@ -1633,11 +1637,15 @@ LayoutComponent.ɵfac = function LayoutComponent_Factory(t) {
 LayoutComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineComponent"]({
   type: LayoutComponent,
   selectors: [["app-layout"]],
-  decls: 3,
+  decls: 4,
   vars: 0,
   template: function LayoutComponent_Template(rf, ctx) {
     if (rf & 1) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](0, "app-navbar")(1, "router-outlet")(2, "app-footer");
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](0, "app-navbar");
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](1, "main");
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](2, "router-outlet");
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](3, "app-footer");
     }
   },
   dependencies: [_angular_router__WEBPACK_IMPORTED_MODULE_3__.RouterOutlet, _shared_components_navbar_navbar_component__WEBPACK_IMPORTED_MODULE_0__.NavbarComponent, _shared_components_footer_footer_component__WEBPACK_IMPORTED_MODULE_1__.FooterComponent],
@@ -1892,7 +1900,7 @@ CategoryTechSkillComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_
   ngContentSelectors: _c1,
   decls: 19,
   vars: 6,
-  consts: [[1, "relative", "isolate", "bg-gray-950", "px-6", "pt-24", "sm:pt-32", "lg:overflow-visible"], [1, "absolute", "inset-0", "-z-10", "overflow-hidden"], ["aria-hidden", "true", 1, "absolute", "left-[max(50%,25rem)]", "top-0", "h-[64rem]", "w-[128rem]", "-translate-x-1/2", "stroke-gray-200", "[mask-image:radial-gradient(64rem_64rem_at_top,white,transparent)]"], ["id", "e813992c-7d03-4cc4-a2bd-151760b470a0", "width", "200", "height", "200", "x", "50%", "y", "-1", "patternUnits", "userSpaceOnUse"], ["d", "M100 200V.5M.5 .5H200", "fill", "none"], ["width", "100%", "height", "100%", "stroke-width", "0", "fill", "url(#e813992c-7d03-4cc4-a2bd-151760b470a0)"], [1, "mx-auto", "grid", "max-w-2xl", "grid-cols-1", "gap-x-8", "gap-y-16", "lg:mx-0", "lg:max-w-none", "lg:grid-cols-2", "lg:items-start", "lg:gap-y-10"], [1, "hidden", "md:block", "sticky", "lg:top-4", "lg:row-span-2", "lg:row-start-1", "lg:overflow-hidden", 3, "ngClass"], ["alt", "code snippet ", 1, "w-full", "h-full", "max-w-none", "rounded-xl", "bg-gray-900", "shadow-xl", "ring-1", "ring-gray-400/10", 3, "src"], [1, "flex", "justify-center"], [1, "lg:pr-4"], [1, "text-white"], [1, "max-w-xl"], ["role", "list", 1, "mt-8", "text-gray-600"], [4, "ngFor", "ngForOf"], [4, "ngIf"], [3, "skill"]],
+  consts: [[1, "relative", "isolate", "bg-gray-950", "px-5", "lg:overflow-visible", "pt-20"], [1, "absolute", "inset-0", "-z-10", "overflow-hidden"], ["aria-hidden", "true", 1, "absolute", "left-[max(50%,25rem)]", "top-0", "h-[64rem]", "w-[128rem]", "-translate-x-1/2", "stroke-gray-200", "[mask-image:radial-gradient(64rem_64rem_at_top,white,transparent)]"], ["id", "e813992c-7d03-4cc4-a2bd-151760b470a0", "width", "200", "height", "200", "x", "50%", "y", "-1", "patternUnits", "userSpaceOnUse"], ["d", "M100 200V.5M.5 .5H200", "fill", "none"], ["width", "100%", "height", "100%", "stroke-width", "0", "fill", "url(#e813992c-7d03-4cc4-a2bd-151760b470a0)"], [1, "mx-auto", "grid", "max-w-2xl", "grid-cols-1", "gap-x-8", "lg:mx-0", "lg:max-w-none", "lg:grid-cols-2", "lg:items-start"], [1, "hidden", "md:block", "sticky", "lg:top-4", "lg:row-span-2", "lg:row-start-1", "lg:overflow-hidden", 3, "ngClass"], ["alt", "code snippet ", 1, "w-full", "h-full", "max-w-none", "rounded-xl", "bg-gray-900", "shadow-xl", "ring-1", "ring-gray-400/10", 3, "src"], [1, "flex", "justify-center"], [1, "lg:pr-4"], [1, "text-white"], [1, "max-w-xl"], ["role", "list", 1, "mt-8", "text-gray-600"], [4, "ngFor", "ngForOf"], [4, "ngIf"], [3, "skill"]],
   template: function CategoryTechSkillComponent_Template(rf, ctx) {
     if (rf & 1) {
       _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵprojectionDef"]();
@@ -1907,7 +1915,7 @@ CategoryTechSkillComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_
       _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](7, "div", 6)(8, "div", 7);
       _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](9, "img", 8);
       _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](10, "div", 9)(11, "div", 10)(12, "h1", 11);
+      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](10, "div", 9)(11, "div", 10)(12, "h2", 11);
       _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](13);
       _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
       _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](14, "div", 12)(15, "p");
