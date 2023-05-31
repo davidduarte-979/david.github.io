@@ -947,12 +947,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-function AboutComponent_ng_container_18_Template(rf, ctx) {
+function AboutComponent_ng_container_21_Template(rf, ctx) {
   if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnamespaceSVG"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnamespaceHTML"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementContainerStart"](0);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "app-category-tech-skill", 14);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "app-category-tech-skill", 15);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementContainerEnd"]();
@@ -994,36 +994,39 @@ AboutComponent.ɵfac = function AboutComponent_Factory(t) {
 AboutComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineComponent"]({
   type: AboutComponent,
   selectors: [["app-about"]],
-  decls: 19,
+  decls: 22,
   vars: 1,
-  consts: [[1, "flex", "justify-center", "items-center", "h-screen", "relative", "isolate", "overflow-hidden", "bg-gray-950"], [1, "px-6", "py-24", "sm:px-6", "sm:py-32", "lg:px-8"], [1, "mx-auto", "text-center"], [1, "text-2xl", "font-bold", "tracking-tight", "text-white", "sm:text-4xl"], [1, "text-6xl", "font-bold", "tracking-tight", "text-white", "sm:text-4xl"], [1, "mx-auto", "mt-6", "max-w-xl", "text-lg", "leading-8", "text-gray-300"], [1, "mt-10", "flex", "items-center", "justify-center", "gap-x-6"], [1, "rounded-md", "bg-white", "px-3.5", "py-2.5", "text-sm", "font-semibold", "text-gray-900", "shadow-sm", "hover:bg-gray-100", "focus-visible:outline", "focus-visible:outline-2", "focus-visible:outline-offset-2", "focus-visible:outline-white", 3, "click"], ["viewBox", "0 0 1024 1024", "aria-hidden", "true", 1, "absolute", "left-1/2", "top-1/2", "-z-10", "h-[64rem]", "w-[64rem]", "-translate-x-1/2", "[mask-image:radial-gradient(closest-side,white,transparent)]"], ["cx", "512", "cy", "512", "r", "512", "fill", "url(#8d958450-c69f-4251-94bc-4e091a323369)", "fill-opacity", "0.7"], ["id", "8d958450-c69f-4251-94bc-4e091a323369"], ["stop-color", "#7775D6"], ["offset", "1", "stop-color", "#E935C1"], [4, "ngFor", "ngForOf"], [3, "skills", "cateroryTitle", "techCategoryEnum", "imgUrl", "rtl"]],
+  consts: [[1, "flex", "justify-center", "h-screen", "relative", "isolate", "overflow-hidden", "bg-gray-950"], [1, "rounded-2xl", "py-10"], ["src", "assets/img/david_profile.jpg", "alt", "", 1, "mx-auto", "h-48", "w-48", "rounded-full", "md:h-56", "md:w-56"], [1, "mx-auto", "text-center"], [1, "text-2xl", "font-bold", "tracking-tight", "text-white", "sm:text-4xl"], [1, "text-6xl", "font-bold", "tracking-tight", "text-white", "sm:text-4xl"], [1, "mx-auto", "mt-6", "max-w-xl", "text-lg", "leading-8", "text-gray-300"], [1, "mt-10", "flex", "items-center", "justify-center", "gap-x-6"], [1, "rounded-md", "bg-white", "px-3.5", "py-2.5", "text-sm", "font-semibold", "text-gray-900", "shadow-sm", "hover:bg-gray-100", "focus-visible:outline", "focus-visible:outline-2", "focus-visible:outline-offset-2", "focus-visible:outline-white", 3, "click"], ["viewBox", "0 0 1024 1024", "aria-hidden", "true", 1, "absolute", "left-1/2", "top-1/2", "-z-10", "h-[64rem]", "w-[64rem]", "-translate-x-1/2", "[mask-image:radial-gradient(closest-side,white,transparent)]"], ["cx", "512", "cy", "512", "r", "512", "fill", "url(#8d958450-c69f-4251-94bc-4e091a323369)", "fill-opacity", "0.7"], ["id", "8d958450-c69f-4251-94bc-4e091a323369"], ["stop-color", "#7775D6"], ["offset", "1", "stop-color", "#E935C1"], [4, "ngFor", "ngForOf"], [3, "skills", "cateroryTitle", "techCategoryEnum", "imgUrl", "rtl"]],
   template: function AboutComponent_Template(rf, ctx) {
     if (rf & 1) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 0)(1, "div", 1)(2, "div", 2)(3, "p", 3);
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](4, "Jesus David Duarte");
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 0)(1, "div")(2, "ul")(3, "li", 1);
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](4, "img", 2);
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()();
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](5, "div", 3)(6, "p", 4);
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](7, "Jesus David Duarte");
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](5, "h2", 4);
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](6, "Software Engineer");
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](8, "h2", 5);
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](9, "Software Engineer");
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](7, "p", 5);
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](8, "Highly skilled and innovative Software Engineer with a strong background in developing and implementing cutting-edge software solutions.");
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](10, "p", 6);
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](11, "Highly skilled and innovative Software Engineer with a strong background in developing and implementing cutting-edge software solutions.");
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](9, "div", 6)(10, "button", 7);
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function AboutComponent_Template_button_click_10_listener() {
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](12, "div", 7)(13, "button", 8);
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function AboutComponent_Template_button_click_13_listener() {
         return ctx.downloadResumen();
       });
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](11, "Get Resume Here");
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](14, "Get Resume Here");
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()()()();
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnamespaceSVG"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](12, "svg", 8);
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](13, "circle", 9);
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](14, "defs")(15, "radialGradient", 10);
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](16, "stop", 11)(17, "stop", 12);
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](15, "svg", 9);
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](16, "circle", 10);
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](17, "defs")(18, "radialGradient", 11);
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](19, "stop", 12)(20, "stop", 13);
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()()()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](18, AboutComponent_ng_container_18_Template, 3, 6, "ng-container", 13);
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](21, AboutComponent_ng_container_21_Template, 3, 6, "ng-container", 14);
     }
     if (rf & 2) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](18);
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](21);
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngForOf", ctx.techStack);
     }
   },
