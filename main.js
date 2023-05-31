@@ -952,7 +952,7 @@ function AboutComponent_ng_container_18_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnamespaceSVG"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnamespaceHTML"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementContainerStart"](0);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "app-category-tech-skill", 13);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "app-category-tech-skill", 14);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementContainerEnd"]();
@@ -996,30 +996,31 @@ AboutComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_5__["
   selectors: [["app-about"]],
   decls: 19,
   vars: 1,
-  consts: [[1, "flex", "justify-center", "items-center", "h-screen", "relative", "isolate", "overflow-hidden", "bg-gray-950"], [1, "px-6", "py-24", "sm:px-6", "sm:py-32", "lg:px-8"], [1, "mx-auto", "text-center"], [1, "text-6xl", "font-bold", "tracking-tight", "text-white", "sm:text-4xl"], [1, "mx-auto", "mt-6", "max-w-xl", "text-lg", "leading-8", "text-gray-300"], [1, "mt-10", "flex", "items-center", "justify-center", "gap-x-6"], [1, "rounded-md", "bg-white", "px-3.5", "py-2.5", "text-sm", "font-semibold", "text-gray-900", "shadow-sm", "hover:bg-gray-100", "focus-visible:outline", "focus-visible:outline-2", "focus-visible:outline-offset-2", "focus-visible:outline-white", 3, "click"], ["viewBox", "0 0 1024 1024", "aria-hidden", "true", 1, "absolute", "left-1/2", "top-1/2", "-z-10", "h-[64rem]", "w-[64rem]", "-translate-x-1/2", "[mask-image:radial-gradient(closest-side,white,transparent)]"], ["cx", "512", "cy", "512", "r", "512", "fill", "url(#8d958450-c69f-4251-94bc-4e091a323369)", "fill-opacity", "0.7"], ["id", "8d958450-c69f-4251-94bc-4e091a323369"], ["stop-color", "#7775D6"], ["offset", "1", "stop-color", "#E935C1"], [4, "ngFor", "ngForOf"], [3, "skills", "cateroryTitle", "techCategoryEnum", "imgUrl", "rtl"]],
+  consts: [[1, "flex", "justify-center", "items-center", "h-screen", "relative", "isolate", "overflow-hidden", "bg-gray-950"], [1, "px-6", "py-24", "sm:px-6", "sm:py-32", "lg:px-8"], [1, "mx-auto", "text-center"], [1, "text-2xl", "font-bold", "tracking-tight", "text-white", "sm:text-4xl"], [1, "text-6xl", "font-bold", "tracking-tight", "text-white", "sm:text-4xl"], [1, "mx-auto", "mt-6", "max-w-xl", "text-lg", "leading-8", "text-gray-300"], [1, "mt-10", "flex", "items-center", "justify-center", "gap-x-6"], [1, "rounded-md", "bg-white", "px-3.5", "py-2.5", "text-sm", "font-semibold", "text-gray-900", "shadow-sm", "hover:bg-gray-100", "focus-visible:outline", "focus-visible:outline-2", "focus-visible:outline-offset-2", "focus-visible:outline-white", 3, "click"], ["viewBox", "0 0 1024 1024", "aria-hidden", "true", 1, "absolute", "left-1/2", "top-1/2", "-z-10", "h-[64rem]", "w-[64rem]", "-translate-x-1/2", "[mask-image:radial-gradient(closest-side,white,transparent)]"], ["cx", "512", "cy", "512", "r", "512", "fill", "url(#8d958450-c69f-4251-94bc-4e091a323369)", "fill-opacity", "0.7"], ["id", "8d958450-c69f-4251-94bc-4e091a323369"], ["stop-color", "#7775D6"], ["offset", "1", "stop-color", "#E935C1"], [4, "ngFor", "ngForOf"], [3, "skills", "cateroryTitle", "techCategoryEnum", "imgUrl", "rtl"]],
   template: function AboutComponent_Template(rf, ctx) {
     if (rf & 1) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 0)(1, "div", 1)(2, "div", 2)(3, "h2", 3);
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 0)(1, "div", 1)(2, "div", 2)(3, "p", 3);
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](4, "Jesus David Duarte");
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](5, "br");
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](5, "h2", 4);
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](6, "Software Engineer");
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](7, "p", 4);
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](7, "p", 5);
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](8, "Highly skilled and innovative Software Engineer with a strong background in developing and implementing cutting-edge software solutions.");
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](9, "div", 5)(10, "button", 6);
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](9, "div", 6)(10, "button", 7);
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function AboutComponent_Template_button_click_10_listener() {
         return ctx.downloadResumen();
       });
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](11, "Get Resume Here");
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()()()();
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnamespaceSVG"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](12, "svg", 7);
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](13, "circle", 8);
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](14, "defs")(15, "radialGradient", 9);
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](16, "stop", 10)(17, "stop", 11);
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](12, "svg", 8);
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](13, "circle", 9);
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](14, "defs")(15, "radialGradient", 10);
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](16, "stop", 11)(17, "stop", 12);
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()()()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](18, AboutComponent_ng_container_18_Template, 3, 6, "ng-container", 12);
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](18, AboutComponent_ng_container_18_Template, 3, 6, "ng-container", 13);
     }
     if (rf & 2) {
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](18);
@@ -1870,7 +1871,7 @@ __webpack_require__.r(__webpack_exports__);
 function CategoryTechSkillComponent_ng_container_18_ng_container_1_Template(rf, ctx) {
   if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementContainerStart"](0);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](1, "app-tech-skill", 16);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](1, "app-tech-skill", 18);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementContainerEnd"]();
   }
   if (rf & 2) {
@@ -1882,7 +1883,7 @@ function CategoryTechSkillComponent_ng_container_18_ng_container_1_Template(rf, 
 function CategoryTechSkillComponent_ng_container_18_Template(rf, ctx) {
   if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementContainerStart"](0);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](1, CategoryTechSkillComponent_ng_container_18_ng_container_1_Template, 2, 1, "ng-container", 15);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](1, CategoryTechSkillComponent_ng_container_18_ng_container_1_Template, 2, 1, "ng-container", 17);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementContainerEnd"]();
   }
   if (rf & 2) {
@@ -1917,9 +1918,9 @@ CategoryTechSkillComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_
     rtl: "rtl"
   },
   ngContentSelectors: _c1,
-  decls: 19,
+  decls: 21,
   vars: 6,
-  consts: [[1, "relative", "isolate", "bg-gray-950", "px-5", "lg:overflow-visible", "pt-20"], [1, "absolute", "inset-0", "-z-10", "overflow-hidden"], ["aria-hidden", "true", 1, "absolute", "left-[max(50%,25rem)]", "top-0", "h-[64rem]", "w-[128rem]", "-translate-x-1/2", "stroke-gray-200", "[mask-image:radial-gradient(64rem_64rem_at_top,white,transparent)]"], ["id", "e813992c-7d03-4cc4-a2bd-151760b470a0", "width", "200", "height", "200", "x", "50%", "y", "-1", "patternUnits", "userSpaceOnUse"], ["d", "M100 200V.5M.5 .5H200", "fill", "none"], ["width", "100%", "height", "100%", "stroke-width", "0", "fill", "url(#e813992c-7d03-4cc4-a2bd-151760b470a0)"], [1, "mx-auto", "grid", "max-w-2xl", "grid-cols-1", "gap-x-8", "lg:mx-0", "lg:max-w-none", "lg:grid-cols-2", "lg:items-start"], [1, "hidden", "md:block", "sticky", "lg:top-4", "lg:row-span-2", "lg:row-start-1", "lg:overflow-hidden", 3, "ngClass"], ["alt", "code snippet ", 1, "w-full", "h-full", "max-w-none", "rounded-xl", "bg-gray-900", "shadow-xl", "ring-1", "ring-gray-400/10", 3, "src"], [1, "flex", "justify-center"], [1, "lg:pr-4"], [1, "text-white"], [1, "max-w-xl"], ["role", "list", 1, "mt-8", "text-gray-600"], [4, "ngFor", "ngForOf"], [4, "ngIf"], [3, "skill"]],
+  consts: [[1, "relative", "isolate", "bg-gray-950", "px-5", "lg:overflow-visible", "pt-20"], [1, "absolute", "inset-0", "-z-10", "overflow-hidden"], ["aria-hidden", "true", 1, "absolute", "left-[max(50%,25rem)]", "top-0", "h-[64rem]", "w-[128rem]", "-translate-x-1/2", "stroke-gray-200", "[mask-image:radial-gradient(64rem_64rem_at_top,white,transparent)]"], ["id", "e813992c-7d03-4cc4-a2bd-151760b470a0", "width", "200", "height", "200", "x", "50%", "y", "-1", "patternUnits", "userSpaceOnUse"], ["d", "M100 200V.5M.5 .5H200", "fill", "none"], ["width", "100%", "height", "100%", "stroke-width", "0", "fill", "url(#e813992c-7d03-4cc4-a2bd-151760b470a0)"], [1, "mx-auto", "grid", "max-w-2xl", "grid-cols-1", "gap-x-8", "lg:mx-0", "lg:max-w-none", "lg:grid-cols-2", "lg:items-start"], [1, "hidden", "md:block", "sticky", "lg:top-4", "lg:row-span-2", "lg:row-start-1", "lg:overflow-hidden", 3, "ngClass"], ["alt", "code snippet ", 1, "w-full", "h-full", "max-w-none", "rounded-xl", "bg-gray-900", "shadow-xl", "ring-1", "ring-gray-400/10", 3, "src"], [1, "flex", "justify-center"], [1, "lg:pr-4"], [1, "text-white"], [1, "max-w-xl"], ["role", "list", 1, "mt-8", "text-gray-600"], [4, "ngFor", "ngForOf"], ["aria-hidden", "true", 1, "pointer-events-none", "absolute", "left-12", "top-1/2", "-z-10", "-translate-y-1/2", "transform-gpu", "blur-3xl", "lg:bottom-[-12rem]", "lg:top-auto", "lg:translate-y-0", "lg:transform-gpu"], [1, "aspect-[1155/678]", "w-[72.1875rem]", "bg-gradient-to-tr", "from-[#ff80b5]", "to-[#9089fc]", "opacity-25", 2, "clip-path", "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"], [4, "ngIf"], [3, "skill"]],
   template: function CategoryTechSkillComponent_Template(rf, ctx) {
     if (rf & 1) {
       _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵprojectionDef"]();
@@ -1942,7 +1943,10 @@ CategoryTechSkillComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_
       _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
       _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](17, "ul", 13);
       _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](18, CategoryTechSkillComponent_ng_container_18_Template, 2, 1, "ng-container", 14);
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]()()()()()();
+      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]()()()();
+      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](19, "div", 15);
+      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](20, "div", 16);
+      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]()()();
     }
     if (rf & 2) {
       _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](8);
