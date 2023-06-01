@@ -1,49 +1,25 @@
-<ng-container>
-  <section class="projects-section pt-4 bg-light" id="projects">
-    <h2 class="text-black-50 text-center pb-4">Projects</h2>
-    <div class="container px-4 px-lg-5">
-      <!-- Featured Project Row-->
-      <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
-        <div class="col-xl-6 col-lg-6">
-          <img
-            class="img-fluid mb-3 mb-lg-0"
-            src="assets/img/bg-masthead.jpg"
-            alt="..."
-          />
-        </div>
-        <div class="col-xl-6 col-lg-6">
-          <div class="text-center">
-            <h4>Projects Portfolio</h4>
-            <p class="text-black-50 ms-3 mb-0">
-              Portfolio of personal projects and with companies, in this section
-              I try to summarize all the hard work that I have used and the
-              different concepts that I have implemented, as well as
-              technological stacks, frameworks, preprocessor, databases, etc.
-            </p>
-          </div>
-        </div>
-      </div>
-      <mat-spinner *ngIf="isLoading" class="m-auto mb-5"></mat-spinner>
-      <div
-        style="z-index: 10"
-        *ngIf="error"
-        class="alert alert-warning"
-        role="alert"
-      >
-        {{ error }}
-        <button class="btn btn-primary" (click)="onClearError()" type="button">
-          Close
-        </button>
-      </div>
-      <div *ngIf="!error" class="container">
-        <div class="row justify-content-center">
-          <app-card
-            class="pt-5 mt-5 col-12 col-md-4"
-            *ngFor="let project of projects"
-            [project]="project"
-          ></app-card>
-        </div>
+<app-wrapper-container>
+  <div class="container px-4 px-lg-5">
+    <div class="text-center">
+      <h2>Projects Portfolio</h2>
+      <p>
+        Portfolio of personal projects and with companies, in this section
+        I try to summarize all the hard work that I have used and the
+        different concepts that I have implemented, as well as
+        technological stacks, frameworks, preprocessor, databases, etc.
+      </p>
+    </div>
+    <mat-spinner *ngIf="isLoading" class="m-auto mb-5"></mat-spinner>
+    <div style="z-index: 10" *ngIf="error" class="alert alert-warning" role="alert">
+      {{ error }}
+      <button class="btn btn-primary" (click)="onClearError()" type="button">
+        Close
+      </button>
+    </div>
+    <div *ngIf="!error" class="container">
+      <div class="row justify-content-center">
+        <app-card class="pt-5 mt-5 col-12 col-md-4" *ngFor="let project of projects" [project]="project"></app-card>
       </div>
     </div>
-  </section>
-</ng-container>
+  </div>
+</app-wrapper-container>

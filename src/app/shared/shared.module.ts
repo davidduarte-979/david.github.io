@@ -8,6 +8,7 @@ import { ButtonComponent } from './components/button/button.component';
 import { TechSkillComponent } from './components/tech-skill/tech-skill.component';
 import { CategoryTechSkillComponent } from './components/category-tech-skill/category-tech-skill.component';
 import { BannerComponent } from './components/banner/banner.component';
+import { WrapperContainerComponent } from './components/wrapper-container/wrapper-container.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { BannerComponent } from './components/banner/banner.component';
     FooterComponent,
     TechSkillComponent,
     CategoryTechSkillComponent,
-    BannerComponent
+    BannerComponent,
+    WrapperContainerComponent
   ],
   imports: [
     CommonModule,
@@ -30,7 +32,8 @@ import { BannerComponent } from './components/banner/banner.component';
       ButtonComponent,
       TechSkillComponent,
       CategoryTechSkillComponent,
-      BannerComponent
+      BannerComponent,
+      WrapperContainerComponent
     ],
 })
 export class SharedModule {}
