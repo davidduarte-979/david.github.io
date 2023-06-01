@@ -1,13 +1,15 @@
 <app-wrapper-container>
-  <div class="container px-4 px-lg-5">
-    <div class="text-center">
-      <h2>Projects Portfolio</h2>
-      <p>
-        Portfolio of personal projects and with companies, in this section
-        I try to summarize all the hard work that I have used and the
-        different concepts that I have implemented, as well as
-        technological stacks, frameworks, preprocessor, databases, etc.
-      </p>
+  <div class="py-10">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="mx-auto max-w-2xl sm:text-center">
+        <div class="text-base font-semibold leading-7 text-indigo-700">Everything you need in terms of experience</div>
+        <div class="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">Projects portfolio</div>
+        <p>
+          Portfolio of personal projects and with companies, in this section
+          I try to summarize all the hard work that I have used and the
+          different concepts that I have implemented, as well as
+          technological stacks, frameworks, preprocessor, databases, etc.</p>
+      </div>
     </div>
     <mat-spinner *ngIf="isLoading" class="m-auto mb-5"></mat-spinner>
     <div style="z-index: 10" *ngIf="error" class="alert alert-warning" role="alert">
@@ -18,7 +20,7 @@
     </div>
     <div *ngIf="!error" class="container">
       <div class="row justify-content-center">
-        <app-card class="pt-5 mt-5 col-12 col-md-4" *ngFor="let project of projects" [project]="project"></app-card>
+        <app-card class="col-12 col-md-5 col-lg-4" *ngFor="let project of projects" [project]="project"></app-card>
       </div>
     </div>
   </div>

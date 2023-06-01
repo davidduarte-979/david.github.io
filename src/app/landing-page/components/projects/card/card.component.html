@@ -1,18 +1,17 @@
-
-      <div class="flip">
-        <div class="front" [style.background]="'url(' + project.imageUrl + ')'">
-          <h1 class="text-shadow text-center text-dark">{{ project.projectName }}</h1>
-        </div>
-        <div class="back">
-          <h2 class="text-center" >{{ project.title }}</h2>
-          <p class="text-center">
-            {{ project.description }}
-          </p>
-          <p class="text-center">
-            {{ project.technologies }}
-          </p>
-          <a class="ms-5" [href]="project.projectUrl">Click here to see the project</a>
-        </div>
-      </div>
-
-
+<div class="h-24 flex items-center justify-center">
+  <h1 class="text-center">{{ project.projectName }}</h1>
+</div>
+<div class="flip">
+  <div class="front" [style.background]="'url(' + project.imageUrl + ')'">
+  </div>
+  <div class="back">
+    <h2 class="text-center">{{ project.title }}</h2>
+    <p class="text-center">
+      {{ project.description }}
+    </p>
+    <p class="text-center">
+      {{ project.technologies }}
+    </p>
+    <a class="text-center" [href]="project.projectUrl">Click here to see the project</a>
+  </div>
+</div>
