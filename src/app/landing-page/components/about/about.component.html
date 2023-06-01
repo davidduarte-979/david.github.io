@@ -1,39 +1,18 @@
-<div class="flex justify-center h-screen relative isolate overflow-hidden bg-gray-950">
-  <div>
-
-    <ul>
-      <li class="rounded-2xl py-10">
-        <img class="mx-auto h-48 w-48 rounded-full md:h-56 md:w-56" src="assets/img/david_profile.jpg" alt="">
-      </li>
-    </ul>
-    <div class="mx-auto
-     text-center">
-
-
-      <p class="text-2xl font-bold tracking-tight text-white sm:text-4xl">Jesus David Duarte</p>
-      <h2 class="text-6xl font-bold tracking-tight text-white sm:text-4xl">Software Engineer</h2>
-      <p class="mx-auto mt-6 max-w-xl text-lg leading-8 text-gray-300">Highly skilled and innovative Software Engineer
-        with a strong background in developing and implementing cutting-edge software solutions.</p>
-      <div class="mt-10 flex items-center justify-center gap-x-6">
-        <button (click)="downloadResumen()"
-          class="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">Get
-          Resume Here</button>
-      </div>
+<app-banner>
+  <figure class="rounded-2xl py-10">
+    <img class="mx-auto h-48 w-48 rounded-full md:h-56 md:w-56" src="assets/img/david_profile.jpg"
+      alt="Profile picture">
+  </figure>
+  <div class="mx-auto text-center">
+    <h1>Jesus David Duarte</h1>
+    <h2>Software Engineer</h2>
+    <p>Highly skilled and innovative Software Engineer
+      with a strong background in developing and implementing cutting-edge software solutions.</p>
+    <div class="mt-10 flex items-center justify-center gap-x-6">
+      <app-button (clickEvent)="downloadResumen()">Get Resume Here</app-button>
     </div>
   </div>
-  <svg viewBox="0 0 1024 1024"
-    class="absolute left-1/2 top-1/2 -z-10 h-[64rem] w-[64rem] -translate-x-1/2 [mask-image:radial-gradient(closest-side,white,transparent)]"
-    aria-hidden="true">
-    <circle cx="512" cy="512" r="512" fill="url(#8d958450-c69f-4251-94bc-4e091a323369)" fill-opacity="0.7" />
-    <defs>
-      <radialGradient id="8d958450-c69f-4251-94bc-4e091a323369">
-        <stop stop-color="#7775D6" />
-        <stop offset="1" stop-color="#E935C1" />
-      </radialGradient>
-    </defs>
-  </svg>
-</div>
-
+</app-banner>
 <ng-container *ngFor="let tech of techStack">
   <app-category-tech-skill [skills]="skills" [cateroryTitle]="tech.categoryTitle"
     [techCategoryEnum]="tech.techCategoryEnum" [imgUrl]="tech.imgUrl" [rtl]="tech.rtl">

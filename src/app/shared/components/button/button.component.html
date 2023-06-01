@@ -1,4 +1,7 @@
-<button (click)="triggerEvent()" class="btn btn-primary animate__animated animate__fadeInUp animate__slow"
-  routerLinkActive="router-link-active">
+<button
+  mat-raised-button
+  class="animate__animated animate__fadeInUp animate__slow"
+  (click)="triggerEvent()"
+  [color]="color">
   <ng-content></ng-content>
 </button>

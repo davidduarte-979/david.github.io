@@ -184,6 +184,16 @@ export class SkillsService {
       
     },
     {
+      name: 'Karma',
+      knowledge: 100,
+      proficient: true,
+      logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/karma/karma-original.svg',
+      yearsOfExperience: this.overAllYearsOfExperience,
+      description: 'By adopting the Karma Developer Unit Testing methodology, developers can gain confidence in the correctness of their karma-related code units. It helps uncover bugs, edge cases, and inconsistencies, allowing developers to fix issues early in the development cycle.',
+      category: TechCategory.TestingFramework
+      
+    },
+    {
       name: 'HTML',
       knowledge: 100,
       proficient: true,

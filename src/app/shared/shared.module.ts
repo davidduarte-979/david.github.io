@@ -7,13 +7,15 @@ import { MaterialModule } from '../material/material.module';
 import { ButtonComponent } from './components/button/button.component';
 import { TechSkillComponent } from './components/tech-skill/tech-skill.component';
 import { CategoryTechSkillComponent } from './components/category-tech-skill/category-tech-skill.component';
+import { BannerComponent } from './components/banner/banner.component';
 
 @NgModule({
   declarations: [
     NavbarComponent,
     FooterComponent,
     TechSkillComponent,
-    CategoryTechSkillComponent
+    CategoryTechSkillComponent,
+    BannerComponent
   ],
   imports: [
     CommonModule,
@@ -27,7 +29,8 @@ import { CategoryTechSkillComponent } from './components/category-tech-skill/cat
       MaterialModule,
       ButtonComponent,
       TechSkillComponent,
-      CategoryTechSkillComponent
+      CategoryTechSkillComponent,
+      BannerComponent
     ],
 })
 export class SharedModule {}

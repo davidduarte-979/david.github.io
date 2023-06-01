@@ -30,7 +30,7 @@ export class AboutService {
     },
     {
       categoryTitle: 'Testing Developer',
-      techCategoryEnum: TechCategory.Database,
+      techCategoryEnum: TechCategory.TestingFramework,
       imgUrl: 'assets/img/testing.png',
       description: 'I have a strong understanding of different testing types, including functional testing, regression testing, integration testing, and user acceptance testing. I am skilled in identifying and prioritizing test cases based on risk analysis and requirements, ensuring maximum test coverage.',
       rtl: true
