@@ -38,6 +38,10 @@ body {
   h1 {
     @apply text-h1 text-gray-400 mb-2;
   }
+
+  ul {
+    @apply pl-0 md:pl-8;
+  }
 }
 
 .mat-mdc-raised-button.mat-primary {

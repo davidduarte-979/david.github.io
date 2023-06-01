@@ -8,6 +8,13 @@ module.exports = {
       fontSize: {
         h1 : ["32px", { lineHeight: "44px", fontWeight: 500 }],
         h2 : ["30px", { lineHeight: "40px", fontWeight: 400 }]
+      },
+      screens: {
+        sm: '390px',
+        md: '768px',
+        lg: '1024px',
+        xl: '1200px',
+        xxl: '1920px'
       }
     },
   },
