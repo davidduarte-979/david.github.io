@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MaterialModule } from 'src/app/material/material.module';
+import { MaterialModule } from '@shared/material/material.module';
 
 @Component({
   selector: 'app-button',

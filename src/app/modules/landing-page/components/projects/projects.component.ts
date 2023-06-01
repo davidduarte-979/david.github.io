@@ -3,9 +3,9 @@ import { Store } from '@ngrx/store';
 import { Observable, pipe, Subscription } from 'rxjs';
 import { map, take } from 'rxjs/operators';
 import { Project } from 'src/app/core/models/project';
-import { ServiceProjects } from '../../../core/services/projects/project.service';
-import * as fromApp from '../../../store/app.reduce';
-import * as ProjectAction from '../projects/store/projects.actions';
+import { ServiceProjects } from '../../../../core/services/projects/project.service';
+import * as fromApp from '../../../../store/app.reduce';
+import * as ProjectAction from './store/projects.actions';
 @Component({
   selector: 'app-projects',
   templateUrl: './projects.component.html',

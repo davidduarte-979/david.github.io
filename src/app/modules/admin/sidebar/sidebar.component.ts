@@ -4,7 +4,7 @@ import { Observable, Subscription } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { AuthService } from '@core/services/auth/auth.service';
 import { User } from '@core/models/user';
-import * as fromApp from '../../store/app.reduce';
+import * as fromApp from '../../../store/app.reduce';
 import * as AuthActions from '../auth/store/auth.actions';
 import { Store } from '@ngrx/store';
 @Component({

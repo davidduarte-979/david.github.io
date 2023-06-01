@@ -2,7 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { Subscription } from 'rxjs';
-import * as fromApp from '../../../../store/app.reduce';
+import * as fromApp from '../../../../../store/app.reduce';
 import * as AuthActions from '../../store/auth.actions';
 @Component({
   selector: 'app-register',
