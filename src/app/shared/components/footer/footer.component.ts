@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
+import { NavLink } from '@core/models/nav-link';
+import { NavService } from '@core/services/nav.service';
 
 @Component({
   selector: 'app-footer',
@@ -6,8 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./footer.component.scss'],
 })
 export class FooterComponent implements OnInit {
-  love = `Made with ❤️ `;
-  constructor() {}
+  private navServices = inject(NavService);
+  currrentYear = new Date().getFullYear();
+  navLinks: NavLink[]
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.navLinks = this.navServices.getNavLinks();
+  }
 }

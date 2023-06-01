@@ -36,24 +36,12 @@
         </div>
         <div class="hidden sm:ml-6 sm:block">
           <div class="flex space-x-4">
-            <a [routerLink]="['/']" routerLinkActive="bg-gray-900 text-white"
-              [routerLinkActiveOptions]="{ exact: true }"
-              class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Home</a>
-
-            <a [routerLink]="['/dashboard']" routerLinkActive="bg-gray-900 text-white"
-              class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Dashboard</a>
-
-            <a [routerLink]="['/', 'about']" routerLinkActive="bg-gray-900 text-white"
-              class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">About</a>
-
-            <a [routerLink]="['/', 'projects']" routerLinkActive="bg-gray-900 text-white"
-              class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Projects</a>
-
-            <a [routerLink]="['/', 'skills']" routerLinkActive="bg-gray-900 text-white"
-              class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Skills</a>
-
-            <a [routerLink]="['/', 'contact']" routerLinkActive="bg-gray-900 text-white"
-              class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Contact</a>
+            <ng-container *ngFor="let navLink of navLinks">
+              <a [routerLink]="[navLink.link]" routerLinkActive="bg-gray-900 text-white"
+                [routerLinkActiveOptions]="{ exact: true }"
+                class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">{{
+                navLink.title }}</a>
+            </ng-container>
           </div>
         </div>
       </div>
@@ -63,25 +51,14 @@
   <!-- Mobile menu, show/hide based on menu state. -->
   <div *ngIf="isOpen" class="sm:hidden" id="mobile-menu">
     <div class="space-y-1 px-2 pb-3 pt-2">
-
-      <a [routerLink]="['/']" routerLinkActive="bg-gray-900 text-white" [routerLinkActiveOptions]="{ exact: true }"
-        class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Home</a>
-
-      <a [routerLink]="['/dashboard']" routerLinkActive="bg-gray-900 text-white"
-        class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Dashboard</a>
-
-      <a [routerLink]="['/about']" routerLinkActive="bg-gray-900 text-white"
-        class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">About</a>
-
-      <a [routerLink]="['/projects']" routerLinkActive="bg-gray-900 text-white"
-        class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Projects</a>
-
-      <a [routerLink]="['/skills']" routerLinkActive="bg-gray-900 text-white"
-        class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Skill</a>
-
-      <a [routerLink]="['/contact']" routerLinkActive="bg-gray-900 text-white"
-        class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Contact</a>
-
+      <ng-container *ngFor="let navLink of navLinks">
+        <a [routerLink]="[navLink.link]" routerLinkActive="bg-gray-900 text-white"
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">
+          {{ navLink.title }}
+        </a>
+      </ng-container>
     </div>
   </div>
+
 </nav>
