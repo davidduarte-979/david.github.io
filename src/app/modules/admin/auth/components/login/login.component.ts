@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, inject } from '@angular/core';
 import {
   AbstractControl,
   FormControl,
@@ -9,12 +9,14 @@ import { Subscription } from 'rxjs';
 import * as fromApp from '../../../../../store/app.reduce';
 import * as AuthActions from '../../store/auth.actions';
 import { Store } from '@ngrx/store';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit, OnDestroy {
+  private router = inject(Router);
   signInForm!: FormGroup;
   signInSub!: Subscription;
   error!: string;
@@ -37,6 +39,11 @@ export class LoginComponent implements OnInit, OnDestroy {
   onClearError(): void {
     this.store.dispatch(AuthActions.clearError());
   }
+
+  signUp() {
+    this.router.navigate(['/', 'dashboard', 'auth', 'register'])
+  }
+
   get email(): AbstractControl {
     return this.signInForm.get('email');
   }

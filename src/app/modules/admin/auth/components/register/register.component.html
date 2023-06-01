@@ -1,53 +1,23 @@
 <ng-container>
   <mat-spinner *ngIf="isLoading" class="m-auto my-5"></mat-spinner>
-  <div
-    *ngIf="error"
-    style="z-index: 10"
-    class="alert alert-warning"
-    role="alert"
-  >
+  <div *ngIf="error" style="z-index: 10" class="alert alert-warning" role="alert">
     {{ error }}
     <button class="btn btn-primary" type="button" (click)="onClearError()">
       Close
     </button>
   </div>
-  <form
-    *ngIf="!isLoading"
-    class="form"
-    [formGroup]="signUpForm"
-    (ngSubmit)="onSubmit()"
-  >
-    <input
-      type="email"
-      placeholder="Email"
-      type="text"
-      formControlName="email"
-      name="email"
-      id="username"
-    />
-    <span *ngIf="!email.valid && email.touched" class="text-danger"
-      >this field is invalid</span
-    >
-    <input
-      formControlName="password"
-      type="password"
-      placeholder="Password"
-      name="password"
-    />
-    <span *ngIf="!password.valid && password.touched" class="text-danger"
-      >this field is required</span
-    >
+  <form *ngIf="!isLoading" class="form" [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+    <input type="email" placeholder="Email" type="text" formControlName="email" name="email" id="username" />
+    <span *ngIf="!email.valid && email.touched" class="text-danger">this field is invalid</span>
+    <input formControlName="password" type="password" placeholder="Password" name="password" />
+    <span *ngIf="!password.valid && password.touched" class="text-danger">this field is required</span>
     <br />
     <button [disabled]="!signUpForm.valid" type="submit" id="login-button">
       Sign up
     </button>
     <br />
-    <span *ngIf="!signUpForm.valid && signUpForm.touched" class="text-danger"
-      >this form data is invalid</span
-    >
+    <span *ngIf="!signUpForm.valid && signUpForm.touched" class="text-danger">this form data is invalid</span>
   </form>
-  <span>Do not have an account yet?</span>
-  <a id="form-link" class="ml-2 text-white" [routerLink]="['/', 'dashboard']">
-    Sign In
-  </a>
+  <span class="text-gray-200 mr-2">Do not have an account yet?</span>
+  <app-button (clickEvent)="signIn()">Sign In</app-button>
 </ng-container>

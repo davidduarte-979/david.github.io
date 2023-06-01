@@ -1,27 +1,25 @@
-<ng-container>
-  <mat-spinner *ngIf="isLoading" class="m-auto my-5"></mat-spinner>
-  <div style="z-index: 10" *ngIf="error" class="alert alert-warning" role="alert">
-    {{ error }}
-    <button class="btn btn-primary" (click)="onClearError()" type="button">
-      Close
-    </button>
-  </div>
-  <form *ngIf="!isLoading" class="form" (ngSubmit)="onSubmit()" [formGroup]="signInForm">
-    <div>
-      <input formControlName="email" type="email" placeholder="Email" />
-      <span class="text-danger" *ngIf="!email.valid && email.touched">
-        This email is not valid
-      </span>
-    </div>
-    <input formControlName="password" type="password" placeholder="Password" />
-    <span *ngIf="!password.valid && password.touched">This password is not valid</span>
-    <br />
-    <button [disabled]="!signInForm.valid" type="submit" id="login-button">
-      Sign In
-    </button>
-  </form>
-  <span>Do have an account?</span> |
-  <button id="form-link" mat-raised-button [disabled]="true" [routerLink]="['/', 'dashboard', 'auth', 'register']">
-    Sign up
+<mat-spinner *ngIf="isLoading" class="m-auto my-5"></mat-spinner>
+<div style="z-index: 10" *ngIf="error" class="alert alert-warning" role="alert">
+  {{ error }}
+  <button class="btn btn-primary" (click)="onClearError()" type="button">
+    Close
   </button>
-</ng-container>
+</div>
+<form *ngIf="!isLoading" class="form" (ngSubmit)="onSubmit()" [formGroup]="signInForm">
+  <div>
+    <input formControlName="email" type="email" placeholder="Email" />
+    <span class="text-danger" *ngIf="!email.valid && email.touched">
+      This email is not valid
+    </span>
+  </div>
+  <input formControlName="password" type="password" placeholder="Password" />
+  <span *ngIf="!password.valid && password.touched">This password is not valid</span>
+  <br />
+  <button [disabled]="!signInForm.valid" type="submit" id="login-button">
+    Sign In
+  </button>
+</form>
+<span class="text-gray-200 mr-2">Do have an account?</span>
+<app-button (clickEvent)="signUp()" color="primary">
+  Sign up
+</app-button>
