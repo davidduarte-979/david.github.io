@@ -23,6 +23,7 @@ import { environment } from 'src/environments/environment';
 import { AuthEffects } from './admin/auth/store/auth.effects';
 import { ButtonComponent } from '@shared/components/button/button.component';
 import { AboutComponent } from './landing-page/components/about/about.component';
+import { ContactComponent } from './landing-page/components/contact/contact.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +34,8 @@ import { AboutComponent } from './landing-page/components/about/about.component'
     ProjectsComponent,
     SkillBarComponent,
     PageNotFoundComponent,
-    AboutComponent
+    AboutComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,

@@ -29,7 +29,7 @@ export class SkillsService {
     },
     {
       name: 'Node.js',
-      knowledge: 80,
+      knowledge: 100,
       logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg',
       yearsOfExperience: this.overAllYearsOfExperience,
       description: 'in Node.js, I have established a strong foundation in server-side JavaScript development. I possess in-depth knowledge and expertise in leveraging Node.js to build scalable and high-performance web applications.',
@@ -37,7 +37,7 @@ export class SkillsService {
     },
     {
       name: 'Css',
-      knowledge: 60,
+      knowledge: 100,
       logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-plain.svg',
       yearsOfExperience: this.overAllYearsOfExperience,
       description: 'With a strong command over CSS (Cascading Style Sheets), I possess the skills to create visually appealing and engaging user interfaces. I have developed expertise in leveraging CSS to style and layout web pages with precision and creativity.',
@@ -85,7 +85,7 @@ export class SkillsService {
     },
     {
       name: 'AWS',
-      knowledge: 50,
+      knowledge: 100,
       // proficient: true,
       logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg',
       yearsOfExperience: this.overAllYearsOfExperience,
@@ -135,7 +135,7 @@ export class SkillsService {
     },
     {
       name: 'C#',
-      knowledge: 50,
+      knowledge: 100,
       proficient: true,
       logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-line.svg',
       yearsOfExperience: this.overAllYearsOfExperience,
@@ -165,7 +165,7 @@ export class SkillsService {
     },
     {
       name: 'Jasmine',
-      knowledge: 60,
+      knowledge: 100,
       // proficient: true,
       logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jasmine/jasmine-plain.svg',
       yearsOfExperience: this.overAllYearsOfExperience,
