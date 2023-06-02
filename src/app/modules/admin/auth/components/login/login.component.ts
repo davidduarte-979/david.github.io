@@ -35,6 +35,11 @@ export class LoginComponent implements OnInit, OnDestroy {
     const password = this.signInForm.value.password;
     this.isLoading = true;
     this.store.dispatch(AuthActions.loginStart({ email, password }));
+    if(this.signInForm.invalid) {
+      this.signInForm.markAllAsTouched();
+      return;
+    }
+    this.router.navigate(['/dashboard'])
   }
   onClearError(): void {
     this.store.dispatch(AuthActions.clearError());
@@ -52,7 +57,7 @@ export class LoginComponent implements OnInit, OnDestroy {
   }
   private buildForm(): void {
     this.signInForm = new FormGroup({
-      email: new FormControl('david@duartechsolutions.com', [
+      email: new FormControl('', [
         Validators.required,
         Validators.email,
       ]),

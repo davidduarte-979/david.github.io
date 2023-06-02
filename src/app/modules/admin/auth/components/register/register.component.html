@@ -7,16 +7,22 @@
     </button>
   </div>
   <form *ngIf="!isLoading" class="form" [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
-    <input type="email" placeholder="Email" type="text" formControlName="email" name="email" id="username" />
-    <span *ngIf="!email.valid && email.touched" class="text-danger">this field is invalid</span>
-    <input formControlName="password" type="password" placeholder="Password" name="password" />
-    <span *ngIf="!password.valid && password.touched" class="text-danger">this field is required</span>
+
+    <div class="mb-4">
+      <input type="email" placeholder="Email" type="text" formControlName="email" name="email" id="username" />
+      <span *ngIf="!email.valid && email.touched" class="text-danger">this field is invalid</span>
+    </div>
+
+    <div class="mb-4">
+      <input formControlName="password" type="password" placeholder="Password" name="password" />
+      <span *ngIf="!password.valid && password.touched" class="text-danger">this field is required</span>
+    </div>
+
     <br />
-    <button [disabled]="!signUpForm.valid" type="submit" id="login-button">
+    <button type="submit" id="login-button">
       Sign up
     </button>
-    <br />
-    <span *ngIf="!signUpForm.valid && signUpForm.touched" class="text-danger">this form data is invalid</span>
+    
   </form>
   <span class="text-gray-200 mr-2">Do not have an account yet?</span>
   <app-button (clickEvent)="signIn()">Sign In</app-button>

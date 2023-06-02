@@ -12,7 +12,7 @@ export class NavService {
     },
     {
       title: 'Dashboard',
-      link: 'dashboard'
+      link: 'dashboard/auth'
     },
     {
       title: 'About',

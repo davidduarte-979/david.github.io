@@ -6,16 +6,21 @@
   </button>
 </div>
 <form *ngIf="!isLoading" class="form" (ngSubmit)="onSubmit()" [formGroup]="signInForm">
-  <div>
+
+  <div class="mb-4">
     <input formControlName="email" type="email" placeholder="Email" />
     <span class="text-danger" *ngIf="!email.valid && email.touched">
       This email is not valid
     </span>
   </div>
-  <input formControlName="password" type="password" placeholder="Password" />
-  <span *ngIf="!password.valid && password.touched">This password is not valid</span>
+
+  <div class="mb-4">
+    <input formControlName="password" type="password" placeholder="Password" />
+    <span class="text-danger" *ngIf="!password.valid && password.touched">This password is not valid</span>
+  </div>
+
   <br />
-  <button [disabled]="!signInForm.valid" type="submit" id="login-button">
+  <button type="submit" id="login-button">
     Sign In
   </button>
 </form>
