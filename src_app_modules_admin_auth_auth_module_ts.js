@@ -229,7 +229,7 @@ function LoginComponent_form_2_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](5, "input", 12)(6, "portfolio-error-validation-mesasage", 13);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](7, "br");
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](8, "button", 14);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](8, "portfolio-button", 14);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](9, " Sign In ");
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]()();
   }
@@ -300,7 +300,7 @@ LoginComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_3__["
   selectors: [["portfolio-login"]],
   decls: 7,
   vars: 3,
-  consts: [["class", "m-auto my-5", 4, "ngIf"], ["style", "z-index: 10", "class", "alert alert-warning", "role", "alert", 4, "ngIf"], ["class", "form", 3, "formGroup", "ngSubmit", 4, "ngIf"], [1, "text-gray-200", "mr-2"], ["color", "primary", 3, "clickEvent"], [1, "m-auto", "my-5"], ["role", "alert", 1, "alert", "alert-warning", 2, "z-index", "10"], ["type", "button", 1, "btn", "btn-primary", 3, "click"], [1, "form", 3, "formGroup", "ngSubmit"], [1, "mb-4"], ["formControlName", "email", "type", "email", "placeholder", "Email"], ["name", "Email", 3, "control"], ["formControlName", "password", "type", "password", "placeholder", "Password"], ["name", "Password", 3, "control"], ["type", "submit", "id", "login-button"]],
+  consts: [["class", "m-auto my-5", 4, "ngIf"], ["style", "z-index: 10", "class", "alert alert-warning", "role", "alert", 4, "ngIf"], ["class", "form", 3, "formGroup", "ngSubmit", 4, "ngIf"], [1, "text-gray-200", "mr-2"], ["color", "primary", 3, "clickEvent"], [1, "m-auto", "my-5"], ["role", "alert", 1, "alert", "alert-warning", 2, "z-index", "10"], ["type", "button", 1, "btn", "btn-primary", 3, "click"], [1, "form", 3, "formGroup", "ngSubmit"], [1, "mb-4"], ["formControlName", "email", "type", "email", "placeholder", "Email"], ["name", "Email", 3, "control"], ["formControlName", "password", "type", "password", "placeholder", "Password"], ["name", "Password", 3, "control"], ["type", "submit", "color", "warn", 1, "w-[250px]"]],
   template: function LoginComponent_Template(rf, ctx) {
     if (rf & 1) {
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](0, LoginComponent_mat_spinner_0_Template, 1, 0, "mat-spinner", 0);
@@ -402,8 +402,8 @@ function RegisterComponent_form_3_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](5, "input", 12)(6, "portfolio-error-validation-mesasage", 13);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](7, "br");
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](8, "button", 14);
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](9, " Sign up ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](8, "portfolio-button", 14);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](9, "Sign up");
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]()();
   }
   if (rf & 2) {
@@ -472,7 +472,7 @@ RegisterComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_3_
   selectors: [["portfolio-register"]],
   decls: 8,
   vars: 3,
-  consts: [["class", "m-auto my-5", 4, "ngIf"], ["style", "z-index: 10", "class", "alert alert-warning", "role", "alert", 4, "ngIf"], ["class", "form", 3, "formGroup", "ngSubmit", 4, "ngIf"], [1, "text-gray-200", "mr-2"], [3, "clickEvent"], [1, "m-auto", "my-5"], ["role", "alert", 1, "alert", "alert-warning", 2, "z-index", "10"], ["type", "button", 1, "btn", "btn-primary", 3, "click"], [1, "form", 3, "formGroup", "ngSubmit"], [1, "mb-4"], ["type", "email", "placeholder", "Email", "type", "text", "formControlName", "email", "name", "email", "id", "username"], ["name", "Email", 3, "control"], ["formControlName", "password", "type", "password", "placeholder", "Password", "name", "password"], ["name", "Password", 3, "control"], ["type", "submit", "id", "login-button"]],
+  consts: [["class", "m-auto my-5", 4, "ngIf"], ["style", "z-index: 10", "class", "alert alert-warning", "role", "alert", 4, "ngIf"], ["class", "form", 3, "formGroup", "ngSubmit", 4, "ngIf"], [1, "text-gray-200", "mr-2"], ["color", "primary", 3, "clickEvent"], [1, "m-auto", "my-5"], ["role", "alert", 1, "alert", "alert-warning", 2, "z-index", "10"], ["type", "button", 1, "btn", "btn-primary", 3, "click"], [1, "form", 3, "formGroup", "ngSubmit"], [1, "mb-4"], ["type", "email", "placeholder", "Email", "type", "text", "formControlName", "email", "name", "email", "id", "username"], ["name", "Email", 3, "control"], ["formControlName", "password", "type", "password", "placeholder", "Password", "name", "password"], ["name", "Password", 3, "control"], ["type", "submit", "color", "warn", 1, "w-[250px]"]],
   template: function RegisterComponent_Template(rf, ctx) {
     if (rf & 1) {
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementContainerStart"](0);

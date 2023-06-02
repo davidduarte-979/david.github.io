@@ -665,6 +665,9 @@ video {
 .w-\[128rem\] {
   width: 128rem;
 }
+.w-\[250px\] {
+  width: 250px;
+}
 .w-\[64rem\] {
   width: 64rem;
 }
@@ -1164,6 +1167,11 @@ body {
 
 .mat-mdc-raised-button.mat-primary {
   --mdc-protected-button-container-color: #9e00a8b1;
+  --mdc-protected-button-label-text-color: #fff;
+}
+
+.mat-mdc-raised-button.mat-warn {
+  --mdc-protected-button-container-color: #be1347;
   --mdc-protected-button-label-text-color: #fff;
 }
 

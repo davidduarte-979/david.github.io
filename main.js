@@ -936,7 +936,6 @@ const _c0 = ["*"];
 class ButtonComponent {
   constructor() {
     this.clickEvent = new _angular_core__WEBPACK_IMPORTED_MODULE_1__.EventEmitter();
-    this.color = 'primary';
   }
   triggerEvent() {
     this.clickEvent.emit(new Event('click'));
@@ -949,7 +948,9 @@ ButtonComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_1__[
   type: ButtonComponent,
   selectors: [["portfolio-button"]],
   inputs: {
-    color: "color"
+    color: "color",
+    type: "type",
+    class: "class"
   },
   outputs: {
     clickEvent: "clickEvent"
@@ -958,8 +959,8 @@ ButtonComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_1__[
   features: [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵStandaloneFeature"]],
   ngContentSelectors: _c0,
   decls: 2,
-  vars: 1,
-  consts: [["mat-raised-button", "", 1, "animate__animated", "animate__fadeInUp", "animate__slow", 3, "color", "click"]],
+  vars: 4,
+  consts: [["mat-raised-button", "", 1, "animate__animated", "animate__fadeInUp", "animate__slow", 3, "type", "color", "click"]],
   template: function ButtonComponent_Template(rf, ctx) {
     if (rf & 1) {
       _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵprojectionDef"]();
@@ -971,7 +972,8 @@ ButtonComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_1__[
       _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
     }
     if (rf & 2) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("color", ctx.color);
+      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵclassMap"](ctx.class);
+      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("type", ctx.type)("color", ctx.color);
     }
   },
   dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_2__.CommonModule, _shared_material_material_module__WEBPACK_IMPORTED_MODULE_0__.MaterialModule, _angular_material_button__WEBPACK_IMPORTED_MODULE_3__.MatButton],
