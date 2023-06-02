@@ -3,7 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { Subscription } from 'rxjs';
 import * as fromApp from '../../../../../store/app.reduce';
-import * as AuthActions from '../../store/auth.actions';
+import * as AuthActions from '../../../../../store/operations/auth/auth.actions';
 import { Router } from '@angular/router';
 @Component({
   selector: 'portfolio-register',

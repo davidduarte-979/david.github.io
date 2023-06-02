@@ -7,7 +7,7 @@ import {
 } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import * as fromApp from '../../../../../store/app.reduce';
-import * as AuthActions from '../../store/auth.actions';
+import * as AuthActions from '../../../../../store/operations/auth/auth.actions';
 import { Store } from '@ngrx/store';
 import { Router } from '@angular/router';
 import { DialogService } from '@core/services/dialog.service';

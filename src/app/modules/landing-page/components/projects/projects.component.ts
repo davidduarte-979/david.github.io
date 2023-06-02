@@ -5,7 +5,7 @@ import { map, take } from 'rxjs/operators';
 import { Project } from 'src/app/core/models/project';
 import { ServiceProjects } from '../../../../core/services/projects/project.service';
 import * as fromApp from '../../../../store/app.reduce';
-import * as ProjectAction from './store/projects.actions';
+import * as ProjectAction from '../../../../store/operations/projects/projects.actions';
 @Component({
   selector: 'portfolio-projects',
   templateUrl: './projects.component.html',

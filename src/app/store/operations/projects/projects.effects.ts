@@ -6,7 +6,7 @@ import { switchMap, map, tap } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { Project } from '@core/models/project';
 import { environment } from 'src/environments/environment';
-import * as fromApp from '../../../../../store/app.reduce';
+import * as fromApp from '../../app.reduce';
 @Injectable({
   providedIn: 'root',
 })

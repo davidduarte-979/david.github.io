@@ -1,5 +1,5 @@
-import * as fromProjects from '../modules/landing-page/components/projects/store/projects.reducer';
-import * as fromAuth from '../modules/admin/auth/store/auth.reducer';
+import * as fromProjects from './operations/projects/projects.reducer';
+import * as fromAuth from './operations/auth/auth.reducer';
 import { ActionReducerMap } from '@ngrx/store';
 
 export interface AppState {

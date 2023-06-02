@@ -8,11 +8,11 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderInterceptor } from '@core/services/auth/auth-interceptor.service';
-import { ProjectsEffects } from './modules/landing-page/components/projects/store/projects.effects';
+import { ProjectsEffects } from './store/operations/projects/projects.effects';
 import * as fromApp from './store/app.reduce';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from 'src/environments/environment';
-import { AuthEffects } from './modules/admin/auth/store/auth.effects';
+import { AuthEffects } from './store/operations/auth/auth.effects';
 import { ButtonComponent } from '@shared/components/button/button.component';
 
 @NgModule({
