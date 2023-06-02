@@ -1,4 +1,4 @@
-<app-wrapper-container>
+<portfolio-wrapper-container>
   <div class="py-10">
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
       <div class="mx-auto max-w-2xl sm:text-center">
@@ -20,8 +20,9 @@
     </div>
     <div *ngIf="!error" class="container">
       <div class="row justify-content-center">
-        <app-card class="py-3 col-12 col-md-5 col-lg-4" *ngFor="let project of projects" [project]="project"></app-card>
+        <portfolio-card class="py-3 col-12 col-md-5 col-lg-4" *ngFor="let project of projects"
+          [project]="project"></portfolio-card>
       </div>
     </div>
   </div>
-</app-wrapper-container>
+</portfolio-wrapper-container>

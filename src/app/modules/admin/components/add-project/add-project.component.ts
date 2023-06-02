@@ -10,7 +10,7 @@ import { Project } from '@core/models/project';
 import { ServiceProjects } from '@core/services/projects/project.service';
 
 @Component({
-  selector: 'app-add-project',
+  selector: 'portfolio-add-project',
   templateUrl: './add-project.component.html',
   styleUrls: ['./add-project.component.scss'],
 })

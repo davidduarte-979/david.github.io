@@ -3,7 +3,7 @@ import { NavLink } from '@core/models/nav-link';
 import { NavService } from '@core/services/nav.service';
 
 @Component({
-  selector: 'app-footer',
+  selector: 'portfolio-footer',
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.scss'],
 })

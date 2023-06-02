@@ -32,7 +32,7 @@
           <ul class="pl-0 md:pl-8" role="list" class="mt-8 text-gray-600">
             <ng-container *ngFor="let skill of skills">
               <ng-container *ngIf="skill.category === techCategoryEnum">
-                <app-tech-skill [skill]="skill"></app-tech-skill>
+                <portfolio-tech-skill [skill]="skill"></portfolio-tech-skill>
               </ng-container>
             </ng-container>
           </ul>

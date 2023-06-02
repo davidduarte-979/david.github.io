@@ -8,7 +8,7 @@ import * as fromApp from '../../../store/app.reduce';
 import * as AuthActions from '../auth/store/auth.actions';
 import { Store } from '@ngrx/store';
 @Component({
-  selector: 'app-sidebar',
+  selector: 'portfolio-sidebar',
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.scss'],
 })

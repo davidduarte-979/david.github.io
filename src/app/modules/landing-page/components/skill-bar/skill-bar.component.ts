@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Skill } from 'src/app/core/models/skills';
 import { SkillsService } from '../../../../core/services/skills/skills.service';
 @Component({
-  selector: 'app-skill-bar',
+  selector: 'portfolio-skill-bar',
   templateUrl: './skill-bar.component.html',
   styleUrls: ['./skill-bar.component.scss'],
 })

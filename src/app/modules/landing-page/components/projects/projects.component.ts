@@ -7,7 +7,7 @@ import { ServiceProjects } from '../../../../core/services/projects/project.serv
 import * as fromApp from '../../../../store/app.reduce';
 import * as ProjectAction from './store/projects.actions';
 @Component({
-  selector: 'app-projects',
+  selector: 'portfolio-projects',
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.scss'],
 })

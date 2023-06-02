@@ -1,4 +1,4 @@
-<app-banner>
+<portfolio-banner>
   <figure class="rounded-2xl py-10">
     <img class="mx-auto h-48 w-48 rounded-full md:h-56 md:w-56" src="assets/img/david_profile.jpg"
       alt="Profile picture">
@@ -9,13 +9,13 @@
     <p>Highly skilled and innovative Software Engineer
       with a strong background in developing and implementing cutting-edge software solutions.</p>
     <div class="mt-10 flex items-center justify-center gap-x-6">
-      <app-button (clickEvent)="downloadResumen()">Get Resume Here</app-button>
+      <portfolio-button (clickEvent)="downloadResumen()">Get Resume Here</portfolio-button>
     </div>
   </div>
-</app-banner>
+</portfolio-banner>
 <ng-container *ngFor="let tech of techStack">
-  <app-category-tech-skill [skills]="skills" [cateroryTitle]="tech.categoryTitle"
+  <portfolio-category-tech-skill [skills]="skills" [cateroryTitle]="tech.categoryTitle"
     [techCategoryEnum]="tech.techCategoryEnum" [imgUrl]="tech.imgUrl" [rtl]="tech.rtl">
     {{tech.description}}
-  </app-category-tech-skill>
+  </portfolio-category-tech-skill>
 </ng-container>

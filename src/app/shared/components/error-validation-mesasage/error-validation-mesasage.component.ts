@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { FormControl, AbstractControl } from '@angular/forms';
 
 @Component({
-  selector: 'app-error-validation-mesasage',
+  selector: 'portfolio-error-validation-mesasage',
   templateUrl: './error-validation-mesasage.component.html',
   styleUrls: ['./error-validation-mesasage.component.scss']
 })

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-newsletter',
+  selector: 'portfolio-newsletter',
   templateUrl: './newsletter.component.html',
   styleUrls: ['./newsletter.component.scss']
 })

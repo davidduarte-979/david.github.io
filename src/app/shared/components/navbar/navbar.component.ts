@@ -5,7 +5,7 @@ import { NavService } from '@core/services/nav.service';
 import { filter } from 'rxjs/operators';
 
 @Component({
-  selector: 'app-navbar',
+  selector: 'portfolio-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss']
 })

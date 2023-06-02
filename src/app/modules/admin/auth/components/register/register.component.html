@@ -10,20 +10,22 @@
 
     <div class="mb-4">
       <input type="email" placeholder="Email" type="text" formControlName="email" name="email" id="username" />
-      <app-error-validation-mesasage [control]="signUpForm.get('email')" name="Email"></app-error-validation-mesasage>
+      <portfolio-error-validation-mesasage [control]="signUpForm.get('email')"
+        name="Email"></portfolio-error-validation-mesasage>
     </div>
 
     <div class="mb-4">
       <input formControlName="password" type="password" placeholder="Password" name="password" />
-      <app-error-validation-mesasage [control]="signUpForm.get('password')" name="Password"></app-error-validation-mesasage>
+      <portfolio-error-validation-mesasage [control]="signUpForm.get('password')"
+        name="Password"></portfolio-error-validation-mesasage>
     </div>
 
     <br />
     <button type="submit" id="login-button">
       Sign up
     </button>
-    
+
   </form>
   <span class="text-gray-200 mr-2">Do not have an account yet?</span>
-  <app-button (clickEvent)="signIn()">Sign In</app-button>
+  <portfolio-button (clickEvent)="signIn()">Sign In</portfolio-button>
 </ng-container>

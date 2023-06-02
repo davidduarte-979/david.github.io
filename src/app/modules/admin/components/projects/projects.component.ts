@@ -7,7 +7,7 @@ import { Project } from '@core/models/project';
 import { ServiceProjects } from '@core/services/projects/project.service';
 import { Subscription } from 'rxjs';
 @Component({
-  selector: 'app-projects',
+  selector: 'portfolio-projects',
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.scss'],
 })

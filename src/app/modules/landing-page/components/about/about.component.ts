@@ -7,7 +7,7 @@ import { FileDownloadsService } from '@core/services/file-downloads.service';
 import { SkillsService } from '@core/services/skills/skills.service';
 
 @Component({
-  selector: 'app-about',
+  selector: 'portfolio-about',
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.scss']
 })

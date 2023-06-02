@@ -11,7 +11,7 @@ import * as AuthActions from '../../store/auth.actions';
 import { Store } from '@ngrx/store';
 import { Router } from '@angular/router';
 @Component({
-  selector: 'app-login',
+  selector: 'portfolio-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
 })

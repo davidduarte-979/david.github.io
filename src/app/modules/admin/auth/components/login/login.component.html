@@ -9,12 +9,14 @@
 
   <div class="mb-4">
     <input formControlName="email" type="email" placeholder="Email" />
-    <app-error-validation-mesasage [control]="signInForm.get('email')" name="Email"></app-error-validation-mesasage>
+    <portfolio-error-validation-mesasage [control]="signInForm.get('email')"
+      name="Email"></portfolio-error-validation-mesasage>
   </div>
 
   <div class="mb-4">
     <input formControlName="password" type="password" placeholder="Password" />
-    <app-error-validation-mesasage [control]="signInForm.get('password')" name="Password"></app-error-validation-mesasage>
+    <portfolio-error-validation-mesasage [control]="signInForm.get('password')"
+      name="Password"></portfolio-error-validation-mesasage>
   </div>
 
   <br />
@@ -23,6 +25,6 @@
   </button>
 </form>
 <span class="text-gray-200 mr-2">Do have an account?</span>
-<app-button (clickEvent)="signUp()" color="primary">
+<portfolio-button (clickEvent)="signUp()" color="primary">
   Sign up
-</app-button>
+</portfolio-button>

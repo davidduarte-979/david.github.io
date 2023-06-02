@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { MaterialModule } from '@shared/material/material.module';
 
 @Component({
-  selector: 'app-button',
+  selector: 'portfolio-button',
   standalone: true,
   imports: [CommonModule, MaterialModule],
   templateUrl: './button.component.html',

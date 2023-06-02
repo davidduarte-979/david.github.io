@@ -6,7 +6,7 @@ import * as fromApp from '../../../../../store/app.reduce';
 import * as AuthActions from '../../store/auth.actions';
 import { Router } from '@angular/router';
 @Component({
-  selector: 'app-register',
+  selector: 'portfolio-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss'],
 })
