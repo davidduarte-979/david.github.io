@@ -82,3 +82,8 @@ body {
   --mdc-protected-button-container-color: #9e00a8b1;
   --mdc-protected-button-label-text-color: #fff;
 }
+
+.mat-mdc-raised-button.mat-warn {
+  --mdc-protected-button-container-color: #be1347;
+  --mdc-protected-button-label-text-color: #fff;
+}

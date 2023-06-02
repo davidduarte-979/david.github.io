@@ -8,21 +8,40 @@
 <form *ngIf="!isLoading" class="form" (ngSubmit)="onSubmit()" [formGroup]="signInForm">
 
   <div class="mb-4">
-    <input formControlName="email" type="email" placeholder="Email" />
-    <portfolio-error-validation-mesasage [control]="signInForm.get('email')"
-      name="Email"></portfolio-error-validation-mesasage>
+    <input
+      formControlName="email"
+      type="email"
+      placeholder="Email" />
+
+    <portfolio-error-validation-mesasage
+      [control]="signInForm.get('email')"
+      name="Email">
+    </portfolio-error-validation-mesasage>
   </div>
 
   <div class="mb-4">
-    <input formControlName="password" type="password" placeholder="Password" />
-    <portfolio-error-validation-mesasage [control]="signInForm.get('password')"
-      name="Password"></portfolio-error-validation-mesasage>
+    <input
+      formControlName="password"
+      type="password"
+      placeholder="Password" />
+
+    <portfolio-error-validation-mesasage
+      [control]="signInForm.get('password')"
+      name="Password">
+    </portfolio-error-validation-mesasage>
   </div>
 
   <br />
-  <button type="submit" id="login-button">
+  <portfolio-button
+    type='submit'
+    color="warn"
+    class="w-[250px]"
+    >
     Sign In
-  </button>
+  </portfolio-button>
+  <!-- <button type="submit" id="login-button">
+    Sign In
+  </button> -->
 </form>
 <span class="text-gray-200 mr-2">Do have an account?</span>
 <portfolio-button (clickEvent)="signUp()" color="primary">

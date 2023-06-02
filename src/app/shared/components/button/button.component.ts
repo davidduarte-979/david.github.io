@@ -11,7 +11,9 @@ import { MaterialModule } from '@shared/material/material.module';
 })
 export class ButtonComponent {
   @Output() clickEvent = new EventEmitter();
-  @Input() color: string = 'primary'
+  @Input() color?: 'primary' | 'accent' | 'warn';
+  @Input() type: 'submit' | 'button';
+  @Input() class?: string;
 
   triggerEvent(): void{
     this.clickEvent.emit(new Event('click'))

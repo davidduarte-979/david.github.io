@@ -21,11 +21,15 @@
     </div>
 
     <br />
-    <button type="submit" id="login-button">
-      Sign up
-    </button>
+    <portfolio-button
+      type="submit"
+      color="warn"
+      class="w-[250px]"
+    >Sign up</portfolio-button>
 
   </form>
   <span class="text-gray-200 mr-2">Do not have an account yet?</span>
-  <portfolio-button (clickEvent)="signIn()">Sign In</portfolio-button>
+  <portfolio-button
+    color="primary"
+    (clickEvent)="signIn()">Sign In</portfolio-button>
 </ng-container>
