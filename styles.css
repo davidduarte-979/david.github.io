@@ -1157,6 +1157,10 @@ body {
 .mat-typography textarea.ng-invalid.ng-touched {
   border: 1px solid red !important;
 }
+.mat-typography span.error {
+  --tw-text-opacity: 1;
+  color: rgb(220 38 38 / var(--tw-text-opacity));
+}
 
 .mat-mdc-raised-button.mat-primary {
   --mdc-protected-button-container-color: #9e00a8b1;
