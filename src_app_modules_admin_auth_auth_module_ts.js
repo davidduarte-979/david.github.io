@@ -130,13 +130,13 @@ LayoutComponent.ɵfac = function LayoutComponent_Factory(t) {
 };
 LayoutComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({
   type: LayoutComponent,
-  selectors: [["app-layout"]],
+  selectors: [["portfolio-layout"]],
   decls: 23,
   vars: 0,
   consts: [[1, "main-container"], [1, "top"], [1, "bottom"], [1, "main-container__forms"], [1, "wrapper"], [1, "container"], [1, "text-white"], [1, "bg-bubbles"]],
   template: function LayoutComponent_Template(rf, ctx) {
     if (rf & 1) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "app-wrapper-container")(1, "div", 0);
+      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "portfolio-wrapper-container")(1, "div", 0);
       _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](2, "div", 1)(3, "div", 2);
       _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](4, "div", 3)(5, "div", 4)(6, "div", 5)(7, "h1", 6);
       _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](8, "Welcome David Duarte");
@@ -223,10 +223,10 @@ function LoginComponent_form_2_Template(rf, ctx) {
       return _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵresetView"](ctx_r5.onSubmit());
     });
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](1, "div", 9);
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](2, "input", 10)(3, "app-error-validation-mesasage", 11);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](2, "input", 10)(3, "portfolio-error-validation-mesasage", 11);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](4, "div", 9);
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](5, "input", 12)(6, "app-error-validation-mesasage", 13);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](5, "input", 12)(6, "portfolio-error-validation-mesasage", 13);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](7, "br");
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](8, "button", 14);
@@ -297,7 +297,7 @@ LoginComponent.ɵfac = function LoginComponent_Factory(t) {
 };
 LoginComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineComponent"]({
   type: LoginComponent,
-  selectors: [["app-login"]],
+  selectors: [["portfolio-login"]],
   decls: 7,
   vars: 3,
   consts: [["class", "m-auto my-5", 4, "ngIf"], ["style", "z-index: 10", "class", "alert alert-warning", "role", "alert", 4, "ngIf"], ["class", "form", 3, "formGroup", "ngSubmit", 4, "ngIf"], [1, "text-gray-200", "mr-2"], ["color", "primary", 3, "clickEvent"], [1, "m-auto", "my-5"], ["role", "alert", 1, "alert", "alert-warning", 2, "z-index", "10"], ["type", "button", 1, "btn", "btn-primary", 3, "click"], [1, "form", 3, "formGroup", "ngSubmit"], [1, "mb-4"], ["formControlName", "email", "type", "email", "placeholder", "Email"], ["name", "Email", 3, "control"], ["formControlName", "password", "type", "password", "placeholder", "Password"], ["name", "Password", 3, "control"], ["type", "submit", "id", "login-button"]],
@@ -309,8 +309,8 @@ LoginComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_3__["
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](3, "span", 3);
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](4, "Do have an account?");
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](5, "app-button", 4);
-      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("clickEvent", function LoginComponent_Template_app_button_clickEvent_5_listener() {
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](5, "portfolio-button", 4);
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("clickEvent", function LoginComponent_Template_portfolio_button_clickEvent_5_listener() {
         return ctx.signUp();
       });
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](6, " Sign up\n");
@@ -396,10 +396,10 @@ function RegisterComponent_form_3_Template(rf, ctx) {
       return _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵresetView"](ctx_r5.onSubmit());
     });
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](1, "div", 9);
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](2, "input", 10)(3, "app-error-validation-mesasage", 11);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](2, "input", 10)(3, "portfolio-error-validation-mesasage", 11);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](4, "div", 9);
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](5, "input", 12)(6, "app-error-validation-mesasage", 13);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](5, "input", 12)(6, "portfolio-error-validation-mesasage", 13);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](7, "br");
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](8, "button", 14);
@@ -469,7 +469,7 @@ RegisterComponent.ɵfac = function RegisterComponent_Factory(t) {
 };
 RegisterComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineComponent"]({
   type: RegisterComponent,
-  selectors: [["app-register"]],
+  selectors: [["portfolio-register"]],
   decls: 8,
   vars: 3,
   consts: [["class", "m-auto my-5", 4, "ngIf"], ["style", "z-index: 10", "class", "alert alert-warning", "role", "alert", 4, "ngIf"], ["class", "form", 3, "formGroup", "ngSubmit", 4, "ngIf"], [1, "text-gray-200", "mr-2"], [3, "clickEvent"], [1, "m-auto", "my-5"], ["role", "alert", 1, "alert", "alert-warning", 2, "z-index", "10"], ["type", "button", 1, "btn", "btn-primary", 3, "click"], [1, "form", 3, "formGroup", "ngSubmit"], [1, "mb-4"], ["type", "email", "placeholder", "Email", "type", "text", "formControlName", "email", "name", "email", "id", "username"], ["name", "Email", 3, "control"], ["formControlName", "password", "type", "password", "placeholder", "Password", "name", "password"], ["name", "Password", 3, "control"], ["type", "submit", "id", "login-button"]],
@@ -482,8 +482,8 @@ RegisterComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_3_
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](4, "span", 3);
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](5, "Do not have an account yet?");
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](6, "app-button", 4);
-      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("clickEvent", function RegisterComponent_Template_app_button_clickEvent_6_listener() {
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](6, "portfolio-button", 4);
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("clickEvent", function RegisterComponent_Template_portfolio_button_clickEvent_6_listener() {
         return ctx.signIn();
       });
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](7, "Sign In");

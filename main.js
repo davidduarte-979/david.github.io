@@ -947,7 +947,7 @@ ButtonComponent.ɵfac = function ButtonComponent_Factory(t) {
 };
 ButtonComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({
   type: ButtonComponent,
-  selectors: [["app-button"]],
+  selectors: [["portfolio-button"]],
   inputs: {
     color: "color"
   },
@@ -1007,7 +1007,7 @@ PageNotFoundComponent.ɵfac = function PageNotFoundComponent_Factory(t) {
 };
 PageNotFoundComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
   type: PageNotFoundComponent,
-  selectors: [["app-page-not-found"]],
+  selectors: [["portfolio-page-not-found"]],
   decls: 8,
   vars: 2,
   consts: [[1, "notFound__hero"], ["src", "https://media-porfolio.s3.us-east-2.amazonaws.com/images/404_error.png", "alt", "astronaut"], [1, "container-astro"], [1, "img-astro"], [3, "routerLink"], ["src", "https://media-porfolio.s3.us-east-2.amazonaws.com/images/astronauta.png", "alt", "astro"]],

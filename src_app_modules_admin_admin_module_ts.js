@@ -301,7 +301,7 @@ AddProjectComponent.ɵfac = function AddProjectComponent_Factory(t) {
 };
 AddProjectComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({
   type: AddProjectComponent,
-  selectors: [["app-add-project"]],
+  selectors: [["portfolio-add-project"]],
   decls: 37,
   vars: 9,
   consts: [[1, "py-4"], [1, "text-center"], [1, "d-flex", "flex-column", "justify-content-center", "align-items-center", 3, "formGroup", "ngSubmit"], ["appearance", "fill", 1, "mb-2"], ["formControlName", "projectName", "matInput", ""], [4, "ngIf"], ["formControlName", "title", "matInput", ""], ["formControlName", "description", "matInput", ""], ["formControlName", "imageUrl", "matInput", ""], ["formControlName", "projectUrl", "matInput", ""], ["formControlName", "technologies", "matInput", ""], ["class", "mt-2", 4, "ngIf"], ["mat-raised-button", "", "type", "submit", "color", "primary", 3, "disabled"], [1, "mt-2"]],
@@ -410,7 +410,7 @@ ContactComponent.ɵfac = function ContactComponent_Factory(t) {
 };
 ContactComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
   type: ContactComponent,
-  selectors: [["app-contact"]],
+  selectors: [["portfolio-contact"]],
   decls: 2,
   vars: 0,
   template: function ContactComponent_Template(rf, ctx) {
@@ -447,7 +447,7 @@ DashboardComponent.ɵfac = function DashboardComponent_Factory(t) {
 };
 DashboardComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
   type: DashboardComponent,
-  selectors: [["app-dashboard"]],
+  selectors: [["portfolio-dashboard"]],
   decls: 2,
   vars: 0,
   template: function DashboardComponent_Template(rf, ctx) {
@@ -582,7 +582,7 @@ EditProjectComponent.ɵfac = function EditProjectComponent_Factory(t) {
 };
 EditProjectComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({
   type: EditProjectComponent,
-  selectors: [["app-edit-project"]],
+  selectors: [["portfolio-edit-project"]],
   decls: 36,
   vars: 8,
   consts: [[1, "py-4"], [1, "text-center"], [1, "d-flex", "flex-column", "justify-content-center", "align-items-center", 3, "formGroup", "ngSubmit"], ["appearance", "fill", 1, "mb-2"], ["formControlName", "projectName", "matInput", ""], [4, "ngIf"], ["appearance", "fill", 1, "mt-2"], ["formControlName", "title", "matInput", ""], ["formControlName", "description", "matInput", ""], ["formControlName", "imageUrl", "matInput", ""], ["formControlName", "projectUrl", "matInput", ""], ["formControlName", "technologies", "matInput", ""], ["mat-raised-button", "", "type", "submit", "color", "primary", 1, "mt-2", 3, "disabled"]],
@@ -921,7 +921,7 @@ ProjectsComponent.ɵfac = function ProjectsComponent_Factory(t) {
 };
 ProjectsComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({
   type: ProjectsComponent,
-  selectors: [["app-projects"]],
+  selectors: [["portfolio-projects"]],
   decls: 10,
   vars: 4,
   consts: [[1, "container"], ["mat-raised-button", "", "color", "primary", 2, "margin", "10px", 3, "routerLink"], ["matInput", "", "placeholder", "Ex. Mia", 3, "keyup"], ["input", ""], ["class", "m-auto mb-5", 4, "ngIf"], ["class", "mat-elevation-z8", 4, "ngIf"], [1, "m-auto", "mb-5"], [1, "mat-elevation-z8"], ["mat-table", "", "matSort", "", 3, "dataSource"], ["matColumnDef", "id"], ["mat-header-cell", "", "mat-sort-header", "", 4, "matHeaderCellDef"], ["mat-cell", "", 4, "matCellDef"], ["matColumnDef", "title"], ["matColumnDef", "projectUrl"], ["matColumnDef", "imageUrl"], ["matColumnDef", "Actions"], ["mat-header-cell", "", "mat-sort-header", "", "class", "text-center", 4, "matHeaderCellDef"], ["mat-header-row", "", 4, "matHeaderRowDef"], ["mat-row", "", 4, "matRowDef", "matRowDefColumns"], ["class", "mat-row", 4, "matNoDataRow"], [3, "pageSizeOptions"], ["mat-header-cell", "", "mat-sort-header", ""], ["mat-cell", ""], [3, "href"], ["mat-header-cell", "", "mat-sort-header", "", 1, "text-center"], [1, "d-flex", "justify-content-center"], ["mat-raised-button", "", "color", "primary", 2, "margin-right", "5px", 3, "routerLink"], ["mat-raised-button", "", "color", "warn", 3, "click"], ["mat-header-row", ""], ["mat-row", ""], [1, "mat-row"], ["colspan", "4", 1, "mat-cell"]],
@@ -979,7 +979,7 @@ SkillsComponent.ɵfac = function SkillsComponent_Factory(t) {
 };
 SkillsComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
   type: SkillsComponent,
-  selectors: [["app-skills"]],
+  selectors: [["portfolio-skills"]],
   decls: 2,
   vars: 0,
   template: function SkillsComponent_Template(rf, ctx) {
@@ -1087,7 +1087,7 @@ SidebarComponent.ɵfac = function SidebarComponent_Factory(t) {
 };
 SidebarComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineComponent"]({
   type: SidebarComponent,
-  selectors: [["app-sidebar"]],
+  selectors: [["portfolio-sidebar"]],
   decls: 27,
   vars: 21,
   consts: [[1, "sidenav-container"], ["fixedInViewport", "", 1, "sidenav", 3, "mode", "opened"], ["drawer", ""], ["mat-list-item", "", 3, "routerLink"], ["color", "primary"], ["type", "button", "aria-label", "Toggle sidenav", "mat-icon-button", "", 3, "click", 4, "ngIf"], [1, "d-flex", "justify-content-between", "w-100"], ["mat-raised-button", "", "color", "warn", 3, "click"], ["type", "button", "aria-label", "Toggle sidenav", "mat-icon-button", "", 3, "click"], ["aria-label", "Side nav toggle icon"]],

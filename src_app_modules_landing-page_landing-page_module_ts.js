@@ -134,7 +134,7 @@ __webpack_require__.r(__webpack_exports__);
 function AboutComponent_ng_container_13_Template(rf, ctx) {
   if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementContainerStart"](0);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](1, "app-category-tech-skill", 6);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](1, "portfolio-category-tech-skill", 6);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementContainerEnd"]();
@@ -175,13 +175,13 @@ AboutComponent.ɵfac = function AboutComponent_Factory(t) {
 };
 AboutComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdefineComponent"]({
   type: AboutComponent,
-  selectors: [["app-about"]],
+  selectors: [["portfolio-about"]],
   decls: 14,
   vars: 1,
   consts: [[1, "rounded-2xl", "py-10"], ["src", "assets/img/david_profile.jpg", "alt", "Profile picture", 1, "mx-auto", "h-48", "w-48", "rounded-full", "md:h-56", "md:w-56"], [1, "mx-auto", "text-center"], [1, "mt-10", "flex", "items-center", "justify-center", "gap-x-6"], [3, "clickEvent"], [4, "ngFor", "ngForOf"], [3, "skills", "cateroryTitle", "techCategoryEnum", "imgUrl", "rtl"]],
   template: function AboutComponent_Template(rf, ctx) {
     if (rf & 1) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "app-banner")(1, "figure", 0);
+      _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "portfolio-banner")(1, "figure", 0);
       _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelement"](2, "img", 1);
       _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
       _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](3, "div", 2)(4, "h1");
@@ -193,8 +193,8 @@ AboutComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_7__["
       _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](8, "p");
       _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](9, "Highly skilled and innovative Software Engineer with a strong background in developing and implementing cutting-edge software solutions.");
       _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](10, "div", 3)(11, "app-button", 4);
-      _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵlistener"]("clickEvent", function AboutComponent_Template_app_button_clickEvent_11_listener() {
+      _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](10, "div", 3)(11, "portfolio-button", 4);
+      _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵlistener"]("clickEvent", function AboutComponent_Template_portfolio_button_clickEvent_11_listener() {
         return ctx.downloadResumen();
       });
       _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](12, "Get Resume Here");
@@ -236,7 +236,7 @@ ContactComponent.ɵfac = function ContactComponent_Factory(t) {
 };
 ContactComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({
   type: ContactComponent,
-  selectors: [["app-contact"]],
+  selectors: [["portfolio-contact"]],
   decls: 71,
   vars: 0,
   consts: [[1, "relative", "isolate", "bg-gray-950"], [1, "mx-auto", "grid", "max-w-7xl", "grid-cols-1", "lg:grid-cols-2"], [1, "relative", "px-6", "pb-20", "pt-24", "sm:pt-32", "lg:static", "lg:px-8", "lg:py-48"], [1, "mx-auto", "max-w-xl", "lg:mx-0", "lg:max-w-lg"], [1, "absolute", "inset-y-0", "left-0", "-z-10", "w-full", "overflow-hidden", "ring-1", "ring-white/5", "lg:w-1/2"], ["aria-hidden", "true", 1, "absolute", "inset-0", "h-full", "w-full", "stroke-gray-700", "[mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]"], ["id", "54f88622-e7f8-4f1d-aaf9-c2f5e46dd1f2", "width", "200", "height", "200", "x", "100%", "y", "-1", "patternUnits", "userSpaceOnUse"], ["d", "M130 200V.5M.5 .5H200", "fill", "none"], ["x", "100%", "y", "-1", 1, "overflow-visible", "fill-gray-800/20"], ["d", "M-470.5 0h201v201h-201Z", "stroke-width", "0"], ["width", "100%", "height", "100%", "stroke-width", "0", "fill", "url(#54f88622-e7f8-4f1d-aaf9-c2f5e46dd1f2)"], ["aria-hidden", "true", 1, "absolute", "-left-56", "top-[calc(100%-13rem)]", "transform-gpu", "blur-3xl", "lg:left-[max(-14rem,calc(100%-59rem))]", "lg:top-[calc(50%-7rem)]"], [1, "aspect-[1155/678]", "w-[72.1875rem]", "bg-gradient-to-br", "from-[#ff80b5]", "to-[#9089fc]", "opacity-20", 2, "clip-path", "polygon(74.1% 56.1%, 100% 38.6%, 97.5% 73.3%, 85.5% 100%, 80.7% 98.2%, 72.5% 67.7%, 60.2% 37.8%, 52.4% 32.2%, 47.5% 41.9%, 45.2% 65.8%, 27.5% 23.5%, 0.1% 35.4%, 17.9% 0.1%, 27.6% 23.5%, 76.1% 2.6%, 74.1% 56.1%)"], [1, "text-3xl", "font-bold", "tracking-tight", "text-white"], [1, "mt-6", "text-lg", "leading-8", "text-gray-300"], [1, "mt-10", "space-y-4", "text-base", "leading-7", "text-gray-300"], [1, "flex", "gap-x-4"], [1, "flex-none"], [1, "sr-only"], ["fill", "none", "viewBox", "0 0 24 24", "stroke-width", "1.5", "stroke", "currentColor", "aria-hidden", "true", 1, "h-7", "w-6", "text-gray-400"], ["stroke-linecap", "round", "stroke-linejoin", "round", "d", "M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008z"], ["stroke-linecap", "round", "stroke-linejoin", "round", "d", "M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"], ["href", "tel:+1 (555) 234-5678", 1, "hover:text-white"], ["stroke-linecap", "round", "stroke-linejoin", "round", "d", "M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"], ["href", "mailto:hello@example.com", 1, "hover:text-white"], [1, "px-6", "pb-24", "pt-20", "sm:pb-32", "lg:px-8", "lg:py-48"], [1, "mx-auto", "max-w-xl", "lg:mr-0", "lg:max-w-lg"], [1, "grid", "grid-cols-1", "gap-x-8", "gap-y-6", "sm:grid-cols-2"], ["for", "first-name"], ["type", "text", "name", "first-name", "id", "first-name"], ["for", "last-name"], ["type", "text", "name", "last-name", "id", "last-name"], [1, "sm:col-span-2"], ["for", "email"], ["type", "email", "name", "email", "id", "email"], ["for", "phone-number"], ["type", "tel", "name", "phone-number", "id", "phone-number"], ["for", "message"], ["name", "message", "id", "message", "rows", "4"], [1, "mt-8", "flex", "justify-end"]],
@@ -320,7 +320,7 @@ ContactComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_1__
       _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
       _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](67, "textarea", 38);
       _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](68, "div", 39)(69, "app-button");
+      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](68, "div", 39)(69, "portfolio-button");
       _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](70, "Send message");
       _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]()()()()()();
     }
@@ -363,7 +363,7 @@ HeroComponent.ɵfac = function HeroComponent_Factory(t) {
 };
 HeroComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({
   type: HeroComponent,
-  selectors: [["app-hero"]],
+  selectors: [["portfolio-hero"]],
   decls: 12,
   vars: 0,
   consts: [[1, "hero"], [1, "container", "px-4", "px-lg-5", "d-flex", "h-100", "align-items-center", "justify-content-center"], [1, "d-flex", "justify-content-center"], [1, "text-center"], [1, "fs-3", "mx-auto", "my-0", "text-uppercase", "animate__animated", "animate__fadeInUp", "animate__slow"], [1, "text-white-50", "mx-auto", "mt-2", "mb-5", "animate__animated", "animate__fadeIn", "animate__delay-2s"], ["color", "", 3, "clickEvent"]],
@@ -377,8 +377,8 @@ HeroComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_1__["�
       _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](8, "h2", 5);
       _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](9, " Professional fullstack Web Developer ");
       _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](10, "app-button", 6);
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("clickEvent", function HeroComponent_Template_app_button_clickEvent_10_listener() {
+      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](10, "portfolio-button", 6);
+      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("clickEvent", function HeroComponent_Template_portfolio_button_clickEvent_10_listener() {
         return ctx.getStarted();
       });
       _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](11, "Get Started");
@@ -419,16 +419,16 @@ LayoutComponent.ɵfac = function LayoutComponent_Factory(t) {
 };
 LayoutComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineComponent"]({
   type: LayoutComponent,
-  selectors: [["app-layout"]],
+  selectors: [["portfolio-layout"]],
   decls: 4,
   vars: 0,
   template: function LayoutComponent_Template(rf, ctx) {
     if (rf & 1) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](0, "app-navbar");
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](0, "portfolio-navbar");
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](1, "main");
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](2, "router-outlet");
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](3, "app-footer");
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](3, "portfolio-footer");
     }
   },
   dependencies: [_angular_router__WEBPACK_IMPORTED_MODULE_3__.RouterOutlet, _shared_components_navbar_navbar_component__WEBPACK_IMPORTED_MODULE_0__.NavbarComponent, _shared_components_footer_footer_component__WEBPACK_IMPORTED_MODULE_1__.FooterComponent],
@@ -461,7 +461,7 @@ CardComponent.ɵfac = function CardComponent_Factory(t) {
 };
 CardComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
   type: CardComponent,
-  selectors: [["app-card"]],
+  selectors: [["portfolio-card"]],
   inputs: {
     project: "project"
   },
@@ -558,9 +558,9 @@ function ProjectsComponent_div_11_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtextInterpolate1"](" ", ctx_r1.error, " ");
   }
 }
-function ProjectsComponent_div_12_app_card_2_Template(rf, ctx) {
+function ProjectsComponent_div_12_portfolio_card_2_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](0, "app-card", 14);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](0, "portfolio-card", 14);
   }
   if (rf & 2) {
     const project_r6 = ctx.$implicit;
@@ -570,7 +570,7 @@ function ProjectsComponent_div_12_app_card_2_Template(rf, ctx) {
 function ProjectsComponent_div_12_Template(rf, ctx) {
   if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "div", 11)(1, "div", 12);
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](2, ProjectsComponent_div_12_app_card_2_Template, 1, 1, "app-card", 13);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](2, ProjectsComponent_div_12_portfolio_card_2_Template, 1, 1, "portfolio-card", 13);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]()();
   }
   if (rf & 2) {
@@ -613,13 +613,13 @@ ProjectsComponent.ɵfac = function ProjectsComponent_Factory(t) {
 };
 ProjectsComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineComponent"]({
   type: ProjectsComponent,
-  selectors: [["app-projects"]],
+  selectors: [["portfolio-projects"]],
   decls: 13,
   vars: 3,
   consts: [[1, "py-10"], [1, "mx-auto", "max-w-7xl", "px-6", "lg:px-8"], [1, "mx-auto", "max-w-2xl", "sm:text-center"], [1, "text-base", "font-semibold", "leading-7", "text-indigo-700"], [1, "mt-2", "text-3xl", "font-bold", "tracking-tight", "text-white", "sm:text-4xl"], ["class", "m-auto mb-5", 4, "ngIf"], ["style", "z-index: 10", "class", "alert alert-warning", "role", "alert", 4, "ngIf"], ["class", "container", 4, "ngIf"], [1, "m-auto", "mb-5"], ["role", "alert", 1, "alert", "alert-warning", 2, "z-index", "10"], ["type", "button", 1, "btn", "btn-primary", 3, "click"], [1, "container"], [1, "row", "justify-content-center"], ["class", "py-3 col-12 col-md-5 col-lg-4", 3, "project", 4, "ngFor", "ngForOf"], [1, "py-3", "col-12", "col-md-5", "col-lg-4", 3, "project"]],
   template: function ProjectsComponent_Template(rf, ctx) {
     if (rf & 1) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "app-wrapper-container")(1, "div", 0)(2, "div", 1)(3, "div", 2)(4, "div", 3);
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "portfolio-wrapper-container")(1, "div", 0)(2, "div", 1)(3, "div", 2)(4, "div", 3);
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](5, "Everything you need in terms of experience");
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](6, "div", 4);
@@ -715,13 +715,13 @@ SkillBarComponent.ɵfac = function SkillBarComponent_Factory(t) {
 };
 SkillBarComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineComponent"]({
   type: SkillBarComponent,
-  selectors: [["app-skill-bar"]],
+  selectors: [["portfolio-skill-bar"]],
   decls: 8,
   vars: 1,
   consts: [[1, "container-fluid", "skill-section"], [1, "row", "justify-content-center"], [1, "col-12", "col-md-6"], [1, "text-white-50", "text-center", "mb-4"], [1, "skill-bars", "mx-auto"], ["class", "bar mb-4", 4, "ngFor", "ngForOf"], [1, "bar", "mb-4"], [1, "info", "flex-col", "items-center"], [1, "w-20"], [3, "src", "alt"], [1, "mb-2"], [4, "ngIf"], [1, "progress"], ["role", "progressbar", 1, "progress-bar", "bg-danger", "progress-bar-striped", "progress-bar-animated"]],
   template: function SkillBarComponent_Template(rf, ctx) {
     if (rf & 1) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "app-wrapper-container")(1, "div", 0)(2, "div", 1)(3, "div", 2)(4, "h2", 3);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "portfolio-wrapper-container")(1, "div", 0)(2, "div", 1)(3, "div", 2)(4, "h2", 3);
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](5, "Skills");
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](6, "div", 4);
@@ -830,12 +830,12 @@ LandingPageComponent.ɵfac = function LandingPageComponent_Factory(t) {
 };
 LandingPageComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({
   type: LandingPageComponent,
-  selectors: [["app-landing-page"]],
+  selectors: [["portfolio-landing-page"]],
   decls: 1,
   vars: 0,
   template: function LandingPageComponent_Template(rf, ctx) {
     if (rf & 1) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](0, "app-hero");
+      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](0, "portfolio-hero");
     }
   },
   dependencies: [_components_hero_hero_component__WEBPACK_IMPORTED_MODULE_0__.HeroComponent],
