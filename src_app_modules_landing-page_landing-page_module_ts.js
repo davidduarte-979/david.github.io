@@ -519,7 +519,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "ProjectsComponent": () => (/* binding */ ProjectsComponent)
 /* harmony export */ });
-/* harmony import */ var _store_projects_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./store/projects.actions */ 9866);
+/* harmony import */ var _store_operations_projects_projects_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../store/operations/projects/projects.actions */ 2376);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 6839);
 /* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ngrx/store */ 4307);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common */ 6477);
@@ -599,10 +599,10 @@ class ProjectsComponent {
     });
   }
   onDispatchAction() {
-    this.store.dispatch(_store_projects_actions__WEBPACK_IMPORTED_MODULE_0__.fetchProjects());
+    this.store.dispatch(_store_operations_projects_projects_actions__WEBPACK_IMPORTED_MODULE_0__.fetchProjects());
   }
   onClearError() {
-    this.store.dispatch(_store_projects_actions__WEBPACK_IMPORTED_MODULE_0__.clearError());
+    this.store.dispatch(_store_operations_projects_projects_actions__WEBPACK_IMPORTED_MODULE_0__.clearError());
   }
   ngOnDestroy() {
     this.projectsSub.unsubscribe();

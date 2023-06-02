@@ -58,7 +58,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "AppComponent": () => (/* binding */ AppComponent)
 /* harmony export */ });
-/* harmony import */ var _modules_admin_auth_store_auth_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/admin/auth/store/auth.actions */ 4546);
+/* harmony import */ var _store_operations_auth_auth_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./store/operations/auth/auth.actions */ 4415);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 6839);
 /* harmony import */ var _core_services_auth_auth_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @core/services/auth/auth.service */ 7990);
 /* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ngrx/store */ 4307);
@@ -74,7 +74,7 @@ class AppComponent {
     this.store = store;
   }
   ngOnInit() {
-    this.store.dispatch(_modules_admin_auth_store_auth_actions__WEBPACK_IMPORTED_MODULE_0__.autoLogin());
+    this.store.dispatch(_store_operations_auth_auth_actions__WEBPACK_IMPORTED_MODULE_0__.autoLogin());
   }
 }
 AppComponent.ɵfac = function AppComponent_Factory(t) {
@@ -116,11 +116,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ngrx_effects__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @ngrx/effects */ 2847);
 /* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/platform-browser/animations */ 9240);
 /* harmony import */ var _core_services_auth_auth_interceptor_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @core/services/auth/auth-interceptor.service */ 2318);
-/* harmony import */ var _modules_landing_page_components_projects_store_projects_effects__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/landing-page/components/projects/store/projects.effects */ 6796);
+/* harmony import */ var _store_operations_projects_projects_effects__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./store/operations/projects/projects.effects */ 4907);
 /* harmony import */ var _store_app_reduce__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./store/app.reduce */ 713);
 /* harmony import */ var _ngrx_store_devtools__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @ngrx/store-devtools */ 203);
 /* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! src/environments/environment */ 2340);
-/* harmony import */ var _modules_admin_auth_store_auth_effects__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/admin/auth/store/auth.effects */ 5120);
+/* harmony import */ var _store_operations_auth_auth_effects__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./store/operations/auth/auth.effects */ 1834);
 /* harmony import */ var _shared_components_button_button_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @shared/components/button/button.component */ 42);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/core */ 6839);
 
@@ -156,7 +156,7 @@ AppModule.ɵinj = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵd
     useClass: _core_services_auth_auth_interceptor_service__WEBPACK_IMPORTED_MODULE_3__.HeaderInterceptor,
     multi: true
   }],
-  imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_11__.BrowserModule, _app_routing_module__WEBPACK_IMPORTED_MODULE_0__.AppRoutingModule, _core_core_module__WEBPACK_IMPORTED_MODULE_2__.CoreModule, _angular_common_http__WEBPACK_IMPORTED_MODULE_10__.HttpClientModule, _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_12__.BrowserAnimationsModule, _ngrx_store__WEBPACK_IMPORTED_MODULE_13__.StoreModule.forRoot(_store_app_reduce__WEBPACK_IMPORTED_MODULE_5__.appReducer), _ngrx_effects__WEBPACK_IMPORTED_MODULE_14__.EffectsModule.forRoot([_modules_admin_auth_store_auth_effects__WEBPACK_IMPORTED_MODULE_7__.AuthEffects, _modules_landing_page_components_projects_store_projects_effects__WEBPACK_IMPORTED_MODULE_4__.ProjectsEffects]), _ngrx_store_devtools__WEBPACK_IMPORTED_MODULE_15__.StoreDevtoolsModule.instrument({
+  imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_11__.BrowserModule, _app_routing_module__WEBPACK_IMPORTED_MODULE_0__.AppRoutingModule, _core_core_module__WEBPACK_IMPORTED_MODULE_2__.CoreModule, _angular_common_http__WEBPACK_IMPORTED_MODULE_10__.HttpClientModule, _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_12__.BrowserAnimationsModule, _ngrx_store__WEBPACK_IMPORTED_MODULE_13__.StoreModule.forRoot(_store_app_reduce__WEBPACK_IMPORTED_MODULE_5__.appReducer), _ngrx_effects__WEBPACK_IMPORTED_MODULE_14__.EffectsModule.forRoot([_store_operations_auth_auth_effects__WEBPACK_IMPORTED_MODULE_7__.AuthEffects, _store_operations_projects_projects_effects__WEBPACK_IMPORTED_MODULE_4__.ProjectsEffects]), _ngrx_store_devtools__WEBPACK_IMPORTED_MODULE_15__.StoreDevtoolsModule.instrument({
     logOnly: src_environments_environment__WEBPACK_IMPORTED_MODULE_6__.environment.production
   }), _shared_components_button_button_component__WEBPACK_IMPORTED_MODULE_8__.ButtonComponent]
 });
@@ -338,7 +338,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "AuthService": () => (/* binding */ AuthService)
 /* harmony export */ });
-/* harmony import */ var _modules_admin_auth_store_auth_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../modules/admin/auth/store/auth.actions */ 4546);
+/* harmony import */ var _store_operations_auth_auth_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../store/operations/auth/auth.actions */ 4415);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 6839);
 /* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ngrx/store */ 4307);
 
@@ -350,7 +350,7 @@ class AuthService {
   }
   setAutoLogout(expirationDuration) {
     this.tokenExpirationTimer = setTimeout(() => {
-      this.store.dispatch(_modules_admin_auth_store_auth_actions__WEBPACK_IMPORTED_MODULE_0__.logout());
+      this.store.dispatch(_store_operations_auth_auth_actions__WEBPACK_IMPORTED_MODULE_0__.logout());
     }, expirationDuration);
   }
   clearLogoutTimer() {
@@ -627,384 +627,6 @@ SkillsService.ɵprov = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_1__["
   providedIn: 'root'
 });
 
-
-/***/ }),
-
-/***/ 4546:
-/*!**********************************************************!*\
-  !*** ./src/app/modules/admin/auth/store/auth.actions.ts ***!
-  \**********************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "authenticateFail": () => (/* binding */ authenticateFail),
-/* harmony export */   "authenticateSuccess": () => (/* binding */ authenticateSuccess),
-/* harmony export */   "autoLogin": () => (/* binding */ autoLogin),
-/* harmony export */   "clearError": () => (/* binding */ clearError),
-/* harmony export */   "loginStart": () => (/* binding */ loginStart),
-/* harmony export */   "logout": () => (/* binding */ logout),
-/* harmony export */   "signUpStart": () => (/* binding */ signUpStart)
-/* harmony export */ });
-/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @ngrx/store */ 4307);
-
-const authenticateSuccess = (0,_ngrx_store__WEBPACK_IMPORTED_MODULE_0__.createAction)('[Auth] Authenticate Success', (0,_ngrx_store__WEBPACK_IMPORTED_MODULE_0__.props)());
-const loginStart = (0,_ngrx_store__WEBPACK_IMPORTED_MODULE_0__.createAction)('[Auth] Login Start', (0,_ngrx_store__WEBPACK_IMPORTED_MODULE_0__.props)());
-const signUpStart = (0,_ngrx_store__WEBPACK_IMPORTED_MODULE_0__.createAction)('[Auth] Signup Start', (0,_ngrx_store__WEBPACK_IMPORTED_MODULE_0__.props)());
-const logout = (0,_ngrx_store__WEBPACK_IMPORTED_MODULE_0__.createAction)('[Auth] Logout');
-const authenticateFail = (0,_ngrx_store__WEBPACK_IMPORTED_MODULE_0__.createAction)('[Auth] Authenticate fail', (0,_ngrx_store__WEBPACK_IMPORTED_MODULE_0__.props)());
-const clearError = (0,_ngrx_store__WEBPACK_IMPORTED_MODULE_0__.createAction)('[Auth] Clear Error');
-const autoLogin = (0,_ngrx_store__WEBPACK_IMPORTED_MODULE_0__.createAction)('[Auth] Auto Login');
-
-/***/ }),
-
-/***/ 5120:
-/*!**********************************************************!*\
-  !*** ./src/app/modules/admin/auth/store/auth.effects.ts ***!
-  \**********************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "AuthEffects": () => (/* binding */ AuthEffects)
-/* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 6839);
-/* harmony import */ var _core_models_user__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @core/models/user */ 8443);
-/* harmony import */ var _ngrx_effects__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @ngrx/effects */ 2847);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! rxjs */ 4139);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! rxjs/operators */ 9095);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! rxjs/operators */ 8759);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! rxjs/operators */ 6942);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! rxjs/operators */ 7418);
-/* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/environments/environment */ 2340);
-/* harmony import */ var _auth_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./auth.actions */ 4546);
-/* harmony import */ var _core_services_dialog_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @core/services/dialog.service */ 6797);
-/* harmony import */ var _core_models_dialog_enum__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @core/models/dialog.enum */ 5319);
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/common/http */ 3765);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/router */ 6679);
-/* harmony import */ var _core_services_auth_auth_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @core/services/auth/auth.service */ 7990);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-class AuthEffects {
-  constructor(actions$, http, router, authService) {
-    this.actions$ = actions$;
-    this.http = http;
-    this.router = router;
-    this.authService = authService;
-    this.dialogService = (0,_angular_core__WEBPACK_IMPORTED_MODULE_6__.inject)(_core_services_dialog_service__WEBPACK_IMPORTED_MODULE_3__.DialogService);
-    this.dialogEnumType = _core_models_dialog_enum__WEBPACK_IMPORTED_MODULE_4__.DialogType;
-    this.authSignUp$ = (0,_ngrx_effects__WEBPACK_IMPORTED_MODULE_7__.createEffect)(() => this.actions$.pipe((0,_ngrx_effects__WEBPACK_IMPORTED_MODULE_7__.ofType)(_auth_actions__WEBPACK_IMPORTED_MODULE_2__.signUpStart), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_8__.switchMap)(action => {
-      return this.http.post(`${src_environments_environment__WEBPACK_IMPORTED_MODULE_1__.environment.API_AUTH_FIREBASE_SIGNUP}${src_environments_environment__WEBPACK_IMPORTED_MODULE_1__.environment.API_KEY_FIREBASE}`, {
-        email: action.email,
-        password: action.password,
-        returnSecureToken: true
-      }).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_9__.tap)(respData => {
-        this.authService.setAutoLogout(+respData.expiresIn * 1000);
-      }), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_10__.map)(resData => this.handleAuthentication(resData)), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_11__.catchError)(this.handleError.bind(this)));
-    })));
-    this.authLogout$ = (0,_ngrx_effects__WEBPACK_IMPORTED_MODULE_7__.createEffect)(() => this.actions$.pipe((0,_ngrx_effects__WEBPACK_IMPORTED_MODULE_7__.ofType)(_auth_actions__WEBPACK_IMPORTED_MODULE_2__.logout), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_9__.tap)(() => {
-      localStorage.removeItem('userData');
-    })), {
-      dispatch: false
-    });
-    this.authLogin$ = (0,_ngrx_effects__WEBPACK_IMPORTED_MODULE_7__.createEffect)(() => this.actions$.pipe((0,_ngrx_effects__WEBPACK_IMPORTED_MODULE_7__.ofType)(_auth_actions__WEBPACK_IMPORTED_MODULE_2__.autoLogin), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_10__.map)(() => {
-      const userData = JSON.parse(localStorage.getItem('userData'));
-      if (!userData) {
-        return {
-          type: 'no user available'
-        };
-      }
-      const loadedUser = new _core_models_user__WEBPACK_IMPORTED_MODULE_0__.CurrentUser(userData.email, userData.id, userData._token, new Date(userData._tokenExpirationDate));
-      if (loadedUser.token) {
-        const expirationDuration = new Date(userData._tokenExpirationDate).getTime() - new Date().getTime();
-        this.authService.setAutoLogout(expirationDuration);
-        return _auth_actions__WEBPACK_IMPORTED_MODULE_2__.authenticateSuccess({
-          email: loadedUser.email,
-          userId: loadedUser.id,
-          token: loadedUser.token,
-          expirationDate: new Date(userData._tokenExpirationDate)
-        });
-      }
-      return {
-        type: 'no token available'
-      };
-    })));
-    this.authSignIn$ = (0,_ngrx_effects__WEBPACK_IMPORTED_MODULE_7__.createEffect)(() => this.actions$.pipe((0,_ngrx_effects__WEBPACK_IMPORTED_MODULE_7__.ofType)(_auth_actions__WEBPACK_IMPORTED_MODULE_2__.loginStart), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_8__.switchMap)(action => {
-      return this.http.post(`${src_environments_environment__WEBPACK_IMPORTED_MODULE_1__.environment.API_AUTH_FIREBASE_SIGNIN}${src_environments_environment__WEBPACK_IMPORTED_MODULE_1__.environment.API_KEY_FIREBASE}`, {
-        email: action.email,
-        password: action.password,
-        returnSecureToken: true
-      }).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_9__.tap)(respData => {
-        this.dialogService.openDialog(this.dialogEnumType.Success, {
-          message: `login successfull welcome ${respData.email}`
-        });
-        this.authService.setAutoLogout(+respData.expiresIn * 1000);
-      }), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_10__.map)(resData => this.handleAuthentication(resData)), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_11__.catchError)(this.handleError.bind(this)));
-    })));
-    this.authRedirect$ = (0,_ngrx_effects__WEBPACK_IMPORTED_MODULE_7__.createEffect)(() => this.actions$.pipe((0,_ngrx_effects__WEBPACK_IMPORTED_MODULE_7__.ofType)(_auth_actions__WEBPACK_IMPORTED_MODULE_2__.authenticateSuccess), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_9__.tap)(() => {
-      this.router.navigate(['/', 'dashboard']);
-    })), {
-      dispatch: false
-    });
-    this.authRedirectLogout$ = (0,_ngrx_effects__WEBPACK_IMPORTED_MODULE_7__.createEffect)(() => this.actions$.pipe((0,_ngrx_effects__WEBPACK_IMPORTED_MODULE_7__.ofType)(_auth_actions__WEBPACK_IMPORTED_MODULE_2__.logout), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_9__.tap)(() => {
-      this.router.navigate(['/', 'dashboard', 'auth']);
-      this.authService.clearLogoutTimer();
-    })), {
-      dispatch: false
-    });
-  }
-  handleError(errorResponse) {
-    let errorMessage = 'An unknown error occurred!';
-    if (!errorResponse.error || !errorResponse.error.error) {
-      this.dialogService.openDialog(this.dialogEnumType.Error, {
-        error: errorMessage,
-        code: 400
-      });
-      return (0,rxjs__WEBPACK_IMPORTED_MODULE_12__.of)(_auth_actions__WEBPACK_IMPORTED_MODULE_2__.authenticateFail({
-        errorMessage
-      }));
-    }
-    switch (errorResponse.error.error.message) {
-      case 'INVALID_PASSWORD':
-        errorMessage = 'Passwords is incorrect';
-        break;
-      case 'EMAIL_NOT_FOUND':
-        errorMessage = 'This Email is not register';
-        break;
-      case 'USER_DISABLED':
-        errorMessage = 'This user as been disabled';
-        break;
-      case 'EMAIL_EXISTS':
-        errorMessage = 'This user is already registered';
-        break;
-      case 'OPERATION_NOT_ALLOWED':
-        errorMessage = 'Password sign-in is disabled for this project';
-        break;
-      case 'TOO_MANY_ATTEMPTS_TRY_LATER':
-        errorMessage = 'Too many attempts try later';
-        break;
-      default:
-        errorMessage = errorResponse.error.error.message;
-        break;
-    }
-    this.dialogService.openDialog(this.dialogEnumType.Error, {
-      error: errorMessage,
-      code: 400
-    });
-    return (0,rxjs__WEBPACK_IMPORTED_MODULE_12__.of)(_auth_actions__WEBPACK_IMPORTED_MODULE_2__.authenticateFail({
-      errorMessage
-    }));
-  }
-  handleAuthentication(responseData) {
-    const expirationDate = new Date(new Date().getTime() + +responseData.expiresIn * 1000);
-    const user = new _core_models_user__WEBPACK_IMPORTED_MODULE_0__.CurrentUser(responseData.email, responseData.localId, responseData.idToken, expirationDate);
-    localStorage.setItem('userData', JSON.stringify(user));
-    return _auth_actions__WEBPACK_IMPORTED_MODULE_2__.authenticateSuccess({
-      email: responseData.email,
-      userId: responseData.localId,
-      token: responseData.idToken,
-      expirationDate
-    });
-  }
-}
-AuthEffects.ɵfac = function AuthEffects_Factory(t) {
-  return new (t || AuthEffects)(_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵinject"](_ngrx_effects__WEBPACK_IMPORTED_MODULE_7__.Actions), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_13__.HttpClient), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵinject"](_angular_router__WEBPACK_IMPORTED_MODULE_14__.Router), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵinject"](_core_services_auth_auth_service__WEBPACK_IMPORTED_MODULE_5__.AuthService));
-};
-AuthEffects.ɵprov = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineInjectable"]({
-  token: AuthEffects,
-  factory: AuthEffects.ɵfac
-});
-
-
-/***/ }),
-
-/***/ 8988:
-/*!**********************************************************!*\
-  !*** ./src/app/modules/admin/auth/store/auth.reducer.ts ***!
-  \**********************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "authReducer": () => (/* binding */ authReducer)
-/* harmony export */ });
-/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ngrx/store */ 4307);
-/* harmony import */ var _core_models_user__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @core/models/user */ 8443);
-/* harmony import */ var _auth_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./auth.actions */ 4546);
-
-
-
-const initialState = {
-  user: null,
-  error: null,
-  loading: false
-};
-const _authReducer = (0,_ngrx_store__WEBPACK_IMPORTED_MODULE_2__.createReducer)(initialState, (0,_ngrx_store__WEBPACK_IMPORTED_MODULE_2__.on)(_auth_actions__WEBPACK_IMPORTED_MODULE_1__.loginStart, _auth_actions__WEBPACK_IMPORTED_MODULE_1__.signUpStart, (state, action) => ({
-  ...state,
-  user: null,
-  error: null,
-  loading: true
-})), (0,_ngrx_store__WEBPACK_IMPORTED_MODULE_2__.on)(_auth_actions__WEBPACK_IMPORTED_MODULE_1__.logout, (state, action) => ({
-  ...state,
-  user: null,
-  uthError: null,
-  loading: false
-})), (0,_ngrx_store__WEBPACK_IMPORTED_MODULE_2__.on)(_auth_actions__WEBPACK_IMPORTED_MODULE_1__.authenticateSuccess, (state, action) => ({
-  ...state,
-  user: new _core_models_user__WEBPACK_IMPORTED_MODULE_0__.CurrentUser(action.email, action.userId, action.token, action.expirationDate),
-  error: null,
-  loading: false
-})), (0,_ngrx_store__WEBPACK_IMPORTED_MODULE_2__.on)(_auth_actions__WEBPACK_IMPORTED_MODULE_1__.authenticateFail, (state, action) => ({
-  ...state,
-  error: action.errorMessage,
-  loading: false
-})), (0,_ngrx_store__WEBPACK_IMPORTED_MODULE_2__.on)(_auth_actions__WEBPACK_IMPORTED_MODULE_1__.clearError, (state, action) => ({
-  ...state,
-  error: null
-})));
-const authReducer = (state, action) => _authReducer(state, action);
-
-/***/ }),
-
-/***/ 9866:
-/*!************************************************************************************!*\
-  !*** ./src/app/modules/landing-page/components/projects/store/projects.actions.ts ***!
-  \************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "clearError": () => (/* binding */ clearError),
-/* harmony export */   "fetchProjects": () => (/* binding */ fetchProjects),
-/* harmony export */   "fetchProjectsFail": () => (/* binding */ fetchProjectsFail),
-/* harmony export */   "fetchProjectsSuccess": () => (/* binding */ fetchProjectsSuccess)
-/* harmony export */ });
-/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @ngrx/store */ 4307);
-
-const fetchProjectsSuccess = (0,_ngrx_store__WEBPACK_IMPORTED_MODULE_0__.createAction)('[Projects] Set Projects', (0,_ngrx_store__WEBPACK_IMPORTED_MODULE_0__.props)());
-const fetchProjects = (0,_ngrx_store__WEBPACK_IMPORTED_MODULE_0__.createAction)('[Projects] Fetch Projects');
-const fetchProjectsFail = (0,_ngrx_store__WEBPACK_IMPORTED_MODULE_0__.createAction)('[Projects] Fail Fetch Projects', (0,_ngrx_store__WEBPACK_IMPORTED_MODULE_0__.props)());
-const clearError = (0,_ngrx_store__WEBPACK_IMPORTED_MODULE_0__.createAction)('[Projects] Clear Error');
-
-/***/ }),
-
-/***/ 6796:
-/*!************************************************************************************!*\
-  !*** ./src/app/modules/landing-page/components/projects/store/projects.effects.ts ***!
-  \************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "ProjectsEffects": () => (/* binding */ ProjectsEffects)
-/* harmony export */ });
-/* harmony import */ var _ngrx_effects__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ngrx/effects */ 2847);
-/* harmony import */ var _projects_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./projects.actions */ 9866);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ 9095);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs/operators */ 6942);
-/* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/environments/environment */ 2340);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 6839);
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/common/http */ 3765);
-/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @ngrx/store */ 4307);
-
-
-
-
-
-
-
-
-class ProjectsEffects {
-  constructor(actions$, http, store) {
-    this.actions$ = actions$;
-    this.http = http;
-    this.store = store;
-    this.fetchProjects$ = (0,_ngrx_effects__WEBPACK_IMPORTED_MODULE_2__.createEffect)(() => this.actions$.pipe((0,_ngrx_effects__WEBPACK_IMPORTED_MODULE_2__.ofType)(_projects_actions__WEBPACK_IMPORTED_MODULE_0__.fetchProjects), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_3__.switchMap)(() => {
-      return this.http.get(`${src_environments_environment__WEBPACK_IMPORTED_MODULE_1__.environment.API_URL_FIREBASE}.json`);
-    }), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.map)(responseData => {
-      const projectsArray = [];
-      for (const key in responseData) {
-        if (responseData.hasOwnProperty(key)) {
-          projectsArray.push({
-            ...responseData[key],
-            id: key
-          });
-        }
-      }
-      return projectsArray;
-    }), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.map)(projects => {
-      return this.store.dispatch(_projects_actions__WEBPACK_IMPORTED_MODULE_0__.fetchProjectsSuccess({
-        projects
-      }));
-    })), {
-      dispatch: false
-    });
-  }
-}
-ProjectsEffects.ɵfac = function ProjectsEffects_Factory(t) {
-  return new (t || ProjectsEffects)(_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵinject"](_ngrx_effects__WEBPACK_IMPORTED_MODULE_2__.Actions), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_6__.HttpClient), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵinject"](_ngrx_store__WEBPACK_IMPORTED_MODULE_7__.Store));
-};
-ProjectsEffects.ɵprov = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineInjectable"]({
-  token: ProjectsEffects,
-  factory: ProjectsEffects.ɵfac,
-  providedIn: 'root'
-});
-
-
-/***/ }),
-
-/***/ 3742:
-/*!************************************************************************************!*\
-  !*** ./src/app/modules/landing-page/components/projects/store/projects.reducer.ts ***!
-  \************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "projectReducer": () => (/* binding */ projectReducer)
-/* harmony export */ });
-/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @ngrx/store */ 4307);
-/* harmony import */ var _projects_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./projects.actions */ 9866);
-
-
-const initialState = {
-  projects: [],
-  errorMessage: null,
-  loading: false
-};
-const _projectsReducer = (0,_ngrx_store__WEBPACK_IMPORTED_MODULE_1__.createReducer)(initialState, (0,_ngrx_store__WEBPACK_IMPORTED_MODULE_1__.on)(_projects_actions__WEBPACK_IMPORTED_MODULE_0__.fetchProjectsSuccess, (state, action) => ({
-  ...state,
-  projects: [...action.projects],
-  errorMessage: null,
-  loading: false
-})), (0,_ngrx_store__WEBPACK_IMPORTED_MODULE_1__.on)(_projects_actions__WEBPACK_IMPORTED_MODULE_0__.fetchProjects, (state, action) => ({
-  ...state,
-  errorMessage: null,
-  loading: true
-})), (0,_ngrx_store__WEBPACK_IMPORTED_MODULE_1__.on)(_projects_actions__WEBPACK_IMPORTED_MODULE_0__.fetchProjectsFail, (state, action) => ({
-  ...state,
-  errorMessage: action.errorMessage,
-  loading: false
-})), (0,_ngrx_store__WEBPACK_IMPORTED_MODULE_1__.on)(_projects_actions__WEBPACK_IMPORTED_MODULE_0__.clearError, (state, action) => ({
-  ...state,
-  errorMessage: null,
-  loading: false
-})));
-function projectReducer(state, action) {
-  return _projectsReducer(state, action);
-}
 
 /***/ }),
 
@@ -1374,14 +996,392 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "appReducer": () => (/* binding */ appReducer)
 /* harmony export */ });
-/* harmony import */ var _modules_landing_page_components_projects_store_projects_reducer__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../modules/landing-page/components/projects/store/projects.reducer */ 3742);
-/* harmony import */ var _modules_admin_auth_store_auth_reducer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../modules/admin/auth/store/auth.reducer */ 8988);
+/* harmony import */ var _operations_projects_projects_reducer__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./operations/projects/projects.reducer */ 1616);
+/* harmony import */ var _operations_auth_auth_reducer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./operations/auth/auth.reducer */ 2970);
 
 
 const appReducer = {
-  projects: _modules_landing_page_components_projects_store_projects_reducer__WEBPACK_IMPORTED_MODULE_0__.projectReducer,
-  auth: _modules_admin_auth_store_auth_reducer__WEBPACK_IMPORTED_MODULE_1__.authReducer
+  projects: _operations_projects_projects_reducer__WEBPACK_IMPORTED_MODULE_0__.projectReducer,
+  auth: _operations_auth_auth_reducer__WEBPACK_IMPORTED_MODULE_1__.authReducer
 };
+
+/***/ }),
+
+/***/ 4415:
+/*!*******************************************************!*\
+  !*** ./src/app/store/operations/auth/auth.actions.ts ***!
+  \*******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "authenticateFail": () => (/* binding */ authenticateFail),
+/* harmony export */   "authenticateSuccess": () => (/* binding */ authenticateSuccess),
+/* harmony export */   "autoLogin": () => (/* binding */ autoLogin),
+/* harmony export */   "clearError": () => (/* binding */ clearError),
+/* harmony export */   "loginStart": () => (/* binding */ loginStart),
+/* harmony export */   "logout": () => (/* binding */ logout),
+/* harmony export */   "signUpStart": () => (/* binding */ signUpStart)
+/* harmony export */ });
+/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @ngrx/store */ 4307);
+
+const authenticateSuccess = (0,_ngrx_store__WEBPACK_IMPORTED_MODULE_0__.createAction)('[Auth] Authenticate Success', (0,_ngrx_store__WEBPACK_IMPORTED_MODULE_0__.props)());
+const loginStart = (0,_ngrx_store__WEBPACK_IMPORTED_MODULE_0__.createAction)('[Auth] Login Start', (0,_ngrx_store__WEBPACK_IMPORTED_MODULE_0__.props)());
+const signUpStart = (0,_ngrx_store__WEBPACK_IMPORTED_MODULE_0__.createAction)('[Auth] Signup Start', (0,_ngrx_store__WEBPACK_IMPORTED_MODULE_0__.props)());
+const logout = (0,_ngrx_store__WEBPACK_IMPORTED_MODULE_0__.createAction)('[Auth] Logout');
+const authenticateFail = (0,_ngrx_store__WEBPACK_IMPORTED_MODULE_0__.createAction)('[Auth] Authenticate fail', (0,_ngrx_store__WEBPACK_IMPORTED_MODULE_0__.props)());
+const clearError = (0,_ngrx_store__WEBPACK_IMPORTED_MODULE_0__.createAction)('[Auth] Clear Error');
+const autoLogin = (0,_ngrx_store__WEBPACK_IMPORTED_MODULE_0__.createAction)('[Auth] Auto Login');
+
+/***/ }),
+
+/***/ 1834:
+/*!*******************************************************!*\
+  !*** ./src/app/store/operations/auth/auth.effects.ts ***!
+  \*******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "AuthEffects": () => (/* binding */ AuthEffects)
+/* harmony export */ });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 6839);
+/* harmony import */ var _core_models_user__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @core/models/user */ 8443);
+/* harmony import */ var _ngrx_effects__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @ngrx/effects */ 2847);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! rxjs */ 4139);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! rxjs/operators */ 9095);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! rxjs/operators */ 8759);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! rxjs/operators */ 6942);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! rxjs/operators */ 7418);
+/* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/environments/environment */ 2340);
+/* harmony import */ var _auth_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./auth.actions */ 4415);
+/* harmony import */ var _core_services_dialog_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @core/services/dialog.service */ 6797);
+/* harmony import */ var _core_models_dialog_enum__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @core/models/dialog.enum */ 5319);
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/common/http */ 3765);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/router */ 6679);
+/* harmony import */ var _core_services_auth_auth_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @core/services/auth/auth.service */ 7990);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+class AuthEffects {
+  constructor(actions$, http, router, authService) {
+    this.actions$ = actions$;
+    this.http = http;
+    this.router = router;
+    this.authService = authService;
+    this.dialogService = (0,_angular_core__WEBPACK_IMPORTED_MODULE_6__.inject)(_core_services_dialog_service__WEBPACK_IMPORTED_MODULE_3__.DialogService);
+    this.dialogEnumType = _core_models_dialog_enum__WEBPACK_IMPORTED_MODULE_4__.DialogType;
+    this.authSignUp$ = (0,_ngrx_effects__WEBPACK_IMPORTED_MODULE_7__.createEffect)(() => this.actions$.pipe((0,_ngrx_effects__WEBPACK_IMPORTED_MODULE_7__.ofType)(_auth_actions__WEBPACK_IMPORTED_MODULE_2__.signUpStart), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_8__.switchMap)(action => {
+      return this.http.post(`${src_environments_environment__WEBPACK_IMPORTED_MODULE_1__.environment.API_AUTH_FIREBASE_SIGNUP}${src_environments_environment__WEBPACK_IMPORTED_MODULE_1__.environment.API_KEY_FIREBASE}`, {
+        email: action.email,
+        password: action.password,
+        returnSecureToken: true
+      }).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_9__.tap)(respData => {
+        this.authService.setAutoLogout(+respData.expiresIn * 1000);
+      }), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_10__.map)(resData => this.handleAuthentication(resData)), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_11__.catchError)(this.handleError.bind(this)));
+    })));
+    this.authLogout$ = (0,_ngrx_effects__WEBPACK_IMPORTED_MODULE_7__.createEffect)(() => this.actions$.pipe((0,_ngrx_effects__WEBPACK_IMPORTED_MODULE_7__.ofType)(_auth_actions__WEBPACK_IMPORTED_MODULE_2__.logout), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_9__.tap)(() => {
+      localStorage.removeItem('userData');
+    })), {
+      dispatch: false
+    });
+    this.authLogin$ = (0,_ngrx_effects__WEBPACK_IMPORTED_MODULE_7__.createEffect)(() => this.actions$.pipe((0,_ngrx_effects__WEBPACK_IMPORTED_MODULE_7__.ofType)(_auth_actions__WEBPACK_IMPORTED_MODULE_2__.autoLogin), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_10__.map)(() => {
+      const userData = JSON.parse(localStorage.getItem('userData'));
+      if (!userData) {
+        return {
+          type: 'no user available'
+        };
+      }
+      const loadedUser = new _core_models_user__WEBPACK_IMPORTED_MODULE_0__.CurrentUser(userData.email, userData.id, userData._token, new Date(userData._tokenExpirationDate));
+      if (loadedUser.token) {
+        const expirationDuration = new Date(userData._tokenExpirationDate).getTime() - new Date().getTime();
+        this.authService.setAutoLogout(expirationDuration);
+        return _auth_actions__WEBPACK_IMPORTED_MODULE_2__.authenticateSuccess({
+          email: loadedUser.email,
+          userId: loadedUser.id,
+          token: loadedUser.token,
+          expirationDate: new Date(userData._tokenExpirationDate)
+        });
+      }
+      return {
+        type: 'no token available'
+      };
+    })));
+    this.authSignIn$ = (0,_ngrx_effects__WEBPACK_IMPORTED_MODULE_7__.createEffect)(() => this.actions$.pipe((0,_ngrx_effects__WEBPACK_IMPORTED_MODULE_7__.ofType)(_auth_actions__WEBPACK_IMPORTED_MODULE_2__.loginStart), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_8__.switchMap)(action => {
+      return this.http.post(`${src_environments_environment__WEBPACK_IMPORTED_MODULE_1__.environment.API_AUTH_FIREBASE_SIGNIN}${src_environments_environment__WEBPACK_IMPORTED_MODULE_1__.environment.API_KEY_FIREBASE}`, {
+        email: action.email,
+        password: action.password,
+        returnSecureToken: true
+      }).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_9__.tap)(respData => {
+        this.dialogService.openDialog(this.dialogEnumType.Success, {
+          message: `login successfull welcome ${respData.email}`
+        });
+        this.authService.setAutoLogout(+respData.expiresIn * 1000);
+      }), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_10__.map)(resData => this.handleAuthentication(resData)), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_11__.catchError)(this.handleError.bind(this)));
+    })));
+    this.authRedirect$ = (0,_ngrx_effects__WEBPACK_IMPORTED_MODULE_7__.createEffect)(() => this.actions$.pipe((0,_ngrx_effects__WEBPACK_IMPORTED_MODULE_7__.ofType)(_auth_actions__WEBPACK_IMPORTED_MODULE_2__.authenticateSuccess), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_9__.tap)(() => {
+      this.router.navigate(['/', 'dashboard']);
+    })), {
+      dispatch: false
+    });
+    this.authRedirectLogout$ = (0,_ngrx_effects__WEBPACK_IMPORTED_MODULE_7__.createEffect)(() => this.actions$.pipe((0,_ngrx_effects__WEBPACK_IMPORTED_MODULE_7__.ofType)(_auth_actions__WEBPACK_IMPORTED_MODULE_2__.logout), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_9__.tap)(() => {
+      this.router.navigate(['/', 'dashboard', 'auth']);
+      this.authService.clearLogoutTimer();
+    })), {
+      dispatch: false
+    });
+  }
+  handleError(errorResponse) {
+    let errorMessage = 'An unknown error occurred!';
+    if (!errorResponse.error || !errorResponse.error.error) {
+      this.dialogService.openDialog(this.dialogEnumType.Error, {
+        error: errorMessage,
+        code: 400
+      });
+      return (0,rxjs__WEBPACK_IMPORTED_MODULE_12__.of)(_auth_actions__WEBPACK_IMPORTED_MODULE_2__.authenticateFail({
+        errorMessage
+      }));
+    }
+    switch (errorResponse.error.error.message) {
+      case 'INVALID_PASSWORD':
+        errorMessage = 'Passwords is incorrect';
+        break;
+      case 'EMAIL_NOT_FOUND':
+        errorMessage = 'This Email is not register';
+        break;
+      case 'USER_DISABLED':
+        errorMessage = 'This user as been disabled';
+        break;
+      case 'EMAIL_EXISTS':
+        errorMessage = 'This user is already registered';
+        break;
+      case 'OPERATION_NOT_ALLOWED':
+        errorMessage = 'Password sign-in is disabled for this project';
+        break;
+      case 'TOO_MANY_ATTEMPTS_TRY_LATER':
+        errorMessage = 'Too many attempts try later';
+        break;
+      default:
+        errorMessage = errorResponse.error.error.message;
+        break;
+    }
+    this.dialogService.openDialog(this.dialogEnumType.Error, {
+      error: errorMessage,
+      code: 400
+    });
+    return (0,rxjs__WEBPACK_IMPORTED_MODULE_12__.of)(_auth_actions__WEBPACK_IMPORTED_MODULE_2__.authenticateFail({
+      errorMessage
+    }));
+  }
+  handleAuthentication(responseData) {
+    const expirationDate = new Date(new Date().getTime() + +responseData.expiresIn * 1000);
+    const user = new _core_models_user__WEBPACK_IMPORTED_MODULE_0__.CurrentUser(responseData.email, responseData.localId, responseData.idToken, expirationDate);
+    localStorage.setItem('userData', JSON.stringify(user));
+    return _auth_actions__WEBPACK_IMPORTED_MODULE_2__.authenticateSuccess({
+      email: responseData.email,
+      userId: responseData.localId,
+      token: responseData.idToken,
+      expirationDate
+    });
+  }
+}
+AuthEffects.ɵfac = function AuthEffects_Factory(t) {
+  return new (t || AuthEffects)(_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵinject"](_ngrx_effects__WEBPACK_IMPORTED_MODULE_7__.Actions), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_13__.HttpClient), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵinject"](_angular_router__WEBPACK_IMPORTED_MODULE_14__.Router), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵinject"](_core_services_auth_auth_service__WEBPACK_IMPORTED_MODULE_5__.AuthService));
+};
+AuthEffects.ɵprov = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineInjectable"]({
+  token: AuthEffects,
+  factory: AuthEffects.ɵfac
+});
+
+
+/***/ }),
+
+/***/ 2970:
+/*!*******************************************************!*\
+  !*** ./src/app/store/operations/auth/auth.reducer.ts ***!
+  \*******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "authReducer": () => (/* binding */ authReducer)
+/* harmony export */ });
+/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ngrx/store */ 4307);
+/* harmony import */ var _core_models_user__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @core/models/user */ 8443);
+/* harmony import */ var _auth_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./auth.actions */ 4415);
+
+
+
+const initialState = {
+  user: null,
+  error: null,
+  loading: false
+};
+const _authReducer = (0,_ngrx_store__WEBPACK_IMPORTED_MODULE_2__.createReducer)(initialState, (0,_ngrx_store__WEBPACK_IMPORTED_MODULE_2__.on)(_auth_actions__WEBPACK_IMPORTED_MODULE_1__.loginStart, _auth_actions__WEBPACK_IMPORTED_MODULE_1__.signUpStart, (state, action) => ({
+  ...state,
+  user: null,
+  error: null,
+  loading: true
+})), (0,_ngrx_store__WEBPACK_IMPORTED_MODULE_2__.on)(_auth_actions__WEBPACK_IMPORTED_MODULE_1__.logout, (state, action) => ({
+  ...state,
+  user: null,
+  uthError: null,
+  loading: false
+})), (0,_ngrx_store__WEBPACK_IMPORTED_MODULE_2__.on)(_auth_actions__WEBPACK_IMPORTED_MODULE_1__.authenticateSuccess, (state, action) => ({
+  ...state,
+  user: new _core_models_user__WEBPACK_IMPORTED_MODULE_0__.CurrentUser(action.email, action.userId, action.token, action.expirationDate),
+  error: null,
+  loading: false
+})), (0,_ngrx_store__WEBPACK_IMPORTED_MODULE_2__.on)(_auth_actions__WEBPACK_IMPORTED_MODULE_1__.authenticateFail, (state, action) => ({
+  ...state,
+  error: action.errorMessage,
+  loading: false
+})), (0,_ngrx_store__WEBPACK_IMPORTED_MODULE_2__.on)(_auth_actions__WEBPACK_IMPORTED_MODULE_1__.clearError, (state, action) => ({
+  ...state,
+  error: null
+})));
+const authReducer = (state, action) => _authReducer(state, action);
+
+/***/ }),
+
+/***/ 2376:
+/*!***************************************************************!*\
+  !*** ./src/app/store/operations/projects/projects.actions.ts ***!
+  \***************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "clearError": () => (/* binding */ clearError),
+/* harmony export */   "fetchProjects": () => (/* binding */ fetchProjects),
+/* harmony export */   "fetchProjectsFail": () => (/* binding */ fetchProjectsFail),
+/* harmony export */   "fetchProjectsSuccess": () => (/* binding */ fetchProjectsSuccess)
+/* harmony export */ });
+/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @ngrx/store */ 4307);
+
+const fetchProjectsSuccess = (0,_ngrx_store__WEBPACK_IMPORTED_MODULE_0__.createAction)('[Projects] Set Projects', (0,_ngrx_store__WEBPACK_IMPORTED_MODULE_0__.props)());
+const fetchProjects = (0,_ngrx_store__WEBPACK_IMPORTED_MODULE_0__.createAction)('[Projects] Fetch Projects');
+const fetchProjectsFail = (0,_ngrx_store__WEBPACK_IMPORTED_MODULE_0__.createAction)('[Projects] Fail Fetch Projects', (0,_ngrx_store__WEBPACK_IMPORTED_MODULE_0__.props)());
+const clearError = (0,_ngrx_store__WEBPACK_IMPORTED_MODULE_0__.createAction)('[Projects] Clear Error');
+
+/***/ }),
+
+/***/ 4907:
+/*!***************************************************************!*\
+  !*** ./src/app/store/operations/projects/projects.effects.ts ***!
+  \***************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "ProjectsEffects": () => (/* binding */ ProjectsEffects)
+/* harmony export */ });
+/* harmony import */ var _ngrx_effects__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ngrx/effects */ 2847);
+/* harmony import */ var _projects_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./projects.actions */ 2376);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ 9095);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs/operators */ 6942);
+/* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/environments/environment */ 2340);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 6839);
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/common/http */ 3765);
+/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @ngrx/store */ 4307);
+
+
+
+
+
+
+
+
+class ProjectsEffects {
+  constructor(actions$, http, store) {
+    this.actions$ = actions$;
+    this.http = http;
+    this.store = store;
+    this.fetchProjects$ = (0,_ngrx_effects__WEBPACK_IMPORTED_MODULE_2__.createEffect)(() => this.actions$.pipe((0,_ngrx_effects__WEBPACK_IMPORTED_MODULE_2__.ofType)(_projects_actions__WEBPACK_IMPORTED_MODULE_0__.fetchProjects), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_3__.switchMap)(() => {
+      return this.http.get(`${src_environments_environment__WEBPACK_IMPORTED_MODULE_1__.environment.API_URL_FIREBASE}.json`);
+    }), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.map)(responseData => {
+      const projectsArray = [];
+      for (const key in responseData) {
+        if (responseData.hasOwnProperty(key)) {
+          projectsArray.push({
+            ...responseData[key],
+            id: key
+          });
+        }
+      }
+      return projectsArray;
+    }), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.map)(projects => {
+      return this.store.dispatch(_projects_actions__WEBPACK_IMPORTED_MODULE_0__.fetchProjectsSuccess({
+        projects
+      }));
+    })), {
+      dispatch: false
+    });
+  }
+}
+ProjectsEffects.ɵfac = function ProjectsEffects_Factory(t) {
+  return new (t || ProjectsEffects)(_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵinject"](_ngrx_effects__WEBPACK_IMPORTED_MODULE_2__.Actions), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_6__.HttpClient), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵinject"](_ngrx_store__WEBPACK_IMPORTED_MODULE_7__.Store));
+};
+ProjectsEffects.ɵprov = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineInjectable"]({
+  token: ProjectsEffects,
+  factory: ProjectsEffects.ɵfac,
+  providedIn: 'root'
+});
+
+
+/***/ }),
+
+/***/ 1616:
+/*!***************************************************************!*\
+  !*** ./src/app/store/operations/projects/projects.reducer.ts ***!
+  \***************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "projectReducer": () => (/* binding */ projectReducer)
+/* harmony export */ });
+/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @ngrx/store */ 4307);
+/* harmony import */ var _projects_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./projects.actions */ 2376);
+
+
+const initialState = {
+  projects: [],
+  errorMessage: null,
+  loading: false
+};
+const _projectsReducer = (0,_ngrx_store__WEBPACK_IMPORTED_MODULE_1__.createReducer)(initialState, (0,_ngrx_store__WEBPACK_IMPORTED_MODULE_1__.on)(_projects_actions__WEBPACK_IMPORTED_MODULE_0__.fetchProjectsSuccess, (state, action) => ({
+  ...state,
+  projects: [...action.projects],
+  errorMessage: null,
+  loading: false
+})), (0,_ngrx_store__WEBPACK_IMPORTED_MODULE_1__.on)(_projects_actions__WEBPACK_IMPORTED_MODULE_0__.fetchProjects, (state, action) => ({
+  ...state,
+  errorMessage: null,
+  loading: true
+})), (0,_ngrx_store__WEBPACK_IMPORTED_MODULE_1__.on)(_projects_actions__WEBPACK_IMPORTED_MODULE_0__.fetchProjectsFail, (state, action) => ({
+  ...state,
+  errorMessage: action.errorMessage,
+  loading: false
+})), (0,_ngrx_store__WEBPACK_IMPORTED_MODULE_1__.on)(_projects_actions__WEBPACK_IMPORTED_MODULE_0__.clearError, (state, action) => ({
+  ...state,
+  errorMessage: null,
+  loading: false
+})));
+function projectReducer(state, action) {
+  return _projectsReducer(state, action);
+}
 
 /***/ }),
 

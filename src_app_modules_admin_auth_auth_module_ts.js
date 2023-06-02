@@ -219,7 +219,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 6839);
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/forms */ 9542);
-/* harmony import */ var _store_auth_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../store/auth.actions */ 4546);
+/* harmony import */ var _store_operations_auth_auth_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../store/operations/auth/auth.actions */ 4415);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/router */ 6679);
 /* harmony import */ var _core_services_dialog_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @core/services/dialog.service */ 6797);
 /* harmony import */ var _core_models_dialog_enum__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @core/models/dialog.enum */ 5319);
@@ -297,7 +297,7 @@ class LoginComponent {
     const email = this.signInForm.value.email;
     const password = this.signInForm.value.password;
     this.isLoading = true;
-    this.store.dispatch(_store_auth_actions__WEBPACK_IMPORTED_MODULE_0__.loginStart({
+    this.store.dispatch(_store_operations_auth_auth_actions__WEBPACK_IMPORTED_MODULE_0__.loginStart({
       email,
       password
     }));
@@ -371,7 +371,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 6839);
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ 9542);
-/* harmony import */ var _store_auth_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../store/auth.actions */ 4546);
+/* harmony import */ var _store_operations_auth_auth_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../store/operations/auth/auth.actions */ 4415);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ 6679);
 /* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ngrx/store */ 4307);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/common */ 6477);
@@ -463,13 +463,13 @@ class RegisterComponent {
     }
     const email = this.signUpForm.value.email;
     const password = this.signUpForm.value.password;
-    this.store.dispatch(_store_auth_actions__WEBPACK_IMPORTED_MODULE_0__.signUpStart({
+    this.store.dispatch(_store_operations_auth_auth_actions__WEBPACK_IMPORTED_MODULE_0__.signUpStart({
       email,
       password
     }));
   }
   onClearError() {
-    this.store.dispatch(_store_auth_actions__WEBPACK_IMPORTED_MODULE_0__.clearError());
+    this.store.dispatch(_store_operations_auth_auth_actions__WEBPACK_IMPORTED_MODULE_0__.clearError());
   }
   signIn() {
     this.router.navigate(['/', 'dashboard', 'auth']);
