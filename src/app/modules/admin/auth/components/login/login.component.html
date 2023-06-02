@@ -9,14 +9,12 @@
 
   <div class="mb-4">
     <input formControlName="email" type="email" placeholder="Email" />
-    <span class="text-danger" *ngIf="!email.valid && email.touched">
-      This email is not valid
-    </span>
+    <app-error-validation-mesasage [control]="signInForm.get('email')" name="Email"></app-error-validation-mesasage>
   </div>
 
   <div class="mb-4">
     <input formControlName="password" type="password" placeholder="Password" />
-    <span class="text-danger" *ngIf="!password.valid && password.touched">This password is not valid</span>
+    <app-error-validation-mesasage [control]="signInForm.get('password')" name="Password"></app-error-validation-mesasage>
   </div>
 
   <br />

@@ -73,6 +73,9 @@ body {
   textarea.ng-invalid.ng-touched {
     border: 1px solid red !important;
   }
+  span.error {
+    @apply text-red-600;
+  }
 }
 
 .mat-mdc-raised-button.mat-primary {

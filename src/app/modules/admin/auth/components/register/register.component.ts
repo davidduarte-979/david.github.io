@@ -26,6 +26,10 @@ export class RegisterComponent implements OnInit, OnDestroy {
     });
   }
   onSubmit(): void {
+    if(this.signUpForm.invalid) {
+      this.signUpForm.markAllAsTouched();
+      return;
+    }
     const email = this.signUpForm.value.email;
     const password = this.signUpForm.value.password;
     this.store.dispatch(AuthActions.signUpStart({ email, password }));

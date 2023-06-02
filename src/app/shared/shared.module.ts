@@ -9,6 +9,7 @@ import { CategoryTechSkillComponent } from './components/category-tech-skill/cat
 import { BannerComponent } from './components/banner/banner.component';
 import { WrapperContainerComponent } from './components/wrapper-container/wrapper-container.component';
 import { MaterialModule } from './material/material.module';
+import { ErrorValidationMesasageComponent } from './components/error-validation-mesasage/error-validation-mesasage.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { MaterialModule } from './material/material.module';
     TechSkillComponent,
     CategoryTechSkillComponent,
     BannerComponent,
-    WrapperContainerComponent
+    WrapperContainerComponent,
+    ErrorValidationMesasageComponent
   ],
   imports: [
     CommonModule,
@@ -33,7 +35,8 @@ import { MaterialModule } from './material/material.module';
       TechSkillComponent,
       CategoryTechSkillComponent,
       BannerComponent,
-      WrapperContainerComponent
+      WrapperContainerComponent,
+      ErrorValidationMesasageComponent
     ],
 })
 export class SharedModule {}

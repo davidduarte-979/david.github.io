@@ -31,15 +31,14 @@ export class LoginComponent implements OnInit, OnDestroy {
     });
   }
   onSubmit(): void {
-    const email = this.signInForm.value.email;
-    const password = this.signInForm.value.password;
-    this.isLoading = true;
-    this.store.dispatch(AuthActions.loginStart({ email, password }));
     if(this.signInForm.invalid) {
       this.signInForm.markAllAsTouched();
       return;
     }
-    this.router.navigate(['/dashboard'])
+    const email = this.signInForm.value.email;
+    const password = this.signInForm.value.password;
+    this.isLoading = true;
+    this.store.dispatch(AuthActions.loginStart({ email, password }));
   }
   onClearError(): void {
     this.store.dispatch(AuthActions.clearError());
