@@ -10,7 +10,7 @@ const routes: Routes = [
   {
     path: '',
     component: LayoutComponent,
-    // canActivate: [RedirectToGuard],
+    canActivate: [RedirectToGuard],
     children: [
       {
         path: '',
@@ -23,7 +23,6 @@ const routes: Routes = [
       },
       {
         path: 'register',
-        // canActivate: [AuthGuard],
         component: RegisterComponent,
       },
     ],

@@ -12,7 +12,7 @@ const routes: Routes = [
   {
     path: '',
     component: SidebarComponent,
-    // canActivate: [AuthGuard],
+    canActivate: [AuthGuard],
     children: [
       {
         path: '',
