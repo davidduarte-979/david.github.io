@@ -1,6 +1,54 @@
 "use strict";
 (self["webpackChunkportfolio_angular"] = self["webpackChunkportfolio_angular"] || []).push([["src_app_modules_admin_auth_auth_module_ts"],{
 
+/***/ 9759:
+/*!**************************************************!*\
+  !*** ./src/app/core/guards/redirect-to.guard.ts ***!
+  \**************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "RedirectToGuard": () => (/* binding */ RedirectToGuard)
+/* harmony export */ });
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs/operators */ 3910);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/operators */ 6942);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 6839);
+/* harmony import */ var _services_auth_auth_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../services/auth/auth.service */ 7990);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ 6679);
+/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ngrx/store */ 4307);
+
+
+
+
+
+class RedirectToGuard {
+  constructor(auth, router, store) {
+    this.auth = auth;
+    this.router = router;
+    this.store = store;
+  }
+  canActivate(route, state) {
+    return this.store.select('auth').pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_1__.take)(1), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_2__.map)(authState => authState.user), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_2__.map)(user => {
+      if (!user) {
+        return true;
+      }
+      return this.router.createUrlTree(['/', 'dashboard']);
+    }));
+  }
+}
+RedirectToGuard.ɵfac = function RedirectToGuard_Factory(t) {
+  return new (t || RedirectToGuard)(_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵinject"](_services_auth_auth_service__WEBPACK_IMPORTED_MODULE_0__.AuthService), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵinject"](_angular_router__WEBPACK_IMPORTED_MODULE_4__.Router), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵinject"](_ngrx_store__WEBPACK_IMPORTED_MODULE_5__.Store));
+};
+RedirectToGuard.ɵprov = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInjectable"]({
+  token: RedirectToGuard,
+  factory: RedirectToGuard.ɵfac,
+  providedIn: 'root'
+});
+
+
+/***/ }),
+
 /***/ 1904:
 /*!***********************************************************!*\
   !*** ./src/app/modules/admin/auth/auth-routing.module.ts ***!
@@ -11,11 +59,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "AuthRoutingModule": () => (/* binding */ AuthRoutingModule)
 /* harmony export */ });
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ 6679);
-/* harmony import */ var _components_layout_layout_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/layout/layout.component */ 7729);
-/* harmony import */ var _components_login_login_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/login/login.component */ 6118);
-/* harmony import */ var _components_register_register_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/register/register.component */ 4045);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 6839);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ 6679);
+/* harmony import */ var _core_guards_redirect_to_guard__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @core/guards/redirect-to.guard */ 9759);
+/* harmony import */ var _components_layout_layout_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/layout/layout.component */ 7729);
+/* harmony import */ var _components_login_login_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/login/login.component */ 6118);
+/* harmony import */ var _components_register_register_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/register/register.component */ 4045);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 6839);
+
 
 
 
@@ -24,36 +74,35 @@ __webpack_require__.r(__webpack_exports__);
 
 const routes = [{
   path: '',
-  component: _components_layout_layout_component__WEBPACK_IMPORTED_MODULE_0__.LayoutComponent,
-  // canActivate: [RedirectToGuard],
+  component: _components_layout_layout_component__WEBPACK_IMPORTED_MODULE_1__.LayoutComponent,
+  canActivate: [_core_guards_redirect_to_guard__WEBPACK_IMPORTED_MODULE_0__.RedirectToGuard],
   children: [{
     path: '',
     redirectTo: '/dashboard/auth',
     pathMatch: 'full'
   }, {
     path: '',
-    component: _components_login_login_component__WEBPACK_IMPORTED_MODULE_1__.LoginComponent
+    component: _components_login_login_component__WEBPACK_IMPORTED_MODULE_2__.LoginComponent
   }, {
     path: 'register',
-    // canActivate: [AuthGuard],
-    component: _components_register_register_component__WEBPACK_IMPORTED_MODULE_2__.RegisterComponent
+    component: _components_register_register_component__WEBPACK_IMPORTED_MODULE_3__.RegisterComponent
   }]
 }];
 class AuthRoutingModule {}
 AuthRoutingModule.ɵfac = function AuthRoutingModule_Factory(t) {
   return new (t || AuthRoutingModule)();
 };
-AuthRoutingModule.ɵmod = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineNgModule"]({
+AuthRoutingModule.ɵmod = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineNgModule"]({
   type: AuthRoutingModule
 });
-AuthRoutingModule.ɵinj = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInjector"]({
-  imports: [_angular_router__WEBPACK_IMPORTED_MODULE_4__.RouterModule.forChild(routes), _angular_router__WEBPACK_IMPORTED_MODULE_4__.RouterModule]
+AuthRoutingModule.ɵinj = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineInjector"]({
+  imports: [_angular_router__WEBPACK_IMPORTED_MODULE_5__.RouterModule.forChild(routes), _angular_router__WEBPACK_IMPORTED_MODULE_5__.RouterModule]
 });
 
 (function () {
-  (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵsetNgModuleScope"](AuthRoutingModule, {
-    imports: [_angular_router__WEBPACK_IMPORTED_MODULE_4__.RouterModule],
-    exports: [_angular_router__WEBPACK_IMPORTED_MODULE_4__.RouterModule]
+  (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵsetNgModuleScope"](AuthRoutingModule, {
+    imports: [_angular_router__WEBPACK_IMPORTED_MODULE_5__.RouterModule],
+    exports: [_angular_router__WEBPACK_IMPORTED_MODULE_5__.RouterModule]
   });
 })();
 
