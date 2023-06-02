@@ -20,7 +20,7 @@ class NavService {
       link: '/'
     }, {
       title: 'Dashboard',
-      link: 'dashboard'
+      link: 'dashboard/auth'
     }, {
       title: 'About',
       link: 'about'

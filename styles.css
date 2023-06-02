@@ -599,9 +599,6 @@ video {
 .mt-2 {
   margin-top: 0.5rem;
 }
-.mt-2\.5 {
-  margin-top: 0.625rem;
-}
 .mt-6 {
   margin-top: 1.5rem;
 }
@@ -789,9 +786,6 @@ video {
 .rounded-xl {
   border-radius: 0.75rem;
 }
-.border-0 {
-  border-width: 0px;
-}
 .bg-black {
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
@@ -803,9 +797,6 @@ video {
 .bg-gray-950 {
   --tw-bg-opacity: 1;
   background-color: rgb(3 7 18 / var(--tw-bg-opacity));
-}
-.bg-white\/5 {
-  background-color: rgb(255 255 255 / 0.05);
 }
 .bg-gradient-to-br {
   background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
@@ -840,10 +831,6 @@ video {
 .px-3 {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
-}
-.px-3\.5 {
-  padding-left: 0.875rem;
-  padding-right: 0.875rem;
 }
 .px-4 {
   padding-left: 1rem;
@@ -982,11 +969,6 @@ video {
 .opacity-25 {
   opacity: 0.25;
 }
-.shadow-sm {
-  --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-  --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
 .shadow-xl {
   --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
@@ -997,14 +979,8 @@ video {
   --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);
   box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
 }
-.ring-inset {
-  --tw-ring-inset: inset;
-}
 .ring-gray-400\/10 {
   --tw-ring-color: rgb(156 163 175 / 0.1);
-}
-.ring-white\/10 {
-  --tw-ring-color: rgb(255 255 255 / 0.1);
 }
 .ring-white\/5 {
   --tw-ring-color: rgb(255 255 255 / 0.05);
@@ -1080,6 +1056,107 @@ body {
     padding-left: 2rem;
   }
 }
+.mat-typography label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.5rem;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+.mat-typography input {
+  transition-duration: 0.25s;
+  margin-top: 0.625rem;
+  display: block;
+  width: 100%;
+  border-radius: 0.375rem;
+  border-width: 0px;
+  background-color: rgb(255 255 255 / 0.05);
+  padding-left: 0.875rem;
+  padding-right: 0.875rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+  --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+  --tw-ring-inset: inset;
+  --tw-ring-color: rgb(255 255 255 / 0.1);
+}
+.mat-typography input:focus {
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+  --tw-ring-inset: inset;
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(162 28 175 / var(--tw-ring-opacity));
+}
+.mat-typography input:focus-visible {
+  right: 0.5rem;
+  --tw-ring-inset: inset;
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(162 28 175 / var(--tw-ring-opacity));
+}
+@media (min-width: 390px) {
+  .mat-typography input {
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+  }
+}
+.mat-typography textarea {
+  transition-duration: 0.25s;
+  display: block;
+  width: 100%;
+  border-radius: 0.375rem;
+  border-width: 0px;
+  background-color: rgb(255 255 255 / 0.05);
+  padding-left: 0.875rem;
+  padding-right: 0.875rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+  --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+  --tw-ring-inset: inset;
+  --tw-ring-color: rgb(255 255 255 / 0.1);
+}
+.mat-typography textarea:focus {
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+  --tw-ring-inset: inset;
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(162 28 175 / var(--tw-ring-opacity));
+}
+@media (min-width: 390px) {
+  .mat-typography textarea {
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+  }
+}
+.mat-typography textarea:focus,
+.mat-typography textarea:focus-visible,
+.mat-typography input:focus,
+.mat-typography input:focus-visible {
+  transform: scale(1.1);
+}
+.mat-typography input:focus-visible,
+.mat-typography textarea:focus-visible {
+  outline: none;
+}
+.mat-typography input.ng-invalid.ng-touched,
+.mat-typography textarea.ng-invalid.ng-touched {
+  border: 1px solid red !important;
+}
 
 .mat-mdc-raised-button.mat-primary {
   --mdc-protected-button-container-color: #9e00a8b1;
@@ -1121,11 +1198,6 @@ body {
   --tw-ring-inset: inset;
 }
 
-.focus\:ring-indigo-500:focus {
-  --tw-ring-opacity: 1;
-  --tw-ring-color: rgb(99 102 241 / var(--tw-ring-opacity));
-}
-
 .focus\:ring-white:focus {
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(255 255 255 / var(--tw-ring-opacity));
@@ -1161,13 +1233,6 @@ body {
   .sm\:text-4xl {
     font-size: 2.25rem;
     line-height: 2.5rem;
-  }
-  .sm\:text-sm {
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-  }
-  .sm\:leading-6 {
-    line-height: 1.5rem;
   }
 }
 
