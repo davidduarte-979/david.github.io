@@ -590,8 +590,8 @@ video {
 .me-0 {
   margin-inline-end: 0px;
 }
-.ml-2 {
-  margin-left: 0.5rem;
+.mr-2 {
+  margin-right: 0.5rem;
 }
 .mt-10 {
   margin-top: 2.5rem;
@@ -865,6 +865,10 @@ video {
   padding-top: 5rem;
   padding-bottom: 5rem;
 }
+.py-3 {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
 .py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -939,6 +943,10 @@ video {
 }
 .tracking-tight {
   letter-spacing: -0.025em;
+}
+.text-gray-200 {
+  --tw-text-opacity: 1;
+  color: rgb(229 231 235 / var(--tw-text-opacity));
 }
 .text-gray-300 {
   --tw-text-opacity: 1;
