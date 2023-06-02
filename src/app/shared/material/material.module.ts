@@ -15,7 +15,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatDialogModule } from '@angular/material/dialog';
 
 const modules = [
   MatProgressSpinnerModule,
@@ -35,6 +36,7 @@ const modules = [
   MatInputModule,
   CommonModule,
   MatSelectModule,
+  MatDialogModule
 ]
 @NgModule({
   declarations: [],

@@ -19,7 +19,6 @@ export class LoginComponent implements OnInit, OnDestroy {
   private router = inject(Router);
   signInForm!: FormGroup;
   signInSub!: Subscription;
-  error!: string;
   isLoading = false;
   constructor(private store: Store<fromApp.AppState>) {
     this.buildForm();
@@ -27,7 +26,6 @@ export class LoginComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.signInSub = this.store.select('auth').subscribe((authResp) => {
       this.isLoading = authResp.loading;
-      this.error = authResp.authError;
     });
   }
   onSubmit(): void {
@@ -39,9 +37,6 @@ export class LoginComponent implements OnInit, OnDestroy {
     const password = this.signInForm.value.password;
     this.isLoading = true;
     this.store.dispatch(AuthActions.loginStart({ email, password }));
-  }
-  onClearError(): void {
-    this.store.dispatch(AuthActions.clearError());
   }
 
   signUp() {

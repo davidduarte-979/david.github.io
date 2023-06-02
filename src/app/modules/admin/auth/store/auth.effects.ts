@@ -1,5 +1,5 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthResponseData, CurrentUser } from '@core/models/user';
 import { AuthService } from '@core/services/auth/auth.service';
@@ -8,14 +8,19 @@ import { Observable, of } from 'rxjs';
 import { catchError, map, switchMap, tap } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import * as AuthActions from './auth.actions';
+import { DialogService } from '@core/services/dialog.service';
+import { DialogType } from '@core/models/dialog.enum';
 
 @Injectable()
 export class AuthEffects {
+  // private dialogService = inject(DialogService);
+   private dialogEnumType = DialogType;
   constructor(
     private actions$: Actions,
     private http: HttpClient,
     private router: Router,
-    private authService: AuthService
+    private authService: AuthService,
+    private dialogService: DialogService
   ) {}
   authSignUp$ = createEffect((): any =>
     this.actions$.pipe(
@@ -35,7 +40,7 @@ export class AuthEffects {
               this.authService.setAutoLogout(+respData.expiresIn * 1000);
             }),
             map((resData) => this.handleAuthentication(resData)),
-            catchError(this.handleError)
+            catchError(this.handleError.bind(this))
           );
       })
     )
@@ -107,7 +112,7 @@ export class AuthEffects {
                 this.authService.setAutoLogout(+respData.expiresIn * 1000);
               }),
               map((resData) => this.handleAuthentication(resData)),
-              catchError(this.handleError)
+              catchError(this.handleError.bind(this))
             );
         })
       )
@@ -138,6 +143,7 @@ export class AuthEffects {
   private handleError(errorResponse: HttpErrorResponse): any {
     let errorMessage = 'An unknown error occurred!';
     if (!errorResponse.error || !errorResponse.error.error) {
+      this.dialogService.openDialog(this.dialogEnumType.Error, {data: errorMessage})
       return of(AuthActions.authenticateFail({ errorMessage }));
     }
     switch (errorResponse.error.error.message) {
@@ -163,6 +169,7 @@ export class AuthEffects {
         errorMessage = errorResponse.error.error.message;
         break;
     }
+    this.dialogService.openDialog(this.dialogEnumType.Error, {data: errorMessage})
     return of(AuthActions.authenticateFail({ errorMessage }));
   }
   private handleAuthentication(responseData: AuthResponseData): any {

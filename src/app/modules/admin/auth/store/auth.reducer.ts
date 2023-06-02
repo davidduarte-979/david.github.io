@@ -4,23 +4,26 @@ import * as AuthActions from './auth.actions';
 
 export interface State {
   user: CurrentUser;
-  authError: string;
+  error: string;
   loading: boolean;
 }
 
 const initialState: State = {
   user: null,
-  authError: null,
+  error: null,
   loading: false,
 };
 
-const _authReducer = createReducer(
+const _authReducer = createReducer<State>(
   initialState,
 
-  on(AuthActions.loginStart, AuthActions.signUpStart, (state, action) => ({
+  on(
+    AuthActions.loginStart,
+    AuthActions.signUpStart,
+    (state, action) => ({
     ...state,
     user: null,
-    authError: null,
+    error: null,
     loading: true,
   })),
 
@@ -39,22 +42,20 @@ const _authReducer = createReducer(
       action.token,
       action.expirationDate
     ),
-    authError: null,
+    error: null,
     loading: false,
   })),
 
   on(AuthActions.authenticateFail, (state, action) => ({
     ...state,
-    authError: action.errorMessage,
+    error: action.errorMessage,
     loading: false,
   })),
 
   on(AuthActions.clearError, (state, action) => ({
     ...state,
-    authError: null,
+    error: null,
   }))
 );
 
-export function authReducer(state: State, action: Action): State {
-  return _authReducer(state, action);
-}
+export const authReducer = (state: State, action: Action): State => _authReducer(state, action);

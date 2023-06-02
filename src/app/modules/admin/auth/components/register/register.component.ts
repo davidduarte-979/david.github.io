@@ -22,7 +22,7 @@ export class RegisterComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.signUpSub = this.store.select('auth').subscribe((authResp) => {
       this.isLoading = authResp.loading;
-      this.error = authResp.authError;
+      this.error = authResp.error;
     });
   }
   onSubmit(): void {

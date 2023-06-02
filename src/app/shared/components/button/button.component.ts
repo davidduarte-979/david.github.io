@@ -12,7 +12,7 @@ import { MaterialModule } from '@shared/material/material.module';
 export class ButtonComponent {
   @Output() clickEvent = new EventEmitter();
   @Input() color?: 'primary' | 'accent' | 'warn';
-  @Input() type: 'submit' | 'button';
+  @Input() type: 'submit' | 'button' | 'reset';
   @Input() class?: string;
 
   triggerEvent(): void{
