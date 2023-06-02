@@ -10,6 +10,8 @@ import * as fromApp from '../../../../../store/app.reduce';
 import * as AuthActions from '../../store/auth.actions';
 import { Store } from '@ngrx/store';
 import { Router } from '@angular/router';
+import { DialogService } from '@core/services/dialog.service';
+import { DialogType } from '@core/models/dialog.enum';
 @Component({
   selector: 'portfolio-login',
   templateUrl: './login.component.html',
@@ -17,6 +19,8 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit, OnDestroy {
   private router = inject(Router);
+  private dialogService = inject(DialogService);
+  dialogTypeEnum = DialogType;
   signInForm!: FormGroup;
   signInSub!: Subscription;
   isLoading = false;

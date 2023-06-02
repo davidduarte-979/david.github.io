@@ -13,14 +13,13 @@ import { DialogType } from '@core/models/dialog.enum';
 
 @Injectable()
 export class AuthEffects {
-  // private dialogService = inject(DialogService);
+  private dialogService = inject(DialogService);
    private dialogEnumType = DialogType;
   constructor(
     private actions$: Actions,
     private http: HttpClient,
     private router: Router,
     private authService: AuthService,
-    private dialogService: DialogService
   ) {}
   authSignUp$ = createEffect((): any =>
     this.actions$.pipe(
@@ -109,6 +108,7 @@ export class AuthEffects {
             )
             .pipe(
               tap((respData) => {
+                this.dialogService.openDialog(this.dialogEnumType.Success, {message: `login successfull welcome ${respData.email}`})
                 this.authService.setAutoLogout(+respData.expiresIn * 1000);
               }),
               map((resData) => this.handleAuthentication(resData)),
@@ -143,7 +143,7 @@ export class AuthEffects {
   private handleError(errorResponse: HttpErrorResponse): any {
     let errorMessage = 'An unknown error occurred!';
     if (!errorResponse.error || !errorResponse.error.error) {
-      this.dialogService.openDialog(this.dialogEnumType.Error, {data: errorMessage})
+      this.dialogService.openDialog(this.dialogEnumType.Error, {error: errorMessage, code: 400})
       return of(AuthActions.authenticateFail({ errorMessage }));
     }
     switch (errorResponse.error.error.message) {
@@ -169,7 +169,7 @@ export class AuthEffects {
         errorMessage = errorResponse.error.error.message;
         break;
     }
-    this.dialogService.openDialog(this.dialogEnumType.Error, {data: errorMessage})
+    this.dialogService.openDialog(this.dialogEnumType.Error, {error: errorMessage, code: 400})
     return of(AuthActions.authenticateFail({ errorMessage }));
   }
   private handleAuthentication(responseData: AuthResponseData): any {

@@ -2,6 +2,7 @@ import { ComponentType } from '@angular/cdk/portal';
 import { Injectable, inject } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { DialogType } from '@core/models/dialog.enum';
+import { Error } from '@core/models/error';
 import { PaginatedResponse } from '@core/models/response-data';
 import { DialogComponent } from '@shared/components/dialog/dialog.component';
 
@@ -13,7 +14,7 @@ export class DialogService {
   private dialogRef: MatDialogRef<any>;
   constructor() { }
 
-  openDialog<T, R>(dialogType: DialogType = DialogType.Info, data?: Partial<PaginatedResponse<R>>, component?: ComponentType<T>): void {
+  openDialog<T, R>(dialogType: DialogType = DialogType.Info, data?: any | Error, component?: ComponentType<T>): void {
     if (component) {
       this.dialogRef = this.dialog.open(component, {
         data: {
