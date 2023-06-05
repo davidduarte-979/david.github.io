@@ -1,12 +1,11 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthResponseData, CurrentUser } from '@core/models/user';
+import { AuthResponseData, AutoLoginUser, CurrentUser } from '@core/models/user';
 import { AuthService } from '@core/services/auth/auth.service';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { Observable, of } from 'rxjs';
 import { catchError, map, switchMap, tap } from 'rxjs/operators';
-import { environment } from 'src/environments/environment';
 import * as AuthActions from './auth.actions';
 import { DialogService } from '@core/services/dialog.service';
 import { DialogType } from '@core/models/dialog.enum';
@@ -14,34 +13,22 @@ import { DialogType } from '@core/models/dialog.enum';
 @Injectable()
 export class AuthEffects {
   private dialogService = inject(DialogService);
-   private dialogEnumType = DialogType;
+  private dialogEnumType = DialogType;
   constructor(
     private actions$: Actions,
-    private http: HttpClient,
     private router: Router,
     private authService: AuthService,
-  ) {}
+  ) { }
+
   authSignUp$ = createEffect((): any =>
     this.actions$.pipe(
       ofType(AuthActions.signUpStart),
-      switchMap((action) => {
-        return this.http
-          .post<AuthResponseData>(
-            `${environment.API_AUTH_FIREBASE_SIGNUP}${environment.API_KEY_FIREBASE}`,
-            {
-              email: action.email,
-              password: action.password,
-              returnSecureToken: true,
-            }
-          )
-          .pipe(
-            tap((respData) => {
-              this.authService.setAutoLogout(+respData.expiresIn * 1000);
-            }),
-            map((resData) => this.handleAuthentication(resData)),
-            catchError(this.handleError.bind(this))
-          );
-      })
+      switchMap((action) => this.authService.signUp(action.email, action.password)
+        .pipe(
+          tap((respData) => this.authService.setAutoLogout(+respData.expiresIn * 1000)),
+          map((resData) => this.handleAuthentication(resData)),
+          catchError(this.handleError.bind(this))
+        ))
     )
   );
 
@@ -49,9 +36,8 @@ export class AuthEffects {
     () =>
       this.actions$.pipe(
         ofType(AuthActions.logout),
-        tap(() => {
-          localStorage.removeItem('userData');
-        })
+        tap(() => localStorage.removeItem('userData')),
+        tap(() => this.dialogService.openDialog(this.dialogEnumType.Success, { message: 'You were succesfully logout.' }))
       ),
     { dispatch: false }
   );
@@ -60,12 +46,7 @@ export class AuthEffects {
     this.actions$.pipe(
       ofType(AuthActions.autoLogin),
       map(() => {
-        const userData: {
-          email: string;
-          id: string;
-          _token: string;
-          _tokenExpirationDate: string;
-        } = JSON.parse(localStorage.getItem('userData') as any);
+        const userData: AutoLoginUser = JSON.parse(localStorage.getItem('userData'));
         if (!userData) {
           return { type: 'no user available' };
         }
@@ -96,34 +77,23 @@ export class AuthEffects {
     (): Observable<any> =>
       this.actions$.pipe(
         ofType(AuthActions.loginStart),
-        switchMap((action) => {
-          return this.http
-            .post<AuthResponseData>(
-              `${environment.API_AUTH_FIREBASE_SIGNIN}${environment.API_KEY_FIREBASE}`,
-              {
-                email: action.email,
-                password: action.password,
-                returnSecureToken: true,
-              }
-            )
-            .pipe(
-              tap((respData) => {
-                this.dialogService.openDialog(this.dialogEnumType.Success, {message: `login successfull welcome ${respData.email}`})
-                this.authService.setAutoLogout(+respData.expiresIn * 1000);
-              }),
-              map((resData) => this.handleAuthentication(resData)),
-              catchError(this.handleError.bind(this))
-            );
-        })
+        switchMap((action) => this.authService.singIn(action.email, action.password)
+          .pipe(
+            tap((respData) => {
+              this.dialogService.openDialog(this.dialogEnumType.Success, { message: `login successfull welcome ${respData.email}` })
+              this.authService.setAutoLogout(+respData.expiresIn * 1000);
+            }),
+            map((resData) => this.handleAuthentication(resData)),
+            catchError(this.handleError.bind(this))
+          ))
       )
   );
+
   authRedirect$ = createEffect(
     () =>
       this.actions$.pipe(
         ofType(AuthActions.authenticateSuccess),
-        tap(() => {
-          this.router.navigate(['/', 'dashboard']);
-        })
+        tap(() => this.router.navigate(['/', 'dashboard']))
       ),
     { dispatch: false }
   );
@@ -143,7 +113,7 @@ export class AuthEffects {
   private handleError(errorResponse: HttpErrorResponse): any {
     let errorMessage = 'An unknown error occurred!';
     if (!errorResponse.error || !errorResponse.error.error) {
-      this.dialogService.openDialog(this.dialogEnumType.Error, {error: errorMessage, code: 400})
+      this.dialogService.openDialog(this.dialogEnumType.Error, { error: errorMessage, code: 400 })
       return of(AuthActions.authenticateFail({ errorMessage }));
     }
     switch (errorResponse.error.error.message) {
@@ -169,7 +139,7 @@ export class AuthEffects {
         errorMessage = errorResponse.error.error.message;
         break;
     }
-    this.dialogService.openDialog(this.dialogEnumType.Error, {error: errorMessage, code: 400})
+    this.dialogService.openDialog(this.dialogEnumType.Error, { error: errorMessage, code: 400 })
     return of(AuthActions.authenticateFail({ errorMessage }));
   }
   private handleAuthentication(responseData: AuthResponseData): any {

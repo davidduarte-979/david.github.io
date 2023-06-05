@@ -6,7 +6,7 @@ export class CurrentUser {
     private _token: string,
     // tslint:disable-next-line: variable-name
     private _tokenExpirationDate: Date,
-  ) {}
+  ) { }
   get token(): string | null {
     if (!this._tokenExpirationDate || new Date() > this._tokenExpirationDate) {
       return null;
@@ -42,3 +42,10 @@ export interface SignInResponseData {
   kind: string;
   displayName: string;
 }
+
+export interface AutoLoginUser {
+  email: string;
+  id: string;
+  _token: string;
+  _tokenExpirationDate: string;
+};
