@@ -272,12 +272,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "HttpErrorHandlerInterceptor": () => (/* binding */ HttpErrorHandlerInterceptor)
 /* harmony export */ });
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ 6587);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/operators */ 7418);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! rxjs */ 6587);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ 7418);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs/operators */ 8759);
 /* harmony import */ var _core_models_dialog_enum__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @core/models/dialog.enum */ 5319);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 6839);
-/* harmony import */ var _core_services_dialog_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @core/services/dialog.service */ 6797);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ 6679);
+/* harmony import */ var _store_operations_projects_projects_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../store/operations/projects/projects.actions */ 2376);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 6839);
+/* harmony import */ var _core_services_dialog_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @core/services/dialog.service */ 6797);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/router */ 6679);
+/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @ngrx/store */ 4307);
+
+
 
 
 
@@ -285,26 +290,27 @@ __webpack_require__.r(__webpack_exports__);
 
 
 class HttpErrorHandlerInterceptor {
-  constructor(dialogService, router) {
+  constructor(dialogService, router, store) {
     this.dialogService = dialogService;
     this.router = router;
+    this.store = store;
     this.dialogTypeEnum = _core_models_dialog_enum__WEBPACK_IMPORTED_MODULE_0__.DialogType;
   }
   intercept(request, next) {
-    return next.handle(request).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_2__.catchError)(err => {
+    return next.handle(request).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_3__.catchError)(err => {
       console.log(err);
       this.dialogService.openDialog(this.dialogTypeEnum.Error, {
         message: 'Something when wrong',
         code: 400
-      }).afterClosed().subscribe(() => this.router.navigate(['/']));
-      return (0,rxjs__WEBPACK_IMPORTED_MODULE_3__.throwError)(() => err);
+      }).afterClosed().pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.tap)(() => this.store.dispatch(_store_operations_projects_projects_actions__WEBPACK_IMPORTED_MODULE_1__.clearError()))).subscribe(() => this.router.navigate(['/']));
+      return (0,rxjs__WEBPACK_IMPORTED_MODULE_5__.throwError)(() => err);
     }));
   }
 }
 HttpErrorHandlerInterceptor.ɵfac = function HttpErrorHandlerInterceptor_Factory(t) {
-  return new (t || HttpErrorHandlerInterceptor)(_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵinject"](_core_services_dialog_service__WEBPACK_IMPORTED_MODULE_1__.DialogService), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵinject"](_angular_router__WEBPACK_IMPORTED_MODULE_5__.Router));
+  return new (t || HttpErrorHandlerInterceptor)(_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵinject"](_core_services_dialog_service__WEBPACK_IMPORTED_MODULE_2__.DialogService), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵinject"](_angular_router__WEBPACK_IMPORTED_MODULE_7__.Router), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵinject"](_ngrx_store__WEBPACK_IMPORTED_MODULE_8__.Store));
 };
-HttpErrorHandlerInterceptor.ɵprov = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineInjectable"]({
+HttpErrorHandlerInterceptor.ɵprov = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineInjectable"]({
   token: HttpErrorHandlerInterceptor,
   factory: HttpErrorHandlerInterceptor.ɵfac
 });
