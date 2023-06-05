@@ -1,10 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { Observable, pipe, Subscription } from 'rxjs';
-import { map, take } from 'rxjs/operators';
+import { Subscription } from 'rxjs';
 import { Project } from 'src/app/core/models/project';
-import { ServiceProjects } from '../../../../core/services/projects/project.service';
-import * as fromApp from '../../../../store/app.reduce';
 import * as ProjectAction from '../../../../store/operations/projects/projects.actions';
 import { AppState } from '@core/models/appState';
 @Component({
@@ -26,7 +23,6 @@ export class ProjectsComponent implements OnInit, OnDestroy {
   onSubscribeData(): void {
     this.projectsSub = this.store
       .select('projects')
-      // .pipe(take(1))
       .subscribe((respStateDataProjects) => {
         this.projects = respStateDataProjects.projects;
         this.isLoading = respStateDataProjects.loading;

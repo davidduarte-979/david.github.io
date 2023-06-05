@@ -11,7 +11,6 @@
           technological stacks, frameworks, preprocessor, databases, etc.</p>
       </div>
     </div>
-    <mat-spinner *ngIf="isLoading" class="m-auto mb-5"></mat-spinner>
     <div style="z-index: 10" *ngIf="error" class="alert alert-warning" role="alert">
       {{ error }}
       <button class="btn btn-primary" (click)="onClearError()" type="button">
@@ -26,3 +25,5 @@
     </div>
   </div>
 </portfolio-wrapper-container>
+
+<portfolio-loader></portfolio-loader>
