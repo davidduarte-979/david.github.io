@@ -6,7 +6,6 @@ import {
   Validators,
 } from '@angular/forms';
 import { Subscription } from 'rxjs';
-import * as fromApp from '../../../../../store/app.reduce';
 import * as AuthActions from '../../../../../store/operations/auth/auth.actions';
 import { Store } from '@ngrx/store';
 import { Router } from '@angular/router';

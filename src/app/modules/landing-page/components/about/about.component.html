@@ -1,3 +1,5 @@
+<portfolio-loader></portfolio-loader>
+
 <portfolio-banner>
   <figure class="rounded-2xl py-10">
     <img class="mx-auto h-48 w-48 rounded-full md:h-56 md:w-56" src="assets/img/david_profile.jpg"
@@ -13,9 +15,11 @@
     </div>
   </div>
 </portfolio-banner>
-<ng-container *ngFor="let tech of techStack">
-  <portfolio-category-tech-skill [skills]="skills" [cateroryTitle]="tech.categoryTitle"
-    [techCategoryEnum]="tech.techCategoryEnum" [imgUrl]="tech.imgUrl" [rtl]="tech.rtl">
-    {{tech.description}}
-  </portfolio-category-tech-skill>
+<ng-container *ngIf="(techStack$ | async) as techStack">
+  <ng-container *ngFor="let tech of techStack">
+    <portfolio-category-tech-skill [skills]="tech.skills" [cateroryTitle]="tech.categoryTitle"
+      [techCategoryEnum]="tech.techCategoryEnum" [imgUrl]="tech.imgUrl" [rtl]="tech.rtl">
+      {{tech.description}}
+    </portfolio-category-tech-skill>
+  </ng-container>
 </ng-container>

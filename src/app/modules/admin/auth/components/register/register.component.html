@@ -1,35 +1,23 @@
-<ng-container>
-  <mat-spinner *ngIf="isLoading" class="m-auto my-5"></mat-spinner>
-  <div *ngIf="error" style="z-index: 10" class="alert alert-warning" role="alert">
-    {{ error }}
-    <button class="btn btn-primary" type="button" (click)="onClearError()">
-      Close
-    </button>
+<form class="form" [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+
+  <div class="mb-4">
+    <input type="email" placeholder="Email" type="text" formControlName="email" name="email" id="username" />
+    <portfolio-error-validation-mesasage [control]="signUpForm.get('email')"
+      name="Email"></portfolio-error-validation-mesasage>
   </div>
-  <form *ngIf="!isLoading" class="form" [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
 
-    <div class="mb-4">
-      <input type="email" placeholder="Email" type="text" formControlName="email" name="email" id="username" />
-      <portfolio-error-validation-mesasage [control]="signUpForm.get('email')"
-        name="Email"></portfolio-error-validation-mesasage>
-    </div>
+  <div class="mb-4">
+    <input formControlName="password" type="password" placeholder="Password" name="password" />
+    <portfolio-error-validation-mesasage [control]="signUpForm.get('password')"
+      name="Password"></portfolio-error-validation-mesasage>
+  </div>
 
-    <div class="mb-4">
-      <input formControlName="password" type="password" placeholder="Password" name="password" />
-      <portfolio-error-validation-mesasage [control]="signUpForm.get('password')"
-        name="Password"></portfolio-error-validation-mesasage>
-    </div>
+  <br />
+  <portfolio-button type="submit" color="warn" class="w-[250px]">Sign up</portfolio-button>
 
-    <br />
-    <portfolio-button
-      type="submit"
-      color="warn"
-      class="w-[250px]"
-    >Sign up</portfolio-button>
+</form>
+<span class="text-gray-200 mr-2">Do not have an account yet?</span>
+<portfolio-button color="primary" (clickEvent)="signIn()">Sign In
+</portfolio-button>
 
-  </form>
-  <span class="text-gray-200 mr-2">Do not have an account yet?</span>
-  <portfolio-button
-    color="primary"
-    (clickEvent)="signIn()">Sign In</portfolio-button>
-</ng-container>
+<portfolio-loader *ngIf="isLoading"></portfolio-loader>

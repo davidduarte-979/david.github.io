@@ -4,7 +4,7 @@
       <div class="col-12 col-md-6">
         <h2 class="text-center mb-4">Skills</h2>
         <div class="skill-bars mx-auto">
-          <ng-container *ngIf="(skills$ | async) as skills; else loader">
+          <ng-container *ngIf="(skills$ | async) as skills">
             <div *ngFor="let skill of skills" class="bar mb-4">
               <div class="info flex-col items-center">
                 <figure class="w-20">
@@ -29,7 +29,4 @@
     </div>
   </div>
 </portfolio-wrapper-container>
-
-<ng-template #loader>
-  <portfolio-loader></portfolio-loader>
-</ng-template>
+<portfolio-loader></portfolio-loader>

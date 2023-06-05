@@ -5,6 +5,6 @@
 }
 
 .spinner {
-  @apply fixed left-1/2 top-1/2;
+  @apply fixed left-1/2 top-[40%] bottom-1/2 right-1/2;
   z-index: 101;
 }

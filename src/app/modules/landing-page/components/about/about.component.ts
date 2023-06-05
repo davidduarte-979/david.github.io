@@ -5,6 +5,7 @@ import { TechStack } from '@core/models/tech-stack';
 import { AboutService } from '@core/services/about.service';
 import { FileDownloadsService } from '@core/services/file-downloads.service';
 import { SkillsService } from '@core/services/skills/skills.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'portfolio-about',
@@ -13,17 +14,15 @@ import { SkillsService } from '@core/services/skills/skills.service';
 })
 export class AboutComponent implements OnInit {
   private downloadsServices = inject(FileDownloadsService);
-  private skillServices = inject(SkillsService);
   private aboutService = inject(AboutService);
-  techStack: TechStack[];
-  skills: Skill[];
+  techStack$: Observable<TechStack[]>;
+  skills$: Observable<Skill[]>;
   techCategoryEnum = TechCategory;
 
   constructor() { }
 
   ngOnInit(): void {
-    this.skills = this.skillServices.getAllSkills();
-    this.techStack = this.aboutService.getTechStack();
+    this.techStack$ = this.aboutService.getTechStackAsync();
   }
 
   downloadResumen(): void {

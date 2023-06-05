@@ -1,3 +1,4 @@
+import { Skill } from "./skills";
 import { TechCategory } from "./tech-category.enum";
 
 export interface TechStack {
@@ -6,4 +7,5 @@ export interface TechStack {
   imgUrl: string;
   rtl: boolean;
   description: string;
+  skills: Skill[]
 }
