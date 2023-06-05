@@ -76,6 +76,9 @@ body {
   input.ng-invalid.ng-touched,
   textarea.ng-invalid.ng-touched {
     border: 1px solid red !important;
+    &:focus {
+      @apply focus:ring-0 focus-visible:right-0
+    }
   }
   span.error {
     @apply text-red-600;

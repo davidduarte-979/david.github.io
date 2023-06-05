@@ -27,7 +27,7 @@
         </div>
 
         <h2 class="text-3xl font-bold tracking-tight text-white">Get in touch</h2>
-        <p class="mt-6 text-lg leading-8 text-gray-300">Please reach me out to work with oyu or your organization</p>
+        <p class="mt-6 text-lg leading-8 text-gray-300">Please reach me out to work with you or your organization</p>
         <dl class="mt-10 space-y-4 text-base leading-7 text-gray-300">
           <div class="flex gap-x-4">
             <dt class="flex-none">
@@ -67,37 +67,47 @@
       </div>
     </div>
 
-    <form class="px-6 pb-24 pt-20 sm:pb-32 lg:px-8 lg:py-48">
+    <form [formGroup]="pageForm" (submit)="onSubmit()" class="px-6 pb-24 pt-20 sm:pb-32 lg:px-8 lg:py-48">
       <div class="mx-auto max-w-xl lg:mr-0 lg:max-w-lg">
         <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
 
           <div>
             <label for="first-name">First name</label>
-            <input type="text" name="first-name" id="first-name">
+            <input formControlName="firstName" type="text" name="first-name" id="first-name">
+            <portfolio-error-validation-mesasage [control]="pageForm.get('firstName')" name="First Name">
+            </portfolio-error-validation-mesasage>
           </div>
 
           <div>
             <label for="last-name">Last name</label>
-            <input type="text" name="last-name" id="last-name">
+            <input formControlName="lastName" type="text" name="last-name" id="last-name">
+            <portfolio-error-validation-mesasage [control]="pageForm.get('firstName')" name="Last Name">
+            </portfolio-error-validation-mesasage>
           </div>
 
           <div class="sm:col-span-2">
             <label for="email">Email</label>
-            <input type="email" name="email" id="email">
+            <input formControlName="email" name="email" id="email">
+            <portfolio-error-validation-mesasage [control]="pageForm.get('email')" name="Email">
+            </portfolio-error-validation-mesasage>
           </div>
 
           <div class="sm:col-span-2">
             <label for="phone-number">Phone number</label>
-            <input type="tel" name="phone-number" id="phone-number">
+            <input formControlName="phone" type="tel" name="phone-number" id="phone-number">
+            <portfolio-error-validation-mesasage [control]="pageForm.get('phone')" name="Phone">
+            </portfolio-error-validation-mesasage>
           </div>
 
           <div class="sm:col-span-2">
             <label for="message">Message</label>
-            <textarea name="message" id="message" rows="4"></textarea>
+            <textarea formControlName="message" name="message" id="message" rows="4"></textarea>
+            <portfolio-error-validation-mesasage [control]="pageForm.get('message')" name="Message">
+            </portfolio-error-validation-mesasage>
           </div>
         </div>
         <div class="mt-8 flex justify-end">
-          <portfolio-button color="primary" >Send message</portfolio-button>
+          <portfolio-button type="submit" color="primary">Send message</portfolio-button>
         </div>
       </div>
     </form>

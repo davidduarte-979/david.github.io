@@ -14,7 +14,7 @@ export class DialogService {
   private dialogRef: MatDialogRef<any>;
   constructor() { }
 
-  openDialog<T, R>(dialogType: DialogType = DialogType.Info, data?: any | Error, component?: ComponentType<T>): void {
+  openDialog<T>(dialogType: DialogType = DialogType.Info, data?: any | Error, component?: ComponentType<T>) {
     if (component) {
       this.dialogRef = this.dialog.open(component, {
         data: {
@@ -30,6 +30,7 @@ export class DialogService {
         }
       });
     }
+    return this.dialogRef;
   }
 
   closeDialog(): void {

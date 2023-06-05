@@ -12,6 +12,7 @@ import { ProjectsComponent } from './components/projects/projects.component';
 import { SkillBarComponent } from './components/skill-bar/skill-bar.component';
 import { LandingPageComponent } from './landing-page.component';
 import { SharedModule } from '@shared/shared.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -29,7 +30,9 @@ import { SharedModule } from '@shared/shared.module';
   imports: [
     CommonModule,
     LandingPageRoutingModule,
-    SharedModule
+    SharedModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class LandingPageModule { }
