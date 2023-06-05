@@ -9,6 +9,9 @@ module.exports = {
         h1 : ["32px", { lineHeight: "44px", fontWeight: 500 }],
         h2 : ["30px", { lineHeight: "40px", fontWeight: 400 }]
       },
+      colors: {
+        'secondary': '#be1347'
+      },
       screens: {
         sm: '390px',
         md: '768px',

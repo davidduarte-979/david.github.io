@@ -2,12 +2,13 @@
   <figure class="w-20 flex-none">
     <img [src]="skill.logo" />
   </figure>
-  <span>
-    <strong class="text-lg font-semibold text-purple-800">{{skill.name}}</strong>
-    <br>
-    Years of Experience:
-    <strong class="font-semibold text-purple-800">{{skill.yearsOfExperience}}</strong>
-    <br>
-    {{ skill.description }}
-  </span>
+  <div>
+    <h3>{{skill.name}}</h3>
+    <div class="text-xl text-gray-300 inline mr-1 mb-1">Years of Experience:</div>
+    <h3 class="inline">{{skill.yearsOfExperience}}</h3>
+    <br class="mb-2">
+    <div class="text-left text-lg text-gray-400 mt-4">
+      {{ skill.description }}
+    </div>
+  </div>
 </li>

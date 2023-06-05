@@ -28,11 +28,11 @@ body {
   }
 
   p {
-    @apply mx-auto mt-6 max-w-xl text-lg leading-8 text-gray-500;
+    @apply mx-auto mt-6 max-w-xl text-lg leading-8 text-gray-400;
   }
 
   h3 {
-    @apply m-0;
+    @apply m-0 text-2xl font-bold text-secondary;
   }
 
   h2 {
