@@ -6,4 +6,6 @@ export const environment = {
   API_KEY_FIREBASE: 'AIzaSyB1i143xgUQYNvO9BOLHh9N-tLLbYicGDI',
   API_DEV: 'http://localhost:3000/api/projects/',
   API_AUTH_DEV: 'http://localhost:3000',
+  API_BASE_URL: 'https://api.rebel-transport-gr75.com',
+  API_VERSION: 'api/v1'
 };

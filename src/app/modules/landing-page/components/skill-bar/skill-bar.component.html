@@ -2,28 +2,34 @@
   <div class="container-fluid skill-section">
     <div class="row justify-content-center">
       <div class="col-12 col-md-6">
-        <h2 class="text-white-50 text-center mb-4">Skills</h2>
+        <h2 class="text-center mb-4">Skills</h2>
         <div class="skill-bars mx-auto">
-          <div *ngFor="let skill of skills" class="bar mb-4">
-            <div class="info flex-col items-center">
-              <figure class="w-20">
-                <img [src]="skill.logo" [alt]="skill.name">
-              </figure>
-              <span class="mb-2">{{ skill.name }}</span>
-              <span *ngIf="skill.proficient && skill.knowledge > 80">Proficient</span>
-            </div>
-            <div class="progress">
-              <div class="
-                  progress-bar
-                  bg-danger
-                  progress-bar-striped progress-bar-animated
-                " role="progressbar" [style.width.%]="skill.knowledge">
-                {{ skill.knowledge }}%
+          <ng-container *ngIf="(skills$ | async) as skills; else loader">
+            <div *ngFor="let skill of skills" class="bar mb-4">
+              <div class="info flex-col items-center">
+                <figure class="w-20">
+                  <img [src]="skill.logo" [alt]="skill.name">
+                </figure>
+                <span class="mb-2">{{ skill.name }}</span>
+                <span *ngIf="skill.proficient && skill.knowledge > 80">Proficient</span>
+              </div>
+              <div class="progress">
+                <div class="
+                    progress-bar
+                    bg-danger
+                    progress-bar-striped progress-bar-animated
+                  " role="progressbar" [style.width.%]="skill.knowledge">
+                  {{ skill.knowledge }}%
+                </div>
               </div>
             </div>
-          </div>
+          </ng-container>
         </div>
       </div>
     </div>
   </div>
 </portfolio-wrapper-container>
+
+<ng-template #loader>
+  <portfolio-loader></portfolio-loader>
+</ng-template>

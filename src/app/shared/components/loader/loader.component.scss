@@ -1,0 +1,10 @@
+.overlay {
+  @apply fixed top-0 left-0 w-full h-full;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 100;
+}
+
+.spinner {
+  @apply fixed left-1/2 top-1/2;
+  z-index: 101;
+}

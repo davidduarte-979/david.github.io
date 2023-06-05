@@ -1,16 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { Skill } from 'src/app/core/models/skills';
-import { SkillsService } from '../../../../core/services/skills/skills.service';
+import { SkillsService } from '@core/services/skills/skills.service';
+import { Observable, of } from 'rxjs';
+
 @Component({
   selector: 'portfolio-skill-bar',
   templateUrl: './skill-bar.component.html',
   styleUrls: ['./skill-bar.component.scss'],
 })
 export class SkillBarComponent implements OnInit {
-  skills!: Skill[];
-  constructor(private skillsService: SkillsService) {}
+  skills$: Observable<Skill[]>;
+  constructor(private skillsService: SkillsService) { }
 
   ngOnInit(): void {
-    this.skills = this.skillsService.getAllSkills();
+    this.skills$ = this.skillsService.getSkillAsync()
   }
 }

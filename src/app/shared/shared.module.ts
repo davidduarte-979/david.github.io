@@ -11,6 +11,7 @@ import { WrapperContainerComponent } from './components/wrapper-container/wrappe
 import { MaterialModule } from './material/material.module';
 import { ErrorValidationMesasageComponent } from './components/error-validation-mesasage/error-validation-mesasage.component';
 import { DialogComponent } from './components/dialog/dialog.component';
+import { LoaderComponent } from './components/loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { DialogComponent } from './components/dialog/dialog.component';
     BannerComponent,
     WrapperContainerComponent,
     ErrorValidationMesasageComponent,
-    DialogComponent
+    DialogComponent,
+    LoaderComponent
   ],
   imports: [
     CommonModule,
@@ -30,16 +32,17 @@ import { DialogComponent } from './components/dialog/dialog.component';
     ButtonComponent
   ],
   exports: [
-      NavbarComponent,
-      FooterComponent,
-      MaterialModule,
-      ButtonComponent,
-      TechSkillComponent,
-      CategoryTechSkillComponent,
-      BannerComponent,
-      WrapperContainerComponent,
-      ErrorValidationMesasageComponent,
-      DialogComponent
-    ],
+    NavbarComponent,
+    FooterComponent,
+    MaterialModule,
+    ButtonComponent,
+    TechSkillComponent,
+    CategoryTechSkillComponent,
+    BannerComponent,
+    WrapperContainerComponent,
+    ErrorValidationMesasageComponent,
+    DialogComponent,
+    LoaderComponent
+  ],
 })
-export class SharedModule {}
+export class SharedModule { }
