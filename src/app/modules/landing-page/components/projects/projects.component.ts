@@ -6,6 +6,7 @@ import { Project } from 'src/app/core/models/project';
 import { ServiceProjects } from '../../../../core/services/projects/project.service';
 import * as fromApp from '../../../../store/app.reduce';
 import * as ProjectAction from '../../../../store/operations/projects/projects.actions';
+import { AppState } from '@core/models/appState';
 @Component({
   selector: 'portfolio-projects',
   templateUrl: './projects.component.html',
@@ -16,7 +17,7 @@ export class ProjectsComponent implements OnInit, OnDestroy {
   isLoading = false;
   projectsSub!: Subscription;
   error = null;
-  constructor(private store: Store<fromApp.AppState>) {}
+  constructor(private store: Store<AppState>) { }
 
   ngOnInit(): void {
     this.onSubscribeData();

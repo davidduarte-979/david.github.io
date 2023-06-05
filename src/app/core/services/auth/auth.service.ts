@@ -1,11 +1,11 @@
 import { Injectable, inject } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import * as fromApp from '../../../store/app.reduce';
 import * as AuthActions from '../../../store/operations/auth/auth.actions';
 import { Store } from '@ngrx/store';
 import { HttpClient } from '@angular/common/http';
 import { AuthResponseData } from '@core/models/user';
 import { Observable } from 'rxjs';
+import { AppState } from '@core/models/appState';
 
 @Injectable({
   providedIn: 'root',
@@ -13,7 +13,7 @@ import { Observable } from 'rxjs';
 export class AuthService {
   private http = inject(HttpClient);
   private tokenExpirationTimer: any;
-  constructor(private store: Store<fromApp.AppState>) { }
+  constructor(private store: Store<AppState>) { }
 
   setAutoLogout(expirationDuration: number): void {
     this.tokenExpirationTimer = setTimeout(() => {

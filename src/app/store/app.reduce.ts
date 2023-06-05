@@ -1,13 +1,9 @@
-import * as fromProjects from './operations/projects/projects.reducer';
-import * as fromAuth from './operations/auth/auth.reducer';
+import * as projectsReducer from './operations/projects/projects.reducer';
+import * as authReducer from './operations/auth/auth.reducer';
 import { ActionReducerMap } from '@ngrx/store';
-
-export interface AppState {
-  projects: fromProjects.State;
-  auth: fromAuth.State;
-}
+import { AppState } from '@core/models/appState';
 
 export const appReducer: ActionReducerMap<AppState> = {
-  projects: fromProjects.projectReducer,
-  auth: fromAuth.authReducer,
+  projects: projectsReducer.projectReducer,
+  auth: authReducer.authReducer,
 };

@@ -5,6 +5,7 @@ import { Subscription } from 'rxjs';
 import * as fromApp from '../../../../../store/app.reduce';
 import * as AuthActions from '../../../../../store/operations/auth/auth.actions';
 import { Router } from '@angular/router';
+import { AppState } from '@core/models/appState';
 @Component({
   selector: 'portfolio-register',
   templateUrl: './register.component.html',
@@ -12,7 +13,7 @@ import { Router } from '@angular/router';
 })
 export class RegisterComponent implements OnInit, OnDestroy {
   private router = inject(Router);
-  constructor(private store: Store<fromApp.AppState>) {
+  constructor(private store: Store<AppState>) {
     this.buildForm();
   }
   signUpForm!: FormGroup;
@@ -26,7 +27,7 @@ export class RegisterComponent implements OnInit, OnDestroy {
     });
   }
   onSubmit(): void {
-    if(this.signUpForm.invalid) {
+    if (this.signUpForm.invalid) {
       this.signUpForm.markAllAsTouched();
       return;
     }

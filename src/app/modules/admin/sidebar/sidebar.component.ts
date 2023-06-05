@@ -4,9 +4,9 @@ import { Observable, Subscription } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { AuthService } from '@core/services/auth/auth.service';
 import { User } from '@core/models/user';
-import * as fromApp from '../../../store/app.reduce';
 import * as AuthActions from '../../../store/operations/auth/auth.actions';
 import { Store } from '@ngrx/store';
+import { AppState } from '@core/models/appState';
 @Component({
   selector: 'portfolio-sidebar',
   templateUrl: './sidebar.component.html',
@@ -26,8 +26,8 @@ export class SidebarComponent implements OnInit, OnDestroy {
   constructor(
     private breakpointObserver: BreakpointObserver,
     private auth: AuthService,
-    private store: Store<fromApp.AppState>
-  ) {}
+    private store: Store<AppState>
+  ) { }
   ngOnInit(): void {
     this.subStore = this.store.select('auth').subscribe((authStateResponse) => {
       this.username = authStateResponse.user

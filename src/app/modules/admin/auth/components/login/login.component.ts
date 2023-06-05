@@ -10,8 +10,8 @@ import * as fromApp from '../../../../../store/app.reduce';
 import * as AuthActions from '../../../../../store/operations/auth/auth.actions';
 import { Store } from '@ngrx/store';
 import { Router } from '@angular/router';
-import { DialogService } from '@core/services/dialog.service';
 import { DialogType } from '@core/models/dialog.enum';
+import { AppState } from '@core/models/appState';
 @Component({
   selector: 'portfolio-login',
   templateUrl: './login.component.html',
@@ -19,12 +19,11 @@ import { DialogType } from '@core/models/dialog.enum';
 })
 export class LoginComponent implements OnInit, OnDestroy {
   private router = inject(Router);
-  private dialogService = inject(DialogService);
   dialogTypeEnum = DialogType;
   signInForm!: FormGroup;
   signInSub!: Subscription;
   isLoading = false;
-  constructor(private store: Store<fromApp.AppState>) {
+  constructor(private store: Store<AppState>) {
     this.buildForm();
   }
   ngOnInit(): void {
@@ -33,7 +32,7 @@ export class LoginComponent implements OnInit, OnDestroy {
     });
   }
   onSubmit(): void {
-    if(this.signInForm.invalid) {
+    if (this.signInForm.invalid) {
       this.signInForm.markAllAsTouched();
       return;
     }

@@ -6,7 +6,7 @@ import { switchMap, map, tap } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { Project } from '@core/models/project';
 import { environment } from 'src/environments/environment';
-import * as fromApp from '../../app.reduce';
+import { AppState } from '@core/models/appState';
 @Injectable({
   providedIn: 'root',
 })
@@ -14,8 +14,8 @@ export class ProjectsEffects {
   constructor(
     private actions$: Actions,
     private http: HttpClient,
-    private store: Store<fromApp.AppState>
-  ) {}
+    private store: Store<AppState>
+  ) { }
   fetchProjects$ = createEffect(
     (): any =>
       this.actions$.pipe(
