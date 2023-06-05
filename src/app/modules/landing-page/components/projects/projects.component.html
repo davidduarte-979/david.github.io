@@ -11,12 +11,6 @@
           technological stacks, frameworks, preprocessor, databases, etc.</p>
       </div>
     </div>
-    <div style="z-index: 10" *ngIf="error" class="alert alert-warning" role="alert">
-      {{ error }}
-      <button class="btn btn-primary" (click)="onClearError()" type="button">
-        Close
-      </button>
-    </div>
     <div *ngIf="!error" class="container">
       <div class="row justify-content-center">
         <portfolio-card class="py-3 col-12 col-md-5 col-lg-4" *ngFor="let project of projects"

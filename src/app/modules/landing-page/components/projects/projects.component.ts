@@ -32,9 +32,7 @@ export class ProjectsComponent implements OnInit, OnDestroy {
   onDispatchAction(): void {
     this.store.dispatch(ProjectAction.fetchProjects());
   }
-  onClearError(): void {
-    this.store.dispatch(ProjectAction.clearError());
-  }
+
   ngOnDestroy(): void {
     this.projectsSub.unsubscribe();
   }
