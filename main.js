@@ -426,6 +426,7 @@ class DialogService {
         }
       });
     }
+    return this.dialogRef;
   }
   closeDialog() {
     this.dialogRef.close();
