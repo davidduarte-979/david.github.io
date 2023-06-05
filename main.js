@@ -154,15 +154,15 @@ AppModule.ɵmod = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵ
 AppModule.ɵinj = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵdefineInjector"]({
   providers: [{
     provide: _angular_common_http__WEBPACK_IMPORTED_MODULE_12__.HTTP_INTERCEPTORS,
+    useClass: _core_interceptors_loading_interceptor__WEBPACK_IMPORTED_MODULE_10__.LoadingInterceptor,
+    multi: true
+  }, {
+    provide: _angular_common_http__WEBPACK_IMPORTED_MODULE_12__.HTTP_INTERCEPTORS,
     useClass: _core_interceptors_auth_interceptor_service__WEBPACK_IMPORTED_MODULE_3__.HeaderInterceptor,
     multi: true
   }, {
     provide: _angular_common_http__WEBPACK_IMPORTED_MODULE_12__.HTTP_INTERCEPTORS,
     useClass: _core_interceptors_http_error_handler_interceptor__WEBPACK_IMPORTED_MODULE_4__.HttpErrorHandlerInterceptor,
-    multi: true
-  }, {
-    provide: _angular_common_http__WEBPACK_IMPORTED_MODULE_12__.HTTP_INTERCEPTORS,
-    useClass: _core_interceptors_loading_interceptor__WEBPACK_IMPORTED_MODULE_10__.LoadingInterceptor,
     multi: true
   }],
   imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_13__.BrowserModule, _app_routing_module__WEBPACK_IMPORTED_MODULE_0__.AppRoutingModule, _core_core_module__WEBPACK_IMPORTED_MODULE_2__.CoreModule, _angular_common_http__WEBPACK_IMPORTED_MODULE_12__.HttpClientModule, _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_14__.BrowserAnimationsModule, _ngrx_store__WEBPACK_IMPORTED_MODULE_15__.StoreModule.forRoot(_store_app_reduce__WEBPACK_IMPORTED_MODULE_6__.appReducer), _ngrx_effects__WEBPACK_IMPORTED_MODULE_16__.EffectsModule.forRoot([_store_operations_auth_auth_effects__WEBPACK_IMPORTED_MODULE_8__.AuthEffects, _store_operations_projects_projects_effects__WEBPACK_IMPORTED_MODULE_5__.ProjectsEffects]), _ngrx_store_devtools__WEBPACK_IMPORTED_MODULE_17__.StoreDevtoolsModule.instrument({
