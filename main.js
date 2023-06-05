@@ -275,6 +275,7 @@ class CurrentUser {
     return this._token;
   }
 }
+;
 
 /***/ }),
 
@@ -338,19 +339,25 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "AuthService": () => (/* binding */ AuthService)
 /* harmony export */ });
-/* harmony import */ var _store_operations_auth_auth_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../store/operations/auth/auth.actions */ 4415);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 6839);
-/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ngrx/store */ 4307);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 6839);
+/* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/environments/environment */ 2340);
+/* harmony import */ var _store_operations_auth_auth_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../store/operations/auth/auth.actions */ 4415);
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ 3765);
+/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ngrx/store */ 4307);
+
+
+
 
 
 
 class AuthService {
   constructor(store) {
     this.store = store;
+    this.http = (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.inject)(_angular_common_http__WEBPACK_IMPORTED_MODULE_3__.HttpClient);
   }
   setAutoLogout(expirationDuration) {
     this.tokenExpirationTimer = setTimeout(() => {
-      this.store.dispatch(_store_operations_auth_auth_actions__WEBPACK_IMPORTED_MODULE_0__.logout());
+      this.store.dispatch(_store_operations_auth_auth_actions__WEBPACK_IMPORTED_MODULE_1__.logout());
     }, expirationDuration);
   }
   clearLogoutTimer() {
@@ -359,11 +366,25 @@ class AuthService {
       this.tokenExpirationTimer = null;
     }
   }
+  signUp(email, password) {
+    return this.http.post(`${src_environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.API_AUTH_FIREBASE_SIGNUP}${src_environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.API_KEY_FIREBASE}`, {
+      email,
+      password,
+      returnSecureToken: true
+    });
+  }
+  singIn(email, password) {
+    return this.http.post(`${src_environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.API_AUTH_FIREBASE_SIGNIN}${src_environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.API_KEY_FIREBASE}`, {
+      email: email,
+      password: password,
+      returnSecureToken: true
+    });
+  }
 }
 AuthService.ɵfac = function AuthService_Factory(t) {
-  return new (t || AuthService)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_ngrx_store__WEBPACK_IMPORTED_MODULE_2__.Store));
+  return new (t || AuthService)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵinject"](_ngrx_store__WEBPACK_IMPORTED_MODULE_4__.Store));
 };
-AuthService.ɵprov = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjectable"]({
+AuthService.ɵprov = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjectable"]({
   token: AuthService,
   factory: AuthService.ɵfac,
   providedIn: 'root'
@@ -730,7 +751,7 @@ function DialogComponent_ng_container_0_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](5, "path", 5);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]()();
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnamespaceHTML"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](6, "div", 6)(7, "h3", 7);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](6, "div", 6)(7, "h4", 7);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](8, "Error");
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]()()();
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](9, "div", 8)(10, "div", 9)(11, "ul", 10)(12, "li");
@@ -756,7 +777,7 @@ function DialogComponent_ng_container_1_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](5, "path", 16);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]()();
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnamespaceHTML"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](6, "div", 6)(7, "h3", 17);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](6, "div", 6)(7, "h4", 17);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](8, "Success!");
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]()()();
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](9, "div", 8)(10, "div", 18)(11, "ul", 10)(12, "li");
@@ -808,7 +829,7 @@ function DialogComponent_ng_container_3_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](4, "path", 29);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnamespaceHTML"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](5, "div", 6)(6, "h3", 30);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](5, "div", 6)(6, "h4", 30);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](7, "Attention needed ");
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]()()();
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](8, "div", 8)(9, "div", 31)(10, "ul", 10)(11, "li");
@@ -1045,23 +1066,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "AuthEffects": () => (/* binding */ AuthEffects)
 /* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 6839);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 6839);
 /* harmony import */ var _core_models_user__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @core/models/user */ 8443);
-/* harmony import */ var _ngrx_effects__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @ngrx/effects */ 2847);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! rxjs */ 4139);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! rxjs/operators */ 9095);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! rxjs/operators */ 8759);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! rxjs/operators */ 6942);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! rxjs/operators */ 7418);
-/* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/environments/environment */ 2340);
-/* harmony import */ var _auth_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./auth.actions */ 4415);
-/* harmony import */ var _core_services_dialog_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @core/services/dialog.service */ 6797);
-/* harmony import */ var _core_models_dialog_enum__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @core/models/dialog.enum */ 5319);
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/common/http */ 3765);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/router */ 6679);
-/* harmony import */ var _core_services_auth_auth_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @core/services/auth/auth.service */ 7990);
-
-
+/* harmony import */ var _ngrx_effects__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ngrx/effects */ 2847);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! rxjs */ 4139);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! rxjs/operators */ 9095);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! rxjs/operators */ 8759);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! rxjs/operators */ 6942);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! rxjs/operators */ 7418);
+/* harmony import */ var _auth_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./auth.actions */ 4415);
+/* harmony import */ var _core_services_dialog_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @core/services/dialog.service */ 6797);
+/* harmony import */ var _core_models_dialog_enum__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @core/models/dialog.enum */ 5319);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/router */ 6679);
+/* harmony import */ var _core_services_auth_auth_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @core/services/auth/auth.service */ 7990);
 
 
 
@@ -1075,28 +1092,19 @@ __webpack_require__.r(__webpack_exports__);
 
 
 class AuthEffects {
-  constructor(actions$, http, router, authService) {
+  constructor(actions$, router, authService) {
     this.actions$ = actions$;
-    this.http = http;
     this.router = router;
     this.authService = authService;
-    this.dialogService = (0,_angular_core__WEBPACK_IMPORTED_MODULE_6__.inject)(_core_services_dialog_service__WEBPACK_IMPORTED_MODULE_3__.DialogService);
-    this.dialogEnumType = _core_models_dialog_enum__WEBPACK_IMPORTED_MODULE_4__.DialogType;
-    this.authSignUp$ = (0,_ngrx_effects__WEBPACK_IMPORTED_MODULE_7__.createEffect)(() => this.actions$.pipe((0,_ngrx_effects__WEBPACK_IMPORTED_MODULE_7__.ofType)(_auth_actions__WEBPACK_IMPORTED_MODULE_2__.signUpStart), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_8__.switchMap)(action => {
-      return this.http.post(`${src_environments_environment__WEBPACK_IMPORTED_MODULE_1__.environment.API_AUTH_FIREBASE_SIGNUP}${src_environments_environment__WEBPACK_IMPORTED_MODULE_1__.environment.API_KEY_FIREBASE}`, {
-        email: action.email,
-        password: action.password,
-        returnSecureToken: true
-      }).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_9__.tap)(respData => {
-        this.authService.setAutoLogout(+respData.expiresIn * 1000);
-      }), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_10__.map)(resData => this.handleAuthentication(resData)), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_11__.catchError)(this.handleError.bind(this)));
-    })));
-    this.authLogout$ = (0,_ngrx_effects__WEBPACK_IMPORTED_MODULE_7__.createEffect)(() => this.actions$.pipe((0,_ngrx_effects__WEBPACK_IMPORTED_MODULE_7__.ofType)(_auth_actions__WEBPACK_IMPORTED_MODULE_2__.logout), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_9__.tap)(() => {
-      localStorage.removeItem('userData');
-    })), {
+    this.dialogService = (0,_angular_core__WEBPACK_IMPORTED_MODULE_5__.inject)(_core_services_dialog_service__WEBPACK_IMPORTED_MODULE_2__.DialogService);
+    this.dialogEnumType = _core_models_dialog_enum__WEBPACK_IMPORTED_MODULE_3__.DialogType;
+    this.authSignUp$ = (0,_ngrx_effects__WEBPACK_IMPORTED_MODULE_6__.createEffect)(() => this.actions$.pipe((0,_ngrx_effects__WEBPACK_IMPORTED_MODULE_6__.ofType)(_auth_actions__WEBPACK_IMPORTED_MODULE_1__.signUpStart), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_7__.switchMap)(action => this.authService.signUp(action.email, action.password).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_8__.tap)(respData => this.authService.setAutoLogout(+respData.expiresIn * 1000)), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_9__.map)(resData => this.handleAuthentication(resData)), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_10__.catchError)(this.handleError.bind(this))))));
+    this.authLogout$ = (0,_ngrx_effects__WEBPACK_IMPORTED_MODULE_6__.createEffect)(() => this.actions$.pipe((0,_ngrx_effects__WEBPACK_IMPORTED_MODULE_6__.ofType)(_auth_actions__WEBPACK_IMPORTED_MODULE_1__.logout), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_8__.tap)(() => localStorage.removeItem('userData')), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_8__.tap)(() => this.dialogService.openDialog(this.dialogEnumType.Success, {
+      message: 'You were succesfully logout.'
+    }))), {
       dispatch: false
     });
-    this.authLogin$ = (0,_ngrx_effects__WEBPACK_IMPORTED_MODULE_7__.createEffect)(() => this.actions$.pipe((0,_ngrx_effects__WEBPACK_IMPORTED_MODULE_7__.ofType)(_auth_actions__WEBPACK_IMPORTED_MODULE_2__.autoLogin), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_10__.map)(() => {
+    this.authLogin$ = (0,_ngrx_effects__WEBPACK_IMPORTED_MODULE_6__.createEffect)(() => this.actions$.pipe((0,_ngrx_effects__WEBPACK_IMPORTED_MODULE_6__.ofType)(_auth_actions__WEBPACK_IMPORTED_MODULE_1__.autoLogin), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_9__.map)(() => {
       const userData = JSON.parse(localStorage.getItem('userData'));
       if (!userData) {
         return {
@@ -1107,7 +1115,7 @@ class AuthEffects {
       if (loadedUser.token) {
         const expirationDuration = new Date(userData._tokenExpirationDate).getTime() - new Date().getTime();
         this.authService.setAutoLogout(expirationDuration);
-        return _auth_actions__WEBPACK_IMPORTED_MODULE_2__.authenticateSuccess({
+        return _auth_actions__WEBPACK_IMPORTED_MODULE_1__.authenticateSuccess({
           email: loadedUser.email,
           userId: loadedUser.id,
           token: loadedUser.token,
@@ -1118,24 +1126,16 @@ class AuthEffects {
         type: 'no token available'
       };
     })));
-    this.authSignIn$ = (0,_ngrx_effects__WEBPACK_IMPORTED_MODULE_7__.createEffect)(() => this.actions$.pipe((0,_ngrx_effects__WEBPACK_IMPORTED_MODULE_7__.ofType)(_auth_actions__WEBPACK_IMPORTED_MODULE_2__.loginStart), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_8__.switchMap)(action => {
-      return this.http.post(`${src_environments_environment__WEBPACK_IMPORTED_MODULE_1__.environment.API_AUTH_FIREBASE_SIGNIN}${src_environments_environment__WEBPACK_IMPORTED_MODULE_1__.environment.API_KEY_FIREBASE}`, {
-        email: action.email,
-        password: action.password,
-        returnSecureToken: true
-      }).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_9__.tap)(respData => {
-        this.dialogService.openDialog(this.dialogEnumType.Success, {
-          message: `login successfull welcome ${respData.email}`
-        });
-        this.authService.setAutoLogout(+respData.expiresIn * 1000);
-      }), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_10__.map)(resData => this.handleAuthentication(resData)), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_11__.catchError)(this.handleError.bind(this)));
-    })));
-    this.authRedirect$ = (0,_ngrx_effects__WEBPACK_IMPORTED_MODULE_7__.createEffect)(() => this.actions$.pipe((0,_ngrx_effects__WEBPACK_IMPORTED_MODULE_7__.ofType)(_auth_actions__WEBPACK_IMPORTED_MODULE_2__.authenticateSuccess), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_9__.tap)(() => {
-      this.router.navigate(['/', 'dashboard']);
-    })), {
+    this.authSignIn$ = (0,_ngrx_effects__WEBPACK_IMPORTED_MODULE_6__.createEffect)(() => this.actions$.pipe((0,_ngrx_effects__WEBPACK_IMPORTED_MODULE_6__.ofType)(_auth_actions__WEBPACK_IMPORTED_MODULE_1__.loginStart), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_7__.switchMap)(action => this.authService.singIn(action.email, action.password).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_8__.tap)(respData => {
+      this.dialogService.openDialog(this.dialogEnumType.Success, {
+        message: `login successfull welcome ${respData.email}`
+      });
+      this.authService.setAutoLogout(+respData.expiresIn * 1000);
+    }), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_9__.map)(resData => this.handleAuthentication(resData)), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_10__.catchError)(this.handleError.bind(this))))));
+    this.authRedirect$ = (0,_ngrx_effects__WEBPACK_IMPORTED_MODULE_6__.createEffect)(() => this.actions$.pipe((0,_ngrx_effects__WEBPACK_IMPORTED_MODULE_6__.ofType)(_auth_actions__WEBPACK_IMPORTED_MODULE_1__.authenticateSuccess), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_8__.tap)(() => this.router.navigate(['/', 'dashboard']))), {
       dispatch: false
     });
-    this.authRedirectLogout$ = (0,_ngrx_effects__WEBPACK_IMPORTED_MODULE_7__.createEffect)(() => this.actions$.pipe((0,_ngrx_effects__WEBPACK_IMPORTED_MODULE_7__.ofType)(_auth_actions__WEBPACK_IMPORTED_MODULE_2__.logout), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_9__.tap)(() => {
+    this.authRedirectLogout$ = (0,_ngrx_effects__WEBPACK_IMPORTED_MODULE_6__.createEffect)(() => this.actions$.pipe((0,_ngrx_effects__WEBPACK_IMPORTED_MODULE_6__.ofType)(_auth_actions__WEBPACK_IMPORTED_MODULE_1__.logout), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_8__.tap)(() => {
       this.router.navigate(['/', 'dashboard', 'auth']);
       this.authService.clearLogoutTimer();
     })), {
@@ -1149,7 +1149,7 @@ class AuthEffects {
         error: errorMessage,
         code: 400
       });
-      return (0,rxjs__WEBPACK_IMPORTED_MODULE_12__.of)(_auth_actions__WEBPACK_IMPORTED_MODULE_2__.authenticateFail({
+      return (0,rxjs__WEBPACK_IMPORTED_MODULE_11__.of)(_auth_actions__WEBPACK_IMPORTED_MODULE_1__.authenticateFail({
         errorMessage
       }));
     }
@@ -1180,7 +1180,7 @@ class AuthEffects {
       error: errorMessage,
       code: 400
     });
-    return (0,rxjs__WEBPACK_IMPORTED_MODULE_12__.of)(_auth_actions__WEBPACK_IMPORTED_MODULE_2__.authenticateFail({
+    return (0,rxjs__WEBPACK_IMPORTED_MODULE_11__.of)(_auth_actions__WEBPACK_IMPORTED_MODULE_1__.authenticateFail({
       errorMessage
     }));
   }
@@ -1188,7 +1188,7 @@ class AuthEffects {
     const expirationDate = new Date(new Date().getTime() + +responseData.expiresIn * 1000);
     const user = new _core_models_user__WEBPACK_IMPORTED_MODULE_0__.CurrentUser(responseData.email, responseData.localId, responseData.idToken, expirationDate);
     localStorage.setItem('userData', JSON.stringify(user));
-    return _auth_actions__WEBPACK_IMPORTED_MODULE_2__.authenticateSuccess({
+    return _auth_actions__WEBPACK_IMPORTED_MODULE_1__.authenticateSuccess({
       email: responseData.email,
       userId: responseData.localId,
       token: responseData.idToken,
@@ -1197,9 +1197,9 @@ class AuthEffects {
   }
 }
 AuthEffects.ɵfac = function AuthEffects_Factory(t) {
-  return new (t || AuthEffects)(_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵinject"](_ngrx_effects__WEBPACK_IMPORTED_MODULE_7__.Actions), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_13__.HttpClient), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵinject"](_angular_router__WEBPACK_IMPORTED_MODULE_14__.Router), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵinject"](_core_services_auth_auth_service__WEBPACK_IMPORTED_MODULE_5__.AuthService));
+  return new (t || AuthEffects)(_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵinject"](_ngrx_effects__WEBPACK_IMPORTED_MODULE_6__.Actions), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵinject"](_angular_router__WEBPACK_IMPORTED_MODULE_12__.Router), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵinject"](_core_services_auth_auth_service__WEBPACK_IMPORTED_MODULE_4__.AuthService));
 };
-AuthEffects.ɵprov = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineInjectable"]({
+AuthEffects.ɵprov = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineInjectable"]({
   token: AuthEffects,
   factory: AuthEffects.ɵfac
 });
