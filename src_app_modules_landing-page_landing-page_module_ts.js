@@ -608,12 +608,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "ProjectsComponent": () => (/* binding */ ProjectsComponent)
 /* harmony export */ });
 /* harmony import */ var _store_operations_projects_projects_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../store/operations/projects/projects.actions */ 2376);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 6839);
-/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ngrx/store */ 4307);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common */ 6477);
-/* harmony import */ var _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/material/progress-spinner */ 5312);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 6839);
+/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ngrx/store */ 4307);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/common */ 6477);
 /* harmony import */ var _shared_components_wrapper_container_wrapper_container_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../shared/components/wrapper-container/wrapper-container.component */ 5078);
-/* harmony import */ var _card_card_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./card/card.component */ 4367);
+/* harmony import */ var _shared_components_loader_loader_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../shared/components/loader/loader.component */ 605);
+/* harmony import */ var _card_card_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./card/card.component */ 4367);
 
 
 
@@ -621,50 +621,45 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-function ProjectsComponent_mat_spinner_10_Template(rf, ctx) {
+function ProjectsComponent_div_10_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](0, "mat-spinner", 8);
+    const _r3 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "div", 7);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](2, "button", 8);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function ProjectsComponent_div_10_Template_button_click_2_listener() {
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r3);
+      const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵresetView"](ctx_r2.onClearError());
+    });
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](3, " Close ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()();
+  }
+  if (rf & 2) {
+    const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate1"](" ", ctx_r0.error, " ");
+  }
+}
+function ProjectsComponent_div_11_portfolio_card_2_Template(rf, ctx) {
+  if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](0, "portfolio-card", 12);
+  }
+  if (rf & 2) {
+    const project_r5 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("project", project_r5);
   }
 }
 function ProjectsComponent_div_11_Template(rf, ctx) {
   if (rf & 1) {
-    const _r4 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "div", 9);
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](2, "button", 10);
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("click", function ProjectsComponent_div_11_Template_button_click_2_listener() {
-      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r4);
-      const ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵresetView"](ctx_r3.onClearError());
-    });
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](3, " Close ");
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]()();
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "div", 9)(1, "div", 10);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](2, ProjectsComponent_div_11_portfolio_card_2_Template, 1, 1, "portfolio-card", 11);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()();
   }
   if (rf & 2) {
-    const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtextInterpolate1"](" ", ctx_r1.error, " ");
-  }
-}
-function ProjectsComponent_div_12_portfolio_card_2_Template(rf, ctx) {
-  if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](0, "portfolio-card", 14);
-  }
-  if (rf & 2) {
-    const project_r6 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("project", project_r6);
-  }
-}
-function ProjectsComponent_div_12_Template(rf, ctx) {
-  if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "div", 11)(1, "div", 12);
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](2, ProjectsComponent_div_12_portfolio_card_2_Template, 1, 1, "portfolio-card", 13);
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]()();
-  }
-  if (rf & 2) {
-    const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngForOf", ctx_r2.projects);
+    const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngForOf", ctx_r1.projects);
   }
 }
 class ProjectsComponent {
@@ -678,9 +673,7 @@ class ProjectsComponent {
     this.onDispatchAction();
   }
   onSubscribeData() {
-    this.projectsSub = this.store.select('projects')
-    // .pipe(take(1))
-    .subscribe(respStateDataProjects => {
+    this.projectsSub = this.store.select('projects').subscribe(respStateDataProjects => {
       this.projects = respStateDataProjects.projects;
       this.isLoading = respStateDataProjects.loading;
       this.error = respStateDataProjects.errorMessage;
@@ -697,40 +690,38 @@ class ProjectsComponent {
   }
 }
 ProjectsComponent.ɵfac = function ProjectsComponent_Factory(t) {
-  return new (t || ProjectsComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](_ngrx_store__WEBPACK_IMPORTED_MODULE_4__.Store));
+  return new (t || ProjectsComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_ngrx_store__WEBPACK_IMPORTED_MODULE_5__.Store));
 };
-ProjectsComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineComponent"]({
+ProjectsComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineComponent"]({
   type: ProjectsComponent,
   selectors: [["portfolio-projects"]],
   decls: 13,
-  vars: 3,
-  consts: [[1, "py-10"], [1, "mx-auto", "max-w-7xl", "px-6", "lg:px-8"], [1, "mx-auto", "max-w-2xl", "sm:text-center"], [1, "text-base", "font-semibold", "leading-7", "text-indigo-700"], [1, "mt-2", "text-3xl", "font-bold", "tracking-tight", "text-white", "sm:text-4xl"], ["class", "m-auto mb-5", 4, "ngIf"], ["style", "z-index: 10", "class", "alert alert-warning", "role", "alert", 4, "ngIf"], ["class", "container", 4, "ngIf"], [1, "m-auto", "mb-5"], ["role", "alert", 1, "alert", "alert-warning", 2, "z-index", "10"], ["type", "button", 1, "btn", "btn-primary", 3, "click"], [1, "container"], [1, "row", "justify-content-center"], ["class", "py-3 col-12 col-md-5 col-lg-4", 3, "project", 4, "ngFor", "ngForOf"], [1, "py-3", "col-12", "col-md-5", "col-lg-4", 3, "project"]],
+  vars: 2,
+  consts: [[1, "py-10"], [1, "mx-auto", "max-w-7xl", "px-6", "lg:px-8"], [1, "mx-auto", "max-w-2xl", "sm:text-center"], [1, "text-base", "font-semibold", "leading-7", "text-indigo-700"], [1, "mt-2", "text-3xl", "font-bold", "tracking-tight", "text-white", "sm:text-4xl"], ["style", "z-index: 10", "class", "alert alert-warning", "role", "alert", 4, "ngIf"], ["class", "container", 4, "ngIf"], ["role", "alert", 1, "alert", "alert-warning", 2, "z-index", "10"], ["type", "button", 1, "btn", "btn-primary", 3, "click"], [1, "container"], [1, "row", "justify-content-center"], ["class", "py-3 col-12 col-md-5 col-lg-4", 3, "project", 4, "ngFor", "ngForOf"], [1, "py-3", "col-12", "col-md-5", "col-lg-4", 3, "project"]],
   template: function ProjectsComponent_Template(rf, ctx) {
     if (rf & 1) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "portfolio-wrapper-container")(1, "div", 0)(2, "div", 1)(3, "div", 2)(4, "div", 3);
-      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](5, "Everything you need in terms of experience");
-      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](6, "div", 4);
-      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](7, "Projects portfolio");
-      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](8, "p");
-      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](9, " Portfolio of personal projects and with companies, in this section I try to summarize all the hard work that I have used and the different concepts that I have implemented, as well as technological stacks, frameworks, preprocessor, databases, etc.");
-      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]()()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](10, ProjectsComponent_mat_spinner_10_Template, 1, 0, "mat-spinner", 5);
-      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](11, ProjectsComponent_div_11_Template, 4, 1, "div", 6);
-      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](12, ProjectsComponent_div_12_Template, 3, 1, "div", 7);
-      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]()();
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "portfolio-wrapper-container")(1, "div", 0)(2, "div", 1)(3, "div", 2)(4, "div", 3);
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](5, "Everything you need in terms of experience");
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](6, "div", 4);
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](7, "Projects portfolio");
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](8, "p");
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](9, " Portfolio of personal projects and with companies, in this section I try to summarize all the hard work that I have used and the different concepts that I have implemented, as well as technological stacks, frameworks, preprocessor, databases, etc.");
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()()();
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](10, ProjectsComponent_div_10_Template, 4, 1, "div", 5);
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](11, ProjectsComponent_div_11_Template, 3, 1, "div", 6);
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()();
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](12, "portfolio-loader");
     }
     if (rf & 2) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](10);
-      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngIf", ctx.isLoading);
-      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](1);
-      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngIf", ctx.error);
-      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](1);
-      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngIf", !ctx.error);
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](10);
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngIf", ctx.error);
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](1);
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngIf", !ctx.error);
     }
   },
-  dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_5__.NgForOf, _angular_common__WEBPACK_IMPORTED_MODULE_5__.NgIf, _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_6__.MatProgressSpinner, _shared_components_wrapper_container_wrapper_container_component__WEBPACK_IMPORTED_MODULE_1__.WrapperContainerComponent, _card_card_component__WEBPACK_IMPORTED_MODULE_2__.CardComponent],
+  dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_6__.NgForOf, _angular_common__WEBPACK_IMPORTED_MODULE_6__.NgIf, _shared_components_wrapper_container_wrapper_container_component__WEBPACK_IMPORTED_MODULE_1__.WrapperContainerComponent, _shared_components_loader_loader_component__WEBPACK_IMPORTED_MODULE_2__.LoaderComponent, _card_card_component__WEBPACK_IMPORTED_MODULE_3__.CardComponent],
   styles: [".grid-container[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: repeat(3, 500px);\n}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9hcHAvbW9kdWxlcy9sYW5kaW5nLXBhZ2UvY29tcG9uZW50cy9wcm9qZWN0cy9wcm9qZWN0cy5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGFBQUE7RUFDQSx1Q0FBQTtBQUNGIiwic291cmNlc0NvbnRlbnQiOlsiLmdyaWQtY29udGFpbmVyIHtcbiAgZGlzcGxheTogZ3JpZDtcbiAgZ3JpZC10ZW1wbGF0ZS1jb2x1bW5zOiByZXBlYXQoMywgNTAwcHgpO1xufVxuIl0sInNvdXJjZVJvb3QiOiIifQ== */"]
 });
 
