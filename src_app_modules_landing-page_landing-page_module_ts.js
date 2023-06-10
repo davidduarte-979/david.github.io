@@ -91,6 +91,47 @@ AboutService.ɵprov = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_2__["�
 
 /***/ }),
 
+/***/ 1124:
+/*!*******************************************************!*\
+  !*** ./src/app/core/services/email-sender.service.ts ***!
+  \*******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "EmailSenderService": () => (/* binding */ EmailSenderService)
+/* harmony export */ });
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ 3765);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 6839);
+/* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/environments/environment */ 2340);
+
+
+
+
+class EmailSenderService {
+  constructor() {
+    this.http = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(_angular_common_http__WEBPACK_IMPORTED_MODULE_2__.HttpClient);
+  }
+  sendEmail(body, template) {
+    let params = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__.HttpParams();
+    params = params.append('templateType', template);
+    return this.http.post(`${src_environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.API_BASE_URL}/${src_environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.API_VERSION}/email`, body, {
+      params
+    });
+  }
+}
+EmailSenderService.ɵfac = function EmailSenderService_Factory(t) {
+  return new (t || EmailSenderService)();
+};
+EmailSenderService.ɵprov = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjectable"]({
+  token: EmailSenderService,
+  factory: EmailSenderService.ɵfac,
+  providedIn: 'root'
+});
+
+
+/***/ }),
+
 /***/ 5300:
 /*!*********************************************************!*\
   !*** ./src/app/core/services/file-downloads.service.ts ***!
@@ -260,12 +301,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "ContactComponent": () => (/* binding */ ContactComponent)
 /* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 6839);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ 9542);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 6839);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/forms */ 9542);
 /* harmony import */ var _core_models_dialog_enum__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @core/models/dialog.enum */ 5319);
 /* harmony import */ var _core_services_dialog_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @core/services/dialog.service */ 6797);
-/* harmony import */ var _shared_components_button_button_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../shared/components/button/button.component */ 42);
-/* harmony import */ var _shared_components_error_validation_mesasage_error_validation_mesasage_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../shared/components/error-validation-mesasage/error-validation-mesasage.component */ 1659);
+/* harmony import */ var _core_services_email_sender_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @core/services/email-sender.service */ 1124);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/common */ 6477);
+/* harmony import */ var _shared_components_button_button_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../shared/components/button/button.component */ 42);
+/* harmony import */ var _shared_components_error_validation_mesasage_error_validation_mesasage_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../shared/components/error-validation-mesasage/error-validation-mesasage.component */ 1659);
+/* harmony import */ var _shared_components_loader_loader_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../../shared/components/loader/loader.component */ 605);
 
 
 
@@ -274,146 +318,168 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
+
+function ContactComponent_portfolio_loader_76_Template(rf, ctx) {
+  if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](0, "portfolio-loader");
+  }
+}
 class ContactComponent {
   constructor() {
     this.dialogTypeEnum = _core_models_dialog_enum__WEBPACK_IMPORTED_MODULE_0__.DialogType;
-    this.fb = (0,_angular_core__WEBPACK_IMPORTED_MODULE_4__.inject)(_angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormBuilder);
-    this.dialogServices = (0,_angular_core__WEBPACK_IMPORTED_MODULE_4__.inject)(_core_services_dialog_service__WEBPACK_IMPORTED_MODULE_1__.DialogService);
+    this.fb = (0,_angular_core__WEBPACK_IMPORTED_MODULE_6__.inject)(_angular_forms__WEBPACK_IMPORTED_MODULE_7__.FormBuilder);
+    this.dialogServices = (0,_angular_core__WEBPACK_IMPORTED_MODULE_6__.inject)(_core_services_dialog_service__WEBPACK_IMPORTED_MODULE_1__.DialogService);
+    this.emailSender = (0,_angular_core__WEBPACK_IMPORTED_MODULE_6__.inject)(_core_services_email_sender_service__WEBPACK_IMPORTED_MODULE_2__.EmailSenderService);
+    this.isLoading = false;
     this.pageForm = this.fb.group({
-      firstName: [null, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.Validators.required],
-      lastName: [null, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.Validators.required],
-      email: [null, [_angular_forms__WEBPACK_IMPORTED_MODULE_5__.Validators.required, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.Validators.email]],
-      phone: [null, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.Validators.required],
-      message: [null, [_angular_forms__WEBPACK_IMPORTED_MODULE_5__.Validators.required, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.Validators.maxLength(255)]]
+      firstname: [null, _angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.required],
+      lastname: [null, _angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.required],
+      email: [null, [_angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.required, _angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.email]],
+      phone: [null, _angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.required],
+      message: [null, [_angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.required, _angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.maxLength(255)]]
     });
   }
   ngOnInit() {}
   onSubmit() {
+    this.isLoading = true;
     if (this.pageForm.invalid) {
       this.pageForm.markAllAsTouched();
+      this.isLoading = false;
       return;
     }
-    this.dialogServices.openDialog(this.dialogTypeEnum.Success, {
-      message: 'Thank you. Your submission was success. I\'ll be reaching you out soon!'
-    }).afterClosed().subscribe(() => {
-      this.pageForm.reset();
+    const body = {
+      to: 'jduartedsp@gmail.com',
+      data: this.pageForm.value,
+      subject: 'David Duarte Portfolio Contact Info'
+    };
+    this.emailSender.sendEmail(body, 'portfolio-contact-info').subscribe(() => {
+      this.isLoading = false;
+      this.dialogServices.openDialog(this.dialogTypeEnum.Success, {
+        message: 'Thank you. Your submission was success. I\'ll be reaching you out soon!'
+      }).afterClosed().subscribe(() => {
+        this.pageForm.reset();
+      });
     });
-    console.log(this.pageForm.value);
   }
 }
 ContactComponent.ɵfac = function ContactComponent_Factory(t) {
   return new (t || ContactComponent)();
 };
-ContactComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineComponent"]({
+ContactComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineComponent"]({
   type: ContactComponent,
   selectors: [["portfolio-contact"]],
-  decls: 76,
-  vars: 6,
-  consts: [[1, "relative", "isolate", "bg-gray-950"], [1, "mx-auto", "grid", "max-w-7xl", "grid-cols-1", "lg:grid-cols-2"], [1, "relative", "px-6", "pb-20", "pt-24", "sm:pt-32", "lg:static", "lg:px-8", "lg:py-48"], [1, "mx-auto", "max-w-xl", "lg:mx-0", "lg:max-w-lg"], [1, "absolute", "inset-y-0", "left-0", "-z-10", "w-full", "overflow-hidden", "ring-1", "ring-white/5", "lg:w-1/2"], ["aria-hidden", "true", 1, "absolute", "inset-0", "h-full", "w-full", "stroke-gray-700", "[mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]"], ["id", "54f88622-e7f8-4f1d-aaf9-c2f5e46dd1f2", "width", "200", "height", "200", "x", "100%", "y", "-1", "patternUnits", "userSpaceOnUse"], ["d", "M130 200V.5M.5 .5H200", "fill", "none"], ["x", "100%", "y", "-1", 1, "overflow-visible", "fill-gray-800/20"], ["d", "M-470.5 0h201v201h-201Z", "stroke-width", "0"], ["width", "100%", "height", "100%", "stroke-width", "0", "fill", "url(#54f88622-e7f8-4f1d-aaf9-c2f5e46dd1f2)"], ["aria-hidden", "true", 1, "absolute", "-left-56", "top-[calc(100%-13rem)]", "transform-gpu", "blur-3xl", "lg:left-[max(-14rem,calc(100%-59rem))]", "lg:top-[calc(50%-7rem)]"], [1, "aspect-[1155/678]", "w-[72.1875rem]", "bg-gradient-to-br", "from-[#ff80b5]", "to-[#9089fc]", "opacity-20", 2, "clip-path", "polygon(74.1% 56.1%, 100% 38.6%, 97.5% 73.3%, 85.5% 100%, 80.7% 98.2%, 72.5% 67.7%, 60.2% 37.8%, 52.4% 32.2%, 47.5% 41.9%, 45.2% 65.8%, 27.5% 23.5%, 0.1% 35.4%, 17.9% 0.1%, 27.6% 23.5%, 76.1% 2.6%, 74.1% 56.1%)"], [1, "text-3xl", "font-bold", "tracking-tight", "text-white"], [1, "mt-6", "text-lg", "leading-8", "text-gray-300"], [1, "mt-10", "space-y-4", "text-base", "leading-7", "text-gray-300"], [1, "flex", "gap-x-4"], [1, "flex-none"], [1, "sr-only"], ["fill", "none", "viewBox", "0 0 24 24", "stroke-width", "1.5", "stroke", "currentColor", "aria-hidden", "true", 1, "h-7", "w-6", "text-gray-400"], ["stroke-linecap", "round", "stroke-linejoin", "round", "d", "M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008z"], ["stroke-linecap", "round", "stroke-linejoin", "round", "d", "M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"], ["href", "tel:+1 (555) 234-5678", 1, "hover:text-white"], ["stroke-linecap", "round", "stroke-linejoin", "round", "d", "M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"], ["href", "mailto:hello@example.com", 1, "hover:text-white"], [1, "px-6", "pb-24", "pt-20", "sm:pb-32", "lg:px-8", "lg:py-48", 3, "formGroup", "submit"], [1, "mx-auto", "max-w-xl", "lg:mr-0", "lg:max-w-lg"], [1, "grid", "grid-cols-1", "gap-x-8", "gap-y-6", "sm:grid-cols-2"], ["for", "first-name"], ["formControlName", "firstName", "type", "text", "name", "first-name", "id", "first-name"], ["name", "First Name", 3, "control"], ["for", "last-name"], ["formControlName", "lastName", "type", "text", "name", "last-name", "id", "last-name"], ["name", "Last Name", 3, "control"], [1, "sm:col-span-2"], ["for", "email"], ["formControlName", "email", "name", "email", "id", "email"], ["name", "Email", 3, "control"], ["for", "phone-number"], ["formControlName", "phone", "type", "tel", "name", "phone-number", "id", "phone-number"], ["name", "Phone", 3, "control"], ["for", "message"], ["formControlName", "message", "name", "message", "id", "message", "rows", "4"], ["name", "Message", 3, "control"], [1, "mt-8", "flex", "justify-end"], ["type", "submit", "color", "primary"]],
+  decls: 77,
+  vars: 7,
+  consts: [[1, "relative", "isolate", "bg-gray-950"], [1, "mx-auto", "grid", "max-w-7xl", "grid-cols-1", "lg:grid-cols-2"], [1, "relative", "px-6", "pb-20", "pt-24", "sm:pt-32", "lg:static", "lg:px-8", "lg:py-48"], [1, "mx-auto", "max-w-xl", "lg:mx-0", "lg:max-w-lg"], [1, "absolute", "inset-y-0", "left-0", "-z-10", "w-full", "overflow-hidden", "ring-1", "ring-white/5", "lg:w-1/2"], ["aria-hidden", "true", 1, "absolute", "inset-0", "h-full", "w-full", "stroke-gray-700", "[mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]"], ["id", "54f88622-e7f8-4f1d-aaf9-c2f5e46dd1f2", "width", "200", "height", "200", "x", "100%", "y", "-1", "patternUnits", "userSpaceOnUse"], ["d", "M130 200V.5M.5 .5H200", "fill", "none"], ["x", "100%", "y", "-1", 1, "overflow-visible", "fill-gray-800/20"], ["d", "M-470.5 0h201v201h-201Z", "stroke-width", "0"], ["width", "100%", "height", "100%", "stroke-width", "0", "fill", "url(#54f88622-e7f8-4f1d-aaf9-c2f5e46dd1f2)"], ["aria-hidden", "true", 1, "absolute", "-left-56", "top-[calc(100%-13rem)]", "transform-gpu", "blur-3xl", "lg:left-[max(-14rem,calc(100%-59rem))]", "lg:top-[calc(50%-7rem)]"], [1, "aspect-[1155/678]", "w-[72.1875rem]", "bg-gradient-to-br", "from-[#ff80b5]", "to-[#9089fc]", "opacity-20", 2, "clip-path", "polygon(74.1% 56.1%, 100% 38.6%, 97.5% 73.3%, 85.5% 100%, 80.7% 98.2%, 72.5% 67.7%, 60.2% 37.8%, 52.4% 32.2%, 47.5% 41.9%, 45.2% 65.8%, 27.5% 23.5%, 0.1% 35.4%, 17.9% 0.1%, 27.6% 23.5%, 76.1% 2.6%, 74.1% 56.1%)"], [1, "text-3xl", "font-bold", "tracking-tight", "text-white"], [1, "mt-6", "text-lg", "leading-8", "text-gray-300"], [1, "mt-10", "space-y-4", "text-base", "leading-7", "text-gray-300"], [1, "flex", "gap-x-4"], [1, "flex-none"], [1, "sr-only"], ["fill", "none", "viewBox", "0 0 24 24", "stroke-width", "1.5", "stroke", "currentColor", "aria-hidden", "true", 1, "h-7", "w-6", "text-gray-400"], ["stroke-linecap", "round", "stroke-linejoin", "round", "d", "M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008z"], ["stroke-linecap", "round", "stroke-linejoin", "round", "d", "M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"], ["href", "tel:+1 (555) 234-5678", 1, "hover:text-white"], ["stroke-linecap", "round", "stroke-linejoin", "round", "d", "M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"], ["href", "mailto:hello@example.com", 1, "hover:text-white"], [1, "px-6", "pb-24", "pt-20", "sm:pb-32", "lg:px-8", "lg:py-48", 3, "formGroup", "submit"], [1, "mx-auto", "max-w-xl", "lg:mr-0", "lg:max-w-lg"], [1, "grid", "grid-cols-1", "gap-x-8", "gap-y-6", "sm:grid-cols-2"], ["for", "first-name"], ["formControlName", "firstname", "type", "text", "name", "first-name", "id", "first-name"], ["name", "First Name", 3, "control"], ["for", "last-name"], ["formControlName", "lastname", "type", "text", "name", "last-name", "id", "last-name"], ["name", "Last Name", 3, "control"], [1, "sm:col-span-2"], ["for", "email"], ["formControlName", "email", "name", "email", "id", "email"], ["name", "Email", 3, "control"], ["for", "phone-number"], ["formControlName", "phone", "type", "tel", "name", "phone-number", "id", "phone-number"], ["name", "Phone", 3, "control"], ["for", "message"], ["formControlName", "message", "name", "message", "id", "message", "rows", "4"], ["name", "Message", 3, "control"], [1, "mt-8", "flex", "justify-end"], ["type", "submit", "color", "primary"], [4, "ngIf"]],
   template: function ContactComponent_Template(rf, ctx) {
     if (rf & 1) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "div", 0)(1, "div", 1)(2, "div", 2)(3, "div", 3)(4, "div", 4);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnamespaceSVG"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](5, "svg", 5)(6, "defs")(7, "pattern", 6);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](8, "path", 7);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](9, "svg", 8);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](10, "path", 9);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](11, "rect", 10);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnamespaceHTML"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](12, "div", 11);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](13, "div", 12);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](14, "h2", 13);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](15, "Get in touch");
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](16, "p", 14);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](17, "Please reach me out to work with you or your organization");
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](18, "dl", 15)(19, "div", 16)(20, "dt", 17)(21, "span", 18);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](22, "Address");
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnamespaceSVG"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](23, "svg", 19);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](24, "path", 20);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnamespaceHTML"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](25, "dd");
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](26, "3760 Metro Parkway Fort Myers, FL 33916");
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](27, "div", 16)(28, "dt", 17)(29, "span", 18);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](30, "Telephone");
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnamespaceSVG"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](31, "svg", 19);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](32, "path", 21);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnamespaceHTML"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](33, "dd")(34, "a", 22);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](35, "+1 (239) 628-9725");
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](36, "div", 16)(37, "dt", 17)(38, "span", 18);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](39, "Email");
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnamespaceSVG"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](40, "svg", 19);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](41, "path", 23);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnamespaceHTML"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](42, "dd")(43, "a", 24);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](44, "jduartedsp@gmail.com");
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()()()()()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](45, "form", 25);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("submit", function ContactComponent_Template_form_submit_45_listener() {
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "div", 0)(1, "div", 1)(2, "div", 2)(3, "div", 3)(4, "div", 4);
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnamespaceSVG"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](5, "svg", 5)(6, "defs")(7, "pattern", 6);
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](8, "path", 7);
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]()();
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](9, "svg", 8);
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](10, "path", 9);
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](11, "rect", 10);
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnamespaceHTML"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](12, "div", 11);
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](13, "div", 12);
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]()();
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](14, "h2", 13);
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](15, "Get in touch");
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](16, "p", 14);
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](17, "Please reach me out to work with you or your organization");
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](18, "dl", 15)(19, "div", 16)(20, "dt", 17)(21, "span", 18);
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](22, "Address");
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnamespaceSVG"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](23, "svg", 19);
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](24, "path", 20);
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]()();
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnamespaceHTML"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](25, "dd");
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](26, "3760 Metro Parkway Fort Myers, FL 33916");
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]()();
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](27, "div", 16)(28, "dt", 17)(29, "span", 18);
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](30, "Telephone");
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnamespaceSVG"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](31, "svg", 19);
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](32, "path", 21);
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]()();
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnamespaceHTML"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](33, "dd")(34, "a", 22);
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](35, "+1 (239) 628-9725");
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]()()();
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](36, "div", 16)(37, "dt", 17)(38, "span", 18);
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](39, "Email");
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnamespaceSVG"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](40, "svg", 19);
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](41, "path", 23);
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]()();
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnamespaceHTML"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](42, "dd")(43, "a", 24);
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](44, "jduartedsp@gmail.com");
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]()()()()()();
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](45, "form", 25);
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("submit", function ContactComponent_Template_form_submit_45_listener() {
         return ctx.onSubmit();
       });
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](46, "div", 26)(47, "div", 27)(48, "div")(49, "label", 28);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](50, "First name");
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](51, "input", 29)(52, "portfolio-error-validation-mesasage", 30);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](53, "div")(54, "label", 31);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](55, "Last name");
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](56, "input", 32)(57, "portfolio-error-validation-mesasage", 33);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](58, "div", 34)(59, "label", 35);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](60, "Email");
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](61, "input", 36)(62, "portfolio-error-validation-mesasage", 37);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](63, "div", 34)(64, "label", 38);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](65, "Phone number");
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](66, "input", 39)(67, "portfolio-error-validation-mesasage", 40);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](68, "div", 34)(69, "label", 41);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](70, "Message");
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](71, "textarea", 42)(72, "portfolio-error-validation-mesasage", 43);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](73, "div", 44)(74, "portfolio-button", 45);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](75, "Send message");
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()()()()()();
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](46, "div", 26)(47, "div", 27)(48, "div")(49, "label", 28);
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](50, "First name");
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](51, "input", 29)(52, "portfolio-error-validation-mesasage", 30);
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](53, "div")(54, "label", 31);
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](55, "Last name");
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](56, "input", 32)(57, "portfolio-error-validation-mesasage", 33);
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](58, "div", 34)(59, "label", 35);
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](60, "Email");
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](61, "input", 36)(62, "portfolio-error-validation-mesasage", 37);
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](63, "div", 34)(64, "label", 38);
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](65, "Phone number");
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](66, "input", 39)(67, "portfolio-error-validation-mesasage", 40);
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](68, "div", 34)(69, "label", 41);
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](70, "Message");
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](71, "textarea", 42)(72, "portfolio-error-validation-mesasage", 43);
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]()();
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](73, "div", 44)(74, "portfolio-button", 45);
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](75, "Send message");
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]()()()()()();
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](76, ContactComponent_portfolio_loader_76_Template, 1, 0, "portfolio-loader", 46);
     }
     if (rf & 2) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](45);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("formGroup", ctx.pageForm);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](7);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("control", ctx.pageForm.get("firstName"));
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](5);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("control", ctx.pageForm.get("firstName"));
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](5);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("control", ctx.pageForm.get("email"));
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](5);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("control", ctx.pageForm.get("phone"));
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](5);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("control", ctx.pageForm.get("message"));
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](45);
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("formGroup", ctx.pageForm);
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](7);
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("control", ctx.pageForm.get("firstName"));
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](5);
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("control", ctx.pageForm.get("firstName"));
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](5);
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("control", ctx.pageForm.get("email"));
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](5);
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("control", ctx.pageForm.get("phone"));
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](5);
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("control", ctx.pageForm.get("message"));
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](4);
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", ctx.isLoading);
     }
   },
-  dependencies: [_shared_components_button_button_component__WEBPACK_IMPORTED_MODULE_2__.ButtonComponent, _shared_components_error_validation_mesasage_error_validation_mesasage_component__WEBPACK_IMPORTED_MODULE_3__.ErrorValidationMesasageComponent, _angular_forms__WEBPACK_IMPORTED_MODULE_5__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_5__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormGroupDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormControlName],
+  dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_8__.NgIf, _shared_components_button_button_component__WEBPACK_IMPORTED_MODULE_3__.ButtonComponent, _shared_components_error_validation_mesasage_error_validation_mesasage_component__WEBPACK_IMPORTED_MODULE_4__.ErrorValidationMesasageComponent, _shared_components_loader_loader_component__WEBPACK_IMPORTED_MODULE_5__.LoaderComponent, _angular_forms__WEBPACK_IMPORTED_MODULE_7__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_7__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_7__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_7__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_7__.FormGroupDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_7__.FormControlName],
   styles: ["\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsInNvdXJjZVJvb3QiOiIifQ== */"]
 });
 
