@@ -1,11 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
-import { TechCategory } from '@core/models/tech-category.enum';
 import { TechStack } from '@core/models/tech-stack';
 import { map, switchMap } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import { SkillsService } from './skills/skills.service';
-import { element } from 'protractor';
 
 @Injectable({
   providedIn: 'root'

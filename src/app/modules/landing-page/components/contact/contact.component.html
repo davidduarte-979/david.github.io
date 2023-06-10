@@ -73,14 +73,14 @@
 
           <div>
             <label for="first-name">First name</label>
-            <input formControlName="firstName" type="text" name="first-name" id="first-name">
+            <input formControlName="firstname" type="text" name="first-name" id="first-name">
             <portfolio-error-validation-mesasage [control]="pageForm.get('firstName')" name="First Name">
             </portfolio-error-validation-mesasage>
           </div>
 
           <div>
             <label for="last-name">Last name</label>
-            <input formControlName="lastName" type="text" name="last-name" id="last-name">
+            <input formControlName="lastname" type="text" name="last-name" id="last-name">
             <portfolio-error-validation-mesasage [control]="pageForm.get('firstName')" name="Last Name">
             </portfolio-error-validation-mesasage>
           </div>
@@ -114,3 +114,4 @@
 
   </div>
 </div>
+<portfolio-loader *ngIf="isLoading"></portfolio-loader>
