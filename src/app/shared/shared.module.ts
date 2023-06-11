@@ -12,6 +12,7 @@ import { MaterialModule } from './material/material.module';
 import { ErrorValidationMesasageComponent } from './components/error-validation-mesasage/error-validation-mesasage.component';
 import { DialogComponent } from './components/dialog/dialog.component';
 import { LoaderComponent } from './components/loader/loader.component';
+import { GlowImgComponent } from './components/glow-img/glow-img.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { LoaderComponent } from './components/loader/loader.component';
     WrapperContainerComponent,
     ErrorValidationMesasageComponent,
     DialogComponent,
-    LoaderComponent
+    LoaderComponent,
+    GlowImgComponent
   ],
   imports: [
     CommonModule,
@@ -42,7 +44,8 @@ import { LoaderComponent } from './components/loader/loader.component';
     WrapperContainerComponent,
     ErrorValidationMesasageComponent,
     DialogComponent,
-    LoaderComponent
+    LoaderComponent,
+    GlowImgComponent
   ],
 })
 export class SharedModule { }
