@@ -23,6 +23,9 @@ body {
 }
 
 .mat-typography {
+  figure {
+    margin: 0;
+  }
   a {
     text-decoration: none !important;
   }

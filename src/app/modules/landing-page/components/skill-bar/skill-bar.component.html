@@ -7,8 +7,8 @@
           <ng-container *ngIf="(skills$ | async) as skills">
             <div *ngFor="let skill of skills" class="bar mb-4">
               <div class="info flex-col items-center">
-                <figure class="w-20">
-                  <img [src]="skill.logo" [alt]="skill.name">
+                <figure class="w-20 h-20">
+                  <portfolio-glow-img [imgUrl]="skill.logo"></portfolio-glow-img>
                 </figure>
                 <span class="mb-2">{{ skill.name }}</span>
                 <span *ngIf="skill.proficient && skill.knowledge > 80">Proficient</span>
