@@ -32,7 +32,7 @@ class AuthGuard {
       if (isAuth) {
         return true;
       }
-      return this.router.createUrlTree(['/', 'dashboard', 'auth']);
+      return this.router.createUrlTree(['/', 'auth']);
     }));
   }
 }
@@ -166,9 +166,6 @@ const routes = [{
     path: 'contact',
     component: _components_contact_contact_component__WEBPACK_IMPORTED_MODULE_4__.ContactComponent
   }]
-}, {
-  path: 'auth',
-  loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_modules_admin_auth_auth_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./auth/auth.module */ 4885)).then(m => m.AuthModule)
 }];
 class AdminRoutingModule {}
 AdminRoutingModule.ɵfac = function AdminRoutingModule_Factory(t) {

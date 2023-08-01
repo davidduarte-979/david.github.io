@@ -25,6 +25,9 @@ const routes = [{
   path: 'dashboard',
   loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-src_app_shared_shared_module_ts"), __webpack_require__.e("src_app_modules_admin_admin_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/admin/admin.module */ 7442)).then(m => m.AdminModule)
 }, {
+  path: 'auth',
+  loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-src_app_shared_shared_module_ts"), __webpack_require__.e("src_app_modules_auth_auth_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/auth/auth.module */ 3970)).then(m => m.AuthModule)
+}, {
   path: '**',
   component: _shared_components_page_not_found_page_not_found_component__WEBPACK_IMPORTED_MODULE_0__.PageNotFoundComponent
 }];
@@ -1284,7 +1287,7 @@ class AuthEffects {
       dispatch: false
     });
     this.authRedirectLogout$ = (0,_ngrx_effects__WEBPACK_IMPORTED_MODULE_6__.createEffect)(() => this.actions$.pipe((0,_ngrx_effects__WEBPACK_IMPORTED_MODULE_6__.ofType)(_auth_actions__WEBPACK_IMPORTED_MODULE_1__.logout), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_8__.tap)(() => {
-      this.router.navigate(['/', 'dashboard', 'auth']);
+      this.router.navigate(['/', 'auth']);
       this.authService.clearLogoutTimer();
     })), {
       dispatch: false

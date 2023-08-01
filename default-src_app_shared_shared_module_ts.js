@@ -20,19 +20,19 @@ class NavService {
       link: '/'
     }, {
       title: 'Dashboard',
-      link: 'dashboard/auth'
+      link: '/dashboard'
     }, {
       title: 'About',
-      link: 'about'
+      link: '/about'
     }, {
       title: 'Projects',
-      link: 'projects'
+      link: '/projects'
     }, {
       title: 'Skills',
-      link: 'skills'
+      link: '/skills'
     }, {
       title: 'Contact',
-      link: 'contact'
+      link: '/contact'
     }];
   }
   getNavLinks() {
@@ -873,7 +873,7 @@ WrapperContainerComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_M
   ngContentSelectors: _c0,
   decls: 15,
   vars: 0,
-  consts: [[1, "min-h-screen", "relative", "isolate", "bg-gray-950"], [1, "mx-auto"], [1, "relative", "lg:static"], [1, "absolute", "inset-y-0", "left-0", "-z-10", "w-full", "overflow-hidden", "ring-1", "ring-white/5", "lg:w-full"], ["aria-hidden", "true", 1, "absolute", "inset-0", "h-full", "w-full", "stroke-gray-700", "[mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]"], ["id", "54f88622-e7f8-4f1d-aaf9-c2f5e46dd1f2", "width", "200", "height", "200", "x", "100%", "y", "-1", "patternUnits", "userSpaceOnUse"], ["d", "M130 200V.5M.5 .5H200", "fill", "none"], ["x", "100%", "y", "-1", 1, "overflow-visible", "fill-gray-800/20"], ["d", "M-470.5 0h201v201h-201Z", "stroke-width", "0"], ["width", "100%", "height", "100%", "stroke-width", "0", "fill", "url(#54f88622-e7f8-4f1d-aaf9-c2f5e46dd1f2)"], ["aria-hidden", "true", 1, "absolute", "-left-56", "top-[calc(100%-13rem)]", "transform-gpu", "blur-3xl", "lg:left-[max(-14rem,calc(100%-59rem))]", "lg:top-[calc(50%-7rem)]"], [1, "aspect-[1155/678]", "w-[72.1875rem]", "bg-gradient-to-br", "from-[#ff80b5]", "to-[#9089fc]", "opacity-20", 2, "clip-path", "polygon(74.1% 56.1%, 100% 38.6%, 97.5% 73.3%, 85.5% 100%, 80.7% 98.2%, 72.5% 67.7%, 60.2% 37.8%, 52.4% 32.2%, 47.5% 41.9%, 45.2% 65.8%, 27.5% 23.5%, 0.1% 35.4%, 17.9% 0.1%, 27.6% 23.5%, 76.1% 2.6%, 74.1% 56.1%)"]],
+  consts: [[1, "relative", "isolate", "bg-gray-950"], [1, "mx-auto"], [1, "relative", "lg:static"], [1, "absolute", "inset-y-0", "left-0", "-z-10", "w-full", "overflow-hidden", "ring-1", "ring-white/5", "lg:w-full"], ["aria-hidden", "true", 1, "absolute", "inset-0", "h-full", "w-full", "stroke-gray-700", "[mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]"], ["id", "54f88622-e7f8-4f1d-aaf9-c2f5e46dd1f2", "width", "200", "height", "200", "x", "100%", "y", "-1", "patternUnits", "userSpaceOnUse"], ["d", "M130 200V.5M.5 .5H200", "fill", "none"], ["x", "100%", "y", "-1", 1, "overflow-visible", "fill-gray-800/20"], ["d", "M-470.5 0h201v201h-201Z", "stroke-width", "0"], ["width", "100%", "height", "100%", "stroke-width", "0", "fill", "url(#54f88622-e7f8-4f1d-aaf9-c2f5e46dd1f2)"], ["aria-hidden", "true", 1, "absolute", "-left-56", "top-[calc(100%-13rem)]", "transform-gpu", "blur-3xl", "lg:left-[max(-14rem,calc(100%-59rem))]", "lg:top-[calc(50%-7rem)]"], [1, "aspect-[1155/678]", "w-[72.1875rem]", "bg-gradient-to-br", "from-[#ff80b5]", "to-[#9089fc]", "opacity-20", 2, "clip-path", "polygon(\n                  74.1% 56.1%,\n                  100% 38.6%,\n                  97.5% 73.3%,\n                  85.5% 100%,\n                  80.7% 98.2%,\n                  72.5% 67.7%,\n                  60.2% 37.8%,\n                  52.4% 32.2%,\n                  47.5% 41.9%,\n                  45.2% 65.8%,\n                  27.5% 23.5%,\n                  0.1% 35.4%,\n                  17.9% 0.1%,\n                  27.6% 23.5%,\n                  76.1% 2.6%,\n                  74.1% 56.1%\n                )"]],
   template: function WrapperContainerComponent_Template(rf, ctx) {
     if (rf & 1) {
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojectionDef"]();
