@@ -359,6 +359,17 @@ function ErrorValidationMesasageComponent_ng_container_0_ng_template_8_span_4_Te
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", ctx_r17.name + " has invalid value ", " ");
   }
 }
+function ErrorValidationMesasageComponent_ng_container_0_ng_template_8_span_5_Template(rf, ctx) {
+  if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "span", 6);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+  }
+  if (rf & 2) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", " Password does not match ", " ");
+  }
+}
 function ErrorValidationMesasageComponent_ng_container_0_ng_template_8_Template(rf, ctx) {
   if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](0, ErrorValidationMesasageComponent_ng_container_0_ng_template_8_span_0_Template, 2, 1, "span", 7);
@@ -366,6 +377,7 @@ function ErrorValidationMesasageComponent_ng_container_0_ng_template_8_Template(
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, ErrorValidationMesasageComponent_ng_container_0_ng_template_8_span_2_Template, 2, 1, "span", 7);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](3, ErrorValidationMesasageComponent_ng_container_0_ng_template_8_span_3_Template, 2, 1, "span", 7);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](4, ErrorValidationMesasageComponent_ng_container_0_ng_template_8_span_4_Template, 2, 1, "span", 7);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](5, ErrorValidationMesasageComponent_ng_container_0_ng_template_8_span_5_Template, 2, 1, "span", 7);
   }
   if (rf & 2) {
     const ctx_r9 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
@@ -378,6 +390,8 @@ function ErrorValidationMesasageComponent_ng_container_0_ng_template_8_Template(
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r9.control.errors == null ? null : ctx_r9.control.errors["min"]);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r9.control.errors == null ? null : ctx_r9.control.errors["validValue"]);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r9.control.errors == null ? null : ctx_r9.control.errors["match_password"]);
   }
 }
 function ErrorValidationMesasageComponent_ng_container_0_Template(rf, ctx) {
@@ -387,7 +401,7 @@ function ErrorValidationMesasageComponent_ng_container_0_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, ErrorValidationMesasageComponent_ng_container_0_ng_template_2_Template, 1, 2, "ng-template", null, 2, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplateRefExtractor"]);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](4, ErrorValidationMesasageComponent_ng_container_0_ng_template_4_Template, 1, 2, "ng-template", null, 3, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplateRefExtractor"]);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](6, ErrorValidationMesasageComponent_ng_container_0_ng_template_6_Template, 1, 2, "ng-template", null, 4, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplateRefExtractor"]);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](8, ErrorValidationMesasageComponent_ng_container_0_ng_template_8_Template, 5, 5, "ng-template", null, 5, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplateRefExtractor"]);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](8, ErrorValidationMesasageComponent_ng_container_0_ng_template_8_Template, 6, 6, "ng-template", null, 5, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplateRefExtractor"]);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerEnd"]();
   }
   if (rf & 2) {

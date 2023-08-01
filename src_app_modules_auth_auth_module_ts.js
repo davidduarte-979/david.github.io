@@ -354,15 +354,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "RegisterComponent": () => (/* binding */ RegisterComponent)
 /* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 6839);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/forms */ 9542);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 6839);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/forms */ 9542);
 /* harmony import */ var _store_operations_auth_auth_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../store/operations/auth/auth.actions */ 4415);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ 6679);
-/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @ngrx/store */ 4307);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/common */ 6477);
-/* harmony import */ var _shared_components_button_button_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../shared/components/button/button.component */ 42);
-/* harmony import */ var _shared_components_error_validation_mesasage_error_validation_mesasage_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../shared/components/error-validation-mesasage/error-validation-mesasage.component */ 1659);
-/* harmony import */ var _shared_components_loader_loader_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../shared/components/loader/loader.component */ 605);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/router */ 6679);
+/* harmony import */ var _validators__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../validators */ 9327);
+/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @ngrx/store */ 4307);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/common */ 6477);
+/* harmony import */ var _shared_components_button_button_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../shared/components/button/button.component */ 42);
+/* harmony import */ var _shared_components_error_validation_mesasage_error_validation_mesasage_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../shared/components/error-validation-mesasage/error-validation-mesasage.component */ 1659);
+/* harmony import */ var _shared_components_loader_loader_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../shared/components/loader/loader.component */ 605);
 
 
 
@@ -374,15 +375,25 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-function RegisterComponent_portfolio_loader_14_Template(rf, ctx) {
+
+function RegisterComponent_portfolio_error_validation_mesasage_11_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](0, "portfolio-loader");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](0, "portfolio-error-validation-mesasage", 14);
+  }
+  if (rf & 2) {
+    const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("control", ctx_r0.signUpForm);
+  }
+}
+function RegisterComponent_portfolio_loader_19_Template(rf, ctx) {
+  if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](0, "portfolio-loader");
   }
 }
 class RegisterComponent {
   constructor(store) {
     this.store = store;
-    this.router = (0,_angular_core__WEBPACK_IMPORTED_MODULE_4__.inject)(_angular_router__WEBPACK_IMPORTED_MODULE_5__.Router);
+    this.router = (0,_angular_core__WEBPACK_IMPORTED_MODULE_5__.inject)(_angular_router__WEBPACK_IMPORTED_MODULE_6__.Router);
     this.isLoading = false;
     this.buildForm();
   }
@@ -416,10 +427,16 @@ class RegisterComponent {
   get password() {
     return this.signUpForm.get('password');
   }
+  get confirmedPassword() {
+    return this.signUpForm.get('confirmedPassword');
+  }
   buildForm() {
-    this.signUpForm = new _angular_forms__WEBPACK_IMPORTED_MODULE_6__.FormGroup({
-      email: new _angular_forms__WEBPACK_IMPORTED_MODULE_6__.FormControl('', [_angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.required, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.email]),
-      password: new _angular_forms__WEBPACK_IMPORTED_MODULE_6__.FormControl('', [_angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.required])
+    this.signUpForm = new _angular_forms__WEBPACK_IMPORTED_MODULE_7__.FormGroup({
+      email: new _angular_forms__WEBPACK_IMPORTED_MODULE_7__.FormControl('', [_angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.required, _angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.email]),
+      password: new _angular_forms__WEBPACK_IMPORTED_MODULE_7__.FormControl('', [_angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.required]),
+      confirmedPassword: new _angular_forms__WEBPACK_IMPORTED_MODULE_7__.FormControl('', [_angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.required])
+    }, {
+      validators: _validators__WEBPACK_IMPORTED_MODULE_1__.CustomValidators.matchPasswords
     });
   }
   ngOnDestroy() {
@@ -429,55 +446,90 @@ class RegisterComponent {
   }
 }
 RegisterComponent.ɵfac = function RegisterComponent_Factory(t) {
-  return new (t || RegisterComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_ngrx_store__WEBPACK_IMPORTED_MODULE_7__.Store));
+  return new (t || RegisterComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](_ngrx_store__WEBPACK_IMPORTED_MODULE_8__.Store));
 };
-RegisterComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineComponent"]({
+RegisterComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineComponent"]({
   type: RegisterComponent,
   selectors: [["portfolio-register"]],
-  decls: 15,
-  vars: 4,
-  consts: [[1, "form", 3, "formGroup", "ngSubmit"], [1, "mb-4"], ["type", "email", "placeholder", "Email", "type", "text", "formControlName", "email", "name", "email", "id", "username"], ["name", "Email", 3, "control"], ["formControlName", "password", "type", "password", "placeholder", "Password", "name", "password"], ["name", "Password", 3, "control"], ["type", "submit", "color", "warn", 1, "w-[250px]"], [1, "text-gray-200", "mr-2"], ["color", "primary", 3, "clickEvent"], [4, "ngIf"]],
+  decls: 20,
+  vars: 6,
+  consts: [[1, "form", 3, "formGroup", "ngSubmit"], [1, "mb-4"], ["type", "email", "placeholder", "Email", "type", "text", "formControlName", "email", "name", "email", "id", "username"], ["name", "Email", 3, "control"], ["formControlName", "password", "type", "password", "placeholder", "Password", "name", "password"], ["name", "Password", 3, "control"], ["formControlName", "confirmedPassword", "type", "password", "placeholder", "Confirme Password", "name", "confirmedPassword"], [1, "flex", "flex-col"], ["name", "Confirme Password", 3, "control"], [3, "control", 4, "ngIf"], ["type", "submit", "color", "warn", 1, "w-[250px]"], [1, "text-gray-200", "mr-2"], ["color", "primary", 3, "clickEvent"], [4, "ngIf"], [3, "control"]],
   template: function RegisterComponent_Template(rf, ctx) {
     if (rf & 1) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "form", 0);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("ngSubmit", function RegisterComponent_Template_form_ngSubmit_0_listener() {
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "form", 0);
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("ngSubmit", function RegisterComponent_Template_form_ngSubmit_0_listener() {
         return ctx.onSubmit();
       });
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](1, "div", 1);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](2, "input", 2)(3, "portfolio-error-validation-mesasage", 3);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](4, "div", 1);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](5, "input", 4)(6, "portfolio-error-validation-mesasage", 5);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](7, "br");
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](8, "portfolio-button", 6);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](9, "Sign up");
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](10, "span", 7);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](11, "Do not have an account yet?");
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](12, "portfolio-button", 8);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("clickEvent", function RegisterComponent_Template_portfolio_button_clickEvent_12_listener() {
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "div", 1);
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](2, "input", 2)(3, "portfolio-error-validation-mesasage", 3);
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](4, "div", 1);
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](5, "input", 4)(6, "portfolio-error-validation-mesasage", 5);
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](7, "div", 1);
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](8, "input", 6);
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](9, "div", 7);
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](10, "portfolio-error-validation-mesasage", 8);
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](11, RegisterComponent_portfolio_error_validation_mesasage_11_Template, 1, 1, "portfolio-error-validation-mesasage", 9);
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()();
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](12, "br");
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](13, "portfolio-button", 10);
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](14, "Sign up");
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()();
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](15, "span", 11);
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](16, "Do not have an account yet?");
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](17, "portfolio-button", 12);
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("clickEvent", function RegisterComponent_Template_portfolio_button_clickEvent_17_listener() {
         return ctx.signIn();
       });
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](13, "Sign In\n");
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](14, RegisterComponent_portfolio_loader_14_Template, 1, 0, "portfolio-loader", 9);
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](18, "Sign In\n");
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](19, RegisterComponent_portfolio_loader_19_Template, 1, 0, "portfolio-loader", 13);
     }
     if (rf & 2) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("formGroup", ctx.signUpForm);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](3);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("control", ctx.signUpForm.get("email"));
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](3);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("control", ctx.signUpForm.get("password"));
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](8);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngIf", ctx.isLoading);
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("formGroup", ctx.signUpForm);
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](3);
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("control", ctx.email);
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](3);
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("control", ctx.password);
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](4);
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("control", ctx.confirmedPassword);
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", (ctx.confirmedPassword == null ? null : ctx.confirmedPassword.touched) && (ctx.signUpForm == null ? null : ctx.signUpForm.hasError("match_password")));
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](8);
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx.isLoading);
     }
   },
-  dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_8__.NgIf, _angular_forms__WEBPACK_IMPORTED_MODULE_6__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_6__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.FormGroupDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.FormControlName, _shared_components_button_button_component__WEBPACK_IMPORTED_MODULE_1__.ButtonComponent, _shared_components_error_validation_mesasage_error_validation_mesasage_component__WEBPACK_IMPORTED_MODULE_2__.ErrorValidationMesasageComponent, _shared_components_loader_loader_component__WEBPACK_IMPORTED_MODULE_3__.LoaderComponent],
+  dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_9__.NgIf, _angular_forms__WEBPACK_IMPORTED_MODULE_7__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_7__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_7__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_7__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_7__.FormGroupDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_7__.FormControlName, _shared_components_button_button_component__WEBPACK_IMPORTED_MODULE_2__.ButtonComponent, _shared_components_error_validation_mesasage_error_validation_mesasage_component__WEBPACK_IMPORTED_MODULE_3__.ErrorValidationMesasageComponent, _shared_components_loader_loader_component__WEBPACK_IMPORTED_MODULE_4__.LoaderComponent],
   styles: ["@font-face {\n  font-family: \"Source Sans Pro\";\n  font-style: normal;\n  font-weight: 200;\n  src: url(https://fonts.gstatic.com/s/sourcesanspro/v14/6xKydSBYKcSV-LCoeQqfX1RYOo3i94_wlxdr.ttf) format(\"truetype\");\n}\n@font-face {\n  font-family: \"Source Sans Pro\";\n  font-style: normal;\n  font-weight: 300;\n  src: url(https://fonts.gstatic.com/s/sourcesanspro/v14/6xKydSBYKcSV-LCoeQqfX1RYOo3ik4zwlxdr.ttf) format(\"truetype\");\n}\ninput.ng-invalid.ng-touched[_ngcontent-%COMP%] {\n  border: 1px solid red !important;\n}\n\n.form[_ngcontent-%COMP%] {\n  font-family: \"Source Sans Pro\", sans-serif;\n  color: white;\n  font-weight: 300;\n}\n\n.form[_ngcontent-%COMP%]   [_ngcontent-%COMP%]::-webkit-input-placeholder {\n  \n  font-family: \"Source Sans Pro\", sans-serif;\n  color: white;\n  font-weight: 300;\n}\n\n.form[_ngcontent-%COMP%]   [_ngcontent-%COMP%]:-moz-placeholder {\n  \n  font-family: \"Source Sans Pro\", sans-serif;\n  color: white;\n  opacity: 1;\n  font-weight: 300;\n}\n\n.form[_ngcontent-%COMP%]   [_ngcontent-%COMP%]::-moz-placeholder {\n  \n  font-family: \"Source Sans Pro\", sans-serif;\n  color: white;\n  opacity: 1;\n  font-weight: 300;\n}\n\n.form[_ngcontent-%COMP%]   [_ngcontent-%COMP%]:-ms-input-placeholder {\n  \n  font-family: \"Source Sans Pro\", sans-serif;\n  color: white;\n  font-weight: 300;\n}\n\n#form-link[_ngcontent-%COMP%] {\n  position: relative;\n  z-index: 2;\n}\n\nform[_ngcontent-%COMP%] {\n  padding: 20px 0;\n  position: relative;\n  z-index: 2;\n}\n\n.form[_ngcontent-%COMP%]   input[_ngcontent-%COMP%] {\n  -webkit-appearance: none;\n  appearance: none;\n  outline: 0;\n  background-color: rgba(255, 255, 255, 0.2);\n  width: 250px;\n  border-radius: 3px;\n  padding: 10px 15px;\n  margin: 0 auto 10px auto;\n  display: block;\n  text-align: center;\n  font-size: 18px;\n  color: white;\n  transition-duration: 0.25s;\n  font-weight: 300;\n}\n\nform[_ngcontent-%COMP%]   input[_ngcontent-%COMP%]:hover {\n  background-color: rgba(255, 255, 255, 0.4);\n}\n\nform[_ngcontent-%COMP%]   input[_ngcontent-%COMP%]:focus {\n  width: 300px;\n}\n\nform[_ngcontent-%COMP%]   button[_ngcontent-%COMP%] {\n  -webkit-appearance: none;\n  appearance: none;\n  outline: 0;\n  background-color: white;\n  border: 0;\n  padding: 10px 15px;\n  color: #53e3a6;\n  border-radius: 3px;\n  width: 250px;\n  cursor: pointer;\n  font-size: 18px;\n  transition-duration: 0.25s;\n}\n\nform[_ngcontent-%COMP%]   button[_ngcontent-%COMP%]:hover {\n  background-color: #f5f7f9;\n}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9hcHAvbW9kdWxlcy9hdXRoL2NvbXBvbmVudHMvcmVnaXN0ZXIvcmVnaXN0ZXIuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSw4QkFBQTtFQUNBLGtCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxtSEFBQTtBQUNGO0FBRUE7RUFDRSw4QkFBQTtFQUNBLGtCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxtSEFBQTtBQUFGO0FBR0E7RUFDRSxnQ0FBQTtBQURGOztBQUdBO0VBQ0UsMENBQUE7RUFDQSxZQUFBO0VBQ0EsZ0JBQUE7QUFBRjs7QUFFQTtFQUNFLG9CQUFBO0VBQ0EsMENBQUE7RUFDQSxZQUFBO0VBQ0EsZ0JBQUE7QUFDRjs7QUFDQTtFQUNFLDRCQUFBO0VBQ0EsMENBQUE7RUFDQSxZQUFBO0VBQ0EsVUFBQTtFQUNBLGdCQUFBO0FBRUY7O0FBQUE7RUFDRSx3QkFBQTtFQUNBLDBDQUFBO0VBQ0EsWUFBQTtFQUNBLFVBQUE7RUFDQSxnQkFBQTtBQUdGOztBQURBO0VBQ0UsMEJBQUE7RUFDQSwwQ0FBQTtFQUNBLFlBQUE7RUFDQSxnQkFBQTtBQUlGOztBQUZBO0VBQ0Usa0JBQUE7RUFDQSxVQUFBO0FBS0Y7O0FBSEE7RUFDRSxlQUFBO0VBQ0Esa0JBQUE7RUFDQSxVQUFBO0FBTUY7O0FBSkE7RUFDRSx3QkFBQTtFQUVBLGdCQUFBO0VBQ0EsVUFBQTtFQUNBLDBDQUFBO0VBQ0EsWUFBQTtFQUNBLGtCQUFBO0VBQ0Esa0JBQUE7RUFDQSx3QkFBQTtFQUNBLGNBQUE7RUFDQSxrQkFBQTtFQUNBLGVBQUE7RUFDQSxZQUFBO0VBQ0EsMEJBQUE7RUFDQSxnQkFBQTtBQU9GOztBQUxBO0VBQ0UsMENBQUE7QUFRRjs7QUFOQTtFQUNFLFlBQUE7QUFTRjs7QUFQQTtFQUNFLHdCQUFBO0VBRUEsZ0JBQUE7RUFDQSxVQUFBO0VBQ0EsdUJBQUE7RUFDQSxTQUFBO0VBQ0Esa0JBQUE7RUFDQSxjQUFBO0VBQ0Esa0JBQUE7RUFDQSxZQUFBO0VBQ0EsZUFBQTtFQUNBLGVBQUE7RUFDQSwwQkFBQTtBQVVGOztBQVJBO0VBQ0UseUJBQUE7QUFXRiIsInNvdXJjZXNDb250ZW50IjpbIkBmb250LWZhY2Uge1xuICBmb250LWZhbWlseTogJ1NvdXJjZSBTYW5zIFBybyc7XG4gIGZvbnQtc3R5bGU6IG5vcm1hbDtcbiAgZm9udC13ZWlnaHQ6IDIwMDtcbiAgc3JjOiB1cmwoaHR0cHM6Ly9mb250cy5nc3RhdGljLmNvbS9zL3NvdXJjZXNhbnNwcm8vdjE0LzZ4S3lkU0JZS2NTVi1MQ29lUXFmWDFSWU9vM2k5NF93bHhkci50dGYpXG4gICAgZm9ybWF0KCd0cnVldHlwZScpO1xufVxuQGZvbnQtZmFjZSB7XG4gIGZvbnQtZmFtaWx5OiAnU291cmNlIFNhbnMgUHJvJztcbiAgZm9udC1zdHlsZTogbm9ybWFsO1xuICBmb250LXdlaWdodDogMzAwO1xuICBzcmM6IHVybChodHRwczovL2ZvbnRzLmdzdGF0aWMuY29tL3Mvc291cmNlc2Fuc3Byby92MTQvNnhLeWRTQllLY1NWLUxDb2VRcWZYMVJZT28zaWs0endseGRyLnR0ZilcbiAgICBmb3JtYXQoJ3RydWV0eXBlJyk7XG59XG5pbnB1dC5uZy1pbnZhbGlkLm5nLXRvdWNoZWQge1xuICBib3JkZXI6IDFweCBzb2xpZCByZWQgIWltcG9ydGFudDtcbn1cbi5mb3JtIHtcbiAgZm9udC1mYW1pbHk6ICdTb3VyY2UgU2FucyBQcm8nLCBzYW5zLXNlcmlmO1xuICBjb2xvcjogd2hpdGU7XG4gIGZvbnQtd2VpZ2h0OiAzMDA7XG59XG4uZm9ybSA6Oi13ZWJraXQtaW5wdXQtcGxhY2Vob2xkZXIge1xuICAvKiBXZWJLaXQgYnJvd3NlcnMgKi9cbiAgZm9udC1mYW1pbHk6ICdTb3VyY2UgU2FucyBQcm8nLCBzYW5zLXNlcmlmO1xuICBjb2xvcjogd2hpdGU7XG4gIGZvbnQtd2VpZ2h0OiAzMDA7XG59XG4uZm9ybSA6LW1vei1wbGFjZWhvbGRlciB7XG4gIC8qIE1vemlsbGEgRmlyZWZveCA0IHRvIDE4ICovXG4gIGZvbnQtZmFtaWx5OiAnU291cmNlIFNhbnMgUHJvJywgc2Fucy1zZXJpZjtcbiAgY29sb3I6IHdoaXRlO1xuICBvcGFjaXR5OiAxO1xuICBmb250LXdlaWdodDogMzAwO1xufVxuLmZvcm0gOjotbW96LXBsYWNlaG9sZGVyIHtcbiAgLyogTW96aWxsYSBGaXJlZm94IDE5KyAqL1xuICBmb250LWZhbWlseTogJ1NvdXJjZSBTYW5zIFBybycsIHNhbnMtc2VyaWY7XG4gIGNvbG9yOiB3aGl0ZTtcbiAgb3BhY2l0eTogMTtcbiAgZm9udC13ZWlnaHQ6IDMwMDtcbn1cbi5mb3JtIDotbXMtaW5wdXQtcGxhY2Vob2xkZXIge1xuICAvKiBJbnRlcm5ldCBFeHBsb3JlciAxMCsgKi9cbiAgZm9udC1mYW1pbHk6ICdTb3VyY2UgU2FucyBQcm8nLCBzYW5zLXNlcmlmO1xuICBjb2xvcjogd2hpdGU7XG4gIGZvbnQtd2VpZ2h0OiAzMDA7XG59XG4jZm9ybS1saW5rIHtcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xuICB6LWluZGV4OiAyO1xufVxuZm9ybSB7XG4gIHBhZGRpbmc6IDIwcHggMDtcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xuICB6LWluZGV4OiAyO1xufVxuLmZvcm0gaW5wdXQge1xuICAtd2Via2l0LWFwcGVhcmFuY2U6IG5vbmU7XG4gIC1tb3otYXBwZWFyYW5jZTogbm9uZTtcbiAgYXBwZWFyYW5jZTogbm9uZTtcbiAgb3V0bGluZTogMDtcbiAgYmFja2dyb3VuZC1jb2xvcjogcmdiYSgyNTUsIDI1NSwgMjU1LCAwLjIpO1xuICB3aWR0aDogMjUwcHg7XG4gIGJvcmRlci1yYWRpdXM6IDNweDtcbiAgcGFkZGluZzogMTBweCAxNXB4O1xuICBtYXJnaW46IDAgYXV0byAxMHB4IGF1dG87XG4gIGRpc3BsYXk6IGJsb2NrO1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gIGZvbnQtc2l6ZTogMThweDtcbiAgY29sb3I6IHdoaXRlO1xuICB0cmFuc2l0aW9uLWR1cmF0aW9uOiAwLjI1cztcbiAgZm9udC13ZWlnaHQ6IDMwMDtcbn1cbmZvcm0gaW5wdXQ6aG92ZXIge1xuICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2JhKDI1NSwgMjU1LCAyNTUsIDAuNCk7XG59XG5mb3JtIGlucHV0OmZvY3VzIHtcbiAgd2lkdGg6IDMwMHB4O1xufVxuZm9ybSBidXR0b24ge1xuICAtd2Via2l0LWFwcGVhcmFuY2U6IG5vbmU7XG4gIC1tb3otYXBwZWFyYW5jZTogbm9uZTtcbiAgYXBwZWFyYW5jZTogbm9uZTtcbiAgb3V0bGluZTogMDtcbiAgYmFja2dyb3VuZC1jb2xvcjogd2hpdGU7XG4gIGJvcmRlcjogMDtcbiAgcGFkZGluZzogMTBweCAxNXB4O1xuICBjb2xvcjogIzUzZTNhNjtcbiAgYm9yZGVyLXJhZGl1czogM3B4O1xuICB3aWR0aDogMjUwcHg7XG4gIGN1cnNvcjogcG9pbnRlcjtcbiAgZm9udC1zaXplOiAxOHB4O1xuICB0cmFuc2l0aW9uLWR1cmF0aW9uOiAwLjI1cztcbn1cbmZvcm0gYnV0dG9uOmhvdmVyIHtcbiAgYmFja2dyb3VuZC1jb2xvcjogI2Y1ZjdmOTtcbn1cbiJdLCJzb3VyY2VSb290IjoiIn0= */"]
 });
 
+
+/***/ }),
+
+/***/ 9327:
+/*!*************************************!*\
+  !*** ./src/app/validators/index.ts ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "CustomValidators": () => (/* binding */ CustomValidators)
+/* harmony export */ });
+class CustomValidators {
+  static matchPasswords(control) {
+    const password = control?.get('password')?.value;
+    const confirmPassword = control?.get('confirmedPassword')?.value;
+    if (password !== confirmPassword) {
+      return {
+        match_password: true
+      };
+    }
+    return null;
+  }
+}
 
 /***/ })
 
