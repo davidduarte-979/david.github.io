@@ -2,8 +2,8 @@ import { Component, OnDestroy, OnInit, inject } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { Subscription } from 'rxjs';
-import * as fromApp from '../../../../../store/app.reduce';
-import * as AuthActions from '../../../../../store/operations/auth/auth.actions';
+import * as fromApp from '../../../../store/app.reduce';
+import * as AuthActions from '../../../../store/operations/auth/auth.actions';
 import { Router } from '@angular/router';
 import { AppState } from '@core/models/appState';
 @Component({
@@ -40,7 +40,7 @@ export class RegisterComponent implements OnInit, OnDestroy {
   }
 
   signIn() {
-    this.router.navigate(['/', 'dashboard', 'auth'])
+    this.router.navigate(['/', 'auth'])
   }
   get email(): any {
     return this.signUpForm.get('email');

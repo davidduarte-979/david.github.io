@@ -6,7 +6,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { Subscription } from 'rxjs';
-import * as AuthActions from '../../../../../store/operations/auth/auth.actions';
+import * as AuthActions from '../../../../store/operations/auth/auth.actions';
 import { Store } from '@ngrx/store';
 import { Router } from '@angular/router';
 import { DialogType } from '@core/models/dialog.enum';
@@ -42,7 +42,7 @@ export class LoginComponent implements OnInit, OnDestroy {
   }
 
   signUp() {
-    this.router.navigate(['/', 'dashboard', 'auth', 'register'])
+    this.router.navigate(['/', 'auth', 'register'])
   }
 
   get email(): AbstractControl {

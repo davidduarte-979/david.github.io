@@ -12,26 +12,26 @@ export class NavService {
     },
     {
       title: 'Dashboard',
-      link: 'dashboard/auth'
+      link: '/dashboard'
     },
     {
       title: 'About',
-      link: 'about'
+      link: '/about'
     },
     {
       title: 'Projects',
-      link: 'projects'
+      link: '/projects'
     },
     {
       title: 'Skills',
-      link: 'skills'
-    }, 
+      link: '/skills'
+    },
     {
       title: 'Contact',
-      link: 'contact'
+      link: '/contact'
     },
   ]
-  
+
   getNavLinks() {
     return this.navLinks;
   }

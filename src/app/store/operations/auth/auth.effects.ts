@@ -103,7 +103,7 @@ export class AuthEffects {
       this.actions$.pipe(
         ofType(AuthActions.logout),
         tap(() => {
-          this.router.navigate(['/', 'dashboard', 'auth']);
+          this.router.navigate(['/', 'auth']);
           this.authService.clearLogoutTimer();
         })
       ),

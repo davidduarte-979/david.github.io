@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { Subscription } from 'rxjs';
 import { map, take } from 'rxjs/operators';
 import { AppState } from '@core/models/appState';
 @Injectable({
@@ -9,7 +8,6 @@ import { AppState } from '@core/models/appState';
 })
 export class AuthGuard {
   isAuthenticated = false;
-  private userSub!: Subscription;
   constructor(
     private router: Router,
     private store: Store<AppState>
@@ -23,7 +21,7 @@ export class AuthGuard {
         if (isAuth) {
           return true;
         }
-        return this.router.createUrlTree(['/', 'dashboard', 'auth']);
+        return this.router.createUrlTree(['/', 'auth']);
       })
     );
   }
