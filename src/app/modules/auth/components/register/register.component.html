@@ -1,23 +1,62 @@
 <form class="form" [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
-
   <div class="mb-4">
-    <input type="email" placeholder="Email" type="text" formControlName="email" name="email" id="username" />
-    <portfolio-error-validation-mesasage [control]="signUpForm.get('email')"
-      name="Email"></portfolio-error-validation-mesasage>
+    <input
+      type="email"
+      placeholder="Email"
+      type="text"
+      formControlName="email"
+      name="email"
+      id="username"
+    />
+    <portfolio-error-validation-mesasage
+      [control]="email"
+      name="Email"
+    ></portfolio-error-validation-mesasage>
   </div>
 
   <div class="mb-4">
-    <input formControlName="password" type="password" placeholder="Password" name="password" />
-    <portfolio-error-validation-mesasage [control]="signUpForm.get('password')"
-      name="Password"></portfolio-error-validation-mesasage>
+    <input
+      formControlName="password"
+      type="password"
+      placeholder="Password"
+      name="password"
+    />
+    <portfolio-error-validation-mesasage
+      [control]="password"
+      name="Password"
+    ></portfolio-error-validation-mesasage>
+  </div>
+
+  <div class="mb-4">
+    <input
+      formControlName="confirmedPassword"
+      type="password"
+      placeholder="Confirme Password"
+      name="confirmedPassword"
+    />
+    <div class="flex flex-col">
+      <portfolio-error-validation-mesasage
+        [control]="confirmedPassword"
+        name="Confirme Password"
+      ></portfolio-error-validation-mesasage>
+
+      <portfolio-error-validation-mesasage
+        *ngIf="
+          confirmedPassword?.touched && signUpForm?.hasError('match_password')
+        "
+        [control]="signUpForm"
+      ></portfolio-error-validation-mesasage>
+    </div>
   </div>
 
   <br />
-  <portfolio-button type="submit" color="warn" class="w-[250px]">Sign up</portfolio-button>
-
+  <portfolio-button type="submit" color="warn" class="w-[250px]"
+    >Sign up</portfolio-button
+  >
 </form>
 <span class="text-gray-200 mr-2">Do not have an account yet?</span>
-<portfolio-button color="primary" (clickEvent)="signIn()">Sign In
+<portfolio-button color="primary" (clickEvent)="signIn()"
+  >Sign In
 </portfolio-button>
 
 <portfolio-loader *ngIf="isLoading"></portfolio-loader>

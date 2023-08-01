@@ -1,42 +1,83 @@
 <ng-container *ngIf="control && (control.dirty || control.touched)">
-  <span id="validationError" class="error" *ngIf="customMessage && control.invalid; else requiredError">
-    {{customMessage}}
+  <span
+    id="validationError"
+    class="error"
+    *ngIf="customMessage && control.invalid; else requiredError"
+  >
+    {{ customMessage }}
   </span>
 
   <ng-template #requiredError>
-    <span id="validationError" class="error" *ngIf="control.errors?.['required']; else minLengthError">
-      {{name + ' is required. ' }}
+    <span
+      id="validationError"
+      class="error"
+      *ngIf="control.errors?.['required']; else minLengthError"
+    >
+      {{ name + " is required. " }}
     </span>
   </ng-template>
 
   <ng-template #minLengthError>
-    <span id="validationError" class="error" *ngIf="control.errors?.['minlength']; else invalidEmailFormat">
-      {{name + ' minimum length is ' + control.getError('minlength').requiredLength }}
+    <span
+      id="validationError"
+      class="error"
+      *ngIf="control.errors?.['minlength']; else invalidEmailFormat"
+    >
+      {{
+        name +
+          " minimum length is " +
+          control.getError("minlength").requiredLength
+      }}
     </span>
   </ng-template>
   <ng-template #invalidEmailFormat>
-    <span id="validationError" class="error" *ngIf="control.errors?.['email']; else otherErrors">
+    <span
+      id="validationError"
+      class="error"
+      *ngIf="control.errors?.['email']; else otherErrors"
+    >
       Enter a valid email
     </span>
   </ng-template>
 
   <ng-template #otherErrors>
-    <span id="validationError" class="error" *ngIf="control.errors?.['maxlength']">
-      {{name + ' maximum length is ' + control.getError('maxlength').requiredLength }}
+    <span
+      id="validationError"
+      class="error"
+      *ngIf="control.errors?.['maxlength']"
+    >
+      {{
+        name +
+          " maximum length is " +
+          control.getError("maxlength").requiredLength
+      }}
     </span>
-    <span id="validationError" class="error" *ngIf="control.errors?.['invalidFormat'] || control?.['pattern']">
-      {{name + ' contains an invalid format ' }}
+    <span
+      id="validationError"
+      class="error"
+      *ngIf="control.errors?.['invalidFormat'] || control?.['pattern']"
+    >
+      {{ name + " contains an invalid format " }}
     </span>
     <span id="validationError" class="error" *ngIf="control.errors?.['max']">
-      {{name + ' maximum value is ' + control.getError('max').max + '.' }}
+      {{ name + " maximum value is " + control.getError("max").max + "." }}
     </span>
     <span id="validationError" class="error" *ngIf="control.errors?.['min']">
-      {{name + ' maximum value is ' + control.getError('min').min + '.' }}
+      {{ name + " maximum value is " + control.getError("min").min + "." }}
     </span>
-    <span id="validationError" class="error" *ngIf="control.errors?.['validValue']">
-      {{name + ' has invalid value '}}
+    <span
+      id="validationError"
+      class="error"
+      *ngIf="control.errors?.['validValue']"
+    >
+      {{ name + " has invalid value " }}
+    </span>
+    <span
+      id="validationError"
+      class="error"
+      *ngIf="control.errors?.['match_password']"
+    >
+      {{ " Password does not match " }}
     </span>
   </ng-template>
-
-
 </ng-container>

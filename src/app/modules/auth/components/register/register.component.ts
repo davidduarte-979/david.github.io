@@ -2,10 +2,10 @@ import { Component, OnDestroy, OnInit, inject } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { Subscription } from 'rxjs';
-import * as fromApp from '../../../../store/app.reduce';
 import * as AuthActions from '../../../../store/operations/auth/auth.actions';
 import { Router } from '@angular/router';
 import { AppState } from '@core/models/appState';
+import { CustomValidators } from "../../../../validators";
 @Component({
   selector: 'portfolio-register',
   templateUrl: './register.component.html',
@@ -42,17 +42,23 @@ export class RegisterComponent implements OnInit, OnDestroy {
   signIn() {
     this.router.navigate(['/', 'auth'])
   }
-  get email(): any {
+  get email() {
     return this.signUpForm.get('email');
   }
-  get password(): any {
+  get password() {
     return this.signUpForm.get('password');
+  }
+  get confirmedPassword() {
+    return this.signUpForm.get('confirmedPassword');
   }
 
   private buildForm(): void {
     this.signUpForm = new FormGroup({
       email: new FormControl('', [Validators.required, Validators.email]),
       password: new FormControl('', [Validators.required]),
+      confirmedPassword: new FormControl('', [Validators.required]),
+    }, {
+      validators: CustomValidators.matchPasswords
     });
   }
   ngOnDestroy(): void {
