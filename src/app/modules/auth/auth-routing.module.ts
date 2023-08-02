@@ -28,11 +28,11 @@ const routes: Routes = [
       },
       {
         path: 'forgot-password',
-        component: ForgotPasswordComponent,
+        component: RecoveryPasswordComponent,
       },
       {
         path: 'recovery-password',
-        component: RecoveryPasswordComponent,
+        component: ForgotPasswordComponent,
       },
     ],
   },

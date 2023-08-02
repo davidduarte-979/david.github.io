@@ -1,5 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { CustomValidators } from 'src/app/validators';
 
 @Component({
@@ -10,6 +11,7 @@ import { CustomValidators } from 'src/app/validators';
 export class ForgotPasswordComponent {
   isLoading = false;
   private fb = inject(FormBuilder)
+  private router = inject(Router)
   pageForm = this.fb.group({
     password: new FormControl('', [Validators.required]),
     confirmPassword: new FormControl('')
@@ -29,5 +31,6 @@ export class ForgotPasswordComponent {
       return;
     }
     console.log('password Changed');
+    this.router.navigate(['/', 'auth'])
   }
 }

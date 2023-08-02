@@ -2,26 +2,34 @@
   <div class="mb-4">
     <input formControlName="email" type="email" placeholder="Email" />
 
-    <portfolio-error-validation-mesasage [control]="signInForm.get('email')" name="Email">
+    <portfolio-error-validation-mesasage
+      [control]="signInForm.get('email')"
+      name="Email"
+    >
     </portfolio-error-validation-mesasage>
   </div>
 
   <div class="mb-4">
     <input formControlName="password" type="password" placeholder="Password" />
 
-    <portfolio-error-validation-mesasage [control]="signInForm.get('password')" name="Password">
+    <portfolio-error-validation-mesasage
+      [control]="signInForm.get('password')"
+      name="Password"
+    >
     </portfolio-error-validation-mesasage>
   </div>
 
   <br />
-  <portfolio-button type='submit' color="warn" class="w-[250px]">
-    Sign In
-  </portfolio-button>
+  <div class="flex flex-col items-center space-y-2">
+    <portfolio-button type="submit" color="warn" class="w-[250px]">
+      Sign In
+    </portfolio-button>
+    <a class="text-lg" routerLink="/auth/forgot-password">Forgot password?</a>
+  </div>
 </form>
 <span class="text-gray-200 mr-2">Do have an account?</span>
 <portfolio-button (clickEvent)="signUp()" color="primary">
   Sign up
 </portfolio-button>
-
 
 <portfolio-loader *ngIf="isLoading"></portfolio-loader>

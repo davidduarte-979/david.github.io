@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormControl, Validators } from "@angular/forms";
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -8,6 +9,7 @@ import { FormControl, Validators } from "@angular/forms";
   styleUrls: ['./recovery-password.component.scss']
 })
 export class RecoveryPasswordComponent {
+  private router = inject(Router);
   input = new FormControl('', [Validators.required, Validators.email])
 
   submit() {
@@ -16,6 +18,7 @@ export class RecoveryPasswordComponent {
       return;
     }
     console.log('send recovery Email');
+    this.router.navigate(['/', 'auth', 'recovery-password'])
   }
 
 }
