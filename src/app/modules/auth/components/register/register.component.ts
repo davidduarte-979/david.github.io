@@ -48,15 +48,15 @@ export class RegisterComponent implements OnInit, OnDestroy {
   get password() {
     return this.signUpForm.get('password');
   }
-  get confirmedPassword() {
-    return this.signUpForm.get('confirmedPassword');
+  get confirmPassword() {
+    return this.signUpForm.get('confirmPassword');
   }
 
   private buildForm(): void {
     this.signUpForm = new FormGroup({
       email: new FormControl('', [Validators.required, Validators.email]),
       password: new FormControl('', [Validators.required]),
-      confirmedPassword: new FormControl('', [Validators.required]),
+      confirmPassword: new FormControl('', [Validators.required]),
     }, {
       validators: CustomValidators.matchPasswords
     });

@@ -36,13 +36,13 @@
     />
     <div class="flex flex-col">
       <portfolio-error-validation-mesasage
-        [control]="confirmedPassword"
+        [control]="confirmPassword"
         name="Confirme Password"
       ></portfolio-error-validation-mesasage>
 
       <portfolio-error-validation-mesasage
         *ngIf="
-          confirmedPassword?.touched && signUpForm?.hasError('match_password')
+          confirmPassword?.touched && signUpForm?.hasError('match_password')
         "
         [control]="signUpForm"
       ></portfolio-error-validation-mesasage>
