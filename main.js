@@ -299,7 +299,7 @@ class HttpErrorHandlerInterceptor {
   intercept(request, next) {
     return next.handle(request).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_2__.catchError)(err => {
       const modalRef = this.dialogService.openDialog(this.dialogTypeEnum.Error, {
-        message: `${err.statusText}: ${err.error.message}`,
+        message: `${err.statusText}: ${err?.error?.message || 'Error'}`,
         code: err.status
       });
       return (0,rxjs__WEBPACK_IMPORTED_MODULE_3__.throwError)({
@@ -556,6 +556,70 @@ LoadingService.ɵfac = function LoadingService_Factory(t) {
 LoadingService.ɵprov = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjectable"]({
   token: LoadingService,
   factory: LoadingService.ɵfac,
+  providedIn: 'root'
+});
+
+
+/***/ }),
+
+/***/ 2879:
+/*!***********************************************************!*\
+  !*** ./src/app/core/services/projects/project.service.ts ***!
+  \***********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "ServiceProjects": () => (/* binding */ ServiceProjects)
+/* harmony export */ });
+/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../environments/environment */ 2340);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/operators */ 6942);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 6839);
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common/http */ 3765);
+/* harmony import */ var _auth_auth_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../auth/auth.service */ 7990);
+
+
+
+
+
+class ServiceProjects {
+  constructor(http, auth) {
+    this.http = http;
+    this.auth = auth;
+    this.projectsArray = [];
+  }
+  getAllProjects() {
+    return this.http.get(`${_environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.API_URL_FIREBASE}.jso`).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_2__.map)(responseData => {
+      for (const key in responseData) {
+        if (responseData.hasOwnProperty(key)) {
+          this.projectsArray.push({
+            ...responseData[key],
+            id: key
+          });
+        }
+      }
+      return this.projectsArray;
+    }));
+  }
+  getProject(id) {
+    return this.http.get(`${_environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.API_URL_FIREBASE}/${id}.json`);
+  }
+  createProjects(project) {
+    return this.http.post(`${_environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.API_URL_FIREBASE}.json`, project);
+  }
+  updateProjects(id, changes) {
+    return this.http.put(`${_environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.API_URL_FIREBASE}/${id}.json`, changes);
+  }
+  deleteProjects(id) {
+    return this.http.delete(`${_environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.API_URL_FIREBASE}/${id}.json`).subscribe();
+  }
+}
+ServiceProjects.ɵfac = function ServiceProjects_Factory(t) {
+  return new (t || ServiceProjects)(_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_4__.HttpClient), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵinject"](_auth_auth_service__WEBPACK_IMPORTED_MODULE_1__.AuthService));
+};
+ServiceProjects.ɵprov = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInjectable"]({
+  token: ServiceProjects,
+  factory: ServiceProjects.ɵfac,
   providedIn: 'root'
 });
 
@@ -1230,11 +1294,7 @@ class AuthEffects {
       this.dialogService.openDialog(this.dialogEnumType.Success, {
         message: `login successfull welcome ${respData.displayName}`
       });
-    }), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_9__.map)(resData => this.handleAuthentication(resData)), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_7__.tap)(() => this.router.navigate(['/', 'dashboard'])), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_8__.catchError)(({
-      err,
-      modalRef
-    }) => {
-      modalRef.afterClosed().subscribe(() => {});
+    }), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_9__.map)(resData => this.handleAuthentication(resData)), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_7__.tap)(() => this.router.navigate(['/', 'dashboard'])), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_8__.catchError)(() => {
       return (0,rxjs__WEBPACK_IMPORTED_MODULE_10__.of)(_auth_actions__WEBPACK_IMPORTED_MODULE_0__.clearError());
     })))));
     this.authRedirect$ = (0,_ngrx_effects__WEBPACK_IMPORTED_MODULE_5__.createEffect)(() => this.actions$.pipe((0,_ngrx_effects__WEBPACK_IMPORTED_MODULE_5__.ofType)(_auth_actions__WEBPACK_IMPORTED_MODULE_0__.authenticateSuccess)), {
@@ -1351,10 +1411,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _projects_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./projects.actions */ 2376);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ 9095);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs/operators */ 6942);
-/* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/environments/environment */ 2340);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 6839);
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/common/http */ 3765);
-/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @ngrx/store */ 4307);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! rxjs/operators */ 7418);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! rxjs */ 4139);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/core */ 6839);
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/common/http */ 3765);
+/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @ngrx/store */ 4307);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/router */ 6679);
+/* harmony import */ var _core_services_projects_project_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @core/services/projects/project.service */ 2879);
+
+
 
 
 
@@ -1364,36 +1429,30 @@ __webpack_require__.r(__webpack_exports__);
 
 
 class ProjectsEffects {
-  constructor(actions$, http, store) {
+  constructor(actions$, http, store, router, serviceProjects) {
     this.actions$ = actions$;
     this.http = http;
     this.store = store;
-    this.fetchProjects$ = (0,_ngrx_effects__WEBPACK_IMPORTED_MODULE_2__.createEffect)(() => this.actions$.pipe((0,_ngrx_effects__WEBPACK_IMPORTED_MODULE_2__.ofType)(_projects_actions__WEBPACK_IMPORTED_MODULE_0__.fetchProjects), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_3__.switchMap)(() => {
-      return this.http.get(`${src_environments_environment__WEBPACK_IMPORTED_MODULE_1__.environment.API_URL_FIREBASE}.json`);
-    }), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.map)(responseData => {
-      const projectsArray = [];
-      for (const key in responseData) {
-        if (responseData.hasOwnProperty(key)) {
-          projectsArray.push({
-            ...responseData[key],
-            id: key
-          });
-        }
-      }
-      return projectsArray;
-    }), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.map)(projects => {
-      return this.store.dispatch(_projects_actions__WEBPACK_IMPORTED_MODULE_0__.fetchProjectsSuccess({
-        projects
-      }));
-    })), {
-      dispatch: false
-    });
+    this.router = router;
+    this.serviceProjects = serviceProjects;
+    this.fetchProjects$ = (0,_ngrx_effects__WEBPACK_IMPORTED_MODULE_2__.createEffect)(() => this.actions$.pipe((0,_ngrx_effects__WEBPACK_IMPORTED_MODULE_2__.ofType)(_projects_actions__WEBPACK_IMPORTED_MODULE_0__.fetchProjects), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_3__.switchMap)(() => this.serviceProjects.getAllProjects().pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.map)(projects => _projects_actions__WEBPACK_IMPORTED_MODULE_0__.fetchProjectsSuccess({
+      projects
+    })), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_5__.catchError)(({
+      err,
+      modalRef
+    }) => {
+      modalRef.afterClosed().subscribe(() => {
+        _projects_actions__WEBPACK_IMPORTED_MODULE_0__.clearError();
+        this.router.navigate(['/']);
+      });
+      return (0,rxjs__WEBPACK_IMPORTED_MODULE_6__.of)(_projects_actions__WEBPACK_IMPORTED_MODULE_0__.clearError());
+    })))));
   }
 }
 ProjectsEffects.ɵfac = function ProjectsEffects_Factory(t) {
-  return new (t || ProjectsEffects)(_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵinject"](_ngrx_effects__WEBPACK_IMPORTED_MODULE_2__.Actions), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_6__.HttpClient), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵinject"](_ngrx_store__WEBPACK_IMPORTED_MODULE_7__.Store));
+  return new (t || ProjectsEffects)(_angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵinject"](_ngrx_effects__WEBPACK_IMPORTED_MODULE_2__.Actions), _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_8__.HttpClient), _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵinject"](_ngrx_store__WEBPACK_IMPORTED_MODULE_9__.Store), _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵinject"](_angular_router__WEBPACK_IMPORTED_MODULE_10__.Router), _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵinject"](_core_services_projects_project_service__WEBPACK_IMPORTED_MODULE_1__.ServiceProjects));
 };
-ProjectsEffects.ɵprov = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineInjectable"]({
+ProjectsEffects.ɵprov = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdefineInjectable"]({
   token: ProjectsEffects,
   factory: ProjectsEffects.ɵfac,
   providedIn: 'root'
@@ -1434,10 +1493,10 @@ const _projectsReducer = (0,_ngrx_store__WEBPACK_IMPORTED_MODULE_1__.createReduc
   ...state,
   errorMessage: action.errorMessage,
   loading: false
-})), (0,_ngrx_store__WEBPACK_IMPORTED_MODULE_1__.on)(_projects_actions__WEBPACK_IMPORTED_MODULE_0__.clearError, (state, action) => ({
+})), (0,_ngrx_store__WEBPACK_IMPORTED_MODULE_1__.on)(_projects_actions__WEBPACK_IMPORTED_MODULE_0__.clearError, state => ({
   ...state,
-  errorMessage: null,
-  loading: false
+  loading: false,
+  errorMessage: null
 })));
 function projectReducer(state, action) {
   return _projectsReducer(state, action);

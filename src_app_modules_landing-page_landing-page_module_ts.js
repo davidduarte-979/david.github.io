@@ -69,14 +69,10 @@ class AboutService {
   //   return this.techStack;
   // }
   getTechStackAsync() {
-    return this.skills.getSkillAsync().pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.switchMap)(skills => {
-      return this.http.get(`${src_environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.API_BASE_URL}/${src_environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.API_VERSION}/tech-category`).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_5__.map)(TechCategory => {
-        return TechCategory.map(element => ({
-          ...element,
-          skills
-        }));
-      }));
-    }));
+    return this.skills.getSkillAsync().pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.switchMap)(skills => this.http.get(`${src_environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.API_BASE_URL}/${src_environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.API_VERSION}/tech-category`).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_5__.map)(TechCategory => TechCategory.map(element => ({
+      ...element,
+      skills
+    }))))));
   }
 }
 AboutService.ɵfac = function AboutService_Factory(t) {
