@@ -1142,6 +1142,9 @@ body {
   --tw-text-opacity: 1;
   color: rgb(156 163 175 / var(--tw-text-opacity));
 }
+.mat-typography h4 {
+  margin: 0px;
+}
 .mat-typography h3 {
   margin: 0px;
   font-size: 1.5rem;
