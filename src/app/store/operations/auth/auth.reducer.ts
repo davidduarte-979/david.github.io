@@ -1,9 +1,9 @@
 import { Action, createReducer, on } from '@ngrx/store';
-import { CurrentUser } from '@core/models/user';
+import { LoginResponseDto } from '@core/models/user';
 import * as AuthActions from './auth.actions';
 
 export interface State {
-  user: CurrentUser;
+  user: LoginResponseDto;
   error: string;
   loading: boolean;
 }
@@ -20,14 +20,14 @@ const _authReducer = createReducer<State>(
   on(
     AuthActions.loginStart,
     AuthActions.signUpStart,
-    (state, action) => ({
-    ...state,
-    user: null,
-    error: null,
-    loading: true,
-  })),
+    (state) => ({
+      ...state,
+      user: null,
+      error: null,
+      loading: true,
+    })),
 
-  on(AuthActions.logout, (state, action) => ({
+  on(AuthActions.logout, (state) => ({
     ...state,
     user: null,
     uthError: null,
@@ -36,12 +36,7 @@ const _authReducer = createReducer<State>(
 
   on(AuthActions.authenticateSuccess, (state, action) => ({
     ...state,
-    user: new CurrentUser(
-      action.email,
-      action.userId,
-      action.token,
-      action.expirationDate
-    ),
+    user: action,
     error: null,
     loading: false,
   })),
@@ -52,10 +47,13 @@ const _authReducer = createReducer<State>(
     loading: false,
   })),
 
-  on(AuthActions.clearError, (state, action) => ({
+  on(AuthActions.clearError, (state) => ({
     ...state,
+    loading: false,
     error: null,
-  }))
+  })),
+
+  on(AuthActions.signUpSuccess, () => (initialState))
 );
 
 export const authReducer = (state: State, action: Action): State => _authReducer(state, action);

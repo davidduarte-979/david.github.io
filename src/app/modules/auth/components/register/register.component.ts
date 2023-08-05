@@ -6,6 +6,7 @@ import * as AuthActions from '../../../../store/operations/auth/auth.actions';
 import { Router } from '@angular/router';
 import { AppState } from '@core/models/appState';
 import { CustomValidators } from "../../../../validators";
+import { CreateUserDto } from '@core/models/user';
 @Component({
   selector: 'portfolio-register',
   templateUrl: './register.component.html',
@@ -13,10 +14,17 @@ import { CustomValidators } from "../../../../validators";
 })
 export class RegisterComponent implements OnInit, OnDestroy {
   private router = inject(Router);
-  constructor(private store: Store<AppState>) {
-    this.buildForm();
-  }
-  signUpForm!: FormGroup;
+  constructor(private store: Store<AppState>) { }
+
+  signUpForm = new FormGroup({
+    firstname: new FormControl('', [Validators.required]),
+    lastname: new FormControl('', [Validators.required]),
+    email: new FormControl('', [Validators.required, Validators.email]),
+    password: new FormControl('', [Validators.required]),
+    confirmPassword: new FormControl('', [Validators.required]),
+  }, {
+    validators: CustomValidators.matchPasswords
+  });
   signUpSub!: Subscription;
   isLoading = false;
   error!: string;
@@ -31,9 +39,13 @@ export class RegisterComponent implements OnInit, OnDestroy {
       this.signUpForm.markAllAsTouched();
       return;
     }
-    const email = this.signUpForm.value.email;
-    const password = this.signUpForm.value.password;
-    this.store.dispatch(AuthActions.signUpStart({ email, password }));
+    const newUser: CreateUserDto = {
+      email: this.signUpForm.value.email,
+      firstname: this.signUpForm.value.firstname,
+      lastname: this.signUpForm.value.lastname,
+      password: this.signUpForm.value.password,
+    }
+    this.store.dispatch(AuthActions.signUpStart(newUser));
   }
   onClearError(): void {
     this.store.dispatch(AuthActions.clearError());
@@ -41,6 +53,12 @@ export class RegisterComponent implements OnInit, OnDestroy {
 
   signIn() {
     this.router.navigate(['/', 'auth'])
+  }
+  get firstname() {
+    return this.signUpForm.get('firstname');
+  }
+  get lastname() {
+    return this.signUpForm.get('lastname');
   }
   get email() {
     return this.signUpForm.get('email');
@@ -52,15 +70,6 @@ export class RegisterComponent implements OnInit, OnDestroy {
     return this.signUpForm.get('confirmPassword');
   }
 
-  private buildForm(): void {
-    this.signUpForm = new FormGroup({
-      email: new FormControl('', [Validators.required, Validators.email]),
-      password: new FormControl('', [Validators.required]),
-      confirmPassword: new FormControl('', [Validators.required]),
-    }, {
-      validators: CustomValidators.matchPasswords
-    });
-  }
   ngOnDestroy(): void {
     if (this.signUpSub) {
       this.signUpSub.unsubscribe();

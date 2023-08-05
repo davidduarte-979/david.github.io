@@ -1,12 +1,39 @@
 <form class="form" [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
   <div class="mb-4">
     <input
+      type="text"
+      placeholder="First Name"
+      type="text"
+      formControlName="firstname"
+      name="firstname"
+    />
+    <portfolio-error-validation-mesasage
+      [control]="firstname"
+      name="Firstname"
+    ></portfolio-error-validation-mesasage>
+  </div>
+
+  <div class="mb-4">
+    <input
+      type="text"
+      placeholder="Last Name"
+      type="text"
+      formControlName="lastname"
+      name="lastname"
+    />
+    <portfolio-error-validation-mesasage
+      [control]="lastname"
+      name="lastname"
+    ></portfolio-error-validation-mesasage>
+  </div>
+
+  <div class="mb-4">
+    <input
       type="email"
       placeholder="Email"
       type="text"
       formControlName="email"
       name="email"
-      id="username"
     />
     <portfolio-error-validation-mesasage
       [control]="email"
@@ -29,10 +56,10 @@
 
   <div class="mb-4">
     <input
-      formControlName="confirmedPassword"
+      formControlName="confirmPassword"
       type="password"
       placeholder="Confirme Password"
-      name="confirmedPassword"
+      name="confirmPassword"
     />
     <div class="flex flex-col">
       <portfolio-error-validation-mesasage

@@ -2,7 +2,6 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable, Subscription } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
-import { AuthService } from '@core/services/auth/auth.service';
 import { User } from '@core/models/user';
 import * as AuthActions from '../../../store/operations/auth/auth.actions';
 import { Store } from '@ngrx/store';
@@ -25,14 +24,11 @@ export class SidebarComponent implements OnInit, OnDestroy {
 
   constructor(
     private breakpointObserver: BreakpointObserver,
-    private auth: AuthService,
     private store: Store<AppState>
   ) { }
   ngOnInit(): void {
     this.subStore = this.store.select('auth').subscribe((authStateResponse) => {
-      this.username = authStateResponse.user
-        ? authStateResponse.user.email
-        : '';
+      this.username = authStateResponse.user.displayName || authStateResponse.user.email
     });
   }
   onLogOut(): void {

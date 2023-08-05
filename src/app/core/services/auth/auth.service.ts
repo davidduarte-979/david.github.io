@@ -3,7 +3,7 @@ import { environment } from 'src/environments/environment';
 import * as AuthActions from '../../../store/operations/auth/auth.actions';
 import { Store } from '@ngrx/store';
 import { HttpClient } from '@angular/common/http';
-import { AuthResponseData } from '@core/models/user';
+import { LoginResponseDto, CreateUserDto, User } from '@core/models/user';
 import { Observable } from 'rxjs';
 import { AppState } from '@core/models/appState';
 
@@ -20,6 +20,7 @@ export class AuthService {
       this.store.dispatch(AuthActions.logout());
     }, expirationDuration);
   }
+
   clearLogoutTimer(): void {
     if (this.tokenExpirationTimer) {
       clearTimeout(this.tokenExpirationTimer);
@@ -27,26 +28,17 @@ export class AuthService {
     }
   }
 
-  signUp(email: string, password: string): Observable<AuthResponseData> {
-    return this.http
-      .post<AuthResponseData>(
-        `${environment.API_AUTH_FIREBASE_SIGNUP}${environment.API_KEY_FIREBASE}`,
-        {
-          email,
-          password,
-          returnSecureToken: true,
-        }
-      )
+  signUp(data: CreateUserDto) {
+    return this.http.post<User>(`${environment.SYSTEM_API}/${environment.API_VERSION}/users`, data)
   }
 
-  singIn(email: string, password: string): Observable<AuthResponseData> {
+  singIn(email: string, password: string): Observable<LoginResponseDto> {
     return this.http
-      .post<AuthResponseData>(
-        `${environment.API_AUTH_FIREBASE_SIGNIN}${environment.API_KEY_FIREBASE}`,
+      .post<LoginResponseDto>(
+        `${environment.SYSTEM_API}/${environment.API_VERSION}/auth/login`,
         {
           email: email,
           password: password,
-          returnSecureToken: true,
         }
       )
   };

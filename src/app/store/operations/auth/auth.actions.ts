@@ -1,14 +1,12 @@
+import { CreateUserDto, LoginResponseDto } from '@core/models/user';
 import { createAction, props } from '@ngrx/store';
 
 export const authenticateSuccess = createAction(
   '[Auth] Authenticate Success',
-  props<{
-    email: string;
-    userId: string;
-    token: string;
-    expirationDate: Date;
-  }>()
+  props<LoginResponseDto>()
 );
+
+export const signUpSuccess = createAction('[Auth] Signup Success');
 
 export const loginStart = createAction(
   '[Auth] Login Start',
@@ -17,7 +15,7 @@ export const loginStart = createAction(
 
 export const signUpStart = createAction(
   '[Auth] Signup Start',
-  props<{ email: string; password: string }>()
+  props<CreateUserDto>()
 );
 export const logout = createAction('[Auth] Logout');
 

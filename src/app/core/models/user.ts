@@ -15,37 +15,28 @@ export class CurrentUser {
   }
 }
 export interface User {
+  readonly id: number;
+  recoveryToken?: string,
   email: string;
   displayName: string;
   password?: string;
-  uid?: string;
+  firstname: string;
+  lastname: string;
+  role: string;
+  createdAt: string;
+  isEmailVerify: boolean;
 }
 
-export interface AuthResponseData {
-  idToken: string;
-  email: string;
-  refreshToken: string;
-  expiresIn: string;
-  localId: string;
-  registered: boolean;
-  kind?: string;
-  displayName?: string;
-}
+export type CreateUserDto = Pick<User, 'firstname' | 'lastname' | 'password' | 'email'>;
 
-export interface SignInResponseData {
-  idToken: string;
-  email: string;
-  refreshToken: string;
-  expiresIn: string;
-  localId: string;
-  registered: boolean;
-  kind: string;
-  displayName: string;
+export interface LoginResponseDto extends Omit<User, 'password' | 'createAt' | 'recoveryToken' | 'role' | 'firstname' | 'lastname'> {
+  token: string;
+  refreshToken: string
 }
 
 export interface AutoLoginUser {
   email: string;
   id: string;
-  _token: string;
-  _tokenExpirationDate: string;
+  token: string;
+  tokenExpirationDate: string;
 };

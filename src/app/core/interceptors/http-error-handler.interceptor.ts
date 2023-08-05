@@ -3,7 +3,8 @@ import {
   HttpRequest,
   HttpHandler,
   HttpEvent,
-  HttpInterceptor
+  HttpInterceptor,
+  HttpErrorResponse
 } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
@@ -25,15 +26,9 @@ export class HttpErrorHandlerInterceptor implements HttpInterceptor {
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     return next.handle(request)
-      .pipe(catchError((err) => {
-        console.log(err);
-        this.dialogService.openDialog(this.dialogTypeEnum.Error, { message: 'Something when wrong', code: 400 })
-          .afterClosed()
-          .pipe(
-            tap(() => this.store.dispatch(ProjectAction.clearError()))
-          )
-          .subscribe(() => this.router.navigate(['/']))
-        return throwError(() => err)
+      .pipe(catchError((err: HttpErrorResponse) => {
+        const modalRef = this.dialogService.openDialog(this.dialogTypeEnum.Error, { message: `${err.statusText}: ${err.error.message}`, code: err.status })
+        return throwError({ err, modalRef })
       }))
   }
 }
