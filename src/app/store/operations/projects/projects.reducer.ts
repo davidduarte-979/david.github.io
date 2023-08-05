@@ -27,15 +27,17 @@ const _projectsReducer = createReducer(
     errorMessage: null,
     loading: true,
   })),
+
   on(ProjectsActions.fetchProjectsFail, (state, action) => ({
     ...state,
     errorMessage: action.errorMessage,
     loading: false,
   })),
-  on(ProjectsActions.clearError, (state, action) => ({
+
+  on(ProjectsActions.clearError, (state) => ({
     ...state,
-    errorMessage: null,
     loading: false,
+    errorMessage: null,
   }))
 );
 

@@ -12,24 +12,24 @@ export class ServiceProjects {
   constructor(
     private http: HttpClient,
     private auth: AuthService
-     ) {}
+  ) { }
   getAllProjects(): Observable<Project[]> {
-    return this.http.get<Project[]>(`${environment.API_URL_FIREBASE}.json`)
-    .pipe(
-      map(
-        (responseData: any) => {
-          for (const key in responseData) {
-            if (responseData.hasOwnProperty(key)) {
-              this.projectsArray.push(
-                {
-                  ...responseData[key],
-                  id: key
-                }
-              );
+    return this.http.get<Project[]>(`${environment.API_URL_FIREBASE}.jso`)
+      .pipe(
+        map(
+          (responseData: any) => {
+            for (const key in responseData) {
+              if (responseData.hasOwnProperty(key)) {
+                this.projectsArray.push(
+                  {
+                    ...responseData[key],
+                    id: key
+                  }
+                );
+              }
             }
-          }
-          return this.projectsArray;
-        })
+            return this.projectsArray;
+          })
       );
   }
   getProject(id: string): Observable<Project> {

@@ -9,7 +9,6 @@ import { catchError, map, switchMap, tap } from 'rxjs/operators';
 import * as AuthActions from './auth.actions';
 import { DialogService } from '@core/services/dialog.service';
 import { DialogType } from '@core/models/dialog.enum';
-import { MatDialogRef } from '@angular/material/dialog';
 
 @Injectable()
 export class AuthEffects {
@@ -73,9 +72,7 @@ export class AuthEffects {
             }),
             map((resData) => this.handleAuthentication(resData)),
             tap(() => this.router.navigate(['/', 'dashboard'])),
-            catchError(({ err, modalRef }) => {
-              (modalRef as MatDialogRef<any, any>).afterClosed().subscribe(() => {
-              })
+            catchError(() => {
               return of(AuthActions.clearError())
             })
           )

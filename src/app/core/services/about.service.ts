@@ -55,11 +55,8 @@ export class AboutService {
 
   getTechStackAsync() {
     return this.skills.getSkillAsync()
-      .pipe(switchMap((skills) => {
-        return this.http.get<TechStack[]>(`${environment.API_BASE_URL}/${environment.API_VERSION}/tech-category`)
-          .pipe(map((TechCategory) => {
-            return TechCategory.map(element => ({ ...element, skills }))
-          }))
-      }))
+      .pipe(switchMap((skills) => this.http.get<TechStack[]>(`${environment.API_BASE_URL}/${environment.API_VERSION}/tech-category`)
+        .pipe(map((TechCategory) => TechCategory.map(element => ({ ...element, skills }))))
+      ))
   }
 }

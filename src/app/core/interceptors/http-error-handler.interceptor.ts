@@ -27,7 +27,7 @@ export class HttpErrorHandlerInterceptor implements HttpInterceptor {
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     return next.handle(request)
       .pipe(catchError((err: HttpErrorResponse) => {
-        const modalRef = this.dialogService.openDialog(this.dialogTypeEnum.Error, { message: `${err.statusText}: ${err.error.message}`, code: err.status })
+        const modalRef = this.dialogService.openDialog(this.dialogTypeEnum.Error, { message: `${err.statusText}: ${err?.error?.message || 'Error'}`, code: err.status })
         return throwError({ err, modalRef })
       }))
   }
