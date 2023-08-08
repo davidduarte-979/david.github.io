@@ -1293,6 +1293,11 @@ body {
   color: rgb(220 38 38 / var(--tw-text-opacity));
 }
 
+input.ng-valid.ng-touched,
+textarea.ng-valid.ng-touched {
+  border: 1px solid green;
+}
+
 .mat-mdc-raised-button.mat-primary {
   --mdc-protected-button-container-color: #9e00a8b1;
   --mdc-protected-button-label-text-color: #fff;

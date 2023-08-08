@@ -589,7 +589,7 @@ class ServiceProjects {
     this.projectsArray = [];
   }
   getAllProjects() {
-    return this.http.get(`${_environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.API_URL_FIREBASE}.jso`).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_2__.map)(responseData => {
+    return this.http.get(`${_environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.API_URL_FIREBASE}.json`).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_2__.map)(responseData => {
       for (const key in responseData) {
         if (responseData.hasOwnProperty(key)) {
           this.projectsArray.push({
@@ -1252,8 +1252,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! rxjs */ 4139);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! rxjs/operators */ 9095);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! rxjs/operators */ 8759);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! rxjs/operators */ 7418);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! rxjs/operators */ 6942);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! rxjs/operators */ 6942);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! rxjs/operators */ 7418);
 /* harmony import */ var _auth_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./auth.actions */ 4415);
 /* harmony import */ var _core_services_dialog_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @core/services/dialog.service */ 6797);
 /* harmony import */ var _core_models_dialog_enum__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @core/models/dialog.enum */ 5319);
@@ -1284,7 +1284,7 @@ class AuthEffects {
       password: action.password
     }).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_7__.tap)(() => this.dialogService.openDialog(this.dialogEnumType.Success, {
       message: 'You were succefully Sign Up! please Log in'
-    })), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_7__.tap)(() => this.router.navigate(['/', 'auth'])), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_7__.tap)(() => _auth_actions__WEBPACK_IMPORTED_MODULE_0__.signUpSuccess()), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_8__.catchError)(this.handleError.bind(this))))));
+    })), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_7__.tap)(() => this.router.navigate(['/', 'auth'])), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_8__.map)(() => _auth_actions__WEBPACK_IMPORTED_MODULE_0__.signUpSuccess()), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_9__.catchError)(this.handleError.bind(this))))));
     this.authLogout$ = (0,_ngrx_effects__WEBPACK_IMPORTED_MODULE_5__.createEffect)(() => this.actions$.pipe((0,_ngrx_effects__WEBPACK_IMPORTED_MODULE_5__.ofType)(_auth_actions__WEBPACK_IMPORTED_MODULE_0__.logout), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_7__.tap)(() => localStorage.removeItem('userData')), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_7__.tap)(() => this.dialogService.openDialog(this.dialogEnumType.Success, {
       message: 'You were succesfully logout.'
     }))), {
@@ -1294,7 +1294,7 @@ class AuthEffects {
       this.dialogService.openDialog(this.dialogEnumType.Success, {
         message: `login successfull welcome ${respData.displayName}`
       });
-    }), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_9__.map)(resData => this.handleAuthentication(resData)), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_7__.tap)(() => this.router.navigate(['/', 'dashboard'])), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_8__.catchError)(() => {
+    }), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_8__.map)(resData => this.handleAuthentication(resData)), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_7__.tap)(() => this.router.navigate(['/', 'dashboard'])), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_9__.catchError)(() => {
       return (0,rxjs__WEBPACK_IMPORTED_MODULE_10__.of)(_auth_actions__WEBPACK_IMPORTED_MODULE_0__.clearError());
     })))));
     this.authRedirect$ = (0,_ngrx_effects__WEBPACK_IMPORTED_MODULE_5__.createEffect)(() => this.actions$.pipe((0,_ngrx_effects__WEBPACK_IMPORTED_MODULE_5__.ofType)(_auth_actions__WEBPACK_IMPORTED_MODULE_0__.authenticateSuccess)), {
@@ -1437,15 +1437,14 @@ class ProjectsEffects {
     this.serviceProjects = serviceProjects;
     this.fetchProjects$ = (0,_ngrx_effects__WEBPACK_IMPORTED_MODULE_2__.createEffect)(() => this.actions$.pipe((0,_ngrx_effects__WEBPACK_IMPORTED_MODULE_2__.ofType)(_projects_actions__WEBPACK_IMPORTED_MODULE_0__.fetchProjects), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_3__.switchMap)(() => this.serviceProjects.getAllProjects().pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.map)(projects => _projects_actions__WEBPACK_IMPORTED_MODULE_0__.fetchProjectsSuccess({
       projects
-    })), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_5__.catchError)(({
-      err,
-      modalRef
-    }) => {
-      modalRef.afterClosed().subscribe(() => {
-        _projects_actions__WEBPACK_IMPORTED_MODULE_0__.clearError();
+    })), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_5__.catchError)(error => {
+      error.modalRef.afterClosed().subscribe(() => {
+        this.store.dispatch(_projects_actions__WEBPACK_IMPORTED_MODULE_0__.clearError());
         this.router.navigate(['/']);
       });
-      return (0,rxjs__WEBPACK_IMPORTED_MODULE_6__.of)(_projects_actions__WEBPACK_IMPORTED_MODULE_0__.clearError());
+      return (0,rxjs__WEBPACK_IMPORTED_MODULE_6__.of)(_projects_actions__WEBPACK_IMPORTED_MODULE_0__.fetchProjectsFail({
+        errorMessage: error.err.statusText
+      }));
     })))));
   }
 }
