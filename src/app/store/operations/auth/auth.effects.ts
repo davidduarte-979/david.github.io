@@ -1,7 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { Router } from '@angular/router';
-import { AutoLoginUser, LoginResponseDto } from '@core/models/user';
+import { LoginResponseDto } from '@core/models/user';
 import { AuthService } from '@core/services/auth/auth.service';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { Observable, of } from 'rxjs';
@@ -38,7 +38,7 @@ export class AuthEffects {
               })
             ),
             tap(() => this.router.navigate(['/', 'auth'])),
-            tap(() => AuthActions.signUpSuccess()),
+            map(() => AuthActions.signUpSuccess()),
             catchError(this.handleError.bind(this))
           )
       )

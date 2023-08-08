@@ -3,7 +3,7 @@ import { Store } from '@ngrx/store';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import * as ProjectsActions from './projects.actions';
 import { switchMap, map, tap, catchError } from 'rxjs/operators';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Project } from '@core/models/project';
 import { environment } from 'src/environments/environment';
 import { AppState } from '@core/models/appState';
@@ -30,12 +30,12 @@ export class ProjectsEffects {
         switchMap(() => this.serviceProjects.getAllProjects()
           .pipe(
             map(projects => ProjectsActions.fetchProjectsSuccess({ projects })),
-            catchError(({ err, modalRef }) => {
-              (modalRef as MatDialogRef<any, any>).afterClosed().subscribe(() => {
-                ProjectsActions.clearError()
+            catchError((error: { err: HttpErrorResponse, modalRef: MatDialogRef<any, any> }) => {
+              error.modalRef.afterClosed().subscribe(() => {
+                this.store.dispatch(ProjectsActions.clearError())
                 this.router.navigate(['/'])
               })
-              return of(ProjectsActions.clearError()
+              return of(ProjectsActions.fetchProjectsFail({ errorMessage: error.err.statusText })
               );
             })
           )))

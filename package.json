@@ -8,7 +8,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "gh-build": "ng build --base-href=#"
+    "gh-build": "ng build --base-href=#",
+    "watch": "ng build --watch --configuration development"
   },
   "private": true,
   "dependencies": {

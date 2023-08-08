@@ -1,11 +1,10 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../../environments/environment';
 import { Project } from '../../models/project';
 import { Observable, Subscription } from 'rxjs';
-import { exhaustMap, map, switchMap, take } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 import { AuthService } from '../auth/auth.service';
-import { CurrentUser } from '@core/models/user';
 @Injectable({ providedIn: 'root' })
 export class ServiceProjects {
   projectsArray: Project[] = [];
@@ -14,7 +13,7 @@ export class ServiceProjects {
     private auth: AuthService
   ) { }
   getAllProjects(): Observable<Project[]> {
-    return this.http.get<Project[]>(`${environment.API_URL_FIREBASE}.jso`)
+    return this.http.get<Project[]>(`${environment.API_URL_FIREBASE}.json`)
       .pipe(
         map(
           (responseData: any) => {
