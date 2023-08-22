@@ -452,6 +452,11 @@ class AuthService {
       password: password
     });
   }
+  isEmailAvailable(email) {
+    return this.http.post(`${src_environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.SYSTEM_API}/${src_environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.API_VERSION}/auth/is-email-available`, {
+      email
+    });
+  }
 }
 AuthService.ɵfac = function AuthService_Factory(t) {
   return new (t || AuthService)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵinject"](_ngrx_store__WEBPACK_IMPORTED_MODULE_4__.Store));

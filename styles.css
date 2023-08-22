@@ -775,6 +775,11 @@ video {
   margin-right: calc(2.5rem * var(--tw-space-x-reverse));
   margin-left: calc(2.5rem * calc(1 - var(--tw-space-x-reverse)));
 }
+.space-x-2 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(0.5rem * var(--tw-space-x-reverse));
+  margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
+}
 .space-x-4 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
   margin-right: calc(1rem * var(--tw-space-x-reverse));
@@ -1049,6 +1054,10 @@ video {
   --tw-text-opacity: 1;
   color: rgb(67 56 202 / var(--tw-text-opacity));
 }
+.text-primary-100 {
+  --tw-text-opacity: 1;
+  color: rgb(190 19 71 / var(--tw-text-opacity));
+}
 .text-red-400 {
   --tw-text-opacity: 1;
   color: rgb(248 113 113 / var(--tw-text-opacity));
@@ -1292,10 +1301,27 @@ body {
   --tw-text-opacity: 1;
   color: rgb(220 38 38 / var(--tw-text-opacity));
 }
+.mat-typography input.ng-valid.ng-touched,
+.mat-typography textarea.ng-valid.ng-touched {
+  border: 2px solid green;
+}
+.mat-typography input.ng-valid.ng-touched:focus:focus,
+.mat-typography textarea.ng-valid.ng-touched:focus:focus {
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(0px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+}
+.mat-typography input.ng-valid.ng-touched:focus:focus-visible,
+.mat-typography textarea.ng-valid.ng-touched:focus:focus-visible {
+  right: 0px;
+}
 
-input.ng-valid.ng-touched,
-textarea.ng-valid.ng-touched {
-  border: 1px solid green;
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px rgba(5, 9, 17, 0.6862745098) inset !important;
+  -webkit-text-fill-color: white;
 }
 
 .mat-mdc-raised-button.mat-primary {

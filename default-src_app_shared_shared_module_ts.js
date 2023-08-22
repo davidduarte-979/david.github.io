@@ -221,6 +221,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 6839);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ 6477);
+/* harmony import */ var _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material/progress-spinner */ 5312);
+
 
 
 function ErrorValidationMesasageComponent_ng_container_0_span_1_Template(rf, ctx) {
@@ -242,9 +244,9 @@ function ErrorValidationMesasageComponent_ng_container_0_ng_template_2_span_0_Te
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
-    const ctx_r10 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](3);
+    const ctx_r11 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](3);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", ctx_r10.name + " is required. ", " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", ctx_r11.name + " is required. ", " ");
   }
 }
 function ErrorValidationMesasageComponent_ng_container_0_ng_template_2_Template(rf, ctx) {
@@ -265,9 +267,9 @@ function ErrorValidationMesasageComponent_ng_container_0_ng_template_4_span_0_Te
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
-    const ctx_r11 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](3);
+    const ctx_r12 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](3);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", ctx_r11.name + " minimum length is " + ctx_r11.control.getError("minlength").requiredLength, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", ctx_r12.name + " minimum length is " + ctx_r12.control.getError("minlength").requiredLength, " ");
   }
 }
 function ErrorValidationMesasageComponent_ng_container_0_ng_template_4_Template(rf, ctx) {
@@ -306,9 +308,9 @@ function ErrorValidationMesasageComponent_ng_container_0_ng_template_8_span_0_Te
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
-    const ctx_r13 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](3);
+    const ctx_r14 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](3);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", ctx_r13.name + " maximum length is " + ctx_r13.control.getError("maxlength").requiredLength, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", ctx_r14.name + " maximum length is " + ctx_r14.control.getError("maxlength").requiredLength, " ");
   }
 }
 function ErrorValidationMesasageComponent_ng_container_0_ng_template_8_span_1_Template(rf, ctx) {
@@ -318,9 +320,9 @@ function ErrorValidationMesasageComponent_ng_container_0_ng_template_8_span_1_Te
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
-    const ctx_r14 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](3);
+    const ctx_r15 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](3);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", ctx_r14.name + " contains an invalid format ", " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", ctx_r15.name + " contains an invalid format ", " ");
   }
 }
 function ErrorValidationMesasageComponent_ng_container_0_ng_template_8_span_2_Template(rf, ctx) {
@@ -330,9 +332,9 @@ function ErrorValidationMesasageComponent_ng_container_0_ng_template_8_span_2_Te
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
-    const ctx_r15 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](3);
+    const ctx_r16 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](3);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", ctx_r15.name + " maximum value is " + ctx_r15.control.getError("max").max + ".", " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", ctx_r16.name + " maximum value is " + ctx_r16.control.getError("max").max + ".", " ");
   }
 }
 function ErrorValidationMesasageComponent_ng_container_0_ng_template_8_span_3_Template(rf, ctx) {
@@ -342,9 +344,9 @@ function ErrorValidationMesasageComponent_ng_container_0_ng_template_8_span_3_Te
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
-    const ctx_r16 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](3);
+    const ctx_r17 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](3);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", ctx_r16.name + " maximum value is " + ctx_r16.control.getError("min").min + ".", " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", ctx_r17.name + " maximum value is " + ctx_r17.control.getError("min").min + ".", " ");
   }
 }
 function ErrorValidationMesasageComponent_ng_container_0_ng_template_8_span_4_Template(rf, ctx) {
@@ -354,9 +356,9 @@ function ErrorValidationMesasageComponent_ng_container_0_ng_template_8_span_4_Te
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
-    const ctx_r17 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](3);
+    const ctx_r18 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](3);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", ctx_r17.name + " has invalid value ", " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", ctx_r18.name + " has invalid value ", " ");
   }
 }
 function ErrorValidationMesasageComponent_ng_container_0_ng_template_8_span_5_Template(rf, ctx) {
@@ -370,6 +372,17 @@ function ErrorValidationMesasageComponent_ng_container_0_ng_template_8_span_5_Te
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", " Password does not match ", " ");
   }
 }
+function ErrorValidationMesasageComponent_ng_container_0_ng_template_8_span_6_Template(rf, ctx) {
+  if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "span", 6);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+  }
+  if (rf & 2) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", " Email is not available ", " ");
+  }
+}
 function ErrorValidationMesasageComponent_ng_container_0_ng_template_8_Template(rf, ctx) {
   if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](0, ErrorValidationMesasageComponent_ng_container_0_ng_template_8_span_0_Template, 2, 1, "span", 7);
@@ -378,6 +391,7 @@ function ErrorValidationMesasageComponent_ng_container_0_ng_template_8_Template(
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](3, ErrorValidationMesasageComponent_ng_container_0_ng_template_8_span_3_Template, 2, 1, "span", 7);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](4, ErrorValidationMesasageComponent_ng_container_0_ng_template_8_span_4_Template, 2, 1, "span", 7);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](5, ErrorValidationMesasageComponent_ng_container_0_ng_template_8_span_5_Template, 2, 1, "span", 7);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](6, ErrorValidationMesasageComponent_ng_container_0_ng_template_8_span_6_Template, 2, 1, "span", 7);
   }
   if (rf & 2) {
     const ctx_r9 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
@@ -392,6 +406,23 @@ function ErrorValidationMesasageComponent_ng_container_0_ng_template_8_Template(
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r9.control.errors == null ? null : ctx_r9.control.errors["validValue"]);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r9.control.errors == null ? null : ctx_r9.control.errors["match_password"]);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r9.control.errors == null ? null : ctx_r9.control.errors["emailNotAvailable"]);
+  }
+}
+function ErrorValidationMesasageComponent_ng_container_0_ng_container_10_Template(rf, ctx) {
+  if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerStart"](0);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 8);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](2, "mat-spinner", 9);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "h4", 10);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4, "validating email");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerEnd"]();
+  }
+  if (rf & 2) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("diameter", 20);
   }
 }
 function ErrorValidationMesasageComponent_ng_container_0_Template(rf, ctx) {
@@ -401,7 +432,8 @@ function ErrorValidationMesasageComponent_ng_container_0_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, ErrorValidationMesasageComponent_ng_container_0_ng_template_2_Template, 1, 2, "ng-template", null, 2, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplateRefExtractor"]);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](4, ErrorValidationMesasageComponent_ng_container_0_ng_template_4_Template, 1, 2, "ng-template", null, 3, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplateRefExtractor"]);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](6, ErrorValidationMesasageComponent_ng_container_0_ng_template_6_Template, 1, 2, "ng-template", null, 4, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplateRefExtractor"]);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](8, ErrorValidationMesasageComponent_ng_container_0_ng_template_8_Template, 6, 6, "ng-template", null, 5, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplateRefExtractor"]);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](8, ErrorValidationMesasageComponent_ng_container_0_ng_template_8_Template, 7, 7, "ng-template", null, 5, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplateRefExtractor"]);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](10, ErrorValidationMesasageComponent_ng_container_0_ng_container_10_Template, 5, 1, "ng-container", 0);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerEnd"]();
   }
   if (rf & 2) {
@@ -409,6 +441,8 @@ function ErrorValidationMesasageComponent_ng_container_0_Template(rf, ctx) {
     const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r0.customMessage && ctx_r0.control.invalid)("ngIfElse", _r2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](9);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r0.control.pending);
   }
 }
 class ErrorValidationMesasageComponent {}
@@ -425,16 +459,16 @@ ErrorValidationMesasageComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMP
   },
   decls: 1,
   vars: 1,
-  consts: [[4, "ngIf"], ["id", "validationError", "class", "error", 4, "ngIf", "ngIfElse"], ["requiredError", ""], ["minLengthError", ""], ["invalidEmailFormat", ""], ["otherErrors", ""], ["id", "validationError", 1, "error"], ["id", "validationError", "class", "error", 4, "ngIf"]],
+  consts: [[4, "ngIf"], ["id", "validationError", "class", "error", 4, "ngIf", "ngIfElse"], ["requiredError", ""], ["minLengthError", ""], ["invalidEmailFormat", ""], ["otherErrors", ""], ["id", "validationError", 1, "error"], ["id", "validationError", "class", "error", 4, "ngIf"], [1, "flex", "space-x-2", "justify-center"], [3, "diameter"], [1, "text-primary-100", "text-sm", "font-medium"]],
   template: function ErrorValidationMesasageComponent_Template(rf, ctx) {
     if (rf & 1) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](0, ErrorValidationMesasageComponent_ng_container_0_Template, 10, 2, "ng-container", 0);
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](0, ErrorValidationMesasageComponent_ng_container_0_Template, 11, 3, "ng-container", 0);
     }
     if (rf & 2) {
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.control && (ctx.control.dirty || ctx.control.touched));
     }
   },
-  dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_1__.NgIf],
+  dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_1__.NgIf, _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_2__.MatProgressSpinner],
   styles: ["\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsInNvdXJjZVJvb3QiOiIifQ== */"]
 });
 
