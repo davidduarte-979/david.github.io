@@ -1,4 +1,7 @@
-import { AbstractControl } from '@angular/forms';
+import { AbstractControl, AsyncValidatorFn, ValidationErrors } from '@angular/forms';
+import { AuthService } from '@core/services/auth/auth.service';
+import { Observable } from 'rxjs';
+import { debounceTime, distinctUntilChanged, first, map, switchMap } from 'rxjs/operators';
 
 export class CustomValidators {
 
@@ -9,5 +12,18 @@ export class CustomValidators {
       return { match_password: true };
     }
     return null;
+  }
+
+  static isEmailAvailable(authService: AuthService): AsyncValidatorFn {
+    return (control: AbstractControl): Observable<ValidationErrors> => control.valueChanges.pipe(
+      debounceTime(500),
+      distinctUntilChanged(),
+      first(),
+      switchMap((value: string) => authService.isEmailAvailable(value)
+        .pipe(
+          map((rta: { isAvailable: boolean }) => rta.isAvailable ? null : { 'emailNotAvailable': true })
+        ),
+      )
+    )
   }
 }

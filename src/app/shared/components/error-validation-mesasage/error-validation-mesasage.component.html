@@ -79,5 +79,19 @@
     >
       {{ " Password does not match " }}
     </span>
+    <span
+      id="validationError"
+      class="error"
+      *ngIf="control.errors?.['emailNotAvailable']"
+    >
+      {{ " Email is not available " }}
+    </span>
   </ng-template>
+
+  <ng-container *ngIf="control.pending">
+    <div class="flex space-x-2 justify-center">
+      <mat-spinner [diameter]="20"></mat-spinner>
+      <h4 class="text-primary-100 text-sm font-medium">validating email</h4>
+    </div>
+  </ng-container>
 </ng-container>

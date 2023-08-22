@@ -40,7 +40,7 @@ body {
   }
 
   h3 {
-    @apply m-0 text-2xl font-bold text-secondary;
+    @apply m-0 text-2xl font-bold text-primary-100;
   }
 
   h2 {
@@ -91,12 +91,22 @@ body {
   span.error {
     @apply text-red-600;
   }
+  input.ng-valid.ng-touched,
+    textarea.ng-valid.ng-touched {
+      border: 2px solid green;
+      &:focus {
+        @apply focus:ring-0 focus-visible:right-0
+      }
+    }
 }
 
-input.ng-valid.ng-touched,
-  textarea.ng-valid.ng-touched {
-    border: 1px solid green;
-  }
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+  -webkit-box-shadow: 0 0 0 30px #050911af inset !important;
+  -webkit-text-fill-color: white;
+}
 
 .mat-mdc-raised-button.mat-primary {
   --mdc-protected-button-container-color: #9e00a8b1;

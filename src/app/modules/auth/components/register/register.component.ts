@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
 import { AppState } from '@core/models/appState';
 import { CustomValidators } from "../../../../validators";
 import { CreateUserDto } from '@core/models/user';
+import { AuthService } from '@core/services/auth/auth.service';
 @Component({
   selector: 'portfolio-register',
   templateUrl: './register.component.html',
@@ -14,12 +15,13 @@ import { CreateUserDto } from '@core/models/user';
 })
 export class RegisterComponent implements OnInit, OnDestroy {
   private router = inject(Router);
+  private authService = inject(AuthService);
   constructor(private store: Store<AppState>) { }
 
   signUpForm = new FormGroup({
     firstname: new FormControl('', [Validators.required]),
     lastname: new FormControl('', [Validators.required]),
-    email: new FormControl('', [Validators.required, Validators.email]),
+    email: new FormControl('', [Validators.required, Validators.email], [CustomValidators.isEmailAvailable(this.authService)]),
     password: new FormControl('', [Validators.required]),
     confirmPassword: new FormControl('', [Validators.required]),
   }, {

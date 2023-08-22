@@ -6,6 +6,7 @@ import { HttpClient } from '@angular/common/http';
 import { LoginResponseDto, CreateUserDto, User } from '@core/models/user';
 import { Observable } from 'rxjs';
 import { AppState } from '@core/models/appState';
+import { debounceTime } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
@@ -42,4 +43,8 @@ export class AuthService {
         }
       )
   };
+
+  isEmailAvailable(email: string) {
+    return this.http.post<{ isAvailable: boolean }>(`${environment.SYSTEM_API}/${environment.API_VERSION}/auth/is-email-available`, { email })
+  }
 }

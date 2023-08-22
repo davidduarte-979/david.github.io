@@ -10,7 +10,9 @@ module.exports = {
         h2 : ["30px", { lineHeight: "40px", fontWeight: 400 }]
       },
       colors: {
-        'secondary': '#be1347'
+        primary: {
+          100: '#be1347'
+        }
       },
       screens: {
         sm: '390px',
