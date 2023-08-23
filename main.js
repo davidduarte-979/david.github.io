@@ -457,6 +457,17 @@ class AuthService {
       email
     });
   }
+  recoveryPassword(email) {
+    return this.http.post(`${src_environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.SYSTEM_API}/${src_environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.API_VERSION}/auth/recovery`, {
+      email
+    });
+  }
+  changePassword(token, password) {
+    return this.http.post(`${src_environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.SYSTEM_API}/${src_environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.API_VERSION}/auth/reset-password`, {
+      token,
+      password
+    });
+  }
 }
 AuthService.ɵfac = function AuthService_Factory(t) {
   return new (t || AuthService)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵinject"](_ngrx_store__WEBPACK_IMPORTED_MODULE_4__.Store));
@@ -1530,7 +1541,8 @@ const environment = {
   API_AUTH_DEV: 'http://localhost:3000',
   API_BASE_URL: 'https://api.rebel-transport-gr75.com',
   API_VERSION: 'api/v1',
-  SYSTEM_API: 'https://system.rebel-transport-gr75.com'
+  // SYSTEM_API: 'http://system.rebel-transport-gr75.com',
+  SYSTEM_API: 'http://localhost:3000'
 };
 /*
  * For easier debugging in development mode, you can import the following file
