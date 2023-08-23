@@ -32,13 +32,7 @@ export class AuthEffects {
             password: action.password,
           })
           .pipe(
-            tap(() =>
-              this.dialogService.openDialog(this.dialogEnumType.Success, {
-                message: 'You were succefully Sign Up! please Log in',
-              })
-            ),
-            tap(() => this.router.navigate(['/', 'auth'])),
-            map(() => AuthActions.signUpSuccess()),
+            map(() => AuthActions.loginStart({ email: action.email, password: action.password })),
             catchError(this.handleError.bind(this))
           )
       )
@@ -72,9 +66,7 @@ export class AuthEffects {
             }),
             map((resData) => this.handleAuthentication(resData)),
             tap(() => this.router.navigate(['/', 'dashboard'])),
-            catchError(() => {
-              return of(AuthActions.clearError())
-            })
+            catchError(() => of(AuthActions.clearError()))
           )
         )
       )

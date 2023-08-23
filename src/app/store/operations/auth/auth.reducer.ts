@@ -2,19 +2,19 @@ import { Action, createReducer, on } from '@ngrx/store';
 import { LoginResponseDto } from '@core/models/user';
 import * as AuthActions from './auth.actions';
 
-export interface State {
+export interface AuthState {
   user: LoginResponseDto;
   error: string;
   loading: boolean;
 }
 
-const initialState: State = {
+const initialState: AuthState = {
   user: null,
   error: null,
   loading: false,
 };
 
-const _authReducer = createReducer<State>(
+const _authReducer = createReducer<AuthState>(
   initialState,
 
   on(
@@ -56,4 +56,4 @@ const _authReducer = createReducer<State>(
   on(AuthActions.signUpSuccess, () => (initialState))
 );
 
-export const authReducer = (state: State, action: Action): State => _authReducer(state, action);
+export const authReducer = (state: AuthState, action: Action): AuthState => _authReducer(state, action);

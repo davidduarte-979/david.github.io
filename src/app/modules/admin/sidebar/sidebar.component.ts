@@ -1,20 +1,18 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { Observable, Subscription } from 'rxjs';
+import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
-import { User } from '@core/models/user';
 import * as AuthActions from '../../../store/operations/auth/auth.actions';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/models/appState';
+import { AuthState } from 'src/app/store/operations/auth/auth.reducer';
 @Component({
   selector: 'portfolio-sidebar',
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.scss'],
 })
-export class SidebarComponent implements OnInit, OnDestroy {
-  username = '';
-  user$!: Observable<User>;
-  subStore: Subscription;
+export class SidebarComponent implements OnInit {
+  auth$!: Observable<AuthState>;
   isHandset$: Observable<boolean> = this.breakpointObserver
     .observe(Breakpoints.Handset)
     .pipe(
@@ -26,17 +24,12 @@ export class SidebarComponent implements OnInit, OnDestroy {
     private breakpointObserver: BreakpointObserver,
     private store: Store<AppState>
   ) { }
+
   ngOnInit(): void {
-    this.subStore = this.store.select('auth').subscribe((authStateResponse) => {
-      this.username = authStateResponse.user.displayName || authStateResponse.user.email
-    });
+    this.auth$ = this.store.select('auth');
   }
+
   onLogOut(): void {
     this.store.dispatch(AuthActions.logout());
-  }
-  ngOnDestroy(): void {
-    if (this.subStore) {
-      this.subStore.unsubscribe();
-    }
   }
 }
