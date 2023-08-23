@@ -1256,9 +1256,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ngrx_effects__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ngrx/effects */ 2847);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! rxjs */ 4139);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! rxjs/operators */ 9095);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! rxjs/operators */ 8759);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! rxjs/operators */ 6942);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! rxjs/operators */ 7418);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! rxjs/operators */ 6942);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! rxjs/operators */ 7418);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! rxjs/operators */ 8759);
 /* harmony import */ var _auth_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./auth.actions */ 4415);
 /* harmony import */ var _core_services_dialog_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @core/services/dialog.service */ 6797);
 /* harmony import */ var _core_models_dialog_enum__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @core/models/dialog.enum */ 5319);
@@ -1287,25 +1287,24 @@ class AuthEffects {
       lastname: action.lastname,
       firstname: action.firstname,
       password: action.password
-    }).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_7__.tap)(() => this.dialogService.openDialog(this.dialogEnumType.Success, {
-      message: 'You were succefully Sign Up! please Log in'
-    })), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_7__.tap)(() => this.router.navigate(['/', 'auth'])), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_8__.map)(() => _auth_actions__WEBPACK_IMPORTED_MODULE_0__.signUpSuccess()), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_9__.catchError)(this.handleError.bind(this))))));
-    this.authLogout$ = (0,_ngrx_effects__WEBPACK_IMPORTED_MODULE_5__.createEffect)(() => this.actions$.pipe((0,_ngrx_effects__WEBPACK_IMPORTED_MODULE_5__.ofType)(_auth_actions__WEBPACK_IMPORTED_MODULE_0__.logout), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_7__.tap)(() => localStorage.removeItem('userData')), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_7__.tap)(() => this.dialogService.openDialog(this.dialogEnumType.Success, {
+    }).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_7__.map)(() => _auth_actions__WEBPACK_IMPORTED_MODULE_0__.loginStart({
+      email: action.email,
+      password: action.password
+    })), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_8__.catchError)(this.handleError.bind(this))))));
+    this.authLogout$ = (0,_ngrx_effects__WEBPACK_IMPORTED_MODULE_5__.createEffect)(() => this.actions$.pipe((0,_ngrx_effects__WEBPACK_IMPORTED_MODULE_5__.ofType)(_auth_actions__WEBPACK_IMPORTED_MODULE_0__.logout), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_9__.tap)(() => localStorage.removeItem('userData')), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_9__.tap)(() => this.dialogService.openDialog(this.dialogEnumType.Success, {
       message: 'You were succesfully logout.'
     }))), {
       dispatch: false
     });
-    this.authSignIn$ = (0,_ngrx_effects__WEBPACK_IMPORTED_MODULE_5__.createEffect)(() => this.actions$.pipe((0,_ngrx_effects__WEBPACK_IMPORTED_MODULE_5__.ofType)(_auth_actions__WEBPACK_IMPORTED_MODULE_0__.loginStart), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_6__.switchMap)(action => this.authService.singIn(action.email, action.password).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_7__.tap)(respData => {
+    this.authSignIn$ = (0,_ngrx_effects__WEBPACK_IMPORTED_MODULE_5__.createEffect)(() => this.actions$.pipe((0,_ngrx_effects__WEBPACK_IMPORTED_MODULE_5__.ofType)(_auth_actions__WEBPACK_IMPORTED_MODULE_0__.loginStart), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_6__.switchMap)(action => this.authService.singIn(action.email, action.password).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_9__.tap)(respData => {
       this.dialogService.openDialog(this.dialogEnumType.Success, {
         message: `login successfull welcome ${respData.displayName}`
       });
-    }), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_8__.map)(resData => this.handleAuthentication(resData)), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_7__.tap)(() => this.router.navigate(['/', 'dashboard'])), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_9__.catchError)(() => {
-      return (0,rxjs__WEBPACK_IMPORTED_MODULE_10__.of)(_auth_actions__WEBPACK_IMPORTED_MODULE_0__.clearError());
-    })))));
+    }), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_7__.map)(resData => this.handleAuthentication(resData)), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_9__.tap)(() => this.router.navigate(['/', 'dashboard'])), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_8__.catchError)(() => (0,rxjs__WEBPACK_IMPORTED_MODULE_10__.of)(_auth_actions__WEBPACK_IMPORTED_MODULE_0__.clearError()))))));
     this.authRedirect$ = (0,_ngrx_effects__WEBPACK_IMPORTED_MODULE_5__.createEffect)(() => this.actions$.pipe((0,_ngrx_effects__WEBPACK_IMPORTED_MODULE_5__.ofType)(_auth_actions__WEBPACK_IMPORTED_MODULE_0__.authenticateSuccess)), {
       dispatch: false
     });
-    this.authRedirectLogout$ = (0,_ngrx_effects__WEBPACK_IMPORTED_MODULE_5__.createEffect)(() => this.actions$.pipe((0,_ngrx_effects__WEBPACK_IMPORTED_MODULE_5__.ofType)(_auth_actions__WEBPACK_IMPORTED_MODULE_0__.logout), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_7__.tap)(() => {
+    this.authRedirectLogout$ = (0,_ngrx_effects__WEBPACK_IMPORTED_MODULE_5__.createEffect)(() => this.actions$.pipe((0,_ngrx_effects__WEBPACK_IMPORTED_MODULE_5__.ofType)(_auth_actions__WEBPACK_IMPORTED_MODULE_0__.logout), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_9__.tap)(() => {
       this.router.navigate(['/', 'auth']);
       this.authService.clearLogoutTimer();
     })), {
