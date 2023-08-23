@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { FormControl, Validators } from "@angular/forms";
-import { Router } from '@angular/router';
+import { AuthService } from '@core/services/auth/auth.service';
 
 
 @Component({
@@ -9,16 +9,24 @@ import { Router } from '@angular/router';
   styleUrls: ['./recovery-password.component.scss']
 })
 export class RecoveryPasswordComponent {
-  private router = inject(Router);
+  private auth = inject(AuthService);
   input = new FormControl('', [Validators.required, Validators.email])
+  isEmailSent = false;
+  isLoading = false;
 
   submit() {
     if (this.input.invalid) {
       this.input.markAsTouched();
       return;
     }
-    console.log('send recovery Email');
-    this.router.navigate(['/', 'auth', 'recovery-password'])
+    this.isLoading = true;
+    this.auth.recoveryPassword(this.input.value).subscribe(() => {
+      this.isEmailSent = true;
+      this.isLoading = false;
+    },
+      () => {
+        this.isLoading = false;
+      })
   }
 
 }
