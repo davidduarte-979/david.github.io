@@ -989,7 +989,7 @@ function SidebarComponent_ng_container_22_Template(rf, ctx) {
   if (rf & 2) {
     const auth_r5 = ctx.ngIf;
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate1"]("Welcome ", auth_r5.user.displayName, "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate1"]("Welcome ", auth_r5.user == null ? null : auth_r5.user.displayName, "");
   }
 }
 const _c0 = function () {
