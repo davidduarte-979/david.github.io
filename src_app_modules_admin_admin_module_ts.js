@@ -1,53 +1,6 @@
 "use strict";
 (self["webpackChunkportfolio_angular"] = self["webpackChunkportfolio_angular"] || []).push([["src_app_modules_admin_admin_module_ts"],{
 
-/***/ 7574:
-/*!*******************************************!*\
-  !*** ./src/app/core/guards/auth.guard.ts ***!
-  \*******************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "AuthGuard": () => (/* binding */ AuthGuard)
-/* harmony export */ });
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! rxjs/operators */ 3910);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs/operators */ 6942);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 6839);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ 6679);
-/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ngrx/store */ 4307);
-
-
-
-
-class AuthGuard {
-  constructor(router, store) {
-    this.router = router;
-    this.store = store;
-    this.isAuthenticated = false;
-  }
-  canActivate() {
-    return this.store.select('auth').pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_0__.take)(1), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_1__.map)(authState => authState.user), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_1__.map)(user => {
-      const isAuth = !!user;
-      if (isAuth) {
-        return true;
-      }
-      return this.router.createUrlTree(['/', 'auth']);
-    }));
-  }
-}
-AuthGuard.ɵfac = function AuthGuard_Factory(t) {
-  return new (t || AuthGuard)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵinject"](_angular_router__WEBPACK_IMPORTED_MODULE_3__.Router), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵinject"](_ngrx_store__WEBPACK_IMPORTED_MODULE_4__.Store));
-};
-AuthGuard.ɵprov = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjectable"]({
-  token: AuthGuard,
-  factory: AuthGuard.ɵfac,
-  providedIn: 'root'
-});
-
-
-/***/ }),
-
 /***/ 8134:
 /*!*******************************************************!*\
   !*** ./src/app/modules/admin/admin-routing.module.ts ***!
@@ -58,17 +11,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "AdminRoutingModule": () => (/* binding */ AdminRoutingModule)
 /* harmony export */ });
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/router */ 6679);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/router */ 6679);
 /* harmony import */ var _sidebar_sidebar_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./sidebar/sidebar.component */ 5788);
-/* harmony import */ var _core_guards_auth_guard__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../core/guards/auth.guard */ 7574);
-/* harmony import */ var _components_projects_projects_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/projects/projects.component */ 2794);
-/* harmony import */ var _components_skills_skills_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/skills/skills.component */ 2923);
-/* harmony import */ var _components_contact_contact_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/contact/contact.component */ 6709);
-/* harmony import */ var _components_dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/dashboard/dashboard.component */ 6298);
-/* harmony import */ var _components_add_project_add_project_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/add-project/add-project.component */ 1392);
-/* harmony import */ var _components_edit_project_edit_project_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/edit-project/edit-project.component */ 1201);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/core */ 6839);
-
+/* harmony import */ var _components_projects_projects_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/projects/projects.component */ 2794);
+/* harmony import */ var _components_skills_skills_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/skills/skills.component */ 2923);
+/* harmony import */ var _components_contact_contact_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/contact/contact.component */ 6709);
+/* harmony import */ var _components_dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/dashboard/dashboard.component */ 6298);
+/* harmony import */ var _components_add_project_add_project_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/add-project/add-project.component */ 1392);
+/* harmony import */ var _components_edit_project_edit_project_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/edit-project/edit-project.component */ 1201);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/core */ 6839);
 
 
 
@@ -82,42 +33,41 @@ __webpack_require__.r(__webpack_exports__);
 const routes = [{
   path: '',
   component: _sidebar_sidebar_component__WEBPACK_IMPORTED_MODULE_0__.SidebarComponent,
-  canActivate: [_core_guards_auth_guard__WEBPACK_IMPORTED_MODULE_1__.AuthGuard],
   children: [{
     path: '',
-    component: _components_dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_5__.DashboardComponent
+    component: _components_dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_4__.DashboardComponent
   }, {
     path: 'projects',
-    component: _components_projects_projects_component__WEBPACK_IMPORTED_MODULE_2__.ProjectsComponent
+    component: _components_projects_projects_component__WEBPACK_IMPORTED_MODULE_1__.ProjectsComponent
   }, {
     path: 'projects/:id',
-    component: _components_edit_project_edit_project_component__WEBPACK_IMPORTED_MODULE_7__.EditProjectComponent
+    component: _components_edit_project_edit_project_component__WEBPACK_IMPORTED_MODULE_6__.EditProjectComponent
   }, {
     path: 'add-project',
-    component: _components_add_project_add_project_component__WEBPACK_IMPORTED_MODULE_6__.AddProjectComponent
+    component: _components_add_project_add_project_component__WEBPACK_IMPORTED_MODULE_5__.AddProjectComponent
   }, {
     path: 'skills',
-    component: _components_skills_skills_component__WEBPACK_IMPORTED_MODULE_3__.SkillsComponent
+    component: _components_skills_skills_component__WEBPACK_IMPORTED_MODULE_2__.SkillsComponent
   }, {
     path: 'contact',
-    component: _components_contact_contact_component__WEBPACK_IMPORTED_MODULE_4__.ContactComponent
+    component: _components_contact_contact_component__WEBPACK_IMPORTED_MODULE_3__.ContactComponent
   }]
 }];
 class AdminRoutingModule {}
 AdminRoutingModule.ɵfac = function AdminRoutingModule_Factory(t) {
   return new (t || AdminRoutingModule)();
 };
-AdminRoutingModule.ɵmod = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵdefineNgModule"]({
+AdminRoutingModule.ɵmod = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdefineNgModule"]({
   type: AdminRoutingModule
 });
-AdminRoutingModule.ɵinj = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵdefineInjector"]({
-  imports: [_angular_router__WEBPACK_IMPORTED_MODULE_9__.RouterModule.forChild(routes), _angular_router__WEBPACK_IMPORTED_MODULE_9__.RouterModule]
+AdminRoutingModule.ɵinj = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdefineInjector"]({
+  imports: [_angular_router__WEBPACK_IMPORTED_MODULE_8__.RouterModule.forChild(routes), _angular_router__WEBPACK_IMPORTED_MODULE_8__.RouterModule]
 });
 
 (function () {
-  (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵsetNgModuleScope"](AdminRoutingModule, {
-    imports: [_angular_router__WEBPACK_IMPORTED_MODULE_9__.RouterModule],
-    exports: [_angular_router__WEBPACK_IMPORTED_MODULE_9__.RouterModule]
+  (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵsetNgModuleScope"](AdminRoutingModule, {
+    imports: [_angular_router__WEBPACK_IMPORTED_MODULE_8__.RouterModule],
+    exports: [_angular_router__WEBPACK_IMPORTED_MODULE_8__.RouterModule]
   });
 })();
 
