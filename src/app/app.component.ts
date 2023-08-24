@@ -12,6 +12,9 @@ export class AppComponent implements OnInit {
     private store: Store<AppState>
   ) { }
   ngOnInit(): void {
-    this.store.dispatch(AuthActions.autoLogin());
+    const userData = JSON.parse(localStorage.getItem('userData'));
+    if (userData) {
+      this.store.dispatch(AuthActions.autoLogin());
+    }
   }
 }

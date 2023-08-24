@@ -9,10 +9,12 @@ import { catchError, map, switchMap, tap } from 'rxjs/operators';
 import * as AuthActions from './auth.actions';
 import { DialogService } from '@core/services/dialog.service';
 import { DialogType } from '@core/models/dialog.enum';
+import { TokenService } from '@core/services/token.service';
 
 @Injectable()
 export class AuthEffects {
   private dialogService = inject(DialogService);
+  private tokenService = inject(TokenService);
   private dialogEnumType = DialogType;
   constructor(
     private actions$: Actions,
@@ -92,11 +94,23 @@ export class AuthEffects {
     { dispatch: false }
   );
 
+  authAutoLogin$ = createEffect(
+    () =>
+      this.actions$.pipe(
+        ofType(AuthActions.autoLogin),
+        map(() => {
+          const userData = JSON.parse(localStorage.getItem('userData')) as LoginResponseDto;
+          return AuthActions.authenticateSuccess(userData)
+        })
+      ),
+  );
+
   private handleError(errorResponse: HttpErrorResponse): any {
     return of(AuthActions.authenticateFail({ errorMessage: errorResponse.error.message }));
   }
   private handleAuthentication(responseData: LoginResponseDto): any {
     localStorage.setItem('userData', JSON.stringify(responseData));
+    this.tokenService.setToken(responseData.token);
     return AuthActions.authenticateSuccess(responseData);
   }
 }
