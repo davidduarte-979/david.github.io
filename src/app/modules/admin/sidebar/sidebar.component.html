@@ -30,7 +30,7 @@
       </button>
       <div class="d-flex justify-content-between w-100">
         <ng-container *ngIf="auth$ | async as auth">
-          <span>Welcome {{ auth.user.displayName }}</span>
+          <span>Welcome {{ auth.user?.displayName }}</span>
         </ng-container>
         <button mat-raised-button color="warn" (click)="onLogOut()">
           logout
