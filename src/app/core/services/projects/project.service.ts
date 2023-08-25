@@ -4,16 +4,17 @@ import { environment } from '../../../../environments/environment';
 import { Project } from '../../models/project';
 import { Observable, Subscription } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { AuthService } from '../auth/auth.service';
+import { checkAuthToken } from '@core/interceptors/auth-interceptor.service';
+
 @Injectable({ providedIn: 'root' })
 export class ServiceProjects {
   projectsArray: Project[] = [];
   constructor(
     private http: HttpClient,
-    private auth: AuthService
   ) { }
+
   getAllProjects(): Observable<Project[]> {
-    return this.http.get<Project[]>(`${environment.API_URL_FIREBASE}.json`)
+    return this.http.get<Project[]>(`${environment.API_URL_FIREBASE}.json`, { context: checkAuthToken() })
       .pipe(
         map(
           (responseData: any) => {

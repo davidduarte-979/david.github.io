@@ -16,6 +16,7 @@ import { environment } from 'src/environments/environment';
 import { AuthEffects } from './store/operations/auth/auth.effects';
 import { ButtonComponent } from '@shared/components/button/button.component';
 import { LoadingInterceptor } from '@core/interceptors/loading.interceptor';
+import { TokenInterceptor } from '@core/interceptors/token-interceptor';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,11 @@ import { LoadingInterceptor } from '@core/interceptors/loading.interceptor';
     {
       provide: HTTP_INTERCEPTORS,
       useClass: HttpErrorHandlerInterceptor,
+      multi: true
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
       multi: true
     },
   ],
