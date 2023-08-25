@@ -19,7 +19,7 @@ export interface User {
   recoveryToken?: string,
   email: string;
   displayName: string;
-  password?: string;
+  password: string;
   firstname: string;
   lastname: string;
   role: string;
