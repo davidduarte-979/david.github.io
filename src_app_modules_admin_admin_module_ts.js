@@ -59,37 +59,31 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/environments/environment */ 2340);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/operators */ 9095);
+/* harmony import */ var _core_interceptors_token_interceptor__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @core/interceptors/token-interceptor */ 5756);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 6839);
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common/http */ 3765);
-/* harmony import */ var _token_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./token.service */ 6616);
 
 
 
 
 
 class UsersService {
-  constructor(http, tokenService) {
+  constructor(http) {
     this.http = http;
-    this.tokenService = tokenService;
-    this.token = this.tokenService.getToken();
   }
   getUsers() {
     return this.http.get(`${src_environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.SYSTEM_API}/${src_environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.API_VERSION}/users`, {
-      headers: {
-        Authorization: `Bearer ${this.token}`
-      }
+      context: (0,_core_interceptors_token_interceptor__WEBPACK_IMPORTED_MODULE_1__.checkBearerToken)()
     });
   }
   deleteUser(id) {
     return this.http.delete(`${src_environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.SYSTEM_API}/${src_environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.API_VERSION}/users/${id}`, {
-      headers: {
-        Authorization: `Bearer ${this.token}`
-      }
+      context: (0,_core_interceptors_token_interceptor__WEBPACK_IMPORTED_MODULE_1__.checkBearerToken)()
     }).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_2__.switchMap)(() => this.getUsers()));
   }
 }
 UsersService.ɵfac = function UsersService_Factory(t) {
-  return new (t || UsersService)(_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_4__.HttpClient), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵinject"](_token_service__WEBPACK_IMPORTED_MODULE_1__.TokenService));
+  return new (t || UsersService)(_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_4__.HttpClient));
 };
 UsersService.ɵprov = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInjectable"]({
   token: UsersService,
