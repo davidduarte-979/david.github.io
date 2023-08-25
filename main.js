@@ -907,26 +907,31 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "TokenService": () => (/* binding */ TokenService)
 /* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 6839);
+/* harmony import */ var typescript_cookie__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! typescript-cookie */ 937);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 6839);
+
 
 class TokenService {
   constructor() {
     this.tokenStorageKey = 'token';
   }
   getToken() {
-    return localStorage.getItem(this.tokenStorageKey);
+    return (0,typescript_cookie__WEBPACK_IMPORTED_MODULE_0__.getCookie)(this.tokenStorageKey);
   }
   setToken(token) {
-    localStorage.setItem(this.tokenStorageKey, JSON.stringify(token));
+    (0,typescript_cookie__WEBPACK_IMPORTED_MODULE_0__.setCookie)(this.tokenStorageKey, token, {
+      expires: 365,
+      path: '/'
+    });
   }
   removeToken() {
-    localStorage.removeItem(this.tokenStorageKey);
+    (0,typescript_cookie__WEBPACK_IMPORTED_MODULE_0__.removeCookie)(this.tokenStorageKey);
   }
 }
 TokenService.ɵfac = function TokenService_Factory(t) {
   return new (t || TokenService)();
 };
-TokenService.ɵprov = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
+TokenService.ɵprov = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjectable"]({
   token: TokenService,
   factory: TokenService.ɵfac,
   providedIn: 'root'
@@ -1640,8 +1645,7 @@ const environment = {
   API_AUTH_DEV: 'http://localhost:3000',
   API_BASE_URL: 'https://api.rebel-transport-gr75.com',
   API_VERSION: 'api/v1',
-  // SYSTEM_API: 'http://system.rebel-transport-gr75.com',
-  SYSTEM_API: 'http://localhost:3000'
+  SYSTEM_API: 'http://system.rebel-transport-gr75.com'
 };
 /*
  * For easier debugging in development mode, you can import the following file
