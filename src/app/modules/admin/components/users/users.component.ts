@@ -39,7 +39,7 @@ export class UsersComponent implements OnInit {
       .subscribe((users) => {
         this.dataSource.init(users)
         this.dialogService.openDialog(this.dialogEnumType.Success, {
-          message: `User ${user.displayName} was successfully delete`,
+          message: `User ${user.displayName} was successfully deleted.`,
         });
       })
   }
