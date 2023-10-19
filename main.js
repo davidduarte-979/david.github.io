@@ -240,35 +240,31 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "AuthGuard": () => (/* binding */ AuthGuard)
 /* harmony export */ });
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! rxjs/operators */ 3910);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs/operators */ 6942);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 6839);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ 6679);
-/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ngrx/store */ 4307);
-
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 6839);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ 6679);
+/* harmony import */ var _core_services_token_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @core/services/token.service */ 6616);
 
 
 
 class AuthGuard {
-  constructor(router, store) {
+  constructor(router, tokenService) {
     this.router = router;
-    this.store = store;
+    this.tokenService = tokenService;
     this.isAuthenticated = false;
   }
   canActivate() {
-    return this.store.select('auth').pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_0__.take)(1), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_1__.map)(authState => authState.user), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_1__.map)(user => {
-      const isAuth = !!user;
-      if (isAuth) {
-        return true;
-      }
-      return this.router.createUrlTree(['/', 'auth']);
-    }));
+    const isValidToken = this.tokenService.isValidToken();
+    if (!isValidToken) {
+      this.router.navigate(['/', 'auth']);
+      return false;
+    }
+    return true;
   }
 }
 AuthGuard.ɵfac = function AuthGuard_Factory(t) {
-  return new (t || AuthGuard)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵinject"](_angular_router__WEBPACK_IMPORTED_MODULE_3__.Router), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵinject"](_ngrx_store__WEBPACK_IMPORTED_MODULE_4__.Store));
+  return new (t || AuthGuard)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_angular_router__WEBPACK_IMPORTED_MODULE_2__.Router), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_core_services_token_service__WEBPACK_IMPORTED_MODULE_0__.TokenService));
 };
-AuthGuard.ɵprov = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjectable"]({
+AuthGuard.ɵprov = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjectable"]({
   token: AuthGuard,
   factory: AuthGuard.ɵfac,
   providedIn: 'root'
@@ -973,7 +969,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "TokenService": () => (/* binding */ TokenService)
 /* harmony export */ });
 /* harmony import */ var typescript_cookie__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! typescript-cookie */ 937);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 6839);
+/* harmony import */ var jwt_decode__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! jwt-decode */ 9168);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 6839);
+
 
 
 class TokenService {
@@ -992,11 +990,25 @@ class TokenService {
   removeToken() {
     (0,typescript_cookie__WEBPACK_IMPORTED_MODULE_0__.removeCookie)(this.tokenStorageKey);
   }
+  isValidToken() {
+    const token = this.getToken();
+    if (!token) {
+      return false;
+    }
+    const decodedToken = (0,jwt_decode__WEBPACK_IMPORTED_MODULE_1__["default"])(token);
+    if (!decodedToken || !decodedToken?.exp) {
+      return false;
+    }
+    const tokenDate = new Date(0);
+    tokenDate.setUTCSeconds(decodedToken.exp);
+    const today = new Date();
+    return tokenDate.getTime() > today.getTime();
+  }
 }
 TokenService.ɵfac = function TokenService_Factory(t) {
   return new (t || TokenService)();
 };
-TokenService.ɵprov = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjectable"]({
+TokenService.ɵprov = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjectable"]({
   token: TokenService,
   factory: TokenService.ɵfac,
   providedIn: 'root'

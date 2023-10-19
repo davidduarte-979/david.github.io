@@ -11,33 +11,29 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "RedirectToGuard": () => (/* binding */ RedirectToGuard)
 /* harmony export */ });
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! rxjs/operators */ 3910);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs/operators */ 6942);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 6839);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ 6679);
-/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ngrx/store */ 4307);
-
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 6839);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ 6679);
+/* harmony import */ var _core_services_token_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @core/services/token.service */ 6616);
 
 
 
 class RedirectToGuard {
-  constructor(router, store) {
+  constructor(router, tokenService) {
     this.router = router;
-    this.store = store;
+    this.tokenService = tokenService;
   }
   canActivate(route, state) {
-    return this.store.select('auth').pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_0__.take)(1), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_1__.map)(authState => authState.user), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_1__.map)(user => {
-      if (!user) {
-        return true;
-      }
-      return this.router.createUrlTree(['/', 'dashboard']);
-    }));
+    const isValidToken = this.tokenService.isValidToken();
+    if (isValidToken) {
+      this.router.navigate(['/', 'dashboard']);
+    }
+    return true;
   }
 }
 RedirectToGuard.ɵfac = function RedirectToGuard_Factory(t) {
-  return new (t || RedirectToGuard)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵinject"](_angular_router__WEBPACK_IMPORTED_MODULE_3__.Router), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵinject"](_ngrx_store__WEBPACK_IMPORTED_MODULE_4__.Store));
+  return new (t || RedirectToGuard)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_angular_router__WEBPACK_IMPORTED_MODULE_2__.Router), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_core_services_token_service__WEBPACK_IMPORTED_MODULE_0__.TokenService));
 };
-RedirectToGuard.ɵprov = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjectable"]({
+RedirectToGuard.ɵprov = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjectable"]({
   token: RedirectToGuard,
   factory: RedirectToGuard.ɵfac,
   providedIn: 'root'
