@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Project } from 'src/app/core/models/project';
 
 @Component({
@@ -6,10 +6,7 @@ import { Project } from 'src/app/core/models/project';
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.scss'],
 })
-export class CardComponent implements OnInit {
+export class CardComponent {
   @Input() project!: Project;
   image = 'https://media-porfolio.s3.us-east-2.amazonaws.com/images/hazpan.gif';
-  constructor() {}
-
-  ngOnInit(): void {}
 }
