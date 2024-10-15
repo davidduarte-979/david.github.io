@@ -4,7 +4,6 @@ import { TechCategory } from '@core/models/tech-category.enum';
 import { TechStack } from '@core/models/tech-stack';
 import { AboutService } from '@core/services/about.service';
 import { FileDownloadsService } from '@core/services/file-downloads.service';
-import { SkillsService } from '@core/services/skills/skills.service';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -26,7 +25,7 @@ export class AboutComponent implements OnInit {
   }
 
   downloadResumen(): void {
-    this.downloadsServices.download('/assets/doc/davidResumen.pdf')
+    this.downloadsServices.download('/assets/doc/Jesus-Duarte-Resumen.pdf')
       .subscribe(blob => {
         const a = document.createElement('a')
         const objectUrl = URL.createObjectURL(blob)

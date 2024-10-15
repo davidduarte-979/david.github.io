@@ -1,4 +1,4 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DialogType } from '@core/models/dialog.enum';
 import { DialogService } from '@core/services/dialog.service';
@@ -9,28 +9,31 @@ import { EmailSenderService } from '@core/services/email-sender.service';
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.scss']
 })
-export class ContactComponent implements OnInit {
-  pageForm: FormGroup;
+export class ContactComponent {
+  isLoading = false;
   readonly dialogTypeEnum = DialogType;
+  readonly demograph = {
+    city: 'Fort Myers, FL 33919',
+    email: 'jduartedsp@gmail.com',
+    phone: '+1 (239) 628-9725'
+  }
+
   private fb: FormBuilder = inject(FormBuilder);
   private dialogServices = inject(DialogService);
   private emailSender = inject(EmailSenderService);
-  isLoading = false;
-  constructor() {
-    this.pageForm = this.fb.group({
-      firstname: [null, Validators.required],
-      lastname: [null, Validators.required],
-      email: [null, [Validators.required, Validators.email]],
-      phone: [null, Validators.required],
-      message: [null, [Validators.required, Validators.maxLength(255)]]
-    })
-  }
 
-  ngOnInit(): void {
-  }
+  pageForm = this.fb.group({
+    firstname: [null, Validators.required],
+    lastname: [null, Validators.required],
+    email: [null, [Validators.required, Validators.email]],
+    phone: [null, Validators.required],
+    message: [null, [Validators.required, Validators.maxLength(255)]]
+  })
+
 
   onSubmit() {
     this.isLoading = true;
+
     if (this.pageForm.invalid) {
       this.pageForm.markAllAsTouched();
       this.isLoading = false;
