@@ -737,19 +737,9 @@ class ProjectsComponent {
   }
   ngOnInit() {
     this.onSubscribeData();
-    // this.onDispatchAction();
   }
-
   onSubscribeData() {
-    // this.projectsSub = this.store
-    //   .select('projects')
-    //   .subscribe((respStateDataProjects) => {
-    //     this.projects = respStateDataProjects.projects;
-    //     this.isLoading = respStateDataProjects.loading;
-    //     this.error = respStateDataProjects.errorMessage;
-    //   });
-    this.http.get('./assets/data/Projects.json').subscribe(data => {
-      console.log(data);
+    this.projectsSub = this.http.get('./assets/data/Projects.json').subscribe(data => {
       this.projects = data;
     });
   }
