@@ -1,0 +1,26 @@
+[
+    {
+        "description": "A broker app is a mobile app that allows users to buy and sell financial assets. This is a MFE application with multiples Angular apps following Micro-frontend architecture",
+        "imageUrl": "./assets/gif/accountview.gif",
+        "projectName": "LPL Account View Online",
+        "projectUrl": "https://accountview.lpl.com/web/login",
+        "technologies": "Angular 15, Angular 12, Angular 6, AngularJs, Node.js, Bootstrap, C#, .Net, SQL, Scss, AWS, JQuery, Git, Karma, Jest.",
+        "title": "MFE Web"
+    },
+    {
+        "description": "Payroll App that helps manage employee payments, including calculating payroll and taxes. This is a Monolithic page built in ASPX pages but it has been migrating to .Net APIs in C# and Angular.",
+        "imageUrl": "./assets/gif/proliant-rpo.gif",
+        "projectName": "Proliant ReadyPay Online",
+        "projectUrl": "https://www.readypayonline.com/Proliant/Login/Login.aspx",
+        "technologies": "Angular 12, Kendo UI for Angular, C#, .Net, SQL, Scss, JenKins, JQuery, Git, SVN, Node.js, BitBucket",
+        "title": "Monolithic Web"
+    },
+    {
+        "description": "Warehouse Managment System, build in React and Nest.js.",
+        "imageUrl": "./assets/gif/lineage.gif",
+        "projectName": "Cognizant Lineage",
+        "projectUrl": "https://www.onelineage.com/",
+        "technologies": "React 17, React Native,TypeScript, Node.js, Nest.js, SQL, Css, JQuery, Git, BitBucket, Redux, Jest, Enzyme",
+        "title": "Web and Mobil"
+    }
+]
