@@ -23,19 +23,10 @@ export class ProjectsComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.onSubscribeData();
-    // this.onDispatchAction();
   }
 
   onSubscribeData(): void {
-    // this.projectsSub = this.store
-    //   .select('projects')
-    //   .subscribe((respStateDataProjects) => {
-    //     this.projects = respStateDataProjects.projects;
-    //     this.isLoading = respStateDataProjects.loading;
-    //     this.error = respStateDataProjects.errorMessage;
-    //   });
-    this.http.get<Project[]>('./assets/data/Projects.json').subscribe((data) => {
-      console.log(data);
+    this.projectsSub = this.http.get<Project[]>('./assets/data/Projects.json').subscribe((data) => {
       this.projects = data;
     })
   }
