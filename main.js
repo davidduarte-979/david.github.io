@@ -559,7 +559,7 @@ class AuthService {
   signUp(data) {
     return this.http.post(`${src_environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.SYSTEM_API}/${src_environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.API_VERSION}/users`, data);
   }
-  singIn(email, password) {
+  signIn(email, password) {
     return this.http.post(`${src_environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.SYSTEM_API}/${src_environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.API_VERSION}/auth/login`, {
       email: email,
       password: password
@@ -996,6 +996,7 @@ class TokenService {
       return false;
     }
     const decodedToken = (0,jwt_decode__WEBPACK_IMPORTED_MODULE_1__["default"])(token);
+    console.log(decodedToken);
     if (!decodedToken || !decodedToken?.exp) {
       return false;
     }
@@ -1483,7 +1484,7 @@ class AuthEffects {
     }))), {
       dispatch: false
     });
-    this.authSignIn$ = (0,_ngrx_effects__WEBPACK_IMPORTED_MODULE_6__.createEffect)(() => this.actions$.pipe((0,_ngrx_effects__WEBPACK_IMPORTED_MODULE_6__.ofType)(_auth_actions__WEBPACK_IMPORTED_MODULE_0__.loginStart), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_7__.switchMap)(action => this.authService.singIn(action.email, action.password).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_10__.tap)(respData => {
+    this.authSignIn$ = (0,_ngrx_effects__WEBPACK_IMPORTED_MODULE_6__.createEffect)(() => this.actions$.pipe((0,_ngrx_effects__WEBPACK_IMPORTED_MODULE_6__.ofType)(_auth_actions__WEBPACK_IMPORTED_MODULE_0__.loginStart), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_7__.switchMap)(action => this.authService.signIn(action.email, action.password).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_10__.tap)(respData => {
       this.dialogService.openDialog(this.dialogEnumType.Success, {
         message: `login successfull welcome ${respData.displayName}`
       });
@@ -1492,6 +1493,7 @@ class AuthEffects {
       dispatch: false
     });
     this.authRedirectLogout$ = (0,_ngrx_effects__WEBPACK_IMPORTED_MODULE_6__.createEffect)(() => this.actions$.pipe((0,_ngrx_effects__WEBPACK_IMPORTED_MODULE_6__.ofType)(_auth_actions__WEBPACK_IMPORTED_MODULE_0__.logout), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_10__.tap)(() => {
+      this.tokenService.removeToken();
       this.router.navigate(['/', 'auth']);
       this.authService.clearLogoutTimer();
     })), {
