@@ -60,7 +60,7 @@ export class AuthEffects {
       this.actions$.pipe(
         ofType(AuthActions.loginStart),
         switchMap((action) =>
-          this.authService.singIn(action.email, action.password).pipe(
+          this.authService.signIn(action.email, action.password).pipe(
             tap((respData) => {
               this.dialogService.openDialog(this.dialogEnumType.Success, {
                 message: `login successfull welcome ${respData.displayName}`,
@@ -87,6 +87,7 @@ export class AuthEffects {
       this.actions$.pipe(
         ofType(AuthActions.logout),
         tap(() => {
+          this.tokenService.removeToken();
           this.router.navigate(['/', 'auth']);
           this.authService.clearLogoutTimer();
         })

@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { getCookie, setCookie, removeCookie } from "typescript-cookie";
 import jwtDecode, { JwtPayload } from 'jwt-decode';
 
+type customJwtPayload = JwtPayload
+
 @Injectable({
   providedIn: 'root'
 })
@@ -25,7 +27,9 @@ export class TokenService {
     if (!token) {
       return false;
     }
-    const decodedToken = jwtDecode<JwtPayload>(token)
+    const decodedToken = jwtDecode<customJwtPayload>(token)
+    console.log(decodedToken);
+
     if (!decodedToken || !decodedToken?.exp) {
       return false
     }

@@ -32,7 +32,7 @@ export class AuthService {
     return this.http.post<User>(`${environment.SYSTEM_API}/${environment.API_VERSION}/users`, data)
   }
 
-  singIn(email: string, password: string): Observable<LoginResponseDto> {
+  signIn(email: string, password: string): Observable<LoginResponseDto> {
     return this.http
       .post<LoginResponseDto>(
         `${environment.SYSTEM_API}/${environment.API_VERSION}/auth/login`,

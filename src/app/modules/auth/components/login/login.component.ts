@@ -11,6 +11,7 @@ import { Store } from '@ngrx/store';
 import { Router } from '@angular/router';
 import { DialogType } from '@core/models/dialog.enum';
 import { AppState } from '@core/models/appState';
+
 @Component({
   selector: 'portfolio-login',
   templateUrl: './login.component.html',
@@ -22,14 +23,17 @@ export class LoginComponent implements OnInit, OnDestroy {
   signInForm!: FormGroup;
   signInSub!: Subscription;
   isLoading = false;
+
   constructor(private store: Store<AppState>) {
     this.buildForm();
   }
+
   ngOnInit(): void {
     this.signInSub = this.store.select('auth').subscribe((authResp) => {
       this.isLoading = authResp.loading;
     });
   }
+
   onSubmit(): void {
     if (this.signInForm.invalid) {
       this.signInForm.markAllAsTouched();
@@ -47,9 +51,11 @@ export class LoginComponent implements OnInit, OnDestroy {
   get email(): AbstractControl {
     return this.signInForm.get('email');
   }
+
   get password(): AbstractControl {
     return this.signInForm.get('password');
   }
+
   private buildForm(): void {
     this.signInForm = new FormGroup({
       email: new FormControl('', [
@@ -59,6 +65,7 @@ export class LoginComponent implements OnInit, OnDestroy {
       password: new FormControl('', [Validators.required]),
     });
   }
+
   ngOnDestroy(): void {
     if (this.signInSub) {
       this.signInSub.unsubscribe();
