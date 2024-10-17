@@ -28,7 +28,15 @@
         "imageUrl": "./assets/gif/lineage.gif",
         "projectName": "Cognizant Lineage",
         "projectUrl": "https://www.onelineage.com/",
-        "technologies": "React 17, React Native,TypeScript, Node.js, Nest.js, SQL, Css, JQuery, Git, BitBucket, Redux, Jest, Enzyme",
+        "technologies": "React 17, React Native, TypeScript, Node.js, Nest.js, SQL, Css, JQuery, Git, BitBucket, Redux, Jest, Enzyme",
         "title": "Web and Mobil"
+    },
+    {
+        "description": "API (Personal Project) that handle Authentication, Database conection writting in Nest.js follwing the Micro services architecture.",
+        "imageUrl": "./assets/gif/api-rebel.gif",
+        "projectName": "Rebel Transport GR-75",
+        "projectUrl": "https://api.rebel-transport-gr75.com",
+        "technologies": "Node.js, Handle-Bars,TypeScript, Node.js, Nest.js, SQL, MongoDb, Css, JQuery, Git, Github, Redux, Jest.",
+        "title": "API"
     }
 ]
