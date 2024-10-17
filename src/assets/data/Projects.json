@@ -1,11 +1,19 @@
 [
     {
-        "description": "A broker app is a mobile app that allows users to buy and sell financial assets. This is a MFE application with multiples Angular apps following Micro-frontend architecture",
+        "description": "A broker app that allows users to buy and sell financial assets. This is a MFE application with multiples Angular apps following Micro-frontend architecture",
         "imageUrl": "./assets/gif/accountview.gif",
         "projectName": "LPL Account View Online",
         "projectUrl": "https://accountview.lpl.com/web/login",
         "technologies": "Angular 15, Angular 12, Angular 6, AngularJs, Node.js, Bootstrap, C#, .Net, SQL, Scss, AWS, JQuery, Git, Karma, Jest.",
         "title": "MFE Web"
+    },
+    {
+        "description": "A broker app that allows prospect to start investing in stock, create a retirement plan etc",
+        "imageUrl": "./assets/gif/GWP.gif",
+        "projectName": "LPL GWP",
+        "projectUrl": "https://myaccountviewonline.com/prospectview/home/DanBensman",
+        "technologies": "Angular 12, Tailwind.css, C#, .Net, SQL, Scss, AWS, JQuery, Git, Karma, Jest.",
+        "title": "Angular Webapp"
     },
     {
         "description": "Payroll App that helps manage employee payments, including calculating payroll and taxes. This is a Monolithic page built in ASPX pages but it has been migrating to .Net APIs in C# and Angular.",
