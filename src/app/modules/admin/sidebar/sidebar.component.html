@@ -1,4 +1,4 @@
-<mat-sidenav-container class="sidenav-container">
+<mat-sidenav-container *ngIf="auth$ | async as auth" class="sidenav-container">
   <mat-sidenav
     #drawer
     class="sidenav"
@@ -10,13 +10,12 @@
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
       <a mat-list-item [routerLink]="['/', 'dashboard']">Dashboard</a>
-      <a mat-list-item [routerLink]="['/', 'dashboard', 'projects']"
-        >Projects</a
-      >
-      <a mat-list-item [routerLink]="['/', 'dashboard', 'skills']">Skills</a>
-      <a mat-list-item [routerLink]="['/', 'dashboard', 'users']">Users</a>
+      <a *ngIf="auth.user?.role === userRole.Admin" mat-list-item [routerLink]="['/', 'dashboard', 'projects']">Projects</a>
+      <a *ngIf="auth.user?.role === userRole.Admin" mat-list-item [routerLink]="['/', 'dashboard', 'skills']">Skills</a>
+      <a *ngIf="auth.user?.role === userRole.Admin"  mat-list-item [routerLink]="['/', 'dashboard', 'users']">Users</a>
     </mat-nav-list>
   </mat-sidenav>
+
   <mat-sidenav-content>
     <mat-toolbar color="primary">
       <button
@@ -29,7 +28,7 @@
         <mat-icon aria-label="Side nav toggle icon">home</mat-icon>
       </button>
       <div class="d-flex justify-content-between w-100">
-        <ng-container *ngIf="auth$ | async as auth">
+        <ng-container>
           <span>Welcome {{ auth.user?.displayName }}</span>
         </ng-container>
         <button mat-raised-button color="warn" (click)="onLogOut()">

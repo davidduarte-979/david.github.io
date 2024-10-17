@@ -29,7 +29,7 @@ export interface User {
 
 export type CreateUserDto = Pick<User, 'firstname' | 'lastname' | 'password' | 'email'>;
 
-export interface LoginResponseDto extends Omit<User, 'password' | 'createAt' | 'recoveryToken' | 'role' | 'firstname' | 'lastname'> {
+export interface LoginResponseDto extends Omit<User, 'password' | 'createAt' | 'recoveryToken' | 'firstname' | 'lastname'> {
   token: string;
   refreshToken: string
 }
@@ -40,3 +40,8 @@ export interface AutoLoginUser {
   token: string;
   tokenExpirationDate: string;
 };
+
+export enum UserRole {
+  Admin = 'admin',
+  Customer = 'customer'
+}

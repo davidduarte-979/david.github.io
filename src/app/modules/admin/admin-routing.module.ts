@@ -8,6 +8,7 @@ import { AddProjectComponent } from './components/add-project/add-project.compon
 import { EditProjectComponent } from './components/edit-project/edit-project.component';
 import { UsersComponent } from './components/users/users.component';
 import { AddEditUserComponent } from './components/add-edit-user/add-edit-user.component';
+import { roleGuard } from '@core/guards/role.guard';
 
 const routes: Routes = [
   {
@@ -21,26 +22,32 @@ const routes: Routes = [
       {
         path: 'projects',
         component: ProjectsComponent,
+        canActivate: [roleGuard]
       },
       {
         path: 'projects/:id',
         component: EditProjectComponent,
+        canActivate: [roleGuard]
       },
       {
         path: 'add-project',
         component: AddProjectComponent,
+        canActivate: [roleGuard]
       },
       {
         path: 'skills',
         component: SkillsComponent,
+        canActivate: [roleGuard]
       },
       {
         path: 'users',
         component: UsersComponent,
+        canActivate: [roleGuard]
       },
       {
         path: 'users/:id',
         component: AddEditUserComponent,
+        canActivate: [roleGuard]
       },
     ],
   },
