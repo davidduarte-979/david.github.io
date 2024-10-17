@@ -36,7 +36,15 @@
         "imageUrl": "./assets/gif/api-rebel.gif",
         "projectName": "Rebel Transport GR-75",
         "projectUrl": "https://api.rebel-transport-gr75.com",
-        "technologies": "Node.js, Handle-Bars,TypeScript, Node.js, Nest.js, SQL, MongoDb, Css, JQuery, Git, Github, Redux, Jest.",
+        "technologies": "Handle-Bars,TypeScript, Node.js, Nest.js, SQL, MongoDb, Css, JQuery, Git, Github, Redux, Jest, HTTP Server.",
+        "title": "API"
+    },
+    {
+        "description": "API (Personal Project) that handle Authentication, Database conection writting in Express and Node.js follwing the Micro services architecture.",
+        "imageUrl": "./assets/gif/system-rebel-api.gif",
+        "projectName": "System API Rebel Transport GR-75",
+        "projectUrl": "https://system.rebel-transport-gr75.com",
+        "technologies": "Handle-Bars, TypeScript, Node.js, Express, PostgreSQL, Css, JQuery, Git, Github, Mocha, HTTP Server, JWT.",
         "title": "API"
     }
 ]
