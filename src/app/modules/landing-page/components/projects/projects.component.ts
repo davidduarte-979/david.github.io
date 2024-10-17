@@ -15,6 +15,8 @@ export class ProjectsComponent implements OnInit, OnDestroy {
   isLoading = false;
   projectsSub!: Subscription;
   error = null;
+  title = 'Projects';
+  text = 'Summarizing hard work, concepts, technological stacks, frameworks, preprocessors, and databases. In this section, I present a compilation of my personal and professional projects. It represents the result of my hard work, diverse skill set, and innovative ideas, and demonstrates the use of various technologies, frameworks, preprocessors, and databases.';
 
   constructor(
     private store: Store<AppState>,
