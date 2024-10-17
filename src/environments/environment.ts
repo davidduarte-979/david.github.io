@@ -12,7 +12,7 @@ export const environment = {
   API_AUTH_DEV: 'http://localhost:3000',
   API_BASE_URL: 'https://api.rebel-transport-gr75.com',
   API_VERSION: 'api/v1',
-  SYSTEM_API: 'https://system.rebel-transport-gr75.com',
+  SYSTEM_API: 'https://rebel-transport-gr75.com',
 };
 
 /*
