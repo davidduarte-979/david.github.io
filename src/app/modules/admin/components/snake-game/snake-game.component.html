@@ -1,0 +1,28 @@
+<div class="snake-game-container">
+  <div>
+    <div class="scores">
+      <h1 style="font-family: 'VT323'" id="score">{{ score }}</h1>
+      <h1
+        *ngIf="highScoreText?.length"
+        style="font-family: 'VT323'"
+        id="highScore"
+      >
+        {{ highScoreText }}
+      </h1>
+    </div>
+    <div class="game-border-1">
+      <div class="game-border-2">
+        <div class="game-border-3">
+          <div #board id="game-board"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <ng-container *ngIf="showIntructions">
+    <h1 style="font-family: 'VT323'" class="text-4xl" id="instruction-text">
+      Press spacebar to start the game
+    </h1>
+    <img id="logo" src="assets/img/snake-game-ai-gen.png" alt="snake-logo" />
+  </ng-container>
+</div>

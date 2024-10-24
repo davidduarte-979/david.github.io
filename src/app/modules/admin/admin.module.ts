@@ -11,6 +11,7 @@ import { AddProjectComponent } from './components/add-project/add-project.compon
 import { EditProjectComponent } from './components/edit-project/edit-project.component';
 import { UsersComponent } from './components/users/users.component';
 import { AddEditUserComponent } from './components/add-edit-user/add-edit-user.component';
+import { SnakeGameComponent } from './components/snake-game/snake-game.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { AddEditUserComponent } from './components/add-edit-user/add-edit-user.c
     EditProjectComponent,
     UsersComponent,
     AddEditUserComponent,
+    SnakeGameComponent
   ],
   imports: [
     CommonModule,

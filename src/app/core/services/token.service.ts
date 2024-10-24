@@ -28,7 +28,6 @@ export class TokenService {
       return false;
     }
     const decodedToken = jwtDecode<customJwtPayload>(token)
-    console.log(decodedToken);
 
     if (!decodedToken || !decodedToken?.exp) {
       return false
