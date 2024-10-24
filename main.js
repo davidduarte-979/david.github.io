@@ -996,7 +996,6 @@ class TokenService {
       return false;
     }
     const decodedToken = (0,jwt_decode__WEBPACK_IMPORTED_MODULE_1__["default"])(token);
-    console.log(decodedToken);
     if (!decodedToken || !decodedToken?.exp) {
       return false;
     }
