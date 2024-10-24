@@ -39,7 +39,7 @@
   
   #instruction-text {
     position: absolute;
-    top: 56%;
+    top: 58%;
     color: #333;
     width: 300px;
     text-align: center;
@@ -47,6 +47,7 @@
     padding: 30px;
     margin: 0;
     font-weight: 600;
+    z-index: 1;
   }
   
   .scores {
@@ -98,6 +99,6 @@
     }
 
     #instruction-text {
-      top: 60%;
+      top: 63%;
     }
   }
