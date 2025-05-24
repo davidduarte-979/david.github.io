@@ -22,10 +22,6 @@ __webpack_require__.r(__webpack_exports__);
 
 const routes = [{
   path: '',
-  redirectTo: 'home',
-  pathMatch: 'full'
-}, {
-  path: 'home',
   loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-src_app_shared_shared_module_ts"), __webpack_require__.e("src_app_modules_landing-page_landing-page_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/landing-page/landing-page.module */ 1436)).then(m => m.LandingPageModule)
 }, {
   path: 'dashboard',

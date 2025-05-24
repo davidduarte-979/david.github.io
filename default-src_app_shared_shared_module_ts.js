@@ -23,16 +23,16 @@ class NavService {
       link: '/dashboard'
     }, {
       title: 'About',
-      link: '/home/about'
+      link: '/about'
     }, {
       title: 'Projects',
-      link: '/home/projects'
+      link: '/projects'
     }, {
       title: 'Skills',
-      link: '/home/skills'
+      link: '/skills'
     }, {
       title: 'Contact',
-      link: '/home/contact'
+      link: '/contact'
     }];
   }
   getNavLinks() {
