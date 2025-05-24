@@ -2,35 +2,35 @@ import { Injectable } from '@angular/core';
 import { NavLink } from '@core/models/nav-link';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class NavService {
   private navLinks: NavLink[] = [
     {
       title: 'Home',
-      link: '/'
+      link: '/',
     },
     {
       title: 'Dashboard',
-      link: '/dashboard'
+      link: '/dashboard',
     },
     {
       title: 'About',
-      link: '/home/about'
+      link: '/about',
     },
     {
       title: 'Projects',
-      link: '/home/projects'
+      link: '/projects',
     },
     {
       title: 'Skills',
-      link: '/home/skills'
+      link: '/skills',
     },
     {
       title: 'Contact',
-      link: '/home/contact'
+      link: '/contact',
     },
-  ]
+  ];
 
   getNavLinks() {
     return this.navLinks;

@@ -6,12 +6,10 @@ import { AuthGuard } from '@core/guards/auth.guard';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'home',
-    pathMatch: 'full'
-  },
-  {
-    path: 'home',
-    loadChildren: () => import('./modules/landing-page/landing-page.module').then(m => m.LandingPageModule)
+    loadChildren: () =>
+      import('./modules/landing-page/landing-page.module').then(
+        (m) => m.LandingPageModule
+      ),
   },
   {
     path: 'dashboard',
@@ -21,7 +19,8 @@ const routes: Routes = [
   },
   {
     path: 'auth',
-    loadChildren: () => import('./modules/auth/auth.module').then((m) => m.AuthModule),
+    loadChildren: () =>
+      import('./modules/auth/auth.module').then((m) => m.AuthModule),
   },
   {
     path: 'page-not-found',
@@ -29,12 +28,12 @@ const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: '/page-not-found'
-  }
+    redirectTo: '/page-not-found',
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
